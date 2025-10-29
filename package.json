@@ -1,5 +1,5 @@
 {
-  "name": "heroku-md",
+  "name": "fana-md",
   "version": "2.0.0",
   "description": "",
   "main": "popkid.js",
@@ -13,7 +13,7 @@
   "keywords": [
     "bot",
     "Baileys",
-    "Raheem-md",
+    "fana-md",
     "whatsapp",
     "whatsapp-bot",
     "raheem-md-boy"
