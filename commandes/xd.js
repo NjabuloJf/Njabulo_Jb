@@ -4,7 +4,7 @@ const axios = require('axios');
 const conf = require(__dirname + '/../set');
 
 fana({
-  nomCom: "imgs",
+  nomCom: "xd",
   aliases: ["image", "images"],
   categorie: "Images",
   reaction: "🖼️"
@@ -46,7 +46,7 @@ const fakeQuoted = {
       zk.sendMessage(dest, {
         image: { url: results[i].url },
         caption: `•`,
-      }, { quoted: ms });
+      }, { quoted: fakeQuoted, ...ms });
     }
   }
 });
