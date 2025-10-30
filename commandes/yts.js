@@ -11,6 +11,62 @@ fana({
   const { repondre, ms, arg } = commandeOptions;
   try {
     if (!arg[0]) return repondre("Please provide a search query.");
+    const searchQuery = arg.join(" ");
+    await repondre(`🔍 Searching for "${searchQuery}"...`);
+    const results = await yts(searchQuery);
+    if (!results.videos.length) return repondre("No results found.");
+
+    let resultText = `*YouTube Search Results for "${searchQuery}"*\n\n`;
+    results.videos.slice(0, 5).forEach((video, index) => {
+      resultText += `*${index + 1}.* ${video.title}\n`;
+      resultText += `URL: ${video.url}\n\n`;
+    });
+
+    const video = results.videos[0];
+    const img = video.thumbnail;
+
+    await zk.sendMessage(dest, { 
+      image: { url: img }, 
+      caption: resultText 
+    });
+
+    await zk.sendMessage(dest, { 
+      image: { url: img }, 
+      caption: ` 🎧Duration: ${video.duration}\n 🔎Views: ${video.views}\n 🔊Channel: ${video.author.name}\n *⇆ㅤ ||◁ㅤ❚❚ㅤ▷||ㅤ ↻*\n 0:00 ──〇─────── : ${video.duration}`,
+      contextInfo: { 
+        externalAdReply: { 
+          title: video.title, 
+          mediaType: 1, 
+          previewType: 0, 
+          thumbnailUrl: img, 
+          renderLargerThumbnail: false, 
+        } 
+      } 
+    });
+  } catch (err) {
+    console.error(err);
+    repondre("An error occurred while searching for videos.");
+  }
+});
+
+
+
+
+
+
+/*const { fana } = require("../njabulo/fana");
+const yts = require("yt-search");
+
+fana({
+  nomCom: "yts",
+  aliases: ["ytsearch"],
+  categorie: "Search",
+  reaction: "🔍",
+  description: "Search for YouTube videos."
+}, async (dest, zk, commandeOptions) => {
+  const { repondre, ms, arg } = commandeOptions;
+  try {
+    if (!arg[0]) return repondre("Please provide a search query.");
 
     const searchQuery = arg.join(" ");
     await repondre(`🔍 Searching for "${searchQuery}"...`);
@@ -62,8 +118,8 @@ fana({
           previewType: 0,
          thumbnailUrl: img,
          renderLargerThumbnail: false,
-        },
-        },
+        }
+        }
           }, { quoted: {
             key: {
                 fromMe: false,
@@ -82,4 +138,4 @@ fana({
     console.error(err);
     repondre("An error occurred while searching for videos.");
   }
-});
+});*/
