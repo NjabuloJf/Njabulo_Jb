@@ -257,21 +257,7 @@ const generalMenu = `╭───────────⊷
 ┊  ⑨◦➛ᥙρdᥲtᥱ               
 ┊  ⑩◦➛ᥙρtιmᥱ               
 ┊  ⑪◦➛ᥙrᥣ                           
-┊  ⑫◦➛ᥴodᥱ                       
-┊  ⑬◦➛sᥴᥲn-ᥴodᥱ           
-┊  ⑭◦➛sᥴᥲn-oρᥱn             
-┊  ⑮◦➛mᥱnᥙ-ᥲι                
-┊  ⑯◦➛mᥱnᥙ-books           
-┊  ⑰◦➛mᥱnᥙ-ᥴontroᥣ         
-┊  ⑱◦➛mᥱnᥙ-doᥕnᥣoᥲd      
-┊  ⑲◦➛mᥱnᥙ-fᥙn               
-┊  ⑳◦➛mᥱnᥙ-gᥱnᥱrᥲᥣ          
-┊  ①◦➛mᥱnᥙ-groᥙρ           
-┊  ②◦➛mᥱnᥙ-mod              
-┊  ③◦➛mᥱnᥙ-sᥱᥲᥴh            
-┊  ④◦➛mᥱnᥙ-ᥙsᥱ             
-┊  ⑤◦➛ρᥲιr            
-┊  ①◦➛gιthᥙbs  
+┊  ⑫◦➛ᥴodᥱ            
 ┊___________________________
 ┊gᥱnᥱrᥲᥣ mᥱnᥙ ᥴommᥲnds ᥲvᥲιᥣᥲbᥣᥱ       
 ╰┬──────────⊷⳹
@@ -550,7 +536,8 @@ const funMenu = `╭───────────⊷
 ┊books mᥱnᥙ ᥴommᥲnds ᥲvᥲιᥣᥲbᥣᥱ 
 ╰┬──────────⊷⳹
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
-┊╰────────────────⊷`;
+┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+╰──────────────────⊷`;
 
     await zk.sendMessage(dest, {
         image: { url: randomNjabulourl }, 
@@ -622,10 +609,41 @@ const groupMenu = `╭───────────⊷
             }
         } });
        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
-                        break;
-                    default:
-                        await zk.sendMessage(dest, { text: "Invalid option" });
-                        await zk.sendMessage(dest, { react: { text: "❌", key: receivedMsg.key } });
+         break;
+        default:
+      const error = `Hყ Invᥲᥣιd oρtιon  *ᥣᥲst nᥙmbᥱr 10*`;
+        await zk.sendMessage(dest, { 
+        text: error, 
+        contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "🚫 message  Invᥲᥣιd oρtιon",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+               await zk.sendMessage(dest, { react: { text: "❌", key: receivedMsg.key } });
                 }
             }
         };
