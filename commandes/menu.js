@@ -44,21 +44,23 @@ fana({ nomCom: "jb", categorie: "General" }, async (dest, zk, commandeOptions) =
 ┊▢modᥱ : *${mode}*
 ┊▢dᥲtᥱ : *${date}*
 ┊___________________________
-┊  1. ᥣιst mᥱnᥙ
-┊  2. ᥲι mᥱnᥙ
-┊  3. gᥱnᥱrᥲᥣ mᥱnᥙ
-┊  4. doᥕnᥣoᥲd mᥱnᥙ 
-┊  5. ᥙsᥱ mᥱnᥙ
-┊  6. mod mᥱnᥙ
-┊  7. fᥙn mᥱnᥙ
-┊  8. books mᥱnᥙ
-┊  9. sᥱᥲᥴh mᥱnᥙ
-┊ 10. groᥙρ mᥱnᥙ
+┊  ①◦➛ᥣιst mᥱnᥙ
+┊  ②◦➛ᥲι mᥱnᥙ
+┊  ③◦➛gᥱnᥱrᥲᥣ mᥱnᥙ
+┊  ④◦➛doᥕnᥣoᥲd mᥱnᥙ 
+┊  ⑤◦➛ᥙsᥱ mᥱnᥙ
+┊  ⑥◦➛mod mᥱnᥙ
+┊  ⑦◦➛fᥙn mᥱnᥙ
+┊  ⑧◦➛books mᥱnᥙ
+┊  ⑨◦➛sᥱᥲᥴh mᥱnᥙ
+┊  ⑩◦➛groᥙρ mᥱnᥙ
+┊  ⑪◦➛ᥴontroᥣ mᥱnᥙ
 ┊___________________________
 ┊ʀᴇᴘʟʏ ʜɪ ᴡɪᴛʜ *ɴᴀᴍᴇ* ʟɪᴋᴇ *ᴀɪ-ᴍᴇɴᴜ*
 ╰┬──────────⊷⳹
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
-┊╰────────────────⊷`;
+┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+╰──────────────────⊷`;
 
     const njabulox = [
         "",
@@ -112,7 +114,30 @@ fana({ nomCom: "jb", categorie: "General" }, async (dest, zk, commandeOptions) =
             audio: { url: randomAudioUrl },
             mimetype: 'audio/mpeg',
             ptt: true, 
-        });
+            contextInfo: {
+                mentionedJid: [dest.sender || ""],
+                externalAdReply: {
+                    title: "📝messages menu song",
+                    mediaType: 1,
+                    previewType: 0,
+                    thumbnailUrl: randomNjabulourl,
+                    sourceUrl: "https://www.instagram.com/njabulojb871",
+                    renderLargerThumbnail: false,
+                }
+            }
+        }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 
         const handler = async (msgData) => {
             const receivedMsg = msgData.messages[0];
