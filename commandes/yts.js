@@ -27,22 +27,72 @@ fana({
 
     await zk.sendMessage(dest, { 
       image: { url: img }, 
-      caption: resultText 
-    });
+      caption: resultText,
+    contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: video.title,
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: img,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 
     await zk.sendMessage(dest, { 
       image: { url: img }, 
       caption: ` 🎧Duration: ${video.duration}\n 🔎Views: ${video.views}\n 🔊Channel: ${video.author.name}\n *⇆ㅤ ||◁ㅤ❚❚ㅤ▷||ㅤ ↻*\n 0:00 ──〇─────── : ${video.duration}`,
-      contextInfo: { 
-        externalAdReply: { 
-          title: video.title, 
-          mediaType: 1, 
-          previewType: 0, 
-          thumbnailUrl: img, 
-          renderLargerThumbnail: false, 
-        } 
-      } 
-    });
+      contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: video.title,
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: img,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+      
+      
+      
   } catch (err) {
     console.error(err);
     repondre("An error occurred while searching for videos.");
