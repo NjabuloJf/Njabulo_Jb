@@ -190,7 +190,7 @@ const controlMenu = `╭───────────⊷
                 }
             }
         } });
-                        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
+         await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
                         break;
                     case "2":
 const aiMenu = `╭───────────⊷
@@ -220,8 +220,23 @@ const aiMenu = `╭───────────⊷
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
-                          await zk.sendMessage(dest, { image: { url: randomNjabulourl }, text: aiMenu });
-                        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
+          await zk.sendMessage(dest, { 
+              image: { url: randomNjabulourl }, 
+              caption: aiMenu 
+            }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+         await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
                         break;
                     case "3":
 const generalMenu = `╭───────────⊷
@@ -263,8 +278,23 @@ const generalMenu = `╭───────────⊷
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
-                         await zk.sendMessage(dest, { image: { url: randomNjabulourl }, text: generalMenu });
-                        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
+        await zk.sendMessage(dest, {
+            image: { url: randomNjabulourl }, 
+            caption: generalMenu 
+           }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
                         break;
                     case "4":
 const downloadMenu = `╭───────────⊷
@@ -310,8 +340,23 @@ const downloadMenu = `╭───────────⊷
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
-                        await zk.sendMessage(dest, { image: { url: randomNjabulourl }, text: downloadMenu });
-                        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
+        await zk.sendMessage(dest, { 
+            image: { url: randomNjabulourl }, 
+            caption: downloadMenu 
+            }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
                         break;
                     case "5":
 const useMenu = `╭───────────⊷
@@ -337,8 +382,23 @@ const useMenu = `╭───────────⊷
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
-                        await zk.sendMessage(dest, { image: { url: randomNjabulourl }, text: useMenu });
-                        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
+       await zk.sendMessage(dest, { 
+           image: { url: randomNjabulourl }, 
+           caption: useMenu 
+         }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
                         break;
                     case "6":
 const modsMenu = `╭───────────⊷
@@ -369,8 +429,23 @@ const modsMenu = `╭───────────⊷
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
-                        await zk.sendMessage(dest, { image: { url: randomNjabulourl }, text: modsMenu });
-                        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
+         await zk.sendMessage(dest, { 
+             image: { url: randomNjabulourl }, 
+             caption: modsMenu 
+            }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+         await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
                         break;
                     case "7":
 const funMenu = `╭───────────⊷
@@ -428,8 +503,23 @@ const funMenu = `╭───────────⊷
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
-                        await zk.sendMessage(dest, { image: { url: randomNjabulourl }, text: funMenu });
-                        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
+        await zk.sendMessage(dest, { 
+            image: { url: randomNjabulourl }, 
+            caption: funMenu 
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
                         break;
                     case "8":
     const booksMenu = `╭───────────⊷
@@ -462,7 +552,22 @@ const funMenu = `╭───────────⊷
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
 ┊╰────────────────⊷`;
 
-    await zk.sendMessage(dest, { image: { url: randomNjabulourl }, text: booksMenu });
+    await zk.sendMessage(dest, {
+        image: { url: randomNjabulourl }, 
+        caption: booksMenu
+        }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
     break;
                     case "9":
@@ -500,8 +605,23 @@ const groupMenu = `╭───────────⊷
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
-                        await zk.sendMessage(dest, { image: { url: randomNjabulourl }, text: groupMenu });
-                        await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
+        await zk.sendMessage(dest, { 
+            image: { url: randomNjabulourl }, 
+            caption: groupMenu 
+            }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+       await zk.sendMessage(dest, { react: { text: "⬇️", key: receivedMsg.key } });
                         break;
                     default:
                         await zk.sendMessage(dest, { text: "Invalid option" });
