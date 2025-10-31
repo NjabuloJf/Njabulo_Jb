@@ -8,40 +8,61 @@ const DATABASE_URL = process.env.DATABASE_URL === undefined
     ? databasePath
     : process.env.DATABASE_URL;
 module.exports = { session: process.env.SESSION_ID || 'zokk',
-    PREFIXE: process.env.PREFIX || "+",
-    OWNER_NAME: process.env.OWNER_NAME || "➥ sir Njabulo Jbメ",
+
+    //process.env.PREFIX//
+    PREFIXE: process.env.PREFIX || ".",
+
+    //process.env.OWNER_NAME//
+    OWNER_NAME: process.env.OWNER_NAME || "Njabulo Jb",
+   
+    //process.env.NUMERO_OWNER//
     NUMERO_OWNER : process.env.NUMERO_OWNER || "26777821911",              
-    AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "non",
-    AUTO_DOWNLOAD_STATUS: process.env.AUTO_DOWNLOAD_STATUS || 'non',
-    BOT : process.env.BOT_NAME || 'Njabulo-Jb',
-    URL : process.env.BOT_MENU_LINKS || 'https://files.catbox.moe/ety154.jpg',
-    MODE: process.env.PUBLIC_MODE || "no",
-    PM_PERMIT: process.env.PM_PERMIT || 'no',
+   
+    //process.env.AUTO_READ_STATUS//             
+    AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "yes",
+   
+    //process.env.AUTOREACT_STATUS//             
+    AUTOREACT_STATUS : process.env.AUTOREACT_STATUS || 'yes',
+    
+    //process.env.AUTO_DOWNLOAD_STATUS//            
+    AUTO_DOWNLOAD_STATUS: process.env.AUTO_DOWNLOAD_STATUS || 'no',
+    
+    //process.env.BOT_NAME//            
+    BOT : process.env.BOT_NAME || 'fana-xmd',
+    
+    //process.env.BOT_MENU_LINKS//             
+    URL : process.env.BOT_MENU_LINKS || 'https://files.catbox.moe/mh36c7.jpg',
+    
+    //process.env.PUBLIC_MODE//             
+    MODE: process.env.PUBLIC_MODE || "yes",
+    
+    //process.env.PM_PERMIT//             
+    PM_PERMIT: process.env.PM_PERMIT || 'yes',
+    
+    //process.env.HEROKU_APP_NAME//             
     HEROKU_APP_NAME : process.env.HEROKU_APP_NAME,
+    
+    //process.env.HEROKU_APY_KEY//             
     HEROKU_APY_KEY : process.env.HEROKU_APY_KEY ,
+    
+    //process.env.WARN_COUNT//            
     WARN_COUNT : process.env.WARN_COUNT || '3' ,
-    ETAT : process.env.PRESENCE || '1',
+    
+    //process.env.PRESENCE//             
+    ETAT : process.env.PRESENCE || '',
+    
+    //process.env.PM_CHATBOT//             
     CHATBOT : process.env.PM_CHATBOT || 'no',
+    
+    //process.env.STARTING_BOT_MESSAGE//             
     DP : process.env.STARTING_BOT_MESSAGE || "yes",
-    ADM : process.env.ANTI_DELETE_MESSAGE || 'yes',
+    
+    //process.env.ANTI_DELETE_MESSAGE//             
+    ADM : process.env.ANTI_DELETE_MESSAGE || 'no',
     DATABASE_URL,
     DATABASE: DATABASE_URL === databasePath
-        ? "postgres://db_7xp9_user:6hwmTN7rGPNsjlBEHyX49CXwrG7cDeYi@dpg-cj7ldu5jeehc73b2p7g0-a.oregon-postgres.render.com/db_7xp9" : "postgres://db_7xp9_user:6hwmTN7rGPNsjlBEHyX49CXwrG7cDeYi@dpg-cj7ldu5jeehc73b2p7g0-a.oregon-postgres.render.com/db_7xp9",
-    /* new Sequelize({
-     dialect: 'sqlite',
-     storage: DATABASE_URL,
-     logging: false,
-})
-: new Sequelize(DATABASE_URL, {
-     dialect: 'postgres',
-     ssl: true,
-     protocol: 'postgres',
-     dialectOptions: {
-         native: true,
-         ssl: { require: true, rejectUnauthorized: false },
-     },
-     logging: false,
-}),*/
+        ? "postgresql://postgres:bKlIqoOUWFIHOAhKxRWQtGfKfhGKgmRX@viaduct.proxy.rlwy.net:47738/railway" : "postgresql://postgres:bKlIqoOUWFIHOAhKxRWQtGfKfhGKgmRX@viaduct.proxy.rlwy.net:47738/railway",
+   
 };
 let fichier = require.resolve(__filename);
 fs.watchFile(fichier, () => {
@@ -49,4 +70,7 @@ fs.watchFile(fichier, () => {
     console.log(`mise à jour ${__filename}`);
     delete require.cache[fichier];
     require(fichier);
-});
+})
+
+
+
