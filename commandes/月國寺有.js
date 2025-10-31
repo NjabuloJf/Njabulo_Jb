@@ -104,7 +104,7 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
             },
             message: {
                 contactMessage: {
-                    displayName: "njᥲbᥙᥣo",
+                    displayName: "🟢online njᥲbᥙᥣo🍥",
                     vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
                 }
             }
@@ -133,7 +133,7 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
             },
             message: {
                 contactMessage: {
-                    displayName: "njᥲbᥙᥣo",
+                    displayName: "🟢online njᥲbᥙᥣo🍥",
                     vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
                 }
             }
