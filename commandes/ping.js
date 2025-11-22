@@ -71,7 +71,7 @@ const date = moment().format('DD/MM/YYYY');
            headerType: 1,
             contextInfo: {
                 externalAdReply: {
-                    title: "",
+                    title: "Ξ Generating pong......",
                     mediaType: 1,
                     previewType: 0,
                     thumbnailUrl: randomNjabulourl,
