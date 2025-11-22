@@ -52,8 +52,20 @@ const date = moment().format('DD/MM/YYYY');
     
     // Reply with ping results
     await zk.sendMessage(dest, {
-        text: `🏓 *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${formattedResults}ᴍs*`,
-          }, { quoted: {
+    image: { url: randomNjabulourl },
+           caption: `🏓 *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${formattedResults}ᴍs*`, 
+            contextInfo: {
+                mentionedJid: [dest.sender || ""],
+                externalAdReply: {
+                    title: "📝messages menu cmd",
+                    mediaType: 1,
+                    previewType: 0,
+                    thumbnailUrl: randomNjabulourl,
+                    sourceUrl: "https://www.instagram.com/njabulojb871",
+                    renderLargerThumbnail: false,
+                }
+            }
+        }, { quoted: {
             key: {
                 fromMe: false,
                 participant: `0@s.whatsapp.net`,
@@ -61,11 +73,13 @@ const date = moment().format('DD/MM/YYYY');
             },
             message: {
                 contactMessage: {
-                    displayName: "njᥲbᥙᥣo",
+                    displayName: "🟢online njᥲbᥙᥣo🍥",
                     vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
                 }
             }
         } });
+
+      
 
     console.log("Ping results sent successfully with verified tick!");
   }
