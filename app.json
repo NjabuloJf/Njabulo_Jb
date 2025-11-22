@@ -1,5 +1,5 @@
 {
- "name":"Njabulo-Jb",
+ "name":"Njabulo_Jb",
   "description":"Njabulo AI",
   "keywords":["bot","node","baileys","whatsapp"],
   "logo":"https://files.catbox.moe/ety154.jpg",
@@ -42,7 +42,7 @@
     "BOT_NAME" : {
        
       "description":"👤put A name for your bot",
-      "value":"Njabulo-Jb",
+      "value":"Njabulo_Jb",
       "required":false
 
     } ,
