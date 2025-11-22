@@ -49,11 +49,26 @@ const date = moment().format('DD/MM/YYYY');
 
     // Select a random image file
     const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+
+    const buttons = [
+      {
+        "buttonId":  `${prefix}ping`,
+        "buttonText": { "displayText": "➲stᥲtᥙs ρong" },
+        "type": 1
+      },
+      {
+        "buttonId":  `${prefix}menu`,
+        "buttonText": { "displayText": "➲stᥲtᥙs ᥕᥱbsιtᥱ " },
+        "type": 1
+      }
+    ];
     
     // Reply with ping results
     await zk.sendMessage(dest, {
     image: { url: randomNjabulourl },
-           caption: `🏓 *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${formattedResults}ᴍs*`, 
+           caption: `🏓 *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${formattedResults}ᴍs*`,
+           buttons: buttons,
+           headerType: 4,
             contextInfo: {
                 mentionedJid: [dest.sender || ""],
                 externalAdReply: {
