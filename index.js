@@ -1388,7 +1388,14 @@ ___________________________
             });
         }
 
+const { handleButtons } = require("./commands/play0");
 
+zk.ev.on("messages.upsert", async (m) => {
+  const msg = m.messages[0];
+  if (!msg.message) return;
+
+  await handleButtons(zk, msg);
+});
 
         // fin fonctions utiles
         /** ************* */
