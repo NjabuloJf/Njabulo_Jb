@@ -53,12 +53,12 @@ const date = moment().format('DD/MM/YYYY');
     const buttons = [
       {
         "buttonId":  `ping`,
-        "buttonText": { "displayText": "➲stᥲtᥙs ρong" },
+        "buttonText": { "displayText": "uptime" },
         "type": 1
       },
       {
         "buttonId":  `menu`,
-        "buttonText": { "displayText": "➲stᥲtᥙs ᥕᥱbsιtᥱ " },
+        "buttonText": { "displayText": "Ping again" },
         "type": 1
       }
     ];
@@ -71,7 +71,7 @@ const date = moment().format('DD/MM/YYYY');
            headerType: 1,
             contextInfo: {
                 externalAdReply: {
-                    title: "📝messages menu cmd",
+                    title: "",
                     mediaType: 1,
                     previewType: 0,
                     thumbnailUrl: randomNjabulourl,
