@@ -80,11 +80,26 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
 
     const randomAudioUrl = audioUrls[Math.floor(Math.random() * audioUrls.length)];
 
+    const buttons = [
+      {
+        "buttonId":  `ping`,
+        "buttonText": { "displayText": "full menu" },
+        "type": 1
+      },
+      {
+        "buttonId":  `menu`,
+        "buttonText": { "displayText": "options menh" },
+        "type": 1
+      }
+    ];
+    
     try {
         const senderName = nomAuteurMessage || message.from;  
         const sentMsg = await zk.sendMessage(dest, {
             image: { url: randomNjabulourl },
             caption: infoMsg,
+            buttons: buttons,
+           headerType: 1,
             contextInfo: {
                 mentionedJid: [dest.sender || ""],
                 externalAdReply: {
@@ -176,7 +191,9 @@ const controlMenu = `╭───────────⊷
 ╰──────────────────⊷`;
              await zk.sendMessage(dest, { 
             image: { url: randomNjabulourl }, 
-            caption: controlMenu 
+            caption: controlMenu, 
+             buttons: buttons,
+             headerType: 1,
              }, { quoted: {
             key: {
                 fromMe: false,
@@ -222,7 +239,9 @@ const aiMenu = `╭───────────⊷
 ╰──────────────────⊷`;
           await zk.sendMessage(dest, { 
               image: { url: randomNjabulourl }, 
-              caption: aiMenu 
+              caption: aiMenu, 
+              buttons: buttons,
+           headerType: 1,
             }, { quoted: {
             key: {
                 fromMe: false,
