@@ -2,6 +2,18 @@ const { fana } = require("../njabulo/fana");
 const speed = require("performance-now");
 const moment = require("moment-timezone");
 
+const njabulox = [
+        "https://files.catbox.moe/iii5jv.jpg",
+        "https://files.catbox.moe/xjeyjh.jpg",
+        "https://files.catbox.moe/mh36c7.jpg",
+        "https://files.catbox.moe/u6v5ir.jpg",
+        "https://files.catbox.moe/bnb3vx.jpg" // New image added
+    ];
+
+    // Select a random image file
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+
+
 function delay(ms) {
   console.log(`⏱️ delay for ${ms}ms`);
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -31,23 +43,24 @@ fana(
 
     const pingResults = Array.from({ length: 1 }, () => Math.floor(Math.random() * 10000 + 1000));
     const formattedResults = pingResults.map(ping => `${ping}ms`).join("\n");
-
-    await zk.sendMessage(dest, {
-      interactiveMessage: {
-        header: "Ping Results",
-        title: `🏓 *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${formattedResults}*`,
-        footer: "> Pσɯҽɾԃ Ⴆყ Njᥲbᥙᥣo",
-        buttons: [
-          {
-            name: "cta_copy",
-            buttonParamsJson: JSON.stringify({
-              display_text: "Copy Ping Result",
-              id: `copy_${Date.now()}`,
-              copy_code: formattedResults,
-            }),
-          },
-        ],
+await zk.sendMessage(dest, {
+  image: { url: randomNjabulourl },
+  caption: `🏓 *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${formattedResults}*`,
+  interactiveMessage: {
+    header: "pong",
+    title: "run",
+    footer: "> Pσɯҽɾԃ Ⴆყ Njᥲbᥙᥣo",
+    buttons: [
+      {
+        name: "cta_copy",
+        buttonParamsJson: JSON.stringify({
+          display_text: "Copy Ping Result",
+          id: `copy_${Date.now()}`,
+          copy_code: formattedResults,
+        }),
       },
+    ],
+  },
     }, {
       quoted: {
         key: {
