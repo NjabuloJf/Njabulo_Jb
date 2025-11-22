@@ -31,7 +31,7 @@ module.exports = { session: process.env.SESSION_ID || 'zokk',
     AUTO_DOWNLOAD_STATUS: process.env.AUTO_DOWNLOAD_STATUS || 'no',
     
     //process.env.BOT_NAME//            
-    BOT : process.env.BOT_NAME || 'fana-xmd',
+    BOT : process.env.BOT_NAME || 'Njabulo_Jb',
     
     //process.env.BOT_MENU_LINKS//             
     URL : process.env.BOT_MENU_LINKS || 'https://files.catbox.moe/mh36c7.jpg',
