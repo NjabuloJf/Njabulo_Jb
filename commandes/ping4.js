@@ -22,7 +22,7 @@ const randomNjabulourl = "https://files.catbox.moe/u6v5ir.jpg";
 
 fana(
   {
-    nomCom: "ping",
+    nomCom: "ping4",
     desc: "To check bot response time",
     Categorie: "General",
     reaction: "⚡",
