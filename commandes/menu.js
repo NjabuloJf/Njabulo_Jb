@@ -80,53 +80,52 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
 
     const randomAudioUrl = audioUrls[Math.floor(Math.random() * audioUrls.length)];
 
-    const buttons = [
-      {
-        name: "cta_copy",
-        buttonParamsJson: JSON.stringify({
-          display_text: "Copy Ping Result",
-          id: `copy_${Date.now()}`,
-          copy_code: formattedResults,
-        }),
+    const buttons = [{
+  name: "cta_copy",
+  buttonParamsJson: JSON.stringify({
+    display_text: "Copy Ping Result",
+    id: `copy_${Date.now()}`,
+    copy_code: formattedResults,
+  }),
+}];
+
+try {
+  const senderName = nomAuteurMessage || message.from;
+  const sentMsg = await zk.sendMessage(dest, {
+    interactiveMessage: {
+      image: { url: randomNjabulourl },
+      header: infoMsg,
+      buttons,
+      footer: "> Pσɯҽɾԃ Ⴆყ Njᥲbᥙᥣo",
+      headerType: 1,
+      contextInfo: {
+        mentionedJid: [dest.sender || ""],
+        externalAdReply: {
+          title: "📝messages menu cmd",
+          mediaType: 1,
+          previewType: 0,
+          thumbnailUrl: randomNjabulourl,
+          sourceUrl: "https://www.instagram.com/njabulojb871", // added URL
+          renderLargerThumbnail: false,
+        }
+      }
+    }
+  }, {
+    quoted: {
+      key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
       },
-    ],
-  },
-    
-    
-    try {
-        const senderName = nomAuteurMessage || message.from;  
-        const sentMsg = await zk.sendMessage(dest, {
-            interactiveMessage: {
-            image: { url: randomNjabulourl },
-            header: infoMsg,
-            buttons: buttons,
-            footer: "> Pσɯҽɾԃ Ⴆყ Njᥲbᥙᥣo",
-           headerType: 1,
-            contextInfo: {
-                mentionedJid: [dest.sender || ""],
-                externalAdReply: {
-                    title: "📝messages menu cmd",
-                    mediaType: 1,
-                    previewType: 0,
-                    thumbnailUrl: randomNjabulourl,
-                    sourceUrl: "https://www.instagram.com/njabulojb871",
-                    renderLargerThumbnail: false,                  
-                    } 
-                } 
-    
-        }, { quoted: {
-            key: {
-                fromMe: false,
-                participant: `0@s.whatsapp.net`,
-                remoteJid: "status@broadcast"
-            },
-            message: {
-                contactMessage: {
-                    displayName: "🟢online njᥲbᥙᥣo🍥",
-                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
-                }
-            }
-        } });
+      message: {
+        contactMessage: {
+          displayName: "🟢online njᥲbᥙᥣo🍥",
+          vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+        }
+      }
+    }
+  });
+
             
         await zk.sendMessage(dest, {
             audio: { url: randomAudioUrl },
