@@ -42,13 +42,13 @@ fana({
       try {
         const result = results[i];
         if (!result || !result.url) continue;
-        const caption = `
+        const imageimg = `
        🖼️ Title: *${searchTerm}*
        💾 Size: *${result.width}x${result.height}*
        🎆 Quality: *High HD*
        🌐 Download by *➥ sir Njabulo Jbメ*`;
 
-        const buttons = [{
+      const buttons = [{
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
       display_text: "Visit Website",
@@ -67,7 +67,7 @@ fana({
         await zk.sendMessage(dest, {
     interactiveMessage: {
       image: { url: result.url }, 
-      header: caption ,
+      header: imageimg,
       buttons: buttons,
       headerType: 1,
       contextInfo: {
@@ -75,7 +75,7 @@ fana({
           title: "📝messages menu cmd",
           mediaType: 1,
           previewType: 0,
-          thumbnailUrl: randomNjabulourl,
+          thumbnailUrl: result.url,
           sourceUrl: "https://www.instagram.com/njabulojb871", // added URL
           renderLargerThumbnail: false,
         }
