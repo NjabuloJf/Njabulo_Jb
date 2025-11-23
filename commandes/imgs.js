@@ -1,0 +1,183 @@
+const { fana } = require("../njabulo/fana");
+const gis = require("g-i-s");
+const axios = require("axios");
+const conf = require(__dirname + "/../set");
+
+// ── Random image list ─────────────────────────────────────────────
+const njabulox = [
+  "", // (empty string kept as in original)
+  "https://files.catbox.moe/xjeyjh.jpg",
+  "https://files.catbox.moe/mh36c7.jpg",
+  "https://files.catbox.moe/u6v5ir.jpg",
+  "https://files.catbox.moe/bnb3vx.jpg",
+];
+const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+
+// ── Base button definition (same as in other modules) ─────
+const baseButtons = [
+  {
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Visit Website",
+      id: "backup channel",
+      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+    }),
+  },
+  {
+    name: "cta_copy",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Copy",
+      id: "copy",
+      copy_code: "", // will be filled dynamically
+    }),
+  },
+];
+
+// ── Helper that sends an interactive message with image + buttons ─────
+async function sendFormattedMessage(zk, chatId, text, ms) {
+  // clone the button array so we can set the copy_code for this message
+  const buttons = JSON.parse(JSON.stringify(baseButtons));
+  buttons[1].buttonParamsJson = JSON.stringify({
+    display_text: "Copy",
+    id: "copy",
+    copy_code: text, // copy the exact text that was sent
+  });
+
+  await zk.sendMessage(
+    chatId,
+    {
+      interactiveMessage: {
+        image: { url: randomNjabulourl },
+        header: text,
+        buttons,
+        headerType: 1,
+        contextInfo: {
+          mentionedJid: [ms?.sender?.jid || ""],
+          externalAdReply: {
+            title: "☘️ Image search",
+            mediaType: 1,
+            previewType: 0,
+            thumbnailUrl: randomNjabulourl,
+            renderLargerThumbnail: false,
+          },
+        },
+      },
+    },
+    {
+      quoted: {
+        key: {
+          fromMe: false,
+          participant: "0@s.whatsapp.net",
+          remoteJid: "status@broadcast",
+        },
+        message: {
+          contactMessage: {
+            displayName: "njᥲbᥙᥣo",
+            vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`,
+          },
+        },
+      },
+    }
+  );
+}
+
+// ── Image search command ─────────────────────────────────────────────
+fana(
+  {
+    nomCom: "image",
+    aliases: ["image", "images"],
+    categorie: "Images",
+    reaction: "☘️",
+  },
+  async (dest, zk, commandeOptions) => {
+    const { repondre, ms, arg } = commandeOptions;
+
+    if (!arg[0]) {
+      return sendFormattedMessage(zk, dest, "Which image?", ms);
+    }
+
+    const searchTerm = arg.join(" ");
+    const loadingMessage = await repondre(
+      `*⏳ Searching for ${searchTerm} images...*`
+    );
+
+    try {
+      const results = await new Promise((resolve, reject) => {
+        gis(searchTerm, (error, results) => {
+          if (error) reject(error);
+          else resolve(results);
+        });
+      });
+
+      if (!results || results.length === 0) {
+        await zk.sendMessage(
+          dest,
+          { text: "No images found." },
+          { quoted: ms }
+        );
+        await zk.deleteMessage(dest, loadingMessage.key);
+        return;
+      }
+
+      for (let i = 0; i < Math.min(results.length, 5); i++) {
+        const result = results[i];
+        if (!result || !result.url) continue;
+
+        const caption = `
+🖼️ Title: *${searchTerm}*
+💾 Size: *${result.width}x${result.height}*
+🎆 Quality: *High HD*
+🌐 Download by *➥ sir Njabulo Jbメ*`;
+
+        // Build a copy‑enabled button list for this image
+        const copyButtons = JSON.parse(JSON.stringify(baseButtons));
+        copyButtons[1].buttonParamsJson = JSON.stringify({
+          display_text: "Copy",
+          id: "copy",
+          copy_code: caption,          // copy the caption
+        });
+
+        await zk.sendMessage(
+          dest,
+          {
+            interactiveMessage: {
+              image: { url: result.url },
+              header: caption,
+              buttons: copyButtons,
+              headerType: 1,
+              contextInfo: {
+                mentionedJid: [ms?.sender?.jid || ""],
+                externalAdReply: {
+                  title: "☘️ Image search",
+                  mediaType: 1,
+                  previewType: 0,
+                  thumbnailUrl: randomNjabulourl,
+                  renderLargerThumbnail: false,
+                },
+              },
+            },
+          },
+          { quoted: ms }
+        );
+      }
+
+      try {
+        await zk.deleteMessage(dest, loadingMessage.key);
+      } catch (error) {
+        console.error("Error deleting loading message:", error);
+      }
+    } catch (error) {
+      console.error("Error searching images:", error);
+      await zk.sendMessage(
+        dest,
+        { text: "Error searching images. Please try again." },
+        { quoted: ms }
+      );
+      try {
+        await zk.deleteMessage(dest, loadingMessage.key);
+      } catch (error) {
+        console.error("Error deleting loading message:", error);
+      }
+    }
+  }
+);
