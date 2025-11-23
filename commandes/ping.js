@@ -49,22 +49,15 @@ fana(
     const uptimeFmt = `${(uptime / 60).toFixed(1)} min`;
 
     const infoMsg = `
-╭───────────⊷
-┊▢ Name : *${name}*
-┊▢ Status Pong : ${ping}ms
-┊▢ Time : ${temps}
-┊▢ Date : ${date}
-┊▢ Uptime : ${uptimeFmt}
-┊___________________________`;
+╭─────────────⊷
+┊▢ *Name : ${name}*
+┊▢ *Status* Pong : *${ping}ms*
+┊▢ *Time* : ${temps}
+┊▢ *Date* : ${date}
+┊▢ *Uptime* : ${uptimeFmt}
+┊____________________________⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭`;
 
     const buttons = [
-      {
-        name: "quick_reply",
-        buttonParamsJson: JSON.stringify({
-          display_text: "Uptime",
-          id: `quick_reply`
-        })
-      },
       {
         name: "cta_copy",
         buttonParamsJson: JSON.stringify({
