@@ -29,7 +29,7 @@ function getName(dest, commandeOptions) {
 
 fana(
   {
-    nomCom: 'ping1',
+    nomCom: 'ping',
     desc: 'To check bot response time',
     Categorie: 'General',
     reaction: '⚡',
@@ -44,81 +44,37 @@ fana(
     const pingResults = Array.from({ length: 1 }, () => Math.floor(Math.random() * 10000 + 1000));
     const formattedResults = pingResults.map(ping => `${ping}ms`).join("\n");
 
-     const infoMsg = `🏓 *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${formattedResults}*`; 
+     const infoMsg = `
+╭───────────⊷
+┊▢Use :  ${pushName}* 
+┊▢status Pong: ${formattedResults}*
+┊▢time :${temps}* 
+┊▢date : ${date}* 
+┊___________________________`; 
 
-       const buttons = [
-  {
-    "name": "cta_copy",
-    "buttonParamsJson": JSON.stringify({
-      display_text: "COPY",
-      id: `copy`
+const buttons = [{
+    name: "quick_reply",
+    buttonParamsJson: JSON.stringify({
+      display_text: "uptime",
+      id: `quick_reply`
     })
-  },
-  {
-    "name": "cta_download",
-    "buttonParamsJson": JSON.stringify({
-      display_text: "DOWNLOAD NOW",
-      id: `download`
+  },{
+    name: "cta_copy",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Copy Ping Result",
+      id: `copy`,
+      copy_code: greeting
     })
-  },
-  {
-    "name": "cta_learn_more",
-    "buttonParamsJson": JSON.stringify({
-      display_text: "LEARN MORE",
-      id: `learn_more`
+  },{
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Visit Channel",
+      id: `visit_website`,
+      url: "https://example.com"
     })
-  },
-  {
-    "name": "cta_sign_up",
-    "buttonParamsJson": JSON.stringify({
-      display_text: "SIGN UP",
-      id: `sign_up`
-    })
-  },
-  {
-    "name": "cta_get_started",
-    "buttonParamsJson": JSON.stringify({
-      display_text: "GET STARTED",
-      id: `get_started`
-    })
-  },
-  {
-    "name": "cta_buy_now",
-    "buttonParamsJson": JSON.stringify({
-      display_text: "BUY NOW",
-      id: `buy_now`
-    })
-  },
-  {
-    "name": "cta_contact_us",
-    "buttonParamsJson": JSON.stringify({
-      display_text: "CONTACT US",
-      id: `contact_us`
-    })
-  },
-  {
-    "name": "cta_read_more",
-    "buttonParamsJson": JSON.stringify({
-      display_text: "READ MORE",
-      id: `read_more`
-    })
-  },
-  {
-    "name": "cta_join_now",
-    "buttonParamsJson": JSON.stringify({
-      display_text: "JOIN NOW",
-      id: `join_now`
-    })
-  },
-  {
-    "name": "cta_shop_now",
-    "buttonParamsJson": JSON.stringify({
-      display_text: "SHOP NOW",
-      id: `shop_now`
-    })
-  }
-];     
-     await zk.sendMessage(dest, {
+  }];
+          
+    await zk.sendMessage(dest, {
     interactiveMessage: {
       image: { url: randomNjabulourl },
       header: infoMsg,
