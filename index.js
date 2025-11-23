@@ -125,6 +125,21 @@ setTimeout(() => {
     // Select a random image file
     const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
 
+        const buttons = [{
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Visit Website",
+      id: `backup channel`,
+      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u" 
+    })
+  },{
+    name: "cta_copy",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Messaging online",
+      id: `copy`,
+      copy_code: greeting
+    })
+    }];
 
         
         const audioMap = {
@@ -1177,44 +1192,47 @@ setInterval(async () => {
 
                 if((conf.DP).toLowerCase() === 'yes') {     
 
-                let cmsg =`___________________________
+                let infoMsg =`___________________________
+Njabulo Jb is connected to devices
 nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
 ρrᥱfιx :  *[ ${prefixe} ]*
 modᥱ : *${md}*
 ___________________________
 `;
-    await zk.sendMessage(zk.user.id, { 
-            image: { url: randomNjabulourl },
-         caption: cmsg,
-         contextInfo: {
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo Jb",
-         serverMessageId: 143,
-         },
-         forwardingScore: 999, // 
-         externalAdReply: {
-         title: "🖐️ message bot is connected",
-         mediaType: 1,
+
+    await zk.sendMessage(dest, {
+    interactiveMessage: {
+      image: { url: randomNjabulourl },
+      header: infoMsg,
+      buttons: buttons,
+      headerType: 1,
+      contextInfo: {
+        mentionedJid: [dest.sender || ""],
+        externalAdReply: {
+          title: "📝messages menu cmd",
+          mediaType: 1,
           previewType: 0,
-         thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: false,
-        },
-        },
-          }, { quoted: {
-            key: {
-                fromMe: false,
-                participant: `0@s.whatsapp.net`,
-                remoteJid: "status@broadcast"
-            },
-            message: {
-                contactMessage: {
-                    displayName: "njᥲbᥙᥣo",
-                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
-                }
-            }
-        } });
+          thumbnailUrl: randomNjabulourl,
+          sourceUrl: "https://www.instagram.com/njabulojb871", // added URL
+          renderLargerThumbnail: false,
+        }
+      }
+    }
+  }, {
+    quoted: {
+      key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+      },
+      message: {
+        contactMessage: {
+          displayName: "🟢online njᥲbᥙᥣo🍥",
+          vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+        }
+      }
+    }
+  });                
                }
              }
             else if (connection == "close") {
