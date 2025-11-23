@@ -84,8 +84,8 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
   name: "cta_copy",
   buttonParamsJson: JSON.stringify({
     display_text: "Copy Ping Result",
-    id: `copy_${Date.now()}`,
-    copy_code: formattedResults,
+    id: `copy`,
+    copy_code: greeting ,
   }),
 }];
 
@@ -95,8 +95,7 @@ try {
     interactiveMessage: {
       image: { url: randomNjabulourl },
       header: infoMsg,
-      buttons,
-      footer: "> Pσɯҽɾԃ Ⴆყ Njᥲbᥙᥣo",
+      buttons: buttons,
       headerType: 1,
       contextInfo: {
         mentionedJid: [dest.sender || ""],
@@ -194,8 +193,6 @@ const controlMenu = `╭───────────⊷
              await zk.sendMessage(dest, { 
             image: { url: randomNjabulourl }, 
             caption: controlMenu, 
-             buttons: buttons,
-             headerType: 1,
              }, { quoted: {
             key: {
                 fromMe: false,
@@ -242,8 +239,6 @@ const aiMenu = `╭───────────⊷
           await zk.sendMessage(dest, { 
               image: { url: randomNjabulourl }, 
               caption: aiMenu, 
-              buttons: buttons,
-           headerType: 1,
             }, { quoted: {
             key: {
                 fromMe: false,
