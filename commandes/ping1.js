@@ -52,7 +52,7 @@ fana(
   buttonParamsJson: JSON.stringify({
     display_text: "Copy Ping Result",
     id: `copy`,
-    copy_code: greeting ,
+    copy_code: formattedResults, 
   }),
 }];
           
