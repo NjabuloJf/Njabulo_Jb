@@ -94,14 +94,22 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
       }
     ];
     
+    
     const buttons = [{
-  name: "cta_copy",
-  buttonParamsJson: JSON.stringify({
-    display_text: "Copy Ping Result",
-    id: `copy`,
-    copy_code: greeting ,
-  }),
-}];
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Visit Website",
+      id: `backup channel`,
+      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u" 
+    })
+  },{
+    name: "cta_copy",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Messaging online",
+      id: `copy`,
+      copy_code: greeting
+    })
+    }];
 
 try {
   const senderName = nomAuteurMessage || message.from;
