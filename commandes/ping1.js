@@ -44,9 +44,17 @@ fana(
     const pingResults = Array.from({ length: 1 }, () => Math.floor(Math.random() * 10000 + 1000));
     const formattedResults = pingResults.map(ping => `${ping}ms`).join("\n");
 
-     const menuText = `🏓 *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${formattedResults}*`; 
+     const infoMsg = `🏓 *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${formattedResults}*`; 
 
 
+          const buttons = [{
+  name: "cta_copy",
+  buttonParamsJson: JSON.stringify({
+    display_text: "Copy Ping Result",
+    id: `copy`,
+    copy_code: greeting ,
+  }),
+}];
           
      await zk.sendMessage(dest, {
     interactiveMessage: {
