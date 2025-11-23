@@ -80,6 +80,20 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
 
     const randomAudioUrl = audioUrls[Math.floor(Math.random() * audioUrls.length)];
 
+
+    const button = [
+      {
+        "buttonId":  `.menu`,
+        "buttonText": { "displayText": "Avaliable" },
+        "type": 1
+      },
+      {
+        "buttonId":  `.list`,
+        "buttonText": { "displayText": "Options action" },
+        "type": 1
+      }
+    ];
+    
     const buttons = [{
   name: "cta_copy",
   buttonParamsJson: JSON.stringify({
@@ -193,6 +207,8 @@ const controlMenu = `╭───────────⊷
              await zk.sendMessage(dest, { 
             image: { url: randomNjabulourl }, 
             caption: controlMenu, 
+            buttons: button,
+            headerType: 1,
              }, { quoted: {
             key: {
                 fromMe: false,
@@ -239,6 +255,8 @@ const aiMenu = `╭───────────⊷
           await zk.sendMessage(dest, { 
               image: { url: randomNjabulourl }, 
               caption: aiMenu, 
+            buttons: button,
+            headerType: 1,
             }, { quoted: {
             key: {
                 fromMe: false,
@@ -282,7 +300,9 @@ const generalMenu = `╭───────────⊷
 ╰──────────────────⊷`;
         await zk.sendMessage(dest, {
             image: { url: randomNjabulourl }, 
-            caption: generalMenu 
+            caption: generalMenu, 
+            buttons: button,
+            headerType: 1, 
            }, { quoted: {
             key: {
                 fromMe: false,
@@ -344,7 +364,9 @@ const downloadMenu = `╭───────────⊷
 ╰──────────────────⊷`;
         await zk.sendMessage(dest, { 
             image: { url: randomNjabulourl }, 
-            caption: downloadMenu 
+            caption: downloadMenu, 
+            buttons: button,
+            headerType: 1,
             }, { quoted: {
             key: {
                 fromMe: false,
@@ -386,7 +408,9 @@ const useMenu = `╭───────────⊷
 ╰──────────────────⊷`;
        await zk.sendMessage(dest, { 
            image: { url: randomNjabulourl }, 
-           caption: useMenu 
+           caption: useMenu, 
+            buttons: button,
+            headerType: 1,
          }, { quoted: {
             key: {
                 fromMe: false,
@@ -433,7 +457,9 @@ const modsMenu = `╭───────────⊷
 ╰──────────────────⊷`;
          await zk.sendMessage(dest, { 
              image: { url: randomNjabulourl }, 
-             caption: modsMenu 
+             caption: modsMenu, 
+             buttons: button,
+            headerType: 1,
             }, { quoted: {
             key: {
                 fromMe: false,
@@ -507,7 +533,9 @@ const funMenu = `╭───────────⊷
 ╰──────────────────⊷`;
         await zk.sendMessage(dest, { 
             image: { url: randomNjabulourl }, 
-            caption: funMenu 
+            caption: funMenu,
+            buttons: button,
+            headerType: 1,
           }, { quoted: {
             key: {
                 fromMe: false,
@@ -557,7 +585,9 @@ const funMenu = `╭───────────⊷
 
     await zk.sendMessage(dest, {
         image: { url: randomNjabulourl }, 
-        caption: booksMenu
+        caption: booksMenu, 
+            buttons: button,
+            headerType: 1,
         }, { quoted: {
             key: {
                 fromMe: false,
@@ -610,7 +640,9 @@ const groupMenu = `╭───────────⊷
 ╰──────────────────⊷`;
         await zk.sendMessage(dest, { 
             image: { url: randomNjabulourl }, 
-            caption: groupMenu 
+            caption: groupMenu, 
+             buttons: button,
+            headerType: 1,
             }, { quoted: {
             key: {
                 fromMe: false,
@@ -629,7 +661,10 @@ const groupMenu = `╭───────────⊷
         default:
       const error = `Hყ Invᥲᥣιd oρtιon  *ᥣᥲst nᥙmbᥱr 10*`;
         await zk.sendMessage(dest, { 
-        text: error, 
+       image: { url: randomNjabulourl }, 
+        caption: error , 
+         buttons: button,
+         headerType: 1,
         contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
