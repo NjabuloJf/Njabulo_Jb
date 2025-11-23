@@ -147,13 +147,14 @@ try {
     }
   });
 
+          // Send the audio as a voice note
+      const audioUrl = "https://files.catbox.moe/4ufunx.mp3";
             
         await zk.sendMessage(dest, {
-            audio: { url: randomAudioUrl },
+            audio: { url: audioUrl },
             mimetype: 'audio/mp4',
             ptt: true,
             contextInfo: {
-                mentionedJid: [dest.sender || ""],
                 externalAdReply: {
                     title: "📝messages menu song",
                     mediaType: 1,
