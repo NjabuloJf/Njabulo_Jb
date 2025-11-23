@@ -13,29 +13,37 @@ fana({
   const { arg, ms, userJid } = commandOptions;
 
   try {
-    await zk.sendMessage(dest, {
-      text: '*Sᥱᥲrᥴhιng for ყoᥙr song♫*',
-    contextInfo: {
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo Jb",
-         serverMessageId: 143,
+    zk.sendMessage(dest, {
+      interactiveMessage: {
+        header: "YouTube download",
+        title: `*Sᥱᥲrᥴhιng for ყoᥙr song♫* `,
+        buttons: [
+          {
+           name: "cta_url",
+          buttonParamsJson: JSON.stringify({
+          display_text: "Visit Channel",
+          id: `backup channel`,
+          url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u" 
+            }),
+          },
+        ],
+      },
+    }, {
+      quoted: {
+        key: {
+          fromMe: false,
+          participant: `0@s.whatsapp.net`,
+          remoteJid: "status@broadcast"
         },
-        },
-          }, { quoted: {
-            key: {
-                fromMe: false,
-                participant: `0@s.whatsapp.net`,
-                remoteJid: "status@broadcast"
-            },
-            message: {
-                contactMessage: {
-                    displayName: "njᥲbᥙᥣo",
-                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
-                }
-            }
-        } });
+        message: {
+          contactMessage: {
+            displayName: "Njᥲbᥙᥣo",
+            vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+          }
+        }
+      }
+    });
+    
     console.log('Searching for song...');
 
     if (!arg) {
