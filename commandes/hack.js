@@ -89,8 +89,8 @@ fana(
 
     try {
       const hackMsgs = [
-        "```⚡ *RAHMANI-XMD*  Injecting malware⚡```",
-        "```🔐 *RAHMANI-XMD*  into device \n 0%```",
+        "```⚡ *Njabulo Jb*  Injecting malware⚡```",
+        "```🔐 *Njabulo Jb*  into device \n 0%```",
         "```♻️ transfering photos \n █ 10%```",
         "```♻️ transfer successful \n █ █ 20%```",
         "```♻️ transfering videos \n █ █ █ 30%```",
