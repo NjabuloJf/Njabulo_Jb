@@ -1,0 +1,69 @@
+const { fana } = require("../njabulo/fana");
+const speed = require("performance-now");
+const moment = require("moment-timezone");
+
+function delay(ms) {
+  console.log(`⏱️ delay for ${ms}ms`);
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function getName(dest, commandeOptions) {
+  return (
+    commandeOptions.pushName ||
+    commandeOptions.name ||
+    (dest.sender ? dest.sender.split('@')[0] : "Unknown User")
+  );
+}
+
+fana(
+  {
+    nomCom: 'ping',
+    desc: 'To check bot response time',
+    Categorie: 'General',
+    reaction: '⚡',
+    fromMe: 'true',
+  },
+  async (dest, zk, commandeOptions) => {
+    const name = getName(dest, commandeOptions);
+    moment.tz.setDefault("Africa/Botswana");
+    const temps = moment().format('hh:mm:ss A');
+    const date = moment().format('DD/MM/YYYY');
+
+    const pingResults = Array.from({ length: 1 }, () => Math.floor(Math.random() * 10000 + 1000));
+    const formattedResults = pingResults.map(ping => `${ping}ms`).join("\n");
+
+    await zk.sendMessage(dest, {
+      interactiveMessage: {
+        header: "Ping Results",
+        title: `🏓 *sᴛᴀᴛᴜs▰▰▰▰▰▱ᴘᴏɴɢ: ${formattedResults}*`,
+        footer: "> Pσɯҽɾԃ Ⴆყ Njᥲbᥙᥣo",
+        buttons: [
+          {
+            name: "cta_copy",
+            buttonParamsJson: JSON.stringify({
+              display_text: "Copy Ping Result",
+              id: `copy_${Date.now()}`,
+              copy_code: formattedResults,
+            }),
+          },
+        ],
+      },
+    }, {
+      quoted: {
+        key: {
+          fromMe: false,
+          participant: `0@s.whatsapp.net`,
+          remoteJid: "status@broadcast"
+        },
+        message: {
+          contactMessage: {
+            displayName: "Njᥲbᥙᥣo",
+            vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+          }
+        }
+      }
+    });
+
+    console.log("Ping results sent successfully with copy button!");
+  }
+);
