@@ -46,7 +46,7 @@ fana(
 
      const infoMsg = `
 ╭───────────⊷
-┊▢Use :  ${pushName}* 
+┊▢Name :  *Njabulo Jb* 
 ┊▢status Pong: ${formattedResults}*
 ┊▢time :${temps}* 
 ┊▢date : ${date}* 
