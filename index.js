@@ -137,7 +137,7 @@ setTimeout(() => {
     buttonParamsJson: JSON.stringify({
       display_text: "Messaging online",
       id: `copy`,
-      copy_code: greeting
+      copy_code: `hallo`
     })
     }];
 
