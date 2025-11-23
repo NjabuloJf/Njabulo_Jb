@@ -82,23 +82,25 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
 
     const buttons = [
       {
-        "buttonId":  `ping`,
-        "buttonText": { "displayText": "full menu" },
-        "type": 1
+        name: "cta_copy",
+        buttonParamsJson: JSON.stringify({
+          display_text: "Copy Ping Result",
+          id: `copy_${Date.now()}`,
+          copy_code: formattedResults,
+        }),
       },
-      {
-        "buttonId":  `menu`,
-        "buttonText": { "displayText": "options menh" },
-        "type": 1
-      }
-    ];
+    ],
+  },
+    
     
     try {
         const senderName = nomAuteurMessage || message.from;  
         const sentMsg = await zk.sendMessage(dest, {
+            interactiveMessage: {
             image: { url: randomNjabulourl },
-            caption: infoMsg,
+            header: infoMsg,
             buttons: buttons,
+            footer: "> Pσɯҽɾԃ Ⴆყ Njᥲbᥙᥣo",
            headerType: 1,
             contextInfo: {
                 mentionedJid: [dest.sender || ""],
@@ -108,9 +110,10 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
                     previewType: 0,
                     thumbnailUrl: randomNjabulourl,
                     sourceUrl: "https://www.instagram.com/njabulojb871",
-                    renderLargerThumbnail: false,
-                }
-            }
+                    renderLargerThumbnail: false,                  
+                    } 
+                } 
+    
         }, { quoted: {
             key: {
                 fromMe: false,
