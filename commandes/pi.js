@@ -1,5 +1,8 @@
+
+
 const { fana } = require("../njabulo/fana");
-const config = require("../set");
+const speed = require("performance-now");
+const moment = require("moment-timezone");
 
 const njabulox = [
   "", // keep the empty entry if you want a chance of no image
@@ -41,7 +44,7 @@ fana(
       const responseTime = (end - start) / 1000;
 
       const header = {
-        title: `╭━━〔 💥 𝗣𝗜𝗡𝗚 𝗧𝗘𝗦𝗧 〕━━╮\n┃ 🤖 *BOT* : *DML-XMD*\n┃ ⏳ *PING* : *${responseTime.toFixed(2)}s ${reactionEmoji}*\n╰━━━━━━━━━━━━━━━━━━╯`,
+        title: `╭━━〔 💥 𝗣𝗜𝗡𝗚 𝗧𝗘𝗦𝗧 〕━━╮\n┃ 🤖 *BOT* : *DML-XMD*\n┃ ⏳ *PING* : ${reactionEmoji}*\n╰━━━━━━━━━━━━━━━━━━╯`,
         subtitle: "> *POWERED BY YOU*",
       };
 
