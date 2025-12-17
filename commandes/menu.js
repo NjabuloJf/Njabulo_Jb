@@ -141,29 +141,21 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
 
-    const menus = `
-╭┈┈┈┈━⊷
-┊▢nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
-┊▢ρrᥱfιx :  *[ ${s.PREFIXE} ]*
-┊▢modᥱ : *${mode}*
-┊▢dᥲtᥱ : *${date}*
-╰┈┈┈┈━⊷\n`;
-    
-    let menuM = ` *${greeting}*`;
+    const menus = ` *${greeting}*`;
     
     for (const cat in coms) {
-        menuM += `
+        menus = `
 *「 ${toFancyUppercaseFont(cat)} 」*
 ╭─━⊷ `;
         for (const cmd of coms[cat]) {
-            menuMsg += `          
+            menus = `          
 *┋* ${toFancyLowercaseFont(cmd)}`;   
         }
-        menuM += `
+        menus = `
 ╰─━⊷`;
     }
     
-    menuM += `
+    menus = `
 > @made by FredieTech 2025\n`;
         
         
@@ -254,7 +246,7 @@ try {
   });
 
            await zk.sendMessage(message, {
-            text: menus + menuM,
+            text: menus,
                contextInfo: {
                 externalAdReply: {
                     title: "hhah", 
