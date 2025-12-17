@@ -62,6 +62,28 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
 
+        let menuMsg = ``;
+
+    for (const cat in coms) {
+        menuMsg += `🔰 *${cat.toUpperCase()}* 🔰\n`;
+        for (const cmd of coms[cat]) {
+            menuMsg += `   🔴 ${cmd}\n`;
+        }
+        menuMsg += `━━━━━━━━━━━━━━━━━━━━\n`;
+    }
+
+    menuMsg += `🛡 *SMART-XMD BOT - DEVELOPED BY DAUDY* 🛡`;
+
+    let imageUrl = "https://files.catbox.moe/vcdwmp.jpg";
+
+    try {
+        zk.sendMessage(dest, { 
+            image: { url: imageUrl }, 
+            caption: menuMsg, 
+            footer: "© SMART-XMD" 
+        }, { quoted: ms });
+        
+
     const njabulox = [
         "",
         "https://files.catbox.moe/xjeyjh.jpg",
