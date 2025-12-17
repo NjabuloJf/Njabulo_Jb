@@ -98,6 +98,9 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
         coms[com.categorie].push(com.nomCom);
     });
 
+    
+    const randomQuote = getRandomQuote();
+
     moment.tz.setDefault("Africa/Botswana");
     const temps = moment().format('HH:mm:ss');
     const date = moment().format('DD/MM/YYYY');
