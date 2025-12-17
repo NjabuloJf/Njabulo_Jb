@@ -8,6 +8,80 @@ const s = require(__dirname + "/../set");
 const more = String.fromCharCode(8206)
 const Taphere = more.repeat(4001)
 
+
+
+const readMore = String.fromCharCode(8206).repeat(4001);
+
+// Function to convert text to fancy uppercase font
+const toFancyUppercaseFont = (text) => {
+    const fonts = {
+        'A': '𝐀', 'B': '𝐁', 'C': '𝐂', 'D': '𝐃', 'E': '𝐄', 'F': '𝐅', 'G': '𝐆', 'H': '𝐇', 'I': '𝐈', 'J': '𝐉', 'K': '𝐊', 'L': '𝐋', 'M': '𝐌',
+        'N': '𝐍', 'O': '𝐎', 'P': '𝐏', 'Q': '𝐐', 'R': '𝐑', 'S': '𝐒', 'T': '𝐓', 'U': '𝐔', 'V': '𝐕', 'W': '𝐖', 'X': '𝐗', 'Y': '𝐘', 'Z': '𝐙'
+    };
+    return text.split('').map(char => fonts[char] || char).join('');
+};
+
+// Function to convert text to fancy lowercase font
+const toFancyLowercaseFont = (text) => {
+    const fonts = {
+        'a': '𝚊', 'b': '𝚋', 'c': '𝚌', 'd': '𝚍', 'e': '𝚎', 'f': '𝚏', 'g': '𝚐', 'h': '𝚑', 'i': '𝚒', 'j': '𝚓', 'k': '𝚔', 'l': '𝚕', 'm': '𝚖',
+        'n': '𝚗', 'o': '𝚘', 'p': '𝚙', 'q': '𝚚', 'r': '𝚛', 's': '𝚜', 't': '𝚝', 'u': '𝚞', 'v': '𝚟', 'w': '𝚠', 'x': '𝚡', 'y': '𝚢', 'z': '𝚣'
+    };
+    return text.split('').map(char => fonts[char] || char).join('');
+};
+
+
+
+// Random quotes array
+const quotes = [
+    "Dream big, work hard.",
+    "Stay humble, hustle hard.",
+    "Believe in yourself.",
+    "Success is earned, not given.",
+    "Actions speak louder than words.",
+    "The best is yet to come.",
+    "Keep pushing forward.",
+    "Do more than just exist.",
+    "Progress, not perfection.",
+    "Stay positive, work hard.",
+    "Be the change you seek.",
+    "Never stop learning.",
+    "Chase your dreams.",
+    "Be your own hero.",
+    "Life is what you make of it.",
+    "Do it with passion or not at all.",
+    "You are stronger than you think.",
+    "Create your own path.",
+    "Make today count.",
+    "Embrace the journey.",
+    "The best way out is always through.",
+    "Strive for progress, not perfection.",
+    "Don't wish for it, work for it.",
+    "Live, laugh, love.",
+    "Keep going, you're getting there.",
+    "Don’t stop until you’re proud.",
+    "Success is a journey, not a destination.",
+    "Take the risk or lose the chance.",
+    "It’s never too late.",
+    "Believe you can and you're halfway there.",
+    "Small steps lead to big changes.",
+    "Happiness depends on ourselves.",
+    "Take chances, make mistakes.",
+    "Be a voice, not an echo.",
+    "The sky is the limit.",
+    "You miss 100% of the shots you don’t take.",
+    "Start where you are, use what you have.",
+    "The future belongs to those who believe.",
+    "Don’t count the days, make the days count.",
+    "Success is not the key to happiness. Happiness is the key to success."
+];
+
+// Function to get a random quote
+const getRandomQuote = () => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+};
+
 fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre, prefixe, nomAuteurMessage, mybotpic } = commandeOptions;
     let { cm } = require(__dirname + "/../njabulo//fana");
@@ -62,26 +136,23 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
 
-        let menuMsg = ``;
+    
+    let commandsList = "*𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒*\n";
+    const sortedCategories = Object.keys(categorizedCommands).sort();
+    let commandIndex = 1;
 
-    for (const cat in coms) {
-        menuMsg += `🔰 *${cat.toUpperCase()}* 🔰\n`;
-        for (const cmd of coms[cat]) {
-            menuMsg += `   🔴 ${cmd}\n`;
+    for (const category of sortedCategories) {
+        commandsList += `\n*┈「 ${toFancyUppercaseFont(category)} 」┈*\n╭┈┈┈┈┈┈┈┈┈┈┈⊷`;
+        const sortedCommands = categorizedCommands[category].sort();
+        for (const command of sortedCommands) {
+            commandsList += `\n┊▸ ${commandIndex++}. ${toFancyLowercaseFont(command)}`;
         }
-        menuMsg += `━━━━━━━━━━━━━━━━━━━━\n`;
+        commandsList += "\n╰┈┈┈┈┈┈┈┈┈┈┈⊷\n";
     }
 
-    menuMsg += `🛡 *SMART-XMD BOT - DEVELOPED BY DAUDY* 🛡`;
+    commandsList += readMore + "\nworld of fredi we are happy\n";
 
-    let imageUrl = "https://files.catbox.moe/vcdwmp.jpg";
-
-    try {
-        zk.sendMessage(dest, { 
-            image: { url: imageUrl }, 
-            caption: menuMsg, 
-            footer: "© SMART-XMD" 
-        }, { quoted: ms });
+        
         
 
     const njabulox = [
@@ -169,6 +240,20 @@ try {
     }
   });
 
+           await zk.sendMessage(message, {
+            text: commandsList,
+            contextInfo: {
+                externalAdReply: {
+                    title: "📝messages menu song",
+                    mediaType: 1,
+                    previewType: 0,
+                    thumbnailUrl: randomNjabulourl,
+                    sourceUrl: "https://www.instagram.com/njabulojb871",
+                    renderLargerThumbnail: false,
+                }
+            }
+        });
+    
           // Send the audio as a voice note
       const audioUrl = "https://files.catbox.moe/4ufunx.mp3";
             
