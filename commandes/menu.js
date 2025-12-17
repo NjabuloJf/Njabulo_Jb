@@ -38,6 +38,15 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
         greeting = "Good Nιght";
     }
 
+    const controlMenuu = `╭───────────⊷
+┊▢nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+┊▢ρrᥱfιx :  *[ ${s.PREFIXE} ]*
+┊▢modᥱ : *${mode}*
+┊▢dᥲtᥱ : *${date}*
+┊___________________________`;
+
+    
+
     let infoMsg = `╭───────────⊷
 ┊▢nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
 ┊▢ρrᥱfιx :  *[ ${s.PREFIXE} ]*
@@ -146,6 +155,23 @@ try {
       }
     }
   });
+
+    await zk.sendMessage(dest, { 
+            image: { url: randomNjabulourl }, 
+            caption: controlMenuu, 
+             }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 
           // Send the audio as a voice note
       const audioUrl = "https://files.catbox.moe/4ufunx.mp3";
