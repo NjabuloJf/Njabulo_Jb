@@ -70,7 +70,7 @@ const njabuloxx = [
   "Start where you are, use what you have. 💡",
   "The future belongs to those who believe. 🔮",
   "Don’t count the days, make the days count. 📆",
-  "Success is not the key to happiness. Happiness is the key to success. 😊"
+  "Success is not the key to happiness. Happiness is the key to success. 😊",
 ];
 
 
@@ -91,9 +91,7 @@ const njabuloxx = [
         greeting = "Good Nιght";
     }
 
-    const { totalUsers } = await fetchGitHubStats();
-    const formattedTotalUsers = totalUsers.toLocaleString();
-
+    
     const controlMenuu = `
     .ᴄʜᴀᴛ
 ② .ɴᴊᴀʙᴜʟᴏ
@@ -171,19 +169,18 @@ sᴇᴀʀᴄʜ
 
     
 
-    let infoMsg = `╭─⃝──────────⊷
+    let infoMsg = `╭───────────⊷
 *┊ ┊ ┊ ┊ ┊* 
 *┊ ┊ ✫ ˚㋛ ⋆｡ ❀* 
 *┊ ☪︎⋆*
 *⊹*    🪔 *𝐌𝐄𝐍𝐔*
 *✧* 「hᥲᥣᥣo *${greeting}* 」
-
-*┊* ✧ _*commandes*_
+┊ ✧ _*commandes*_
 ┊ ──¬¬¬¬¦
 ┊▢nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ!*
 ┊▢ρrᥱfιx :  *[ ${s.PREFIXE} ]%*
 ┊▢modᥱ : *${mode}*
-┊▢Total CMD  
+┊▢dᥲtᥱ : *${date}* 
 ┊ ──¬¬¬¬¬¦
 ┊ *®ʀᴇᴘʟʏ* ᴡɪᴛʜ ɴᴜᴍʙᴇʀ *① ᴛᴏ ⑩*
 ┊ *©ʀᴇᴘʟʏ* ᴡɪᴛʜ ɴᴀᴍᴇ ʟɪᴋᴇ *ᴀɪ-ᴍᴇɴᴜ? *
