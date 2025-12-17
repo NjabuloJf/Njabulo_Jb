@@ -80,6 +80,26 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
     
     const randomQuote = getRandomQuote();
 
+
+        const you = `╭───────────⊷
+┊  ①◦➛ᥴontroᥣ mᥱnᥙ
+┊  ②◦➛ᥲι mᥱnᥙ
+┊  ③◦➛gᥱnᥱrᥲᥣ mᥱnᥙ
+┊  ④◦➛doᥕnᥣoᥲd mᥱnᥙ 
+┊  ⑤◦➛ᥙsᥱ mᥱnᥙ
+┊  ⑥◦➛mod mᥱnᥙ
+┊  ⑦◦➛fᥙn mᥱnᥙ
+┊  ⑧◦➛books mᥱnᥙ
+┊  ⑨◦➛sᥱᥲᥴh mᥱnᥙ
+┊  ⑩◦➛groᥙρ mᥱnᥙ
+┊___________________________
+┊ *ʀᴇᴘʟʏ* ᴡɪᴛʜ ɴᴜᴍʙᴇʀ *① ᴛᴏ ⑩*
+┊ *ʀᴇᴘʟʏ* ᴡɪᴛʜ ɴᴀᴍᴇ ʟɪᴋᴇ *ᴀɪ-ᴍᴇɴᴜ*
+╰┬──────────⊷⳹
+┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
+┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+╰──────────────────⊷`;
+
     moment.tz.setDefault("Africa/Botswana");
     const temps = moment().format('HH:mm:ss');
     const date = moment().format('DD/MM/YYYY');
@@ -177,6 +197,37 @@ try {
       header: infoMsg,
       buttons: buttons,
       headerType: 1,
+      contextInfo: {
+        mentionedJid: [dest.sender || ""],
+        externalAdReply: {
+          title: "📝messages menu cmd",
+          mediaType: 1,
+          previewType: 0,
+          thumbnailUrl: randomNjabulourl,
+          sourceUrl: "https://www.instagram.com/njabulojb871", // added URL
+          renderLargerThumbnail: false,
+        }
+      }
+    }
+  }, {
+    quoted: {
+      key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+      },
+      message: {
+        contactMessage: {
+          displayName: "🟢online njᥲbᥙᥣo🍥",
+          vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+        }
+      }
+    }
+  });
+
+
+    await zk.sendMessage(dest, {
+    text: you,
       contextInfo: {
         mentionedJid: [dest.sender || ""],
         externalAdReply: {
