@@ -73,14 +73,7 @@ const quotes = [
   "Success is not the key to happiness. Happiness is the key to success. 😊"
 ];
 
-// Function to get a random quote
-const getRandomQuote = () => {
-  const randomIndex = Math.floor(Math.random() * quotes.length);
-  return quotes[randomIndex];
-};
-
-// Get a random quote and send it
-const randomQuote = getRandomQuote();
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 
     moment.tz.setDefault("Africa/Botswana");
