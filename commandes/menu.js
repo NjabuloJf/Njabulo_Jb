@@ -9,7 +9,6 @@ const more = String.fromCharCode(8206)
 const Taphere = more.repeat(4001)
 
 
-
 const readMore = String.fromCharCode(8206).repeat(4001);
 
 // Function to convert text to fancy uppercase font
@@ -24,11 +23,13 @@ const toFancyUppercaseFont = (text) => {
 // Function to convert text to fancy lowercase font
 const toFancyLowercaseFont = (text) => {
     const fonts = {
-        'a': '𝚊', 'b': '𝚋', 'c': '𝚌', 'd': '𝚍', 'e': '𝚎', 'f': '𝚏', 'g': '𝚐', 'h': '𝚑', 'i': '𝚒', 'j': '𝚓', 'k': '𝚔', 'l': '𝚕', 'm': '𝚖',
-        'n': '𝚗', 'o': '𝚘', 'p': '𝚙', 'q': '𝚚', 'r': '𝚛', 's': '𝚜', 't': '𝚝', 'u': '𝚞', 'v': '𝚟', 'w': '𝚠', 'x': '𝚡', 'y': '𝚢', 'z': '𝚣'
+        'a': 'ᴀ', 'b': 'ʙ', 'c': 'ᴄ', 'd': 'ᴅ', 'e': 'ᴇ', 'f': 'ғ', 'g': 'ɢ', 'h': 'ʜ', 'i': 'ɪ', 'j': 'ᴊ', 'k': 'ᴋ', 'l': 'ʟ', 'm': 'ᴍ',
+        'n': 'ɴ', 'o': 'ᴏ', 'p': 'ᴘ', 'q': 'ǫ', 'r': 'ʀ', 's': 's', 't': 'ᴛ', 'u': 'ᴜ', 'v': 'ᴠ', 'w': 'ᴡ', 'x': 'x', 'y': 'ʏ', 'z': 'ᴢ'
     };
     return text.split('').map(char => fonts[char] || char).join('');
 };
+
+
 
 
 
@@ -120,6 +121,7 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
 ┊▢ρrᥱfιx :  *[ ${s.PREFIXE} ]*
 ┊▢modᥱ : *${mode}*
 ┊▢dᥲtᥱ : *${date}*
+*┋* *ᴘʟᴜɢɪɴs ᴄᴍᴅ :* ${cm.length}
 ┊___________________________
 ┊  ①◦➛ᥴontroᥣ mᥱnᥙ
 ┊  ②◦➛ᥲι mᥱnᥙ
