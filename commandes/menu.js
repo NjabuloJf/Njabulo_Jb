@@ -139,22 +139,30 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
 
+    const menu = `
+╭┈┈┈┈━⊷
+┊▢nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+┊▢ρrᥱfιx :  *[ ${s.PREFIXE} ]*
+┊▢modᥱ : *${mode}*
+┊▢dᥲtᥱ : *${date}*
+╰┈┈┈┈━⊷\n`;
     
-    let commandsList = "*𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒*\n";
-    const sortedCategories = Object.keys(categorizedCommands).sort();
-    let commandIndex = 1;
-
-    for (const category of sortedCategories) {
-        commandsList += `\n*┈「 ${toFancyUppercaseFont(category)} 」┈*\n╭┈┈┈┈┈┈┈┈┈┈┈⊷`;
-        const sortedCommands = categorizedCommands[category].sort();
-        for (const command of sortedCommands) {
-            commandsList += `\n┊▸ ${commandIndex++}. ${toFancyLowercaseFont(command)}`;
+    let menuM = ` *${greeting}*`;
+    
+    for (const cat in coms) {
+        menuMsg += `
+*「 ${toFancyUppercaseFont(cat)} 」*
+╭─━⊷ `;
+        for (const cmd of coms[cat]) {
+            menuMsg += `          
+*┋* ${toFancyLowercaseFont(cmd)}`;   
         }
-        commandsList += "\n╰┈┈┈┈┈┈┈┈┈┈┈⊷\n";
+        menuM += `
+╰─━⊷`;
     }
-
-    commandsList += readMore + "\nworld of fredi we are happy\n";
-
+    
+    menuM += `
+> @made by FredieTech 2025\n`;
         
         
 
@@ -244,7 +252,7 @@ try {
   });
 
            await zk.sendMessage(message, {
-            text: commandsList,
+            text: menu + menuM,
             contextInfo: {
                 externalAdReply: {
                     title: "📝messages menu song",
