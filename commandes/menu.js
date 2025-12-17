@@ -255,14 +255,14 @@ try {
 
            await zk.sendMessage(message, {
             text: menus + menuM,
-            contextInfo: {
+               contextInfo: {
                 externalAdReply: {
-                    title: "📝messages menu song",
-                    mediaType: 1,
-                    previewType: 0,
+                    title: "hhah", 
+                    body: "jb", 
                     thumbnailUrl: randomNjabulourl,
                     sourceUrl: "https://www.instagram.com/njabulojb871",
-                    renderLargerThumbnail: false,
+                    mediaType: 1,
+                    renderLargerThumbnail: false
                 }
             }
         });
