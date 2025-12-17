@@ -8,7 +8,7 @@ const s = require(__dirname + "/../set");
 const more = String.fromCharCode(8206)
 const Taphere = more.repeat(4001)
 
-fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "mena", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre, prefixe, nomAuteurMessage, mybotpic } = commandeOptions;
     let { cm } = require(__dirname + "/../njabulo//fana");
     var coms = {};
