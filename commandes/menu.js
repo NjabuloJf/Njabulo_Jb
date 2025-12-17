@@ -30,7 +30,7 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
     
 
 // Random quotes array 🌟
-const quotes = [
+const njabuloxx = [
   "Dream big, work hard. 💪",
   "Stay humble, hustle hard. 🙏",
   "Believe in yourself. 💫",
@@ -73,7 +73,8 @@ const quotes = [
   "Success is not the key to happiness. Happiness is the key to success. 😊"
 ];
 
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+    const randomNjabulotext = njabuloxx[Math.floor(Math.random() * njabuloxx.length)];
 
 
     moment.tz.setDefault("Africa/Botswana");
@@ -187,7 +188,7 @@ sᴇᴀʀᴄʜ
 ┊ *®ʀᴇᴘʟʏ* ᴡɪᴛʜ ɴᴜᴍʙᴇʀ *① ᴛᴏ ⑩*
 ┊ *©ʀᴇᴘʟʏ* ᴡɪᴛʜ ɴᴀᴍᴇ ʟɪᴋᴇ *ᴀɪ-ᴍᴇɴᴜ? *
 ╰┬──────────⊷⳹
-┌┤ *${randomQuote}*
+┌┤ ${randomNjabulotext}
 ┊╰────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────⊷`;
 
