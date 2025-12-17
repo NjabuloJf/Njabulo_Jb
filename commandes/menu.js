@@ -152,7 +152,7 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
     let menuM = ` *${greeting}*`;
     
     for (const cat in coms) {
-        menuMsg += `
+        menuM += `
 *「 ${toFancyUppercaseFont(cat)} 」*
 ╭─━⊷ `;
         for (const cmd of coms[cat]) {
