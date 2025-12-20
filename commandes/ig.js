@@ -1,8 +1,11 @@
 
-const { fana } = require('../njabulo/fana');
+
+const { fana } = require("../njabulo/fana");
 const gis = require("g-i-s");
 const axios = require("axios");
-
+const conf = require(__dirname + "/../set");
+ 
+  
 fana({
   nomCom: "imu",
   aliases: ["image", "images"],
