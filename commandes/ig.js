@@ -1,10 +1,10 @@
 
-const { zokou } = require('../framework/zokou');
+const { fana } = require('../njabulo/fana');
 var gis = require('g-i-s');
 const axios = require("axios");
 
-zokou({
-  nomCom: "img",
+fana({
+  nomCom: "imu",
   aliases: ["image", "images"],
   categorie: "Search",
   reaction: "📷"
