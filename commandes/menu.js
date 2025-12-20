@@ -49,7 +49,7 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
 ┊  ③◦➛gᥱnᥱrᥲᥣ mᥱnᥙ
 ┊  ④◦➛doᥕnᥣoᥲd mᥱnᥙ 
 ┊  ⑤◦➛ᥙsᥱ mᥱnᥙ
-┊  ⑥◦➛anime
+┊  ⑥◦➛ᥕᥱb ᥲnιmᥱ 
 ┊  ⑦◦➛groᥙρ mᥱnᥙ 
 ┊____________________
 ┊ *ʀᴇᴘʟʏ* ᴡɪᴛʜ ɴᴜᴍʙᴇʀ *① ᴛᴏ ⑩*
