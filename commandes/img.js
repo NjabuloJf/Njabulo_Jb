@@ -70,7 +70,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
 // ── Image search command ─────────────────────────────────────────────
 fana(
   {
-    nomCom: "pii",
+    nomCom: "img",
     aliases: ["image", "images"],
     categorie: "Images",
     reaction: "☘️",
