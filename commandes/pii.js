@@ -1,4 +1,3 @@
-😊 The const text is there because it was part of the original script you provided. It's used to construct a text message with the ping response time.
 
 const { fana } = require("../njabulo/fana");
 const config = require("../set");
@@ -24,7 +23,7 @@ END:VCARD`;
 
 // PING COMMAND BY DML
 fana({
-  nomCom: "ping",
+  nomCom: "pii",
   alias: ["speed", "pong"],
   categorie: "General",
   reaction: "📌",
