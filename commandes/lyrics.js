@@ -35,6 +35,7 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
     const data = response.data;
 
     if (!data.status || !data.result) {
+      await zk.sendMessage(dest, { text: "😕 Sorry, we can't provide lyrics for that song. Want to know more about the song or artist? 😊" }, { quoted: ms });
        await zk.deleteMessage(dest, loadingMessage.key);
       return;
     }
@@ -87,6 +88,7 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
     await zk.deleteMessage(dest, loadingMessage.key);
   } catch (err) {
     console.error("lyrics error:", err);
+    await zk.sendMessage(dest, { text: "😕 Sorry, we can't provide lyrics for that song. Want to know more about the song or artist? 😊" }, { quoted: ms });
     await zk.deleteMessage(dest, loadingMessage.key);
   }
 });
