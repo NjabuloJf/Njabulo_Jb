@@ -123,7 +123,7 @@ fana(
             imageMessage: (await generateWAMessageContent({ image: item.buffer }, { upload: zk.waUploadToServer })).imageMessage,
           },
           body: { text: `🔍 Search: ${q}` },
-          footer: { text: "🔹 Scroll to see more images" },
+          footer: { text: "ᯤNᴊᴀʙᴜʟᴏ Jʙ ᴘʜᴏᴛᴏ ɢʀᴀᴍ 🙄" },
           nativeFlowMessage: {
             buttons: [
               {
