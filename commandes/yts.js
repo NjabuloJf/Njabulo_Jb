@@ -80,7 +80,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
 // ── YouTube search command ─────────────────────────────────────────────
 fana(
   {
-    nomCom: "yr",
+    nomCom: "yts",
     aliases: ["ytsearch"],
     categorie: "Search",
     reaction: "🔍",
@@ -101,11 +101,11 @@ fana(
       const cards = await Promise.all(
         results.videos.slice(0, 5).map(async (video, i) => {
           let resultText = `*YouTube Search Result ${i+1}*\n\n`;
-          resultText += `*Title:* ${video.title}\n`;
-          resultText += `*URL:* ${video.url}\n`;
-          resultText += `*Views:* ${video.views.toLocaleString()}\n`;
-          resultText += `*Uploaded:* ${video.ago}\n`;
-          resultText += `*Duration:* ${video.timestamp}`;
+          resultText += `*🎧Title:* ${video.title}\n`;
+          resultText += `🖇️*URL:* ${video.url}\n`;
+          resultText += `*🙈Views:* ${video.views.toLocaleString()}\n`;
+          resultText += `*🎶Uploaded:* ${video.ago}\n`;
+          resultText += `*⏲️Duration:* ${video.timestamp}`;
           return {
             header: {
               title: `📸 ${video.title}`,
@@ -116,7 +116,7 @@ fana(
               text: resultText,
             },
             footer: {
-              text: "🔹 Play song",
+              text: "*Nᴊᴀʙᴜʟᴏ Jʙ YᴏᴜTᴜʙᴇ ᴅᴏᴡɴʟᴏᴀᴅᯤ*",
             },
             nativeFlowMessage: {
               buttons: [
