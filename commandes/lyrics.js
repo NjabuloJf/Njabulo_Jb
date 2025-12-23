@@ -1,3 +1,7 @@
+const { fana } = require("../njabulo/fana");
+const axios = require("axios");
+const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
+
 // ── Lyrics search command ─────────────────────────────────────────────
 fana({
   nomCom: "eliy",
