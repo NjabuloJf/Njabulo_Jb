@@ -1,5 +1,4 @@
 
-
 const { fana } = require("../njabulo/fana");
 const speed = require("performance-now");
 const moment = require("moment-timezone");
@@ -44,25 +43,27 @@ function formatDuration(sec) {
 // ── Main ping command ───────────────────────────────────────────
 fana(
   {
-    nomCom: "pi",
+    nomCom: "pin",
     desc: "Check bot response time",
     Categorie: "General",
     reaction: "🏓",
     fromMe: true,
   },
   async (dest, zk, opts) => {
-    const name = getName(dest, opts);
-    // Botswana time
-    moment.tz.setDefault("Africa/Botswana");
-    const now = moment();
-    const time = now.format("HH:mm:ss"); // 24‑hour format
-    const date = now.format("YYYY‑MM‑DD"); // exactly YYYY‑MM‑DD
-    const day = now.format("dddd"); // Monday, Tuesday, …
-    // Random ping between 100 ms and 2 s
-    const ping = Math.floor(Math.random() * 1900 + 100);
-    const uptime = formatDuration(process.uptime());
+    try {
+      console.log("Ping command triggered!");
+      const name = getName(dest, opts);
+      // Botswana time
+      moment.tz.setDefault("Africa/Botswana");
+      const now = moment();
+      const time = now.format("HH:mm:ss"); // 24‑hour format
+      const date = now.format("YYYY‑MM‑DD"); // exactly YYYY‑MM‑DD
+      const day = now.format("dddd"); // Monday, Tuesday, …
+      // Random ping between 100 ms and 2 s
+      const ping = Math.floor(Math.random() * 1900 + 100);
+      const uptime = formatDuration(process.uptime());
 
-    const infoMsg = `
+      const infoMsg = `
 📅 Date : ${date}
 📆 Day : ${day}
 ⏰ Time : ${time}
@@ -72,68 +73,77 @@ fana(
 ⏳ Uptime : ${uptime}
 `.trim();
 
-    const cards = await Promise.all(
-      Array(5).fill().map(async (_, i) => ({
-        header: {
-          title: `📊 Server Stats`,
-          hasMediaAttachment: true,
-          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
-        },
-        body: {
-          text: infoMsg,
-        },
-        footer: {
-          text: "ᯤAll is for you enjoy🎈",
-        },
-        nativeFlowMessage: {
-          buttons: [
-            {
-              name: "cta_copy",
-              buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Stats",
-                copy_code: infoMsg,
-              }),
-            },
-            {
-              name: "cta_url",
-              buttonParamsJson: JSON.stringify({
-                display_text: "🌐 Visit Channel",
-                url: "https://example.com",
-              }),
-            },
-          ],
-        },
-      }))
-    );
+      console.log("Info message generated:", infoMsg);
 
-    const message = generateWAMessageFromContent(
-      dest,
-      {
-        viewOnceMessage: {
-          message: {
-            messageContextInfo: {
-              deviceListMetadata: {},
-              deviceListMetadataVersion: 2,
-            },
-            interactiveMessage: {
-              body: {
-                text: `*Nᴊᴀʙᴜʟᴏ Jʙ Pɪɴɢ ᴍᴇɴᴜ*\n📊 Server Stats`,
+      const cards = await Promise.all(
+        Array(5).fill().map(async (_, i) => ({
+          header: {
+            title: `📊 Server Stats`,
+            hasMediaAttachment: true,
+            imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+          },
+          body: {
+            text: infoMsg,
+          },
+          footer: {
+            text: "ᯤAll is for you enjoy🎈",
+          },
+          nativeFlowMessage: {
+            buttons: [
+              {
+                name: "cta_copy",
+                buttonParamsJson: JSON.stringify({
+                  display_text: "📋 Copy Stats",
+                  copy_code: infoMsg,
+                }),
               },
-              footer: {
-                text: `📂 Showing ping and uptime info`,
+              {
+                name: "cta_url",
+                buttonParamsJson: JSON.stringify({
+                  display_text: "🌐 Visit Channel",
+                  url: "https://example.com",
+                }),
               },
-              carouselMessage: {
-                cards,
+            ],
+          },
+        }))
+      );
+
+      console.log("Cards generated:", cards);
+
+      const message = generateWAMessageFromContent(
+        dest,
+        {
+          viewOnceMessage: {
+            message: {
+              messageContextInfo: {
+                deviceListMetadata: {},
+                deviceListMetadataVersion: 2,
+              },
+              interactiveMessage: {
+                body: {
+                  text: `*Nᴊᴀʙᴜʟᴏ Jʙ Pɪɴɢ ᴍᴇɴᴜ*\n📊 Server Stats`,
+                },
+                footer: {
+                  text: `📂 Showing ping and uptime info`,
+                },
+                carouselMessage: {
+                  cards,
+                },
               },
             },
           },
         },
-      },
-      { quoted: opts }
-    );
+        { quoted: opts }
+      );
 
-    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
-    console.log("Ping results sent successfully!");
+      console.log("Message generated:", message);
+
+      await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+      console.log("Ping results sent successfully!");
+    } catch (error) {
+      console.error("Error sending ping message:", error);
+    }
   }
 );
 
