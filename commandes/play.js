@@ -138,7 +138,28 @@ fana({
         audio: { url: data.downloadLink },
         mimetype: 'audio/mpeg',
         fileName,
-      }, { quoted: ms });
+          contextInfo: {
+         externalAdReply: {
+         title: " ⇆ㅤ ||◁ㅤ❚❚ㅤ▷||ㅤ ↻ ",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: video.thumbnail,
+         renderLargerThumbnail: true,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } }); 
     } catch (err) {
       console.error('[PLAY] API Error:', err);
       await zk.sendMessage(dest, {
