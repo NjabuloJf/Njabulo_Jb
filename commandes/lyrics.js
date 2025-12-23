@@ -3,7 +3,7 @@ const axios = require("axios");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({
-  nomCom: "uya",
+  nomCom: "lyrcs",
   reaction: '🎵', 
   categorie: "Music",
   aliases: ["lyric", "mistari"]
@@ -14,6 +14,19 @@ async (dest, zk, commandeOptions) => {
   if (!songName) {
     return repondre("Please provide a song name. Example: *" + "lyrics Shape of You*");
   }
+
+
+  // ── Random image list ─────────────────────────────────────────────
+const njabulox = [
+  "", // (empty string kept as in original)
+  "https://files.catbox.moe/xjeyjh.jpg",
+  "https://files.catbox.moe/mh36c7.jpg",
+  "https://files.catbox.moe/u6v5ir.jpg",
+  "https://files.catbox.moe/bnb3vx.jpg",
+];
+const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+
+  
   const apiUrl = `https://apiskeith.vercel.app/search/lyrics2?query=${encodeURIComponent(songName)}`;
   const loadingMessage = await repondre(`*⏳ Searching for lyrics of ${songName}...*`);
 
@@ -22,18 +35,16 @@ async (dest, zk, commandeOptions) => {
     const data = response.data;
 
     if (!data.status || !data.result) {
-      await zk.sendMessage(dest, { text: "😕 Sorry, we can't provide lyrics for that song. Want to know more about the song or artist? 😊" }, { quoted: ms });
-      await zk.deleteMessage(dest, loadingMessage.key);
+       await zk.deleteMessage(dest, loadingMessage.key);
       return;
     }
 
-    const imageUrl = "https://files.catbox.moe/aktbgo.jpg"; // default image
     const cards = await Promise.all([
       {
         header: {
           title: `🎵 ${songName}`,
           hasMediaAttachment: true,
-          imageMessage: (await generateWAMessageContent({ image: { url: imageUrl } }, { upload: zk.waUploadToServer })).imageMessage,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
         body: {
           text: data.result,
@@ -76,7 +87,6 @@ async (dest, zk, commandeOptions) => {
     await zk.deleteMessage(dest, loadingMessage.key);
   } catch (err) {
     console.error("lyrics error:", err);
-    await zk.sendMessage(dest, { text: "😕 Sorry, we can't provide lyrics for that song. Want to know more about the song or artist? 😊" }, { quoted: ms });
     await zk.deleteMessage(dest, loadingMessage.key);
   }
 });
