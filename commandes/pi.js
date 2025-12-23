@@ -1,7 +1,9 @@
-
 const { fana } = require("../njabulo/fana");
-const speed = require("performance-now");
+const axios = require('axios');
+const conf = require(__dirname + '/../set');
 const moment = require("moment-timezone");
+const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
+
 
 // ── Random image for the header ─────────────────────────────────
 const njabulox = [
