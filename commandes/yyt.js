@@ -110,7 +110,7 @@ fana(
             imageMessage: (await generateWAMessageContent({ image: { url: video.thumbnail } }, { upload: zk.waUploadToServer })).imageMessage,
           },
           body: {
-            text: `🎧 Views: ${video.views.toLocaleString()}\n🎻 Uploaded: ${video.ago}\n${video.timestamp}`,
+            text: `🎧 Views: ${video.views.toLocaleString()}\n🎻 Uploaded: ${video.ago}\n${video.timestamp} ${resultText}`,
           },
           footer: {
             text: "🔹 Play song",
