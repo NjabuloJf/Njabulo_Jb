@@ -6,7 +6,7 @@ const moment = require("moment-timezone");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({
-  nomCom: "pla",
+  nomCom: "play",
   aliases: ["song", "playdoc", "audio", "mp3"],
   categorie: "download",
   reaction: "🎸"
@@ -51,10 +51,10 @@ fana({
           imageMessage: (await generateWAMessageContent({ image: { url: video.thumbnail } }, { upload: zk.waUploadToServer })).imageMessage,
         },
         body: {
-          text: `🎧 Views: ${video.views.toLocaleString()}\n🎻 Uploaded: ${video.ago}\n${video.timestamp}`,
+          text: `*🎧 Views:* ${video.views.toLocaleString()}\n*🎻 Uploaded:* ${video.ago}\n${video.timestamp}`,
         },
         footer: {
-          text: "🔹 Play song",
+          text: "ᯤAll is for you enjoy🎈",
         },
         nativeFlowMessage: {
           buttons: [
@@ -84,7 +84,7 @@ fana({
           message: {
             messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 },
             interactiveMessage: {
-              body: { text: `🔍 Search Results for: ${query}` },
+              body: { text: `*Nᴊᴀʙᴜʟᴏ Jʙ YᴏᴜTᴜʙᴇ ᴅᴏᴡɴʟᴏᴀᴅᯤ*\n🔍 Search Results for: ${query}` },
               footer: { text: `📂 Found ${search.videos.length} results` },
               carouselMessage: { cards },
             },
