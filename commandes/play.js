@@ -143,7 +143,7 @@ fana({
          title: " ⇆ㅤ ||◁ㅤ❚❚ㅤ▷||ㅤ ↻ ",
          mediaType: 1,
           previewType: 0,
-         thumbnailUrl: video.thumbnail,
+         thumbnailUrl: "https://files.catbox.moe/vddrok.jpg",
          renderLargerThumbnail: true,
         },
         },
