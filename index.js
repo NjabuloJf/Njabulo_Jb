@@ -1179,7 +1179,7 @@ ___________________________
 await zk.sendMessage(zk.user.id, { 
     interactiveMessage: {
             image: { url: randomNjabulourl },
-         caption: cmsg,
+         header: cmsg,
         buttons: buttons,
       headerType: 1,
          contextInfo: {
