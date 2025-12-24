@@ -97,7 +97,7 @@ fana(
         { quoted: ms }
       );
 
-      await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+      await zk.sendMessage(dest, { text: message });
 
     } catch (e) {
       console.log("Error fetching data:", e);
