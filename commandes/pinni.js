@@ -1,5 +1,7 @@
 const { fana } = require("../njabulo/fana");
 const config = require("../set");
+const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
+
 
 // PING COMMAND BY DML
 fana({
