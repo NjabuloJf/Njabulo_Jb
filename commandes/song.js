@@ -6,7 +6,7 @@ const moment = require("moment-timezone");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({
-  nomCom: "pl",
+  nomCom: "song",
   aliases: ["song", "playdoc", "audio", "mp3"],
   categorie: "download",
   reaction: "🎸"
@@ -143,7 +143,7 @@ fana({
 
       await zk.relayMessage(dest, message.message, { messageId: message.key.id });
       await zk.sendMessage(dest, {
-        audio: { url: data.downloadLink },
+        document: { url: data.downloadLink },
         mimetype: 'audio/mpeg',
         fileName,
       }, { quoted: ms });
