@@ -35,10 +35,7 @@ fana({
     const uptimeString = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
     
-
-    const cards = await Promise.all(results.map(async (result, i) => {
-      if (i === 0) {
-        return {
+          const card = {
           header: {
             title: `⏳ *PING* : *${responseTime.toFixed(2)}s`,
             hasMediaAttachment: true,
