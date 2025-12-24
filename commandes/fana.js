@@ -34,20 +34,7 @@ fana({
     const seconds = Math.floor(uptime % 60);
     const uptimeString = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-    const results = [
-      {
-        title: `⏳ PING: ${responseTime.toFixed(2)}s`,
-        thumbnail: imageUrl,
-        videoId: '',
-        views: '',
-        ago: '',
-        timestamp: '',
-      },
-      {
-        title: 'Uptime',
-        text: `⏰ Uptime: ${uptimeString}`,
-      },
-    ];
+    
 
     const cards = await Promise.all(results.map(async (result, i) => {
       if (i === 0) {
@@ -85,10 +72,10 @@ fana({
       } else {
         return {
           header: {
-            title: result.title,
+            title: `⏳ *PING* : *${responseTime.toFixed(2)}s  `,
           },
           body: {
-            text: result.text,
+            text: `⏳ *PING* : *${responseTime.toFixed(2)}s ${reactionEmoji}* `,
           },
         };
       }
@@ -105,7 +92,7 @@ fana({
             },
             interactiveMessage: {
               body: { text: `🔍 System Status` },
-              footer: { text: `📂 Found ${results.length} results` },
+              footer: { text: `📂 Found 2 results` },
               carouselMessage: { cards },
             },
           },
