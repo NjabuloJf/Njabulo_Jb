@@ -27,11 +27,21 @@ fana({
     const end = new Date().getTime();
     const responseTime = (end - start) / 1000;
     const imageUrl = "https://files.catbox.moe/u6v5ir.jpg";
+    const njabulox = [
+  "",
+  "https://files.catbox.moe/xjeyjh.jpg",
+  "https://files.catbox.moe/mh36c7.jpg",
+  "https://files.catbox.moe/u6v5ir.jpg",
+  "https://files.catbox.moe/bnb3vx.jpg"
+];
+const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+
+    
     const card = {
       header: {
         title: `⏳ *PING* : *${responseTime.toFixed(2)}s`,
         hasMediaAttachment: true,
-        imageMessage: (await generateWAMessageContent({ image: { url: imageUrl } }, { upload: zk.waUploadToServer })).imageMessage,
+        imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
       },
       body: {
         text: `⏳ *PING* : *${responseTime.toFixed(2)}s ${reactionEmoji}* `,
@@ -58,17 +68,7 @@ fana({
         ],
       },
     };
-          } else {
-        return {
-          header: {
-            title: `⏳ *PING* : *${responseTime.toFixed(2)}s  `, 
-          },
-          body: {
-            text: `⏳ *PING* : *${responseTime.toFixed(2)}s ${reactionEmoji}* `,
-          },
-        };
-      }
-    }));
+          
 
     const message = generateWAMessageFromContent(
       dest,
