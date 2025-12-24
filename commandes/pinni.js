@@ -32,13 +32,14 @@ fana({
 
     const end = new Date().getTime();
     const responseTime = (end - start) / 1000;
+    const imageUrl = "https://files.catbox.moe/u6v5ir.jpg",
 
 
     const card = {
         header: {
           title: `⏳ *PING* : *${responseTime.toFixed(2)}s`,
           hasMediaAttachment: true,
-          imageMessage: (await generateWAMessageContent({ image: { url: video.thumbnail } }, { upload: zk.waUploadToServer })).imageMessage,
+          imageMessage: (await generateWAMessageContent({ image: { url: imageUrl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
         body: {
           text: `⏳ *PING* : *${responseTime.toFixed(2)}s ${reactionEmoji}* `,
