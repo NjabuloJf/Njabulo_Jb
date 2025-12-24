@@ -2,6 +2,8 @@
 const { fana } = require("../njabulo/fana");
 const axios = require("axios");
 const moment = require("moment");
+const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
+
 
 // List of image URLs
 const njabulox = [
