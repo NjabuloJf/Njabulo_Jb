@@ -58,6 +58,17 @@ fana({
         ],
       },
     };
+          } else {
+        return {
+          header: {
+            title: `⏳ *PING* : *${responseTime.toFixed(2)}s  `, 
+          },
+          body: {
+            text: `⏳ *PING* : *${responseTime.toFixed(2)}s ${reactionEmoji}* `,
+          },
+        };
+      }
+    }));
 
     const message = generateWAMessageFromContent(
       dest,
