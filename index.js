@@ -125,6 +125,21 @@ setTimeout(() => {
     // Select a random image file
     const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
 
+        const buttons = [{
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Visit Website",
+      id: `backup channel`,
+      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u" 
+    })
+  },{
+    name: "cta_copy",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Messaging online",
+      id: `copy`,
+      copy_code: `greeting`
+    })
+    }];
         
         
         const audioMap = {
@@ -1162,8 +1177,11 @@ modᥱ : *${md}*
 ___________________________
 `;
 await zk.sendMessage(zk.user.id, { 
+    interactiveMessage: {
             image: { url: randomNjabulourl },
          caption: cmsg,
+        buttons: buttons,
+      headerType: 1,
          contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
@@ -1180,6 +1198,7 @@ await zk.sendMessage(zk.user.id, {
          renderLargerThumbnail: false,
         },
         },
+    },
           }, { quoted: {
             key: {
                 fromMe: false,
