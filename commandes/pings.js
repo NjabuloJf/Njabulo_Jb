@@ -1,5 +1,5 @@
 
-Here's the corrected code:
+
 const { fana } = require("../njabulo/fana");
 const config = require("../set");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
