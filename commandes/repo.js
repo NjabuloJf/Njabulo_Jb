@@ -7,7 +7,7 @@ const moment = require("moment");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({ 
-  nomCom: "ri", 
+  nomCom: "repo", 
   alias: ["speed", "pong"], 
   categorie: "General", 
   reaction: "📌", 
@@ -50,12 +50,12 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
     
     const card = {
       header: {
-        title: `sʏsᴛᴇᴍ ᴘɪɴɢ🏓`,
+        title: `sʏsᴛᴇᴍ ʀᴇᴘᴏsɪᴛᴏʀʏ`,
         hasMediaAttachment: true,
         imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
       },
       body: {
-        text: `⏳ Stars   : ${data.stargazers_count}\nForks   : ${data.forks_count}${reactionEmoji}* `,
+        text: `💫sᴛᴀʀ : ${data.stargazers_count}\n🍴ғᴏʀᴋs : ${data.forks_count} `,
       },
       footer: {
         text: "Pσɯҽɾ Ⴆყ Ɲנαвυʟσ Jbᯤ",
@@ -65,8 +65,8 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
           {
             name: "cta_url",
             buttonParamsJson: JSON.stringify({
-              display_text: "🌐 View on YouTube",
-              url: `https://youtu.be/`,
+              display_text: "🌐 View on Github",
+              url: `https://github.com/NjabuloJ/Njabulo-Jb`,
             }),
           },
           {
@@ -92,7 +92,7 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
             },
             interactiveMessage: {
               header: { text: `🔍 Search Results for` },
-              body: { text: `*📂 sʏsᴛᴇᴍ ᴘɪɴɢ......*` },
+              body: { text: `*📂 sʏsᴛᴇᴍ ʀᴇᴘᴏsɪᴛᴏʀʏ......*` },
               carouselMessage: { cards: [card] },
             },
           },
