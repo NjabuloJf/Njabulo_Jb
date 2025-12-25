@@ -68,15 +68,15 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
           {
             name: "cta_url",
             buttonParamsJson: JSON.stringify({
-              display_text: "🌐 View on YouTube",
-              url: `https://youtu.be/`,
+              display_text: "🌐 View on Channel",
+              url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
             }),
           },
           {
             name: "cta_copy",
             buttonParamsJson: JSON.stringify({
               display_text: "📋 Copy Link",
-              copy_code: "https://youtu.be/",
+              copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
             }),
           },
         ],
