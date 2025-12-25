@@ -596,7 +596,9 @@ function mybotpic() {
                                     await zk.sendMessage(origineMessage, {
                                     interactiveMessage: {                                    
                                      header: txt,
+                                    mentions: [auteurMessage],
                                       buttons: buttons,
+                                        headerType: 1
                                           },
                                             }, { quoted: {
                                               key: {
@@ -625,8 +627,10 @@ function mybotpic() {
                                         // await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                                        await zk.sendMessage(origineMessage, { 
                                           interactiveMessage: {
-                                           header txt,
-                                           buttons: buttons
+                                           header: txt,
+                                           mentions: [auteurMessage],
+                                           buttons: buttons,
+                                           headerType: 1
                                           },
                                             }, { quoted: {
                                               key: {
@@ -766,7 +770,9 @@ function mybotpic() {
       await zk.sendMessage(origineMessage, { 
           interactiveMessage: {
           header: msg,
-          buttons: buttons        
+          mentions: [auteurMessage],
+          buttons: buttons,
+          headerType: 1
         },
           }, { quoted: {
             key: {
@@ -886,7 +892,9 @@ zk.ev.on('group-participants.update', async (group) => {
         interactiveMessage: {
         image: { url: randomNjabulourl },
         header: msg,
-         buttons: buttons         
+          mentions: [auteurMessage],
+         buttons: buttons,
+        headerType: 1
         },
           }, { quoted: {
             key: {
@@ -912,7 +920,9 @@ zk.ev.on('group-participants.update', async (group) => {
         zk.sendMessage(group.id, { 
          interactiveMessage: {
         header: msg, 
-        buttons: buttons,        
+        mentions: [auteurMessage],
+        buttons: buttons,
+        headerType: 1
         },
           }, { quoted: {
             key: {
