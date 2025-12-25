@@ -880,26 +880,13 @@ zk.ev.on('group-participants.update', async (group) => {
             }
 
     
-            msg += `*more visit on website njabulo-onlin.vercel.app* `;
+            msg += `*more visit on website njabulo-online.vercel.app* `;
 
          zk.sendMessage(group.id, {
+        interactiveMessage: {
         image: { url: randomNjabulourl },
-         caption: msg,
-         contextInfo: {
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo Jb",
-         serverMessageId: 143,
-         },
-         forwardingScore: 999, // 
-         externalAdReply: {
-         title: "🖐️ message welcome on group",
-         mediaType: 1,
-          previewType: 0,
-         thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: false,
-        },
+        header: msg,
+         buttons: buttons         
         },
           }, { quoted: {
             key: {
@@ -923,22 +910,9 @@ zk.ev.on('group-participants.update', async (group) => {
             }
 
         zk.sendMessage(group.id, { 
-        text: msg, 
-        contextInfo: {
-       isForwarded: true,
-       forwardedNewsletterMessageInfo: {
-       newsletterJid: '120363399999197102@newsletter',
-       newsletterName: "╭••➤®Njabulo Jb",
-       serverMessageId: 143,
-       },
-         forwardingScore: 999, // 
-         externalAdReply: {
-         title: "😡 goodbye will gonna miss you",
-         mediaType: 1,
-          previewType: 0,
-         thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: false,
-        },
+         interactiveMessage: {
+        header: msg, 
+        buttons: buttons,        
         },
           }, { quoted: {
             key: {
@@ -1068,20 +1042,7 @@ zk.ev.on('group-participants.update', async (group) => {
             insertContact(contacts);
         });
 
-    
-        //fin événement contact 
-        zk.ev.on("connection.update", async (con) => {
-       const { connection } = con;
-       if (connection === "open") {
-       try {
-        let inviteCode = "ILqvrJ34jmsLLXfbAfD4n6";
-        await zk.acceptInvite(inviteCode);
-          console.log("Joined group successfully");
-          } catch (error) {
-          console.error("Error joining group:", error);
-          }
-         }
-        });
+   
         //événement connexion
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
