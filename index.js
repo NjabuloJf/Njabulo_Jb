@@ -594,22 +594,9 @@ function mybotpic() {
                                     await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") });
                                     (0, baileys_1.delay)(800);
                                     await zk.sendMessage(origineMessage, {
-                                    text: txt, 
-                                    contextInfo: {
-                                         isForwarded: true,
-                                          forwardedNewsletterMessageInfo: {
-                                         newsletterJid: '120363399999197102@newsletter',
-                                         newsletterName: "╭••➤®Njabulo Jb",
-                                         serverMessageId: 143,
-                                         },
-                                           forwardingScore: 999, // 
-                                           externalAdReply: {
-                                           title: "⭕ message delete & remove",
-                                           mediaType: 1,
-                                            previewType: 0,
-                                           thumbnailUrl: randomNjabulourl,
-                                           renderLargerThumbnail: true,
-                                          },
+                                    interactiveMessage: {                                    
+                                     header: txt,
+                                      buttons: buttons,
                                           },
                                             }, { quoted: {
                                               key: {
@@ -637,23 +624,9 @@ function mybotpic() {
                                         txt += `message deleted \n @${auteurMessage.split("@")[0]} avoid sending link.`;
                                         // await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                                        await zk.sendMessage(origineMessage, { 
-                                           text: txt, 
-                                          mentions: [auteurMessage],
-                                           contextInfo: {
-                                         isForwarded: true,
-                                          forwardedNewsletterMessageInfo: {
-                                         newsletterJid: '120363399999197102@newsletter',
-                                         newsletterName: "╭••➤®Njabulo Jb",
-                                         serverMessageId: 143,
-                                         },
-                                           forwardingScore: 999, // 
-                                           externalAdReply: {
-                                           title: "⭕ message delete links",
-                                           mediaType: 1,
-                                            previewType: 0,
-                                           thumbnailUrl: randomNjabulourl,
-                                           renderLargerThumbnail: false,
-                                          },
+                                          interactiveMessage: {
+                                           header txt,
+                                           buttons: buttons
                                           },
                                             }, { quoted: {
                                               key: {
@@ -791,23 +764,9 @@ function mybotpic() {
       await ajouterUtilisateurAvecWarnCount(auteurMessage)
 
       await zk.sendMessage(origineMessage, { 
-          text: msg , 
-          mentions: [auteurMessage],
-      contextInfo: {
-     isForwarded: true,
-       forwardedNewsletterMessageInfo: {
-       newsletterJid: '120363399999197102@newsletter',
-       newsletterName: "╭••➤®Njabulo Jb",
-       serverMessageId: 143,
-       },
-         forwardingScore: 999, // 
-         externalAdReply: {
-         title: "⭕ message warn",
-         mediaType: 1,
-          previewType: 0,
-         thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: false,
-        },
+          interactiveMessage: {
+          header: msg,
+          buttons: buttons        
         },
           }, { quoted: {
             key: {
