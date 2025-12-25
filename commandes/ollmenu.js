@@ -1,5 +1,4 @@
 
-
 const { fana } = require("../njabulo/fana");
 const config = require("../set");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
@@ -15,20 +14,16 @@ fana({
   const { repondre, ms } = commandeOptions;
   try {
     const njabulox = [
-      "",
       "https://files.catbox.moe/xjeyjh.jpg",
       "https://files.catbox.moe/mh36c7.jpg",
-      "",
       "https://files.catbox.moe/bnb3vx.jpg"
     ];
 
     const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
-    const reactionEmojis = ['❄️'];
-    const textEmojis = ['🚀'];
-    const reactionEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)];
-    let textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
-    while (textEmoji === reactionEmoji) {
-      textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
+    if (!randomNjabulourl) {
+      console.error("Error: No image URL found.");
+      repondre("An error occurred: No image URL found.");
+      return;
     }
 
     const cards = [
@@ -333,7 +328,7 @@ sᴇᴀʀᴄʜ
             },
             interactiveMessage: {
               header: { text: `🔍 System Info` },
-              body: { text: `*📂 Found 7 results*` },
+              body: { text: `*📂 Found 2 results*` },
               carouselMessage: { cards },
             },
           },
@@ -348,4 +343,4 @@ sᴇᴀʀᴄʜ
   }
 });
 
-
+    
