@@ -3,6 +3,7 @@
 const { fana } = require("../njabulo/fana");
 const config = require("../set");
 const axios = require("axios");
+const moment = require("moment"); 
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({ 
