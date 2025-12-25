@@ -5,7 +5,7 @@ const config = require("../set");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({ 
-  nomCom: "sasa", 
+  nomCom: "uptime", 
   alias: ["speed", "pong"], 
   categorie: "General", 
   reaction: "📌", 
@@ -53,12 +53,12 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
     
     const card = {
       header: {
-        title: `sʏsᴛᴇᴍ ᴘɪɴɢ🏓`,
+        title: `sʏsᴛᴇᴍs ᴜᴘᴛɪᴍᴇ🏓`,
         hasMediaAttachment: true,
         imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
       },
       body: {
-        text: `⏳ *ᴘɪɴɢ* : *${runtime(process.uptime())}  ${reactionEmoji}* `,
+        text: `*ᴅᴀᴛᴇ* : ${now.format("YYYY‑MM‑DD")\n📆 *ᴅᴀʏ* : ${now.format("dddd")}\n⏰ *ᴛɪᴍᴇ* : ${now.format("HH:mm:ss")}\n⏳ *sʏsᴛᴇᴍs ᴜᴘᴛɪᴍᴇ* : *${runtime(process.uptime())}  ${reactionEmoji}* `,
       },
       footer: {
         text: "Pσɯҽɾ Ⴆყ Ɲנαвυʟσ Jbᯤ",
@@ -95,7 +95,7 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
             },
             interactiveMessage: {
               header: { text: `🔍 Search Results for` },
-              body: { text: `*📂 sʏsᴛᴇᴍ ᴘɪɴɢ......*` },
+              body: { text: `*📂 sʏsᴛᴇᴍs ᴜᴘᴛɪᴍᴇ.....*` },
               carouselMessage: { cards: [card] },
             },
           },
