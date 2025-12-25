@@ -1,5 +1,203 @@
 
 
+const { fana } = require("../njabulo/fana");
+const config = require("../set");
+const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
+
+fana({
+  nomCom: "ollmenu",
+  alias: ["help", "cmds"],
+  categorie: "General",
+  reaction: "📚",
+  use: ".menu",
+}, async (dest, zk, commandeOptions) => {
+  console.log('Command triggered!');
+  const { repondre, ms } = commandeOptions;
+  try {
+    const njabulox = [
+      "",
+      "https://files.catbox.moe/xjeyjh.jpg",
+      "https://files.catbox.moe/mh36c7.jpg",
+      "",
+      "https://files.catbox.moe/bnb3vx.jpg"
+    ];
+
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+    const reactionEmojis = ['❄️'];
+    const textEmojis = ['🚀'];
+    const reactionEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)];
+    let textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
+    while (textEmoji === reactionEmoji) {
+      textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
+    }
+
+    const cards = [
+      {
+        header: {
+          title: `📊 Group Menu`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+ɢʀᴏᴜᴘ
+① .ᴀɴᴛɪʟɪɴᴋ
+② .ᴀᴘᴘʀᴏᴠᴇ
+③ .ᴅᴇʟ
+④ .ᴘʀᴏᴍᴏᴛᴇ
+⑤ .ᴅᴇᴍᴏᴛᴇ
+⑥ .ɢʀᴏᴜᴘ
+⑦ .ʜɪᴅᴇᴛᴀɢ
+⑧ .ʟɪɴᴋ
+⑨ .ᴋɪᴄᴋᴀʟʟ
+⑩ .ᴛᴀɢᴀʟʟ
+⑪ .ᴡᴇʟᴄᴏᴍᴇ
+⑫ .ɢᴏᴏᴅʙʏᴇ
+⑬ .ᴀɴᴛɪᴘʀᴏᴍᴏᴛᴇ
+⑭ .ᴀɴᴛɪᴅᴇᴍᴏᴛᴇ
+`,
+        },
+        footer: {
+          text: "Pσɯҽɾ Ⴆყ Ɲנαвυʟσ Jbᯤ",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_url",
+              buttonParamsJson: JSON.stringify({
+                display_text: "🌐 View on Channel",
+                url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
+              }),
+            },
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "📋 Copy Link",
+                copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
+              }),
+            },
+          ],
+        },
+      },
+      {
+        header: {
+          title: `📊 Web Menu`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+ᴡᴇᴇʙ
+① .ᴡᴀɪғᴜ
+② .ɴᴇᴋᴏ
+③ .sʜɪɴᴏʙᴜ
+④ .ᴍᴇɢᴜᴍɪɴ
+⑤ .ᴄᴏsᴘʟᴀʏ
+⑥ .ᴄᴏᴜᴘʟᴇᴘᴘ
+`,
+        },
+        footer: {
+          text: "Pσɯҽɾ Ⴆყ Ɲנαвυʟσ Jbᯤ",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_url",
+              buttonParamsJson: JSON.stringify({
+                display_text: "🌐 View on Channel",
+                url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
+              }),
+            },
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "📋 Copy Link",
+                copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
+              }),
+            },
+          ],
+        },
+      },
+      {
+        header: {
+          title: `📊 Use Menu`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+ᴜsᴇ
+① .ᴛʀᴛ
+② .ғᴀɴᴄʏ
+③ .ʜᴀᴄᴋ
+④ .ʙʟᴏᴄᴋ
+⑤ .ᴜɴʙʟᴏᴄᴋ
+⑥ .ʟᴇғᴛ
+`,
+        },
+        footer: {
+          text: "Pσɯҽɾ Ⴆყ Ɲנαвυʟσ Jbᯤ",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_url",
+              buttonParamsJson: JSON.stringify({
+                display_text: "🌐 View on Channel",
+                url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
+              }),
+            },
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "📋 Copy Link",
+                copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
+              }),
+            },
+          ],
+        },
+      },
+      {
+        header: {
+          title: `📊 Search Menu`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+sᴇᴀʀᴄʜ
+① .ʟʏʀɪᴄs
+② .sᴛɪᴄᴋᴇʀsᴇᴀʀᴄʜ
+③ .ʏᴛs
+④ .ᴘʟᴀʏ
+⑤ .ᴠɪᴅᴇᴏ
+⑥ .ɪᴍᴀɢᴇ
+⑥ .ɪᴍɢ
+⑧ .ғʙ
+`,
+        },
+        footer: {
+          text: "Pσɯҽɾ Ⴆყ Ɲנαвυʟσ Jbᯤ",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_url",
+              buttonParamsJson: JSON.stringify({
+                display_text: "🌐 View on Channel",
+                url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
+              }),
+            },
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "📋 Copy Link",
+                copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
+              }),
+            },
+          ],
+        },
+      },
       {
         header: {
           title: `📊 General Menu`,
