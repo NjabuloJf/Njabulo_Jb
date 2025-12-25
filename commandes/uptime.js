@@ -58,7 +58,7 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
         imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
       },
       body: {
-        text: `*ᴅᴀᴛᴇ* : ${now.format("YYYY‑MM‑DD")\n📆 *ᴅᴀʏ* : ${now.format("dddd")}\n⏰ *ᴛɪᴍᴇ* : ${now.format("HH:mm:ss")}\n⏳ *sʏsᴛᴇᴍs ᴜᴘᴛɪᴍᴇ* : *${runtime(process.uptime())}  ${reactionEmoji}* `,
+        text: `⏳ *sʏsᴛᴇᴍs ᴜᴘᴛɪᴍᴇ* : *${runtime(process.uptime())}  ${reactionEmoji}* `,
       },
       footer: {
         text: "Pσɯҽɾ Ⴆყ Ɲנαвυʟσ Jbᯤ",
