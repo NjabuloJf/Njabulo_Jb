@@ -4,7 +4,7 @@ const config = require("../set");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({
-  nomCom: "ollmenu",
+  nomCom: "menu",
   alias: ["help", "cmds"],
   categorie: "General",
   reaction: "📚",
@@ -328,7 +328,7 @@ sᴇᴀʀᴄʜ
             },
             interactiveMessage: {
               header: { text: `🔍 System Info` },
-              body: { text: `*📂 Found 2 results*` },
+              body: { text: `*ɴᴀᴍᴇ ʙᴏᴛ ɴᴊᴀʙᴜʟᴏ ᴊʙ*\n*ʟɪʙʀᴀʀʏ ɴᴏᴅᴇ.ᴊs*` },
               carouselMessage: { cards },
             },
           },
