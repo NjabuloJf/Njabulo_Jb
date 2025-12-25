@@ -5,7 +5,7 @@ const config = require("../set");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({ 
-  nomCom: "sasa", 
+  nomCom: "ping", 
   alias: ["speed", "pong"], 
   categorie: "General", 
   reaction: "📌", 
@@ -44,7 +44,7 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
         imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
       },
       body: {
-        text: `⏳ *ᴘɪɴɢ* : *${responseTime.toFixed(2)}s ${reactionEmoji}* `,
+        text: `⏳ *ᴘɪɴɢ* : *${responseTime.toFixed(2)}ms ${reactionEmoji}* `,
       },
       footer: {
         text: "Pσɯҽɾ Ⴆყ Ɲנαвυʟσ Jbᯤ",
@@ -97,3 +97,4 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
   }
 });
 
+ 
