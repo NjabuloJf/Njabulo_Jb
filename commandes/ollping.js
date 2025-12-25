@@ -13,14 +13,20 @@ fana({
 }, async (dest, zk, commandeOptions) => {
   console.log('Command triggered!');
   const { repondre, ms } = commandeOptions;
+  
   try {
     const njabulox = [
-      "",
       "https://files.catbox.moe/xjeyjh.jpg",
       "https://files.catbox.moe/mh36c7.jpg",
-      "",
       "https://files.catbox.moe/bnb3vx.jpg"
     ];
+
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+    if (!randomNjabulourl) {
+      console.error("Error: No image URL found.");
+      repondre("An error occurred: No image URL found.");
+      return;
+    }
 
     const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
     const reactionEmojis = ['❄️'];
@@ -135,9 +141,7 @@ fana({
     );
     await zk.relayMessage(dest, message.message, { messageId: message.key.id });
   } catch (e) {
-    console.error("Error in ping command:", e);
+    console.error("Error in menu command:", e);
     repondre(`An error occurred: ${e.message}`);
   }
 });
-
-
