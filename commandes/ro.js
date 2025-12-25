@@ -6,7 +6,7 @@ const { generateWAMessageContent, generateWAMessageFromContent } = require('@whi
 const axios = require('axios');
 
 fana({
-  nomCom: "ro",
+  nomCom: "repo",
   alias: ["repository"],
   categorie: "General",
   reaction: "⭐",
@@ -43,9 +43,9 @@ fana({
         },
         body: {
           text: `
-Njabulo-md is a WhatsApp bot created by Njabulo
-📅 Created : ${created}
-🔄 Updated : ${updated}
+*💞 Name : Njabulo Jb*
+*📅 Created* : ${created}
+*🔄 Updated* : ${updated}
           `,
         },
         footer: {
@@ -71,8 +71,9 @@ Njabulo-md is a WhatsApp bot created by Njabulo
         },
         body: {
           text: `
-⭐ Stars : ${data.stargazers_count}
-🍴 Forks : ${data.forks_count}
+*💞 Name* : Njabulo Jb*
+*⭐ Stars* : ${data.stargazers_count}
+*🍴 Forks* : ${data.forks_count}
           `,
         },
         footer: {
@@ -103,7 +104,7 @@ Njabulo-md is a WhatsApp bot created by Njabulo
             },
             interactiveMessage: {
               header: { text: `🔍 System Info` },
-              body: { text: `*📂 Found 2 results*` },
+              body: { text: `*📂 sʏsᴛᴇᴍs ʟᴏᴀᴅɪɴɢ.....*` },
               carouselMessage: { cards },
             },
           },
