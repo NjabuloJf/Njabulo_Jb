@@ -101,7 +101,7 @@ fana(
     }
 
     const apis = [
-      `{encodeURIComponent(songName)}`,
+      `https://api.elrayyxml.web.id/api/search/lyrics?q=${encodeURIComponent(songName)}`,
       `https://some-random-api.com/others/lyrics?title=${encodeURIComponent(songName)}`,
       `https://api.davidcyriltech.my.id/lyrics?title=${encodeURIComponent(songName)}`,
     ];
