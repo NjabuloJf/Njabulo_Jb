@@ -128,14 +128,14 @@ setTimeout(() => {
         const buttons = [{
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "Visit Website",
+      display_text: "View on channel",
       id: `backup channel`,
       url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u" 
     })
   },{
     name: "cta_copy",
     buttonParamsJson: JSON.stringify({
-      display_text: "Messaging online",
+      display_text: "Copy links",
       id: `copy`,
       copy_code: `greeting`
     })
@@ -1169,35 +1169,20 @@ zk.ev.on('group-participants.update', async (group) => {
 
                 if((conf.DP).toLowerCase() === 'yes') {     
 
-                let cmsg =`___________________________
-Njabulo Jb is connected to devices
-nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
-ρrᥱfιx :  *[ ${prefixe} ]*
-modᥱ : *${md}*
-___________________________
-`;
+                let cmsg =` ╭──────────⊷
+┊┏━┈┈┈┈┈┈┈⏤͟͟͞͞★
+┊┊ *ᯤɴᴊᴀʙᴜʟᴏ ᴊʙ: ᴄᴏɴɴᴇᴄᴛᴇᴅ* 
+┊┊ *ɴᴀᴍᴇ ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+┊┊ *ᴘʀᴇғɪx: [ ${prefixe} ]*
+┊┊ *ᴍᴏᴅᴇ:* ${md}
+┊┗━┈┈┈┈┈┈┈┈━⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+╰───────────⊷`;
 await zk.sendMessage(zk.user.id, { 
     interactiveMessage: {
             image: { url: randomNjabulourl },
          header: cmsg,
         buttons: buttons,
       headerType: 1,
-         contextInfo: {
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo Jb",
-         serverMessageId: 143,
-         },
-         forwardingScore: 999, // 
-         externalAdReply: {
-         title: "🖐️ message bot is connected",
-         mediaType: 1,
-          previewType: 0,
-         thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: false,
-        },
-        },
     },
           }, { quoted: {
             key: {
