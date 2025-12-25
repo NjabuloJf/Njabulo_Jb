@@ -128,7 +128,7 @@ fana({
             },
             interactiveMessage: {
               header: { text: `🔍 System Info` },
-              body: { text: `*📂 sʏsᴛᴇᴍs ʟᴏᴀᴅɪɴɢ *` },
+              body: { text: `*📂 sʏsᴛᴇᴍs ʟᴏᴀᴅɪɴɢ*` },
               carouselMessage: { cards },
             },
           },
