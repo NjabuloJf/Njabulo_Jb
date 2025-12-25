@@ -39,15 +39,15 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
     
     const card = {
       header: {
-        title: `⏳ *PING* : *${responseTime.toFixed(2)}s`,
+        title: `sʏsᴛᴇᴍ ᴘɪɴɢ🏓`,
         hasMediaAttachment: true,
         imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
       },
       body: {
-        text: `⏳ *PING* : *${responseTime.toFixed(2)}s ${reactionEmoji}* `,
+        text: `⏳ *ᴘɪɴɢ* : *${responseTime.toFixed(2)}s ${reactionEmoji}* `,
       },
       footer: {
-        text: "🔹 Play song",
+        text: "Pσɯҽɾ Ⴆყ Ɲנαвυʟσ Jbᯤ",
       },
       nativeFlowMessage: {
         buttons: [
@@ -81,7 +81,7 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
             },
             interactiveMessage: {
               header: { text: `🔍 Search Results for` },
-              body: { text: `📂 Found 1 result` },
+              body: { text: `*📂 sʏsᴛᴇᴍ ᴘɪɴɢ......*` },
               carouselMessage: { cards: [card] },
             },
           },
