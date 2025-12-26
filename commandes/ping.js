@@ -78,7 +78,7 @@ fana({
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
                 display_text: "📋 Copy Link",
-                copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
+                copy_code: config.GURL
               }),
             },
           ],
@@ -102,14 +102,14 @@ fana({
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
                 display_text: "🌐 View on Channel",
-                url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
+                url: config.GURL
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
                 display_text: "📋 Copy Link",
-                copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
+                copy_code: config.GURL
               }),
             },
           ],
