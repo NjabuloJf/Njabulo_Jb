@@ -294,6 +294,81 @@ fana({
   }
 });
 
+
+😊 Here's the updated "didong" command with multiple images sent as cards:
+fana({
+  nomCom: "didong",
+  categorie: "Logo",
+  reaction: "📱"
+}, async (dest, zk, commandeOptions) => {
+  let { arg, repondre, prefixe, ms } = commandeOptions;
+  try {
+    if (!arg || arg == "") {
+      repondre(`*exemple :* ${prefixe}didong fredi`)
+      return;
+    }
+    var lien = "https://ephoto360.com/tao-anh-che-vui-tu-choi-cuoc-goi-voi-ten-cua-ban-930.html";
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      var img = await mumaker.ephoto(lien, arg.join(' '));
+      cards.push({
+        header: {
+          title: `Didong ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: img.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this didong logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: img.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Didong Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
+
+This script sends 6 different didong logos as cards 😊.
+
 // Add more commands here...
 
 module.exports = { fana };
