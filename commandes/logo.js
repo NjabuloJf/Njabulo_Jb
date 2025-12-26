@@ -367,6 +367,154 @@ fana({
   }
 });
 
+
+😊 Here are the updated "summer" and "wall" commands with multiple images sent as cards:
+// summer command
+fana({
+  nomCom: "summer",
+  categorie: "Logo",
+  reaction: "🌞"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}summer My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/create-sunset-light-text-effects-online-for-free-1124.html", text);
+      cards.push({
+        header: {
+          title: `Summer ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this summer logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Summer Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
+
+// wall command
+fana({
+  nomCom: "wall",
+  categorie: "Logo",
+  reaction: "👍"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}wall My text`);
+    return;
+  }
+  let text = arg.join(" ")
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/break-wall-text-effect-871.html", text);
+      cards.push({
+        header: {
+          title: `Wall ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this wall logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Wall Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
+
+These scripts send 6 different summer and wall logos as cards 😊.
+
 This script sends 6 different didong logos as cards 😊.
 
 // Add more commands here...
