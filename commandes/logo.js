@@ -29,7 +29,7 @@ fana({
           text: "Check out this hacker avatar!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -101,7 +101,7 @@ fana({
           text: "Check out this dragon ball logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -174,7 +174,7 @@ fana({
           text: "Check out this naruto logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -247,7 +247,7 @@ fana({
           text: "Check out this didong logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -319,7 +319,7 @@ fana({
           text: "Check out this didong logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -391,7 +391,7 @@ fana({
           text: "Check out this summer logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -463,7 +463,7 @@ fana({
           text: "Check out this wall logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -536,7 +536,7 @@ fana({
           text: "Check out this green neon logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -608,7 +608,7 @@ fana({
           text: "Check out this neon light logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -681,7 +681,7 @@ fana({
           text: "Check out this boom logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -753,7 +753,7 @@ fana({
           text: "Check out this devil logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -825,7 +825,7 @@ fana({
           text: "Check out this glitch logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -898,7 +898,7 @@ fana({
           text: "Check out this transformer logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -970,7 +970,7 @@ fana({
           text: "Check out this snow logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -1042,7 +1042,7 @@ fana({
           text: "Check out this water logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -1114,7 +1114,7 @@ fana({
           text: "Check out this neon logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -1186,7 +1186,7 @@ fana({
           text: "Check out this thor logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -1258,7 +1258,7 @@ fana({
           text: "Check out this light glow logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -1330,7 +1330,7 @@ fana({
           text: "Check out this arena logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -1402,7 +1402,7 @@ fana({
           text: "Check out this gold logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -1474,7 +1474,7 @@ fana({
           text: "Check out this purple logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
@@ -1547,7 +1547,7 @@ fana({
           text: "Check out this gif logo!",
         },
         footer: {
-          text: "LUCKY MD",
+          text: "🖼️ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴀɪ ɢᴇɴᴇʀᴀʟ ʟᴏɢᴏ ɪᴍᴀɢᴇ",
         },
         nativeFlowMessage: {
           buttons: [
