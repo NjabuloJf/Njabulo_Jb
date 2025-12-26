@@ -35,7 +35,10 @@ module.exports = { session: process.env.SESSION_ID || 'zokk',
     
     //process.env.BOT_MENU_LINKS//             
     URL : process.env.BOT_MENU_LINKS || 'https://files.catbox.moe/mh36c7.jpg',
-    
+
+    //GURL: process.env.GURL//
+     GURL: process.env.GURL  || 'https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k',
+  
     //process.env.PUBLIC_MODE//             
     MODE: process.env.PUBLIC_MODE || "yes",
     
