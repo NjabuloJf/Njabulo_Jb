@@ -877,6 +877,225 @@ fana({
   }
 });
 
+😊 Here are the updated "transformer", "snow", and "water" commands with multiple images sent as cards:
+// transformer command
+fana({
+  nomCom: "transformer",
+  categorie: "Logo",
+  reaction: "🤖"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}transformer My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/create-a-transformer-text-effect-online-1035.html", text);
+      cards.push({
+        header: {
+          title: `Transformer ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this transformer logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Transformer Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
+
+// snow command
+fana({
+  nomCom: "snow",
+  categorie: "Logo",
+  reaction: "❄️"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}snow My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/create-beautiful-3d-snow-text-effect-online-1101.html", text);
+      cards.push({
+        header: {
+          title: `Snow ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this snow logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Snow Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
+
+// water command
+fana({
+  nomCom: "water",
+  categorie: "Logo",
+  reaction: "💦"
+}, async (dest, zk, commandeOptions) => {
+  let { arg, repondre, prefixe, ms } = commandeOptions;
+  try {
+    if (!arg || arg == "") {
+      repondre(`${prefixe}water hans`)
+      return;
+    }
+    var lien = "https://en.ephoto360.com/create-water-effect-text-online-295.html";
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      var img = await mumaker.ephoto(lien, arg.join(' '));
+      cards.push({
+        header: {
+          title: `Water ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: img.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this water logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: img.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Water Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
+
+These scripts send 6 different transformer, snow, and water logos as cards 😊.
+
 These scripts send 6 different boom, devil, and glitch logos as cards 😊.
 
 These scripts send 6 different green neon and neon light logos as cards 😊.
