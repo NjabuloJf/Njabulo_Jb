@@ -1,4 +1,3 @@
-😊 Here's the full script with all commands using fana and sending multiple images with cards:
 const { fana } = require("../njabulo/fana");
 var mumaker = require("mumaker");
 const axios = require("axios");
@@ -295,7 +294,6 @@ fana({
 });
 
 
-😊 Here's the updated "didong" command with multiple images sent as cards:
 fana({
   nomCom: "didong",
   categorie: "Logo",
@@ -367,8 +365,6 @@ fana({
   }
 });
 
-
-😊 Here are the updated "summer" and "wall" commands with multiple images sent as cards:
 // summer command
 fana({
   nomCom: "summer",
@@ -514,7 +510,6 @@ fana({
 });
 
 
-😊 Here are the updated "greenneon" and "neonlight" commands with multiple images sent as cards:
 // greenneon command
 fana({
   nomCom: "greenneon",
@@ -660,7 +655,6 @@ fana({
 });
 
 
-😊 Here are the updated "boomlg", "devil", and "glitch" commands with multiple images sent as cards:
 // boomlg command
 fana({
   nomCom: "boomlg",
@@ -877,7 +871,7 @@ fana({
   }
 });
 
-😊 Here are the updated "transformer", "snow", and "water" commands with multiple images sent as cards:
+
 // transformer command
 fana({
   nomCom: "transformer",
@@ -1094,17 +1088,580 @@ fana({
   }
 });
 
-These scripts send 6 different transformer, snow, and water logos as cards 😊.
+// neon command
+fana({
+  nomCom: "neon",
+  categorie: "Logo",
+  reaction: "💡"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}neon My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/neon-light-text-effect-online-882.html", text);
+      cards.push({
+        header: {
+          title: `Neon ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this neon logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Neon Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
 
-These scripts send 6 different boom, devil, and glitch logos as cards 😊.
+// thor command
+fana({
+  nomCom: "thor",
+  categorie: "Logo",
+  reaction: "⚡️"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}thor My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/create-thor-logo-online-free-1061.html", text);
+      cards.push({
+        header: {
+          title: `Thor ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this thor logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Thor Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
 
-These scripts send 6 different green neon and neon light logos as cards 😊.
-These scripts send 6 different summer and wall logos as cards 😊.
+// lightglow command
+fana({
+  nomCom: "lightglow",
+  categorie: "Logo",
+  reaction: "✨"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}lightglow My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/create-light-glow-sliced-text-effect-online-1068.html", text);
+      cards.push({
+        header: {
+          title: `Light Glow ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this light glow logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Light Glow Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
 
-This script sends 6 different didong logos as cards 😊.
+// arena command
+fana({
+  nomCom: "arena",
+  categorie: "Logo",
+  reaction: "🏟️"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}arena My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/create-a-arena-lol-text-effect-online-1081.html", text);
+      cards.push({
+        header: {
+          title: `Arena ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this arena logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Arena Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
 
-// Add more commands here...
+// gold command
+fana({
+  nomCom: "gold",
+  categorie: "Logo",
+  reaction: "💫"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}gold My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/gold-text-effect-on-transparent-background-893.html", text);
+      cards.push({
+        header: {
+          title: `Gold ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this gold logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Gold Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
 
-module.exports = { fana };
+// purple command
+fana({
+  nomCom: "purple",
+  categorie: "Logo",
+  reaction: "💜"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}purple My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/purple-text-effect-1038.html", text);
+      cards.push({
+        header: {
+          title: `Purple ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this purple logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Purple Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
 
-This script includes multiple commands with multiple images sent as cards 😊.
+
+// gif command
+fana({
+  nomCom: "gif",
+  categorie: "Logo",
+  reaction: "🎥"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}gif My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/create-gif-text-effect-online-1029.html", text);
+      cards.push({
+        header: {
+          title: `Gif ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this gif logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Gif Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
+
+// incandescent command
+fana({
+  nomCom: "incandescent",
+  categorie: "Logo",
+  reaction: "💡"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}incandescent My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/incandescent-bulb-text-effect-881.html", text);
+      cards.push({
+        header: {
+          title: `Incandescent ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this incandescent logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Incandescent Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
+
