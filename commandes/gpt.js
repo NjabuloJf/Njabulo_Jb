@@ -29,7 +29,7 @@ fana({
 
     await zk.sendMessage(chatId, { delete: statusMsg });
     await zk.sendMessage(chatId, { react: { text: 'done' } });
-    await repondre(`[GPT]\n${replyText}\n—\nFEE-XMD`);
+    await repondre(`${replyText}`);
   } catch (error) {
     console.error(`GPT error:`, error);
     await zk.sendMessage(chatId, { react: { text: 'error' } });
