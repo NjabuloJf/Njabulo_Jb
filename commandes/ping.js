@@ -71,7 +71,7 @@ fana({
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
                 display_text: "🌐 View on Channel",
-                url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
+                url: config.GURL
               }),
             },
             {
