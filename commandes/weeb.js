@@ -102,7 +102,7 @@ async function sendError(zk, chatId, text, ms) {
 // ── Waifu command ─────────────────────────────────────────────
 fana(
   {
-    nomCom: "waifu",
+    nomCom: "waifu-one",
     categorie: "Weeb",
     reaction: "😏",
   },
@@ -174,7 +174,7 @@ fana(
 // ── Neko command ─────────────────────────────────────────────
 fana(
   {
-    nomCom: "neko",
+    nomCom: "neko-one",
     categorie: "Weeb",
     reaction: "😺",
   },
@@ -246,7 +246,7 @@ fana(
 // ── Shinobu command ─────────────────────────────────────────────
 fana(
   {
-    nomCom: "shinobu",
+    nomCom: "shinobu-one",
     categorie: "Weeb",
     reaction: "🦋",
   },
@@ -317,7 +317,7 @@ fana(
 
 fana(
   {
-    nomCom: "megumin",
+    nomCom: "megumin-one",
     categorie: "Weeb",
     reaction: "💥",
   },
@@ -389,7 +389,7 @@ fana(
 // ── Cosplay command ─────────────────────────────────────────────
 fana(
   {
-    nomCom: "cosplay",
+    nomCom: "cosplay-one",
     categorie: "Weeb",
     reaction: "😏",
   },
@@ -462,7 +462,7 @@ fana(
 // ── Couple PP command ─────────────────────────────────────────────
 fana(
   {
-    nomCom: "couplepp",
+    nomCom: "couplepp-one",
     categorie: "Weeb",
     reaction: "💞",
   },
