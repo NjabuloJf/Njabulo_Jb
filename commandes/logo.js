@@ -513,6 +513,153 @@ fana({
   }
 });
 
+
+😊 Here are the updated "greenneon" and "neonlight" commands with multiple images sent as cards:
+// greenneon command
+fana({
+  nomCom: "greenneon",
+  categorie: "Logo",
+  reaction: "🟢"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}greenneon My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/green-neon-text-effect-874.html", text);
+      cards.push({
+        header: {
+          title: `Green Neon ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this green neon logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Green Neon Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
+
+// neonlight command
+fana({
+  nomCom: "neonlight",
+  categorie: "Logo",
+  reaction: "💡"
+}, async (dest, zk, commandeOptions) => {
+  const { arg, repondre, ms, prefixe } = commandeOptions;
+  if (!arg[0]) {
+    repondre(`Exemple of using commande:\n ${prefixe}neonlight My text`);
+    return;
+  }
+  const text = arg.join(" ");
+  try {
+    const cards = [];
+    for (let i = 0; i < 6; i++) {
+      let data = await mumaker.textpro("https://textpro.me/create-glowing-neon-light-text-effect-online-free-1061.html", text);
+      cards.push({
+        header: {
+          title: `Neon Light ${i + 1}`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: data.image } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: "Check out this neon light logo!",
+        },
+        footer: {
+          text: "LUCKY MD",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Copy Link",
+                copy_code: data.image,
+              }),
+            },
+          ],
+        },
+      });
+    }
+    const message = generateWAMessageFromContent(
+      dest,
+      {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: {
+              body: {
+                text: "Neon Light Logos"
+              },
+              footer: {
+                text: "Click to view"
+              },
+              carouselMessage: {
+                cards
+              },
+            },
+          },
+        },
+      },
+      { quoted: ms }
+    );
+    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+  } catch (e) {
+    repondre("🥵🥵 " + e);
+  }
+});
+
+These scripts send 6 different green neon and neon light logos as cards 😊.
 These scripts send 6 different summer and wall logos as cards 😊.
 
 This script sends 6 different didong logos as cards 😊.
