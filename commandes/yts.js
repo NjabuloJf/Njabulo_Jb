@@ -2,6 +2,7 @@
 
 const { fana } = require("../njabulo/fana");
 const yts = require("yt-search");
+const config = require(__dirname + "/../set");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 // ── Random image list ─────────────────────────────────────────────
@@ -20,7 +21,7 @@ const baseButtons = [
     buttonParamsJson: JSON.stringify({
       display_text: "Visit Website",
       id: "backup channel",
-      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+      url: config.GURL
     }),
   },
   {
@@ -28,7 +29,7 @@ const baseButtons = [
     buttonParamsJson: JSON.stringify({
       display_text: "Copy",
       id: "copy",
-      copy_code: "", // will be filled dynamically
+      copy_code: config.GURL
     }),
   },
 ];
