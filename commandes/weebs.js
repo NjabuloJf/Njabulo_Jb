@@ -1,5 +1,3 @@
-😊 Here's the full script with all commands sending multiple images:
-// ── Imports ───────────────────────────────────────────────────────
 const { fana } = require("../njabulo/fana");
 const axios = require("axios");
 const { writeFile } = require("fs/promises");
