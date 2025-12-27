@@ -10,13 +10,13 @@ const {
 } = require("@whiskeysockets/baileys");
 
 // bug database
-const { bugtext1 } = require("../fredi/fredi/bugtext1");
-const { bugtext2 } = require("../fredi/fredi/bugtext2");
-const { bugtext3 } = require("../fredi/fredi/bugtext3");
-const { bugtext4 } = require("../fredi/fredi/bugtext4");
-const { bugtext5 } = require("../fredi/fredi/bugtext5");
-const { bugtext6 } = require("../fredi/fredi/bugtext6");
-const { bugpdf } = require("../fredi/fredi/bugpdf.js");
+const { bugtext1 } = require("../njabulo/njabulo/bugtext1");
+const { bugtext2 } = require("../njabulo/njabulo/bugtext2");
+const { bugtext3 } = require("../njabulo/njabulo/bugtext3");
+const { bugtext4 } = require("../njabulo/njabulo/bugtext4");
+const { bugtext5 } = require("../njabulo/njabulo/bugtext5");
+const { bugtext6 } = require("../njabulo/njabulo/bugtext6");
+const { bugpdf } = require("../njabulo/njabulo/bugpdf.js");
 
 const category = "Bug-cmds";
 const reaction = "🤯";
