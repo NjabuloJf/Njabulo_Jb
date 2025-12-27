@@ -27,10 +27,28 @@ const GIFBufferToVideoBuffer = async (image) => {
     return buffer5;
 };
 
-const buttons = [
+const buttonsi = [
   { buttonId: '.web',   buttonText: { displayText: '🗃️ᴅʀᴏɪᴅ sᴛᴏʀᴇ ᴀᴘᴘ' },   type: 1 },
 ];
 
+const buttons = [
+  {
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Visit Website",
+      id: "backup channel",
+      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+    }),
+  },
+  {
+    name: "cta_copy",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Copy",
+      id: "copy",
+      copy_code: "", // will be filled dynamically
+    }),
+  },
+];
 const generateReactionCommand = (reactionName, reactionEmoji) => {
     fana({
         nomCom: reactionName,
@@ -60,11 +78,13 @@ const generateReactionCommand = (reactionName, reactionEmoji) => {
     
             } else {
                 const videoMessage = {
+                    interactiveMessage: {
                     video: videoBuffer,
                     gifPlayback: true,
-                    caption: `@${auteurMessage.split("@")[0]} ${reactionName} everyone`,
+                    header: `@${auteurMessage.split("@")[0]} ${reactionName} everyone`,
                     mentions: [auteurMessage],
                     buttons: buttons 
+                    };
                 };
                 zk.sendMessage(origineMessage, videoMessage, { quoted: ms });
             }
