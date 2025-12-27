@@ -193,6 +193,56 @@ fana({
       },
       {
         header: {
+          title: `🐛Bug cmd Menu`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+① .ʙᴜɢ ᴄʀᴀsʜ
+② .ʟᴏᴄᴄʀᴀsʜ
+③ .ᴀᴍᴏᴜɴᴛʙᴜɢ <ᴀᴍᴏᴜɴᴛ>
+④ .ᴄʀᴀsʜʙᴜɢ 255xxxx
+⑤ .ᴘᴍʙᴜɢ 255xxxx
+⑥ .ᴅᴇʟᴀʏʙᴜɢ 255xxxx
+⑦ .ᴛʀᴏʟʟʏʙᴜɢ 255xxxx
+⑧ .ᴅᴏᴄᴜʙᴜɢ 254xxxx
+⑨ .ᴜɴʟɪᴍɪᴛᴇᴅʙᴜɢ 255xxxx
+⑩ .ʙᴏᴍʙᴜɢ 255xxxx
+⑪ .ʟᴀɢʙᴜɢ 255xxxx
+⑫ .ɢᴄʙᴜɢ <ɢʀᴏᴜᴘʟɪɴᴋ>
+⑬ .ᴅᴇʟᴀʏɢᴄʙᴜɢ <ɢʀᴏᴜᴘʟɪɴᴋ>
+⑭ .ᴛʀᴏʟʟʏɢᴄʙᴜɢ <ɢʀᴏᴜᴘʟɪɴᴋ>
+⑮ .ʟᴀɢɢᴄʙᴜɢ <ɢʀᴏᴜᴘʟɪɴᴋ>
+⑯ .ʙᴏᴍɢᴄʙᴜɢ <ɢʀᴏᴜᴘʟɪɴᴋ>
+⑰ .ᴜɴʟɪᴍɪᴛᴇᴅɢᴄʙᴜɢ <ɢʀᴏᴜᴘʟɪɴᴋ>
+⑱ .ᴅᴏᴄᴜɢᴄʙᴜɢ <ɢʀᴏᴜᴘʟɪɴᴋ>
+`,
+        },
+        footer: {
+          text: "Pσɯҽɾ Ⴆყ Ɲנαвυʟσ Jbᯤ",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_url",
+              buttonParamsJson: JSON.stringify({
+                display_text: "🌐 View on Channel",
+                url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
+              }),
+            },
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "📋 Copy Link",
+                copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
+              }),
+            },
+          ],
+        },
+      },
+      {
+        header: {
           title: `👥 Group Menu`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
