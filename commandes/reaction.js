@@ -1,6 +1,6 @@
 
 const axios = require('axios');
-const { fana } = require("../fredi/njabulo");
+const { fana } = require("../njabulo/fana");
 const fs = require("fs-extra");
 const { exec } = require("child_process");
 const child_process = require('child_process');
