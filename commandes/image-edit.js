@@ -2,6 +2,18 @@ const { fana } = require("../njabulo/fana");
 const canvacord = require("canvacord");
 const {uploadImageToImgur} = require("../njabulo/imgur")
 
+const buttons = [
+  {
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Visit Website",
+      id: "backup channel",
+      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+    }),
+  },
+  ];
+
+
 // Generic function to create a canvacord order
 function createCanvacordCommand(commandName, canvacordFunction) {
   fana({
@@ -28,7 +40,12 @@ function createCanvacordCommand(commandName, canvacordFunction) {
 
       const result = await canvacordFunction(img);
 
-      await zk.sendMessage(origineMessage, { image: result }, { quoted: ms });
+      await zk.sendMessage(origineMessage, {
+        interactiveMessage:{
+        image: result,
+          buttons
+        }
+      }, { quoted: ms });
     } catch (error) {
       console.error(`Error when ordering "${commandName}":`, error);
     }
