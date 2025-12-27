@@ -84,8 +84,9 @@ const generateReactionCommand = (reactionName, reactionEmoji) => {
                     header: `@${auteurMessage.split("@")[0]} ${reactionName} everyone`,
                     mentions: [auteurMessage],
                     buttons: buttons 
-                    };
-                };
+                    }
+                  }
+                }
                 zk.sendMessage(origineMessage, videoMessage, { quoted: ms });
             }
 
