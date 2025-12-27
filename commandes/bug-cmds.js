@@ -1,5 +1,5 @@
 const { fana } = require("../njabulo/fana");
-const { delay, loading, react } = require("../fana/utils");
+const { delay, loading, react } = require("../njabulo/utils");
 const moment = require("moment-timezone");
 const conf = require("../set.js");
 const fs = require("fs");
