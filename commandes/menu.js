@@ -29,6 +29,65 @@ fana({
     const cards = [
       {
         header: {
+          title: `😅 Reaction Menu`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+① .ʙᴜʟʟʏ
+② .ᴄᴜᴅᴅʟᴇ
+③ .ᴄʀʏ
+④ .ʜᴜɢ
+⑤ .ᴀᴡᴏᴏ
+⑥ .ᴋɪss
+⑦ .ʟɪᴄᴋ
+⑧ .ᴘᴀᴛ
+⑨ .sᴍᴜɢ
+⑩ .ʙᴏɴᴋ
+⑪ .ʏᴇᴇᴛ
+⑫ .ʙʟᴜsʜ
+⑬ .sᴍɪʟᴇ
+⑭ .ᴡᴀᴠᴇ
+⑮ .ʜɪɢʜғɪᴠᴇ
+⑯ .ʜᴀɴᴅʜᴏʟᴅ
+⑰ .ɴᴏᴍ
+⑱ .ʙɪᴛᴇ
+⑲ .ɢʟᴏᴍᴘ
+⑳ .sʟᴀᴘ
+㉑ .ᴋɪʟʟ
+㉒ .ᴋɪᴄᴋ
+㉓ .ʜᴀᴘᴘʏ
+㉔ .ᴡɪɴᴋ
+㉕ .ᴘᴏᴋᴇ
+㉖ .ᴅᴀɴᴄᴇ
+㉗ .ᴄʀɪɴɢᴇ
+`,
+        },
+        footer: {
+          text: "Pσɯҽɾ Ⴆყ Ɲנαвυʟσ Jbᯤ",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_url",
+              buttonParamsJson: JSON.stringify({
+                display_text: "🌐 View on Channel",
+                url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
+              }),
+            },
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "📋 Copy Link",
+                copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
+              }),
+            },
+          ],
+        },
+      },
+      {
+        header: {
           title: `📊 Logo Menu`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
