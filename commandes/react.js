@@ -27,6 +27,10 @@ const GIFBufferToVideoBuffer = async (image) => {
     return buffer5;
 };
 
+const buttons = [
+  { buttonId: '.web',   buttonText: { displayText: '🗃️ᴅʀᴏɪᴅ sᴛᴏʀᴇ ᴀᴘᴘ' },   type: 1 },
+];
+
 const generateReactionCommand = (reactionName, reactionEmoji) => {
     fana({
         nomCom: reactionName,
@@ -59,7 +63,8 @@ const generateReactionCommand = (reactionName, reactionEmoji) => {
                     video: videoBuffer,
                     gifPlayback: true,
                     caption: `@${auteurMessage.split("@")[0]} ${reactionName} everyone`,
-                    mentions: [auteurMessage]
+                    mentions: [auteurMessage],
+                    buttons: buttons 
                 };
                 zk.sendMessage(origineMessage, videoMessage, { quoted: ms });
             }
