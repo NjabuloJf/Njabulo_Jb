@@ -44,6 +44,7 @@ function createCanvacordCommand(commandName, canvacordFunction) {
         interactiveMessage:{
         image: result,
           header: "Images Editing 🖼️🎨",
+          headerType: 1,
           buttons
         }
       }, { quoted: ms });
