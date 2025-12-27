@@ -1,10 +1,10 @@
-const { ezra } = require("../fredi/ezra");
+const { fana } = require("../njabulo/fana");
 const canvacord = require("canvacord");
 const { uploadImageToImgur } = require("../fredi/imgur")
 
 // Generic function to create a canvacord order function
 createCanvacordCommand(commandName, canvacordFunction) {
-  ezra({
+  fana({
     nomCom: commandName,
     categorie: "Image-Edit",
     reaction: "🎉"
