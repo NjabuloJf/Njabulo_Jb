@@ -43,6 +43,7 @@ function createCanvacordCommand(commandName, canvacordFunction) {
       await zk.sendMessage(origineMessage, {
         interactiveMessage:{
         image: result,
+          header: "Images Editing 🖼️🎨",
           buttons
         }
       }, { quoted: ms });
