@@ -21,19 +21,18 @@ const GIFBufferToVideoBuffer = async (image) => {
     console.error(e);
   }
 };
-
 const buttons = [
   {
-    buttonId: '1',
-    buttonText: { displayText: '🗃️ Visit Website' },
-    type: 1
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Visit Website",
+      id: "backup channel",
+      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+    }),
   },
-  {
-    buttonId: '2',
-    buttonText: { displayText: 'Copy' },
-    type: 1
-  }
-];
+  ];
+
+
 
 const generateReactionCommand = (reactionName, reactionEmoji) => {
   fana({
@@ -52,20 +51,26 @@ const generateReactionCommand = (reactionName, reactionEmoji) => {
       if (msgRepondu) {
         const txt = `@${auteurMessage.split("@")[0]} ${reactionName} @${auteurMsgRepondu.split("@")[0]}`;
         await zk.sendMessage(origineMessage, {
+          interactiveMessage: {
           video: videoBuffer,
           gifPlayback: true,
-          caption: txt,
-          mentions: [auteurMessage, auteurMsgRepondu],
-          buttons
+         header: txt,
+           headerType: 1,
+           mentions: [auteurMessage, auteurMsgRepondu],
+           buttons
+          }
         }, { quoted: ms });
       } else {
         const txt = `@${auteurMessage.split("@")[0]} ${reactionName} everyone`;
         await zk.sendMessage(origineMessage, {
+          interactiveMessage: {
           video: videoBuffer,
           gifPlayback: true,
-          caption: txt,
+           header: txt,
+        headerType: 1,
           mentions: [auteurMessage],
           buttons
+          }
         }, { quoted: ms });
       }
     } catch (error) {
