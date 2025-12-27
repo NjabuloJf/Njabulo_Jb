@@ -143,7 +143,57 @@ fana({
       },
       {
         header: {
-          title: `📊 Group Menu`,
+          title: `🎨 Edit Menu`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+① .sʜɪᴛ
+② .ᴡᴀsᴛᴇᴅ
+③ .ᴡᴀɴᴛᴇᴅ
+④ .ᴛʀɪɢɢᴇʀ
+⑤ .ᴛʀᴀsʜ
+⑥ .ʀɪᴘ
+⑦ .sᴇᴘɪᴀ
+⑧ .ʀᴀɪɴʙᴏᴡ
+⑨ .ʜɪᴛʟᴇʀ
+⑩ .ɪɴᴠᴇʀᴛ
+⑪ .ᴊᴀɪʟ
+⑫ .ᴀғғᴇᴄᴛ
+⑬ .ʙᴇᴀᴜᴛɪғᴜʟ
+⑭ .ʙʟᴜʀ
+⑮ .ᴄɪʀᴄʟᴇ
+⑯ .ғᴀᴄᴇᴘᴀʟᴍ
+⑰ .ɢʀᴇʏsᴄᴀʟᴇ
+⑱ .ᴊᴏᴋᴇs
+`,
+        },
+        footer: {
+          text: "Pσɯҽɾ Ⴆყ Ɲנαвυʟσ Jbᯤ",
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_url",
+              buttonParamsJson: JSON.stringify({
+                display_text: "🌐 View on Channel",
+                url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
+              }),
+            },
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "📋 Copy Link",
+                copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
+              }),
+            },
+          ],
+        },
+      },
+      {
+        header: {
+          title: `👥 Group Menu`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
@@ -190,7 +240,7 @@ fana({
       },
       {
         header: {
-          title: `📊 Web Menu`,
+          title: `🧚‍♂️ Web Menu`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
@@ -234,7 +284,7 @@ fana({
       },
       {
         header: {
-          title: `📊 Use Menu`,
+          title: `🛠️ Use Menu`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
@@ -273,7 +323,7 @@ fana({
       },
       {
         header: {
-          title: `📊 Search Menu`,
+          title: `🔍 Search Menu`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
@@ -314,7 +364,7 @@ sᴇᴀʀᴄʜ
       },
       {
         header: {
-          title: `📊 General Menu`,
+          title: `⚡ General Menu`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
@@ -399,7 +449,7 @@ sᴇᴀʀᴄʜ
       },
       {
         header: {
-          title: `📊 Chat Menu`,
+          title: `🤖 Chat Menu`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
