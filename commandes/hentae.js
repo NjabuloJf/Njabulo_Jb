@@ -2,6 +2,19 @@ const { fana } = require('../njabulo/fana');
 const gis = require('g-i-s');
 const axios = require('axios');
 const conf = require(__dirname + '/../set');
+
+
+const buttons = [
+  {
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Visit Website",
+      id: "backup channel",
+      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+    }),
+  },
+  ];
+
 fana({
   nomCom: "screenswidth",
   categorie: "take-screenshots",
@@ -23,8 +36,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -42,7 +59,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken by Njabulo Jb*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -73,7 +90,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken by Njabulo Jb*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -85,8 +102,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1,
+      }
     }, { quoted: ms });
 
   } catch (error) {
