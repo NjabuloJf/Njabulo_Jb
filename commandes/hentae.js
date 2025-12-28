@@ -442,7 +442,7 @@ fana({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-fan({
+fana({
   nomCom: "galaxys5",
   aliases: ["ss", "sshot"],
   categorie: "take-screenshots",
@@ -833,7 +833,7 @@ fana({
 });
 
 // Oogway Meme Command
-fan({
+fana({
   'nomCom': "ohogway",
   'reaction': '📡',
   'categorie': 'mod-image'
