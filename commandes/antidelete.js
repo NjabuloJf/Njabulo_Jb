@@ -1,11 +1,11 @@
-const { zokou } = require("../framework/zokou");
+const { fana } = require("../njabulo/fana");
 const fs = require('fs');
 
 
 let antiDeleteActive = false; // Variable pour stocker l'tat de la commande anti-delete
 
-zokou({
-  nomCom: "anti/delete2",
+fana({
+  nomCom: "anti/delete",
   categorie: "General",
   reaction: "?"
 }, async (origineMessage, zk, commandeOptions) => {
