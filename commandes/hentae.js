@@ -1,8 +1,8 @@
-const { ezra } = require('../fredi/ezra');
+const { fana } = require('../njabulo/fana');
 const gis = require('g-i-s');
 const axios = require('axios');
 const conf = require(__dirname + '/../set');
-ezra({
+fana({
   nomCom: "screenswidth",
   categorie: "take-screenshots",
   reaction: "🎞️"
@@ -33,7 +33,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "screenscrop",
   categorie: "take-screenshots",
   reaction: "🎞️"
@@ -64,7 +64,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "maxage",
   categorie: "take-screenshots",
   reaction: "🎞️"
@@ -95,7 +95,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "jpg",
   categorie: "tak-screenshots",
   reaction: "🎞️"
@@ -126,7 +126,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "png",
   aliases: ["ss", "sshot"],
   categorie: "take-screenshots",
@@ -158,7 +158,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "noanimate",
   categorie: "take-screenshots",
   reaction: "🎞️"
@@ -189,7 +189,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "wait",
   aliases: ["ss", "sshot"],
   categorie: "take-screenshots",
@@ -221,7 +221,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "viewportwidth",
   aliases: ["ss", "sshot"],
   categorie: "take-screenshots",
@@ -253,7 +253,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "iphone5",
   categorie: "take-screenshots",
   reaction: "🎞️"
@@ -284,7 +284,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "iphone6",
   aliases: ["ss", "sshot"],
   categorie: "take-screenshots",
@@ -316,7 +316,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "iphone6plus",
   categorie: "take-screenshots",
   reaction: "🎞️"
@@ -347,7 +347,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "iphoneX",
   categorie: "take-screenshots",
   reaction: "🎞️"
@@ -378,7 +378,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "iphone12pro",
   aliases: ["ss", "sshot"],
   categorie: "take-screenshots",
@@ -410,7 +410,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "iphone14promax",
   aliases: ["ss", "sshot"],
   categorie: "take-screenshots",
@@ -442,7 +442,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fan({
   nomCom: "galaxys5",
   aliases: ["ss", "sshot"],
   categorie: "take-screenshots",
@@ -474,7 +474,7 @@ ezra({
     repondre(`An error occurred while processing the screenshot: ${error.message}`);
   }
 });
-ezra({
+fana({
   nomCom: "screenshot",
   aliases: ["ss", "sshot"],
   categorie: "take-screenshots",
@@ -507,7 +507,7 @@ ezra({
   }
 });
 
-ezra({
+fana({
   nomCom: "imgs",
   aliases: ["image", "images"],
   categorie: "mod-image",
@@ -553,7 +553,7 @@ ezra({
   }
 });
 
-ezra({
+fana({
   nomCom: 'messi',
   categorie: 'mod-image',
   reaction: '🐐'
@@ -590,7 +590,7 @@ ezra({
     sendMessage("Error occurred while retrieving data: " + error.message);
   }
 });
-ezra({
+fana({
   nomCom: "waifues",
   categorie: "mod-image",
   reaction: "🙄"
@@ -622,7 +622,7 @@ ezra({
     repondre('Error retrieving data: ' + error.message);
   }
 });
-ezra({
+fana({
   nomCom: "traps",
   categorie: "mod-image",
   reaction: "🙄"
@@ -654,7 +654,7 @@ ezra({
     repondre('Error retrieving data: ' + error.message);
   }
 });
-ezra({
+fana({
   nomCom: "gneko",
   categorie: "mod-image",
   reaction: "🙄"
@@ -686,7 +686,7 @@ ezra({
     repondre('Error retrieving data: ' + error.message);
   }
 });
-ezra({
+fana({
   nomCom: "blowjobs",
   categorie: "mod-image",
   reaction: "🙄"
@@ -718,7 +718,7 @@ ezra({
     repondre('Error retrieving data: ' + error.message);
   }
 });
-ezra({
+fana({
   'nomCom': "lulcaty",
   'reaction': '📡',
   'categorie': 'mod-image'
@@ -741,7 +741,7 @@ ezra({
 });
 
 // Sadcat Meme Command
-ezra({
+fana({
   'nomCom': "sadcaty",
   'reaction': '📡',
   'categorie': 'mod-image'
@@ -764,7 +764,7 @@ ezra({
 });
 
 // Nokia Meme Command
-ezra({
+fana({
   'nomCom': "nokiah",
   'reaction': '📡',
   'categorie': 'mod-image'
@@ -787,7 +787,7 @@ ezra({
 });
 
 // Unforgivable Meme Command
-ezra({
+fana({
   'nomCom': "unforgivab",
   'reaction': '📡',
   'categorie': 'mod-image'
@@ -810,7 +810,7 @@ ezra({
 });
 
 // Pooh Meme Command
-ezra({
+fana({
   'nomCom': "poohh",
   'reaction': '📡',
   'categorie': 'mod-image'
@@ -833,7 +833,7 @@ ezra({
 });
 
 // Oogway Meme Command
-ezra({
+fan({
   'nomCom': "ohogway",
   'reaction': '📡',
   'categorie': 'mod-image'
@@ -856,7 +856,7 @@ ezra({
 });
 
 // Biden Meme Command
-ezra({
+fana({
   'nomCom': "jbiden",
   'reaction': '📡',
   'categorie': 'mod-image'
@@ -879,7 +879,7 @@ ezra({
 });
 
 // Drip Meme Command
-ezra({
+fana({
   'nomCom': "hdrip",
   'reaction': '📡',
   'categorie': 'mod-image'
@@ -901,7 +901,7 @@ ezra({
 });
 
 // Clown Meme Command
-ezra({
+fana({
   'nomCom': "clowns",
   'reaction': '📡',
   'categorie': 'mod-image'
@@ -925,7 +925,7 @@ ezra({
 
 
 // Image generation command
-ezra({
+fana({
   'nomCom': "imag-generate",
   'reaction': '📡',
   'category': 'mod-image'
@@ -952,7 +952,7 @@ ezra({
 });
 
 // Image text extraction command
-ezra({
+fana({
   'nomCom': "toextract",
   'reaction': '📡',
   'category': 'mod-image'
@@ -979,7 +979,7 @@ ezra({
 });
 
 // Bing image generation command
-ezra({
+fana({
   'nomCom': "flux-img",
   'reaction': '📡',
   'category': 'mod-image'
@@ -1008,7 +1008,7 @@ ezra({
 
 
 // Ilama image generation command
-ezra({
+fana({
   'nomCom': "mi",
   'reaction': '📡',
   'category': 'mod-image'
@@ -1035,7 +1035,7 @@ ezra({
 });
 
 // Beautify image command
-ezra({
+fana({
   'nomCom': "dbeautify",
   'reaction': '📡',
   'category': 'mod-image'
