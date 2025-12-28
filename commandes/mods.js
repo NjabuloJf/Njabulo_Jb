@@ -1,4 +1,4 @@
-const { zokou } = require('../framework/zokou');
+const { fana } = require('../njabulo/fana');
 const axios = require("axios")
 let { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
 const {isUserBanned , addUserToBanList , removeUserFromBanList} = require("../bdd/banUser");
@@ -13,7 +13,7 @@ const sleep =  (ms) =>{
   } ;
 
 
-  zokou({ nomCom: "telesticker", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+  fana({ nomCom: "telesticker", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
     const { ms, repondre, arg, nomAuteurMessage, superUser } = commandeOptions;
   
     if (!superUser) {
@@ -94,7 +94,7 @@ const sleep =  (ms) =>{
     }
   });
 
-zokou({ nomCom: "crew", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "crew", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
   const { ms, repondre, arg, auteurMessage, superUser, auteurMsgRepondu, msgRepondu } = commandeOptions;
 
   if (!superUser) { repondre("only modds can use this command"); return };
@@ -110,7 +110,7 @@ zokou({ nomCom: "crew", categorie: "Mods" }, async (dest, zk, commandeOptions) =
 
 });
 
-zokou({ nomCom: "left", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "leave", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
 
   const { ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage } = commandeOptions;
   if (!verifGroupe) { repondre("group only"); return };
@@ -122,7 +122,7 @@ zokou({ nomCom: "left", categorie: "Mods" }, async (dest, zk, commandeOptions) =
   await zk.groupLeave(dest)
 });
 
-zokou({ nomCom: "join", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "join", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
 
   const { arg, ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage } = commandeOptions;
 
@@ -140,7 +140,7 @@ zokou({ nomCom: "join", categorie: "Mods" }, async (dest, zk, commandeOptions) =
 })
 
 
-zokou({ nomCom: "jid", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "jid", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
 
   const { arg, ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage,auteurMsgRepondu } = commandeOptions;
 
@@ -159,7 +159,7 @@ zokou({ nomCom: "jid", categorie: "Mods" }, async (dest, zk, commandeOptions) =>
 
   
 
-zokou({ nomCom: "block", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "block", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
 
   const { arg, ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage,auteurMsgRepondu } = commandeOptions;
 
@@ -183,7 +183,7 @@ zokou({ nomCom: "block", categorie: "Mods" }, async (dest, zk, commandeOptions) 
 
   });
 
-zokou({ nomCom: "unblock", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "unblock", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
 
   const { arg, ms, repondre, verifGroupe, msgRepondu, verifAdmin, superUser, auteurMessage,auteurMsgRepondu } = commandeOptions;
 
@@ -206,7 +206,7 @@ zokou({ nomCom: "unblock", categorie: "Mods" }, async (dest, zk, commandeOptions
   
     });
 
-zokou({ nomCom: "kickall", categorie: 'Group', reaction: "📣" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "autoll", categorie: 'Group', reaction: "📣" }, async (dest, zk, commandeOptions) => {
 
   const { auteurMessage ,ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser,prefixe } = commandeOptions
 
@@ -241,7 +241,7 @@ await zk.groupParticipantsUpdate(
 }
 });
 
-zokou({
+fana({
     nomCom: 'ban',
     categorie: 'Mods',
 }, async (dest, zk, commandeOptions) => {
@@ -290,7 +290,7 @@ zokou({
 
 
 
-zokou({
+fana({
     nomCom: 'bangroup',
     categorie: 'Mods',
 }, async (dest, zk, commandeOptions) => {
@@ -338,7 +338,7 @@ zokou({
 });
 
 
-zokou({
+fana({
   nomCom: 'onlyadmin',
   categorie: 'Group',
 }, async (dest, zk, commandeOptions) => {
@@ -385,7 +385,7 @@ if(!verifGroupe) {repondre('order reservation for groups' ) ; return };
 } else { repondre('You are not entitled to this order')}
 });
 
-zokou({
+fana({
   nomCom: 'sudo',
   categorie: 'Mods',
 }, async (dest, zk, commandeOptions) => {
@@ -434,7 +434,7 @@ if (!superUser) {repondre('This command is only allowed to the bot owner') ; ret
 });
 
 
-zokou({ nomCom: "save", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "save", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
 
   const { repondre , msgRepondu , superUser, auteurMessage } = commandeOptions;
   
@@ -518,7 +518,7 @@ zokou({ nomCom: "save", categorie: "Mods" }, async (dest, zk, commandeOptions) =
 ;
 
 
-zokou({
+fana({
   nomCom : 'mention',
   categorie : 'Mods',
 } , async (dest,zk,commandeOptions) => {
