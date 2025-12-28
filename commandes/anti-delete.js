@@ -1,4 +1,4 @@
-const { zokou } = require("../framework/zokou");
+const { fana } = require("../njabulo/fana");
 
 // Store Anti-Delete status per chat (group or personal)
 const antiDeleteStatus = new Map();
