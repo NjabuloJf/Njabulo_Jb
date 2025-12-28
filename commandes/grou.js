@@ -1,4 +1,4 @@
-const { zokou } = require("../framework/zokou")
+const { fana } = require("../njabulo/fana")
 const { Sticker, StickerTypes } = require('wa-sticker-formatter');
 const {ajouterOuMettreAJourJid,mettreAJourAction,verifierEtatJid} = require("../bdd/antilien")
 const {atbajouterOuMettreAJourJid,atbverifierEtatJid} = require("../bdd/antibot")
@@ -7,7 +7,7 @@ const fs = require("fs-extra");
 const conf = require("../set");
 const { default: axios } = require('axios');
 
-zokou({ nomCom: "tagall", categorie: 'Group', reaction: "🐝" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "tagall", categorie: 'Group', reaction: "🐝" }, async (dest, zk, commandeOptions) => {
   const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
   if (!verifGroupe) { repondre("✋🏿 ✋🏿this command is reserved for groups ❌"); return; }
   let mess = arg && arg.join(' ') ? arg.join(' ') : 'Aucun Message';
@@ -32,7 +32,7 @@ zokou({ nomCom: "tagall", categorie: 'Group', reaction: "🐝" }, async (dest, z
   } else { repondre('command reserved for admins')}
 });
 
-zokou({ nomCom: "link", categorie: 'Group', reaction: "🙋" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "link", categorie: 'Group', reaction: "🙋" }, async (dest, zk, commandeOptions) => {
   const { repondre, nomGroupe, nomAuteurMessage, verifGroupe } = commandeOptions;
   if (!verifGroupe) { repondre("wait bro , you want the link to my dm?"); return; };
   var link = await zk.groupInviteCode(dest)
@@ -45,7 +45,7 @@ Group link :${lien}
   repondre(mess)
 });
 
-zokou({ nomCom: "promote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "promote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
   let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, auteurMessage, superUser, idBot } = commandeOptions;
   let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
   if (!verifGroupe) { return repondre("For groups only"); }
@@ -80,7 +80,7 @@ he/she has been named group administrator.`
   } catch (e) { repondre("oups " + e) }
 });
 
-zokou({ nomCom: "demote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "demote", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
   let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, auteurMessage, superUser, idBot } = commandeOptions;
   let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
   if (!verifGroupe) { return repondre("For groups only"); }
@@ -114,7 +114,7 @@ zokou({ nomCom: "demote", categorie: 'Group', reaction: "👨🏿‍💼" }, asy
   } catch (e) { repondre("oups " + e) }
 });
 
-zokou({ nomCom: "remove", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "remove", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
   let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, nomAuteurMessage, auteurMessage, superUser, idBot } = commandeOptions;
   let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
   if (!verifGroupe) { return repondre("for groups only"); }
@@ -155,7 +155,7 @@ zokou({ nomCom: "remove", categorie: 'Group', reaction: "👨🏿‍💼" }, asy
   } catch (e) { repondre("oups " + e) }
 });
 
-zokou({ nomCom: "del", categorie: 'Group',reaction:"🧹" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "delete", categorie: 'Group',reaction:"🧹" }, async (dest, zk, commandeOptions) => {
   const { ms, repondre, verifGroupe,auteurMsgRepondu,idBot, msgRepondu, verifAdmin, superUser} = commandeOptions;
   if (!msgRepondu) {
     repondre("Please mention the message to delete.");
@@ -186,7 +186,7 @@ zokou({ nomCom: "del", categorie: 'Group',reaction:"🧹" }, async (dest, zk, co
   }
 });
 
-zokou({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
   const { ms, repondre, verifGroupe } = commandeOptions;
   if (!verifGroupe) { repondre("order reserved for the group only"); return };
  try { ppgroup = await zk.profilePictureUrl(dest ,'image') ; } catch { ppgroup = conf.IMAGE_MENU}
@@ -206,7 +206,7 @@ ${info.desc}`
     zk.sendMessage(dest, mess, { quoted: ms })
   });
 
-zokou({ nomCom: "antilink", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "antilink", categorie: 'Group', reaction: "🔗" }, async (dest, zk, commandeOptions) => {
   var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
   if (!verifGroupe) {
     return repondre("*for groups only*");
@@ -243,7 +243,7 @@ zokou({ nomCom: "antilink", categorie: 'Group', reaction: "🔗" }, async (dest,
   }
 });
 
-zokou({ nomCom: "antibot", categorie: 'Group', reaction: "😬" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "antibot", categorie: 'Group', reaction: "😬" }, async (dest, zk, commandeOptions) => {
   var { repondre, arg, verifGroupe, superUser, verifAdmin } = commandeOptions;
   if (!verifGroupe) {
     return repondre("*for groups only*");
@@ -282,7 +282,7 @@ zokou({ nomCom: "antibot", categorie: 'Group', reaction: "😬" }, async (dest, 
   }
 });
 
-zokou({ nomCom: "group", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "group", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
   const { repondre, verifGroupe, verifAdmin, superUser, arg } = commandeOptions;
   if (!verifGroupe) { repondre("order reserved for group only"); return };
   if (superUser || verifAdmin) {
@@ -305,7 +305,7 @@ zokou({ nomCom: "group", categorie: 'Group' }, async (dest, zk, commandeOptions)
   }
 });
 
-zokou({ nomCom: "left", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "left", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
   const { repondre, verifGroupe, superUser } = commandeOptions;
   if (!verifGroupe) { repondre("order reserved for group only"); return };
   if (!superUser) {
@@ -316,7 +316,7 @@ zokou({ nomCom: "left", categorie: "Mods" }, async (dest, zk, commandeOptions) =
   zk.groupLeave(dest)
 });
 
-zokou({ nomCom: "gname", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "gname", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
   const { arg, repondre, verifAdmin } = commandeOptions;
   if (!verifAdmin) {
     repondre("order reserved for administrators of the group");
@@ -331,7 +331,7 @@ zokou({ nomCom: "gname", categorie: 'Group' }, async (dest, zk, commandeOptions)
     repondre(`group name refresh: *${nom}*`)
 });
 
-zokou({ nomCom: "gdesc", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "gdesc", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
   const { arg, repondre, verifAdmin } = commandeOptions;
   if (!verifAdmin) {
     repondre("order reserved for administrators of the group");
@@ -346,7 +346,7 @@ zokou({ nomCom: "gdesc", categorie: 'Group' }, async (dest, zk, commandeOptions)
     repondre(`group description update: *${nom}*`)
 });
 
-zokou({ nomCom: "gpp", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "gpp", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
   const { repondre, msgRepondu, verifAdmin } = commandeOptions;
   if (!verifAdmin) {
     repondre("order reserved for administrators of the group");
@@ -364,7 +364,7 @@ zokou({ nomCom: "gpp", categorie: 'Group' }, async (dest, zk, commandeOptions) =
   }
 });
 
-zokou({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,commandeOptions)=>{
+fana({nomCom:"hidetag",categorie:'Group',reaction:"🎤"},async(dest,zk,commandeOptions)=>{
   const {repondre,msgRepondu,verifGroupe,arg ,verifAdmin , superUser}=commandeOptions;
   if(!verifGroupe)  { repondre('This command is only allowed in groups.')} ;
   if (verifAdmin || superUser) { 
