@@ -1,10 +1,10 @@
 
-const { zokou } = require('../framework/zokou');
+const { fana } = require('../njabulo/fana');
 const {ajouterUtilisateurAvecWarnCount , getWarnCountByJID , resetWarnCountByJID} = require('../bdd/warn')
 const s = require("../set")
 
 
-zokou(
+fana(
     {
         nomCom : 'warn',
         categorie : 'Group'
