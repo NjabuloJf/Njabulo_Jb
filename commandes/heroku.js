@@ -1,7 +1,7 @@
 
 
 
-const { zokou } = require("../framework/zokou");
+const { fana } = require("../njabulo/fana");
 const s = require("../set");
 const fs = require('fs');
 const Heroku = require('heroku-client');
@@ -15,7 +15,7 @@ function getDescriptionFromEnv(varName) {
 }
 
 // Anti-call function setup
-zokou({
+fana({
   nomCom: 'anticall',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -57,7 +57,7 @@ zokou({
 });
 
 
-zokou({
+fana({
   nomCom: 'areact',
   categorie: "General"
 }, async (chatId, zk, context) => {
@@ -98,7 +98,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'readstatus',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -138,7 +138,7 @@ zokou({
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
   }
 });
-zokou({
+fana({
   nomCom: 'antidelete',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -179,7 +179,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'downloadstatus',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -220,7 +220,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'startmessage',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -261,7 +261,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'readmessage',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -302,7 +302,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'pm-permit',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -342,7 +342,7 @@ zokou({
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
   }
 });
-zokou({
+fana({
   nomCom: 'chatbot',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -382,7 +382,7 @@ zokou({
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
   }
 });
-zokou({
+fana({
   nomCom: 'greet',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -423,7 +423,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'antivv',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -464,7 +464,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'publicmode',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -505,7 +505,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'autorecord',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -546,7 +546,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'autotyping',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -587,7 +587,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'alwaysonline',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -628,7 +628,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'privatemode',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -668,7 +668,7 @@ zokou({
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
   }
 });
-zokou({
+fana({
   nomCom: 'autolikestatus',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -708,7 +708,7 @@ zokou({
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
   }
 });
-zokou({
+fana({
   nomCom: 'chatbot',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, zk, context) => {
@@ -749,7 +749,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'settings',
   categorie: "HEROKU-CLIENT"
 }, async (chatId, messagingService, context) => {
@@ -827,7 +827,7 @@ zokou({
 
 // Function to change Heroku environment variables
 function changevars(commandName, varName) {
-  keith({
+  fana({
     nomCom: commandName,
     categorie: 'HEROKU-CLIENT'
   }, async (chatId, messagingService, context) => {
