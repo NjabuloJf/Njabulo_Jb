@@ -1,7 +1,7 @@
 const { fana } = require('../njabulo/fana');
 const { ajouterUtilisateurAvecWarnCount, getWarnCountByJID, resetWarnCountByJID } = require('../bdd/warn');
 const s = require("../set");
-const conf = require('../set');
+const config = require("../set");
 
 
 
