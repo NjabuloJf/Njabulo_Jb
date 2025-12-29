@@ -6,6 +6,19 @@ const s = require("../set");
 const fs = require('fs');
 const Heroku = require('heroku-client');
 
+
+const buttons = [
+  {
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Visit Website",
+      id: "backup channel",
+      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+    }),
+  },
+  ];
+
+
 // Function to get a description of an environment variable
 function getDescriptionFromEnv(varName) {
   const filePath = "./app.json";
@@ -49,7 +62,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      text: responseMessage,
+      buttons,
+        headerType: 1
+    }
+    }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
