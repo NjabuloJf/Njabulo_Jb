@@ -1,5 +1,5 @@
 
-const { timoth } = require("../njabulo/fana");
+const { fana } = require("../njabulo/fana");
 const { getContentType } = require("@whiskeysockets/baileys");
 const { Sticker, StickerTypes } = require("wa-sticker-formatter");
 
