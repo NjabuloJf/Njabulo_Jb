@@ -24,7 +24,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky  Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -59,7 +59,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Njabulo Jb*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -71,8 +71,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+      buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -137,8 +141,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -169,8 +177,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -200,8 +212,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      caption: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -232,8 +248,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -264,8 +284,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -295,8 +319,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -327,8 +355,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -358,8 +390,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+     header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -389,8 +425,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -421,8 +461,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -453,8 +497,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
