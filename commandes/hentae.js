@@ -3,17 +3,18 @@ const gis = require('g-i-s');
 const axios = require('axios');
 const conf = require(__dirname + '/../set');
 
-
 const buttons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "🌐Wachannel",
+      display_text: "🌐WA channel",
       id: "backup channel",
       url: config.GURL
     }),
   },
   ];
+
+
 
 fana({
   nomCom: "screenswidth",
