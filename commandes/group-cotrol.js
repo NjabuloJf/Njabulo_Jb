@@ -10,6 +10,85 @@ const conf = require("../set");
 const { default: axios } = require("axios");
 const { getBinaryNodeChild, getBinaryNodeChildren } = require("@whiskeysockets/baileys")['default'];
 
+
+
+
+fana({ 
+  'nomCom': 'add', 
+  'categorie': "Group", 
+  'reaction': '🪄' 
+}, async (origineMessage, zk, commandeOptions) => {
+  let { 
+    repondre, 
+    verifAdmin, 
+    msgRepondu, 
+    infosGroupe, 
+    auteurMsgRepondu, 
+    verifGroupe, 
+    auteurMessage, 
+    superUser, 
+    idBot, 
+    arg, 
+    ms 
+  } = commandeOptions;
+
+  if (!verifGroupe) return await zk.sendMessage(origineMessage, { text: "*This command works in groups only!*" }, { quoted: ms });
+  if (!superUser) return await zk.sendMessage(origineMessage, { text: "You are too weak to do that" }, { quoted: ms });
+  if (!verifAdmin) return await zk.sendMessage(origineMessage, { text: "You are not an admin here!" }, { quoted: ms });
+
+  let groupMetadata;
+  try {
+    groupMetadata = await zk.groupMetadata(origineMessage);
+  } catch (error) {
+    return await zk.sendMessage(origineMessage, { text: "Failed to fetch group metadata." }, { quoted: ms });
+  }
+
+  let participants = groupMetadata.participants;
+  if (!arg[0]) return await zk.sendMessage(origineMessage, { text: "Provide number to be added. Example:\nadd 2557XXXXX801" }, { quoted: ms });
+
+  let numbers = arg.join(" ");
+  const participantIds = participants.map(p => p.id);
+  let numbersToAdd = [];
+  let alreadyInGroup = [];
+
+  try {
+    const onWhatsApp = await Promise.all(
+      numbers.split(',')
+        .map(n => n.replace(/[^0-9]/g, ''))
+        .filter(n => n.length > 4 && n.length < 14)
+        .map(async n => [n, await zk.onWhatsApp(n + "@s.whatsapp.net")])
+    );
+
+    onWhatsApp.forEach(([num, result]) => {
+      const jid = num + "@s.whatsapp.net";
+      if (participantIds.includes(jid)) {
+        alreadyInGroup.push(jid);
+      } else if (result[0]?.exists) {
+        numbersToAdd.push(num + "@s.whatsapp.net");
+      }
+    });
+  } catch (error) {
+    return await zk.sendMessage(origineMessage, { text: "Error validating phone numbers." }, { quoted: ms });
+  }
+
+  for (const jid of alreadyInGroup) {
+    await zk.sendMessage(origineMessage, { text: "That user is already in this group!" }, { quoted: ms });
+  }
+
+  if (numbersToAdd.length > 0) {
+    try {
+      await zk.groupAdd(origineMessage, numbersToAdd);
+      for (const jid of numbersToAdd) {
+        await zk.sendMessage(origineMessage, { text: `Successfully added @${jid.split('@')[0]}` }, { quoted: ms });
+      }
+    } catch (error) {
+      return await zk.sendMessage(origineMessage, { text: "Failed to add user to the group!" }, { quoted: ms });
+    }
+  }
+});
+
+
+
 fana({ 
   'nomCom': 'approve', 
   'aliases': ["approve-all", "accept"], 
