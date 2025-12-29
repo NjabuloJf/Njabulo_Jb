@@ -1,6 +1,6 @@
 
-const { timoth } = require('../njabulo/fana');
-const { attribuerUnevaleur } = require('../njabulo/welcome');
+const { fana } = require('../njabulo/fana');
+const { attribuerUnevaleur } = require('../bdd/welcome');
 
 
 async function events(nomCom) {
