@@ -125,21 +125,17 @@ setTimeout(() => {
     // Select a random image file
     const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
 
-        const buttons = [{
+        const buttons = [
+  {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "View on channel",
-      id: `backup channel`,
-      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u" 
-    })
-  },{
-    name: "cta_copy",
-    buttonParamsJson: JSON.stringify({
-      display_text: "Copy links",
-      id: `copy`,
-      copy_code: `greeting`
-    })
-    }];
+      display_text: "🌐WA channel",
+      id: "backup channel",
+      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u"
+    }),
+  },
+  ];
+        
         
         
         const audioMap = {
@@ -597,22 +593,10 @@ function mybotpic() {
                                     interactiveMessage: {                                    
                                      header: txt,
                                     mentions: [auteurMessage],
-                                      buttons: buttons,
+                                      buttons,
                                         headerType: 1
                                           },
-                                            }, { quoted: {
-                                              key: {
-                                                  fromMe: false,
-                                                  participant: `0@s.whatsapp.net`,
-                                                  remoteJid: "status@broadcast"
-                                              },
-                                              message: {
-                                                  contactMessage: {
-                                                      displayName: "njᥲbᥙᥣo",
-                                                      vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
-                                                  }
-                                              }
-                                          } });
+                                          }, { quoted: ms });
                                     try {
                                         await zk.groupParticipantsUpdate(origineMessage, [auteurMessage], "remove");
                                     }
@@ -631,20 +615,8 @@ function mybotpic() {
                                            mentions: [auteurMessage],
                                            buttons: buttons,
                                            headerType: 1
-                                          },
-                                            }, { quoted: {
-                                              key: {
-                                                  fromMe: false,
-                                                  participant: `0@s.whatsapp.net`,
-                                                  remoteJid: "status@broadcast"
-                                              },
-                                              message: {
-                                                  contactMessage: {
-                                                      displayName: "njᥲbᥙᥣo",
-                                                      vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
-                                                  }
-                                              }
-                                          } });
+                                          }
+                                          }, { quoted: ms });
                                        await zk.sendMessage(origineMessage, { delete: key });
                                        await fs.unlink("st1.webp");
 
@@ -771,22 +743,10 @@ function mybotpic() {
           interactiveMessage: {
           header: msg,
           mentions: [auteurMessage],
-          buttons: buttons,
+          buttons,
           headerType: 1
-        },
-          }, { quoted: {
-            key: {
-                fromMe: false,
-                participant: `0@s.whatsapp.net`,
-                remoteJid: "status@broadcast"
-            },
-            message: {
-                contactMessage: {
-                    displayName: "njᥲbᥙᥣo",
-                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
-                }
-            }
-        } });
+          }
+            }, { quoted: ms });
       await zk.sendMessage(origineMessage, { delete: key });
 
     }
@@ -893,22 +853,10 @@ zk.ev.on('group-participants.update', async (group) => {
         image: { url: randomNjabulourl },
         header: msg,
           mentions: [auteurMessage],
-         buttons: buttons,
+         buttons,
         headerType: 1
-        },
-          }, { quoted: {
-            key: {
-                fromMe: false,
-                participant: `0@s.whatsapp.net`,
-                remoteJid: "status@broadcast"
-            },
-            message: {
-                contactMessage: {
-                    displayName: "njᥲbᥙᥣo",
-                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
-                }
-            }
-        } });
+        }
+    }, { quoted: ms });
         } else if (group.action == 'remove' && (await recupevents(group.id, "goodbye") == 'on')) {
             let msg = `one or somes member(s) left group;\n`;
 
@@ -921,22 +869,10 @@ zk.ev.on('group-participants.update', async (group) => {
          interactiveMessage: {
         header: msg, 
         mentions: [auteurMessage],
-        buttons: buttons,
+        buttons,
         headerType: 1
-        },
-          }, { quoted: {
-            key: {
-                fromMe: false,
-                participant: `0@s.whatsapp.net`,
-                remoteJid: "status@broadcast"
-            },
-            message: {
-                contactMessage: {
-                    displayName: "njᥲbᥙᥣo",
-                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
-                }
-            }
-        } });
+         }
+      }, { quoted: ms });
 
         } else if (group.action == 'promote' && (await recupevents(group.id, "antipromote") == 'on') ) {
             //  console.log(zk.user.id)
