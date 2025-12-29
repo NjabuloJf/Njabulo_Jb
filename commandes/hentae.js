@@ -533,8 +533,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -565,8 +569,12 @@ fana({
 
     // Send the screenshot image with the caption
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: image },
-      caption: cap
+      header: cap,
+        buttons,
+        headerType: 1
+      }
     }, { quoted: ms });
 
   } catch (error) {
@@ -634,18 +642,12 @@ fana({
       const randomImage = Math.floor(Math.random() * images.length);
       const image = images[randomImage];
       await zk.sendMessage(dest, {
+        interactiveMessage: {
         image: { url: image },
-        caption: `*Downloaded by ${conf.BOT}*`,
-        contextInfo: {
-          externalAdReply: {
-            title: "Modern-Logo Search Result",
-            body: `Here's an inspiring logo related to: messi`,
-            thumbnailUrl: image,
-            sourceUrl: conf.GURL,
-            mediaType: 1,
-            showAdAttribution: true
-          }
-        }
+        header: `*Downloaded by ${conf.BOT}*`,
+         buttons,
+        headerType: 1
+      }
       }, { quoted: ms });
     }
   } catch (error) {
@@ -771,7 +773,7 @@ fana({
     const imageUrl = `https://api.popcat.xyz/lulcat?text=${text}`;
     message.sendMessage(user, {
       'image': { 'url': imageUrl },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, { 'quoted': ms });
   } catch (error) {
     console.error("Error:", error.message || "An error occurred");
@@ -794,7 +796,7 @@ fana({
     const imageUrl = `https://api.popcat.xyz/sadcat?text=${text}`;
     message.sendMessage(user, {
       'image': { 'url': imageUrl },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, { 'quoted': ms });
   } catch (error) {
     console.error("Error:", error.message || "An error occurred");
@@ -817,7 +819,7 @@ fana({
     const imageUrl = `https://api.popcat.xyz/nokia?image=${text}`;
     message.sendMessage(user, {
       'image': { 'url': imageUrl },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, { 'quoted': ms });
   } catch (error) {
     console.error("Error:", error.message || "An error occurred");
@@ -840,7 +842,7 @@ fana({
     const imageUrl = `https://api.popcat.xyz/unforgivable?text=${text}`;
     message.sendMessage(user, {
       'image': { 'url': imageUrl },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, { 'quoted': ms });
   } catch (error) {
     console.error("Error:", error.message || "An error occurred");
@@ -863,7 +865,7 @@ fana({
     const imageUrl = `https://api.popcat.xyz/pooh?text1=&text2=${text}`;
     message.sendMessage(user, {
       'image': { 'url': imageUrl },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, { 'quoted': ms });
   } catch (error) {
     console.error("Error:", error.message || "An error occurred");
@@ -886,7 +888,7 @@ fana({
     const imageUrl = `https://api.popcat.xyz/oogway?text=${text}`;
     message.sendMessage(user, {
       'image': { 'url': imageUrl },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, { 'quoted': ms });
   } catch (error) {
     console.error("Error:", error.message || "An error occurred");
@@ -909,7 +911,7 @@ fana({
     const imageUrl = `https://api.popcat.xyz/biden?text=${text}`;
     message.sendMessage(user, {
       'image': { 'url': imageUrl },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, { 'quoted': ms });
   } catch (error) {
     console.error("Error:", error.message || "An error occurred");
@@ -931,7 +933,7 @@ fana({
     const imageUrl = `https://api.popcat.xyz/drip?image=${arg.join(" ")}`;
     message.sendMessage(user, {
       'image': { 'url': imageUrl },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, { 'quoted': ms });
   } catch (error) {
     console.error("Error:", error.message || "An error occurred");
@@ -954,7 +956,7 @@ fana({
     const imageUrl = `https://api.popcat.xyz/clown?text=${text}`;
     message.sendMessage(user, {
       'image': { 'url': imageUrl },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, { 'quoted': ms });
   } catch (error) {
     console.error("Error:", error.message || "An error occurred");
@@ -980,7 +982,7 @@ fana({
       'image': {
         'url': generatedImageUrl
       },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, {
       'quoted': messageInstance
     });
@@ -1007,7 +1009,7 @@ fana({
       'image': {
         'url': extractedTextUrl
       },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, {
       'quoted': messageInstance
     });
@@ -1034,7 +1036,7 @@ fana({
       'image': {
         'url': generatedImageUrl
       },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, {
       'quoted': messageInstance
     });
@@ -1063,7 +1065,7 @@ fana({
       'image': {
         'url': generatedImageUrl
       },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, {
       'quoted': messageInstance
     });
@@ -1090,7 +1092,7 @@ fana({
       'image': {
         'url': beautifiedImageUrl
       },
-      'caption': "*powered by LUCKY-MD*"
+      'caption': "*powered by Njabulo Jb*"
     }, {
       'quoted': messageInstance
     });
