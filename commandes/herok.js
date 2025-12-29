@@ -64,7 +64,7 @@ fana({
   try {
     await zk.sendMessage(chatId, {
       interactiveMessage: {
-      text: responseMessage,
+      header: responseMessage,
       buttons,
         headerType: 1
     }
