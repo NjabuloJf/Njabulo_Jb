@@ -82,7 +82,7 @@ fana({
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { 
     interactiveMessage: {
-   header: 'Error processing your request.',
+      header: 'Error processing your request.',
        buttons,
         headerType: 1
      }
