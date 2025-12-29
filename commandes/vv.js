@@ -1,4 +1,3 @@
-
 const { fana } = require("../njabulo/fana");
 const { getContentType } = require("@whiskeysockets/baileys");
 const { Sticker, StickerTypes } = require("wa-sticker-formatter");
@@ -19,19 +18,55 @@ fana({
         const media = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage);
         msg = {
           image: { url: media },
-          caption: msgRepondu.imageMessage.caption
+          caption: msgRepondu.imageMessage.caption,
+          buttons: [
+            {
+              buttonId: 'button1',
+              buttonText: { displayText: 'Button 1' },
+              type: 1
+            },
+            {
+              buttonId: 'button2',
+              buttonText: { displayText: 'Button 2' },
+              type: 1
+            }
+          ]
         };
       } else if (msgRepondu.videoMessage) {
         const media = await zk.downloadAndSaveMediaMessage(msgRepondu.videoMessage);
         msg = {
           video: { url: media },
-          caption: msgRepondu.videoMessage.caption
+          caption: msgRepondu.videoMessage.caption,
+          buttons: [
+            {
+              buttonId: 'button1',
+              buttonText: { displayText: 'Button 1' },
+              type: 1
+            },
+            {
+              buttonId: 'button2',
+              buttonText: { displayText: 'Button 2' },
+              type: 1
+            }
+          ]
         };
       } else if (msgRepondu.audioMessage) {
         const media = await zk.downloadAndSaveMediaMessage(msgRepondu.audioMessage);
         msg = {
           audio: { url: media },
-          mimetype: 'audio/mp4'
+          mimetype: 'audio/mp4',
+          buttons: [
+            {
+              buttonId: 'button1',
+              buttonText: { displayText: 'Button 1' },
+              type: 1
+            },
+            {
+              buttonId: 'button2',
+              buttonText: { displayText: 'Button 2' },
+              type: 1
+            }
+          ]
         };
       } else if (msgRepondu.stickerMessage) {
         const media = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage);
@@ -44,14 +79,40 @@ fana({
           background: "transparent",
         });
         const stickerBuffer2 = await stickerMess.toBuffer();
-        msg = { sticker: stickerBuffer2 };
+        msg = { 
+          sticker: stickerBuffer2,
+          buttons: [
+            {
+              buttonId: 'button1',
+              buttonText: { displayText: 'Button 1' },
+              type: 1
+            },
+            {
+              buttonId: 'button2',
+              buttonText: { displayText: 'Button 2' },
+              type: 1
+            }
+          ]
+        };
       } else {
-        msg = { text: msgRepondu.conversation };
+        msg = { 
+          text: msgRepondu.conversation,
+          buttons: [
+            {
+              buttonId: 'button1',
+              buttonText: { displayText: 'Button 1' },
+              type: 1
+            },
+            {
+              buttonId: 'button2',
+              buttonText: { displayText: 'Button 2' },
+              type: 1
+            }
+          ]
+        };
       }
       // Send the message
-      await zk.sendMessage(dest,{ 
-        msg, 
-      },{ quoted: ms });
+      await zk.sendMessage(dest, msg, { quoted: ms });
     } catch (error) {
       console.error("Error processing the message:", error);
       await zk.sendMessage(dest, { text: 'An error occurred while processing your request.' }, { quoted: ms });
