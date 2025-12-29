@@ -4,6 +4,7 @@
 const { fana } = require("../njabulo/fana");
 const s = require("../set");
 const fs = require('fs');
+const config = require("../set");
 const Heroku = require('heroku-client');
 
 
@@ -11,9 +12,9 @@ const buttons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "Visit Website",
+      display_text: "🌐WA channel",
       id: "backup channel",
-      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+      url: config.GURL
     }),
   },
   ];
@@ -110,7 +111,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, { 
+      interactiveMessage: {
+      header: responseMessage,
+      buttons,
+        headerType: 1
+    }
+    }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -151,7 +158,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -191,8 +204,14 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
-  } catch (error) {
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
+     } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
   }
@@ -232,7 +251,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -273,7 +298,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -314,7 +345,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -355,7 +392,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -395,7 +438,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -435,7 +484,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -476,7 +531,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -517,7 +578,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -558,7 +625,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -599,7 +672,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -640,7 +719,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -681,7 +766,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -721,7 +812,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -761,7 +858,13 @@ fana({
 
   // Send the response message to the user
   try {
-    await zk.sendMessage(chatId, { text: responseMessage }, { quoted: ms });
+    await zk.sendMessage(chatId, {
+      interactiveMessage: {
+      header: responseMessage,
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
   } catch (error) {
     console.error("Error processing your request:", error);
     await zk.sendMessage(chatId, { text: 'Error processing your request.' }, { quoted: ms });
@@ -799,7 +902,13 @@ fana({
   });
   settingsMenu += "\n*Please choose a variable by its number*";
 
-  const initialMessage = await messagingService.sendMessage(chatId, { text: settingsMenu }, { quoted: ms });
+  const initialMessage = await messagingService.sendMessage(chatId, { 
+    interactiveMessage: {
+    header: settingsMenu,
+    buttons,
+        headerType: 1
+  }
+  }, { quoted: ms });
   console.log(initialMessage);
 
   // Await user choice for a setting
@@ -822,7 +931,13 @@ fana({
   });
   settingsDetail += "\n└────── ⋆⋅☆⋅⋆ ──────┘\n\n*Now reply to this message with the number that matches your choice.*";
 
-  const choiceMessage = await messagingService.sendMessage(chatId, { text: settingsDetail }, { quoted: userChoice });
+  const choiceMessage = await messagingService.sendMessage(chatId, {
+    interactiveMessage: {
+    header: settingsDetail,
+    buttons,
+        headerType: 1
+  }
+  }, { quoted: userChoice });
   
   // Await user choice for the option
   const userOptionChoice = await messagingService.awaitForMessage({
