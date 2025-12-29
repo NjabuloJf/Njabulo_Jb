@@ -129,7 +129,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -165,7 +165,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -200,7 +200,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -236,7 +236,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot take by Lucky Md*`;
+    const cap = `*Screenshot take*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -272,7 +272,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -307,7 +307,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -343,7 +343,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -378,7 +378,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -413,7 +413,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -449,7 +449,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -485,7 +485,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -521,7 +521,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
@@ -557,7 +557,7 @@ fana({
 
   try {
     // Caption for the screenshot
-    const cap = `*Screenshot taken by Lucky Md*`;
+    const cap = `*Screenshot taken*`;
 
     // Check if a URL is provided
     if (!arg[0]) {
