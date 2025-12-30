@@ -33,39 +33,39 @@ async function events(nomCom) {
       if (!arg[0] || arg.join(' ') === ' ') {
 interactiveMessage: {
         await zk.sendMessage(dest, { 
-header: `${nomCom} on to active and ${nomCom} off to put off`,
-buttons,
-          headerType: 1
-          }
+        header: `${nomCom} on to active and ${nomCom} off to put off`,
+        buttons,
+         headerType: 1
+        }
 }, { quoted: ms });
       } else {
         if (arg[0] === 'on' || arg[0] === 'off') {
           await attribuerUnevaleur(dest, nomCom, arg[0]);
           await zk.sendMessage(dest, {
-interactiveMessage: {
- header: `${nomCom} is actualised on ${arg[0]}`,
-buttons,
-          headerType: 1
-          }
- }, { quoted: ms });
+       interactiveMessage: {
+       header: `${nomCom} is actualised on ${arg[0]}`,
+        buttons,
+        headerType: 1
+        }
+      }, { quoted: ms });
         } else {
           await zk.sendMessage(dest, { 
-interactiveMessage: {
-header: 'on for active and off for desactive',
-buttons,
+          interactiveMessage: {
+          header: 'on for active and off for desactive',
+          buttons,
           headerType: 1
           }
- }, { quoted: ms });
+        }, { quoted: ms });
         }
       }
     } else {
       await zk.sendMessage(dest, { 
-interactiveMessage: {
-header: 'You can\'t use this commands',
-buttons,
+      interactiveMessage: {
+      header: 'You can\'t use this commands',
+       buttons,
           headerType: 1
           }
- }, { quoted: ms });
+       }, { quoted: ms });
     }
   });
 }
