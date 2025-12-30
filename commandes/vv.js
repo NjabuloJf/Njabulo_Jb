@@ -3,6 +3,17 @@ const { getContentType } = require("@whiskeysockets/baileys");
 const { Sticker, StickerTypes } = require("wa-sticker-formatter");
 const config = require("../set");
 
+const buttons = [
+  {
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "🌐WA channel",
+      id: "backup channel",
+      url: config.GURL
+    }),
+  },
+  ];
+
 fana({
   nomCom: "vv",
   aliases: ["send", "keep"],
@@ -12,7 +23,13 @@ fana({
     const { repondre, msgRepondu, superUser, ms } = commandeOptions;
 
     if (!msgRepondu) {
-      await zk.sendMessage(dest, { text: 'Mention the message that you want to save' }, { quoted: ms });
+      await zk.sendMessage(dest, {
+        interactiveMessage: {
+        header: '*Mention the message that you want to save*',
+        buttons,
+        headerType: 1
+      }
+      }, { quoted: ms });
       return;
     }
 
@@ -77,7 +94,13 @@ fana({
     await zk.sendMessage(dest, message, { quoted: ms });
   } catch (error) {
     console.error("Error sending message:", error);
-    await zk.sendMessage(dest, { text: 'Error sending message' }, { quoted: ms });
+    await zk.sendMessage(dest, { 
+      interactiveMessage: {
+      header: 'Error sending message',
+      buttons,
+        headerType: 1
+    }
+    }, { quoted: ms });
   }
 });
 
