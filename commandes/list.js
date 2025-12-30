@@ -772,9 +772,20 @@ GEᑎEᖇᗩᒪ ᗰEᑎᑌ`,
             },
           },
         },
-      },
-      { quoted: ms }
-    );
+        }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "ɳʝαႦυʅσ ʝႦ",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+
     
 await zk.relayMessage(dest, message.message, { messageId: message.key.id });
 
