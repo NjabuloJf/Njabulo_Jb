@@ -47,9 +47,9 @@ fana({
       {
         header: {
           title: `╭───────────⊷
-┊▢Name: Njabulo Jb
-┊▢date: ${date}
-┊▢time: ${temps}
+┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
+┊▢ *ᴅᴀᴛᴇ:* ${date}
+┊▢ *ᴛɪᴍᴇ:* ${temps}
 ┌┤`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
