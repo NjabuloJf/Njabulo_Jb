@@ -751,7 +751,7 @@ fana({
       },
     ];
 
-    const audioUrl = "https://files.catbox.moe/4ufunx.mp3";
+    const audioUrl = "https://files.catbox.moe/h0iecb.mp3";
             
     
     const message = generateWAMessageFromContent(
@@ -765,6 +765,7 @@ fana({
             },
             interactiveMessage: {
               header: { text: `🔍 System Info` },
+              image: { url: randomNjabulourl },
               body: { text: `*ɴᴀᴍᴇ ʙᴏᴛ ɴᴊᴀʙᴜʟᴏ ᴊʙ*\n*ʟɪʙʀᴀʀʏ ɴᴏᴅᴇ.ᴊs*` },
               carouselMessage: { cards },
             },
@@ -789,7 +790,7 @@ await zk.relayMessage(dest, message.message, { messageId: message.key.id });
             },
             message: {
                 contactMessage: {
-                    displayName: "🟢online njᥲbᥙᥣo🍥",
+                    displayName: "ɳʝαႦυʅσ ʝႦ",
                     vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
                 }
             }
