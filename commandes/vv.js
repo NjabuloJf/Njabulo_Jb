@@ -1,9 +1,10 @@
 
-const { timoth } = require("../timnasa/timoth");
+const { fana } = require("../njabulo/fana");
 const { getContentType } = require("@whiskeysockets/baileys");
 const { Sticker, StickerTypes } = require("wa-sticker-formatter");
+const config = require("../set");
 
-timoth({
+fana({
   nomCom: "vv",
   aliases: ["send", "keep"],
   categorie: "General"
@@ -35,9 +36,12 @@ timoth({
     } else if (type === 'imageMessage') {
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage);
       message = {
+        interactiveMessage: {
         image: { url: media },
-        caption: msgRepondu.imageMessage.caption,
-        buttons
+        header: msgRepondu.imageMessage.caption,
+        buttons,
+          headerType: 1
+        };
       };
     } else if (type === 'videoMessage') {
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.videoMessage);
