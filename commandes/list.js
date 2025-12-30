@@ -194,7 +194,7 @@ fana({
 ⑨ .ʜɪᴛʟᴇʀ
 ⑩ .ɪɴᴠᴇʀᴛ
 ⑪ .ᴊᴀɪʟ
-⑫ .ᴀғғᴇᴄᴛ
+⑫ .ᴀғғᴇᴄᴛi
 ⑬ .ʙᴇᴀᴜᴛɪғᴜʟ
 ⑭ .ʙʟᴜʀ
 ⑮ .ᴄɪʀᴄʟᴇ
@@ -770,15 +770,14 @@ fana({
       },
       { quoted: ms }
     );
-    await zk.relayMessage(dest, message.message, { messageId: message.key.id });
-
+    
 const audioUrl = "https://files.catbox.moe/h0iecb.mp3";
-messages.message.audioMessage = {
+message.message.audioMessage = {
   url: audioUrl,
   mimetype: 'audio/mpeg',
   ptt: true
 };
-await zk.relayMessage(dest, messages.messages, { messageId: message.key.id });
+await zk.relayMessage(dest, message.message { messageId: message.key.id });
 
          
   } catch (e) {
