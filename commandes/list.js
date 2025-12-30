@@ -4,7 +4,7 @@ const moment = require("moment-timezone");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({
-  nomCom: "list",
+  nomCom: "menu",
   alias: ["help", "cmds"],
   categorie: "General",
   reaction: "📚",
@@ -93,14 +93,14 @@ fana({
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on Channel",
+                display_text: "🌐 Wa Channel",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Link",
+                display_text: "📋 Copy Links",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
@@ -157,14 +157,14 @@ fana({
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on Channel",
+                display_text: "🌐 Wa Channel",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Link",
+                display_text: "📋 Copy Links",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
@@ -221,14 +221,14 @@ EᗪIT ᗰEᑎᑌ`,
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on Channel",
+                display_text: "🌐 Wa Channel",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Link",
+                display_text: "📋 Copy Links",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
@@ -285,14 +285,14 @@ EᗪIT ᗰEᑎᑌ`,
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on Channel",
+                display_text: "🌐 Wa Channel",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Link",
+                display_text: "📋 Copy Links",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
@@ -349,14 +349,14 @@ GᖇOᑌᑭ ᗰEᑎᑌ`,
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on Channel",
+                display_text: "🌐 Wa Channel",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Link",
+                display_text: "📋 Copy Links",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
@@ -413,14 +413,14 @@ GᖇOᑌᑭ ᗰEᑎᑌ`,
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on Channel",
+                display_text: "🌐 Wa Channel",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Link",
+                display_text: "📋 Copy Links",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
@@ -477,14 +477,14 @@ GᖇOᑌᑭ ᗰEᑎᑌ`,
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on Channel",
+                display_text: "🌐 Wa Channel",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Link",
+                display_text: "📋 Copy Links",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
@@ -541,14 +541,14 @@ GᖇOᑌᑭ ᗰEᑎᑌ`,
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on Channel",
+                display_text: "🌐 Wa Channel",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Link",
+                display_text: "📋 Copy Links",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
@@ -607,14 +607,14 @@ GEᑎEᖇᗩᒪ ᗰEᑎᑌ`,
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on Channel",
+                display_text: "🌐 Wa Channel",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Link",
+                display_text: "📋 Copy Links",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
@@ -671,14 +671,14 @@ GEᑎEᖇᗩᒪ ᗰEᑎᑌ`,
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on Channel",
+                display_text: "🌐 Wa Channel",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Link",
+                display_text: "📋 Copy Links",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
@@ -735,14 +735,14 @@ GEᑎEᖇᗩᒪ ᗰEᑎᑌ`,
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on Channel",
+                display_text: "🌐 Wa Channel",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Link",
+                display_text: "📋 Copy Links",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
