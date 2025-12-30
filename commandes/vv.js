@@ -1,8 +1,6 @@
-
 const { fana } = require("../njabulo/fana");
 const { getContentType } = require("@whiskeysockets/baileys");
 const { Sticker, StickerTypes } = require("wa-sticker-formatter");
-const config = require("../set");
 
 fana({
   nomCom: "vv",
@@ -25,40 +23,34 @@ fana({
     } else if (type === 'imageMessage') {
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage);
       message = {
-        interactiveMessage: {
-          header: { hasMedia: "image", imageMessage: { url: media }, headerType: 1 },
-          body: { text: msgRepondu.imageMessage.caption },
-          footer: { text: 'Pσɯҽɾԃ Ⴆყ ɳʝαႦυʅσ ʝႦ' },
-          buttons: [
-            {
-              name: "cta_url",
-              buttonParamsJson: JSON.stringify({
-                display_text: "🌐WA channel",
-                id: "backup channel",
-                url: config.GURL
-              }),
-            },
-          ],
-        },
+        image: { url: media },
+        caption: msgRepondu.imageMessage.caption,
+        buttons: [
+          {
+            name: "cta_url",
+            buttonParamsJson: JSON.stringify({
+              display_text: "🌐WA channel",
+              id: "backup channel",
+              url: config.GURL
+            }),
+          },
+        ],
       };
     } else if (type === 'videoMessage') {
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.videoMessage);
       message = {
-        interactiveMessage: {
-          header: { hasMedia: "video", videoMessage: { url: media }, headerType: 1 },
-          body: { text: msgRepondu.videoMessage.caption },
-          footer: { text: 'Pσɯҽɾԃ Ⴆყ ɳʝαႦυʅσ ʝႦ' },
-          buttons: [
-            {
-              name: "cta_url",
-              buttonParamsJson: JSON.stringify({
-                display_text: "🌐WA channel",
-                id: "backup channel",
-                url: config.GURL
-              }),
-            },
-          ],
-        },
+        video: { url: media },
+        caption: msgRepondu.videoMessage.caption,
+        buttons: [
+          {
+            name: "cta_url",
+            buttonParamsJson: JSON.stringify({
+              display_text: "🌐WA channel",
+              id: "backup channel",
+              url: config.GURL
+            }),
+          },
+        ],
       };
     } else if (type === 'stickerMessage') {
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage);
@@ -83,4 +75,4 @@ fana({
   }
 });
 
-   
+ 
