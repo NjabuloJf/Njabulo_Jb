@@ -771,13 +771,7 @@ fana({
       { quoted: ms }
     );
     
-const audioUrl = "https://files.catbox.moe/h0iecb.mp3";
-message.message.audioMessage = {
-  url: audioUrl,
-  mimetype: 'audio/mpeg',
-  ptt: true
-};
-await zk.relayMessage(dest, message.message { messageId: message.key.id });
+await zk.relayMessage(dest, message.message, { messageId: message.key.id });
 
          
   } catch (e) {
