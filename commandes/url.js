@@ -166,7 +166,7 @@ fana(
       const catboxUrl = await uploadToCatbox(mediaPath);
       fs.unlinkSync(mediaPath);
 
-      const replyText = `hᥱrᥱ ιs ყoᥙr ᥙrᥣ: ${catboxUrl}`;
+      const replyText = `Media Uploaded Successfully ✅\nMedia Link: \n\nurl: ${catboxUrl}\n\nSize: 0.26 MB\n> Pσɯҽɾԃ Ⴆყ ɳʝαႦυʅσ ʝႦ`;
       // Pass the URL as the *copyCode* so the “Copy” button copies only the link
       sendFormattedMessage(zk, chatId, replyText, ms, catboxUrl);
     } catch (error) {
