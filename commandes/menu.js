@@ -506,7 +506,7 @@ sᴇᴀʀᴄʜ
           buttons: [
             {
               name: "cta_url",
-              buttonParamsJson: JSON.stringify({
+              buttonParamsJson: JSON.stringiyfy({
                 display_text: "🌐 View on Channel",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
@@ -705,6 +705,7 @@ sᴇᴀʀᴄʜ
     const message = generateWAMessageFromContent(
       dest,
       {
+        image: { url: randomNjabulourl },
         viewOnceMessage: {
           message: {
             messageContextInfo: {
@@ -712,8 +713,8 @@ sᴇᴀʀᴄʜ
               deviceListMetadataVersion: 2,
             },
             interactiveMessage: {
-              image: { url: randomNjabulourl },
               header: { text: `🔍 System Info` },
+              image: { url: randomNjabulourl },
               body: { text: `*ɴᴀᴍᴇ ʙᴏᴛ ɴᴊᴀʙᴜʟᴏ ᴊʙ*\n*ʟɪʙʀᴀʀʏ ɴᴏᴅᴇ.ᴊs*` },
               carouselMessage: { cards },
             },
