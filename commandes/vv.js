@@ -24,8 +24,8 @@ fana({
     } else if (type === 'imageMessage') {
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage);
       message = {
-        image: { url: media },
         interactiveMessage: {
+        image: { url: media },
         header: msgRepondu.imageMessage.caption,
         headerType: 1,
         buttons: [
