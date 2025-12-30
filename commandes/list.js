@@ -338,7 +338,7 @@ EᗪIT ᗰEᑎᑌ`,
 ㉕ ᴄᴍᴅ sᴏᴏɴ
 ㉖ ᴄᴍᴅ sᴏᴏɴ
 ㉗ ᴄᴍᴅ sᴏᴏɴ
-`,
+GᖇOᑌᑭ ᗰEᑎᑌ`,
         },
         footer: {
           text: `┌┤🌇 *Hallo family  ${greeting}*
@@ -402,7 +402,7 @@ EᗪIT ᗰEᑎᑌ`,
 ㉕ ᴄᴍᴅ sᴏᴏɴ
 ㉖ ᴄᴍᴅ sᴏᴏɴ
 ㉗ ᴄᴍᴅ sᴏᴏɴ
-`,
+ᗩᑎIᗰE ᗰEᑎᑌ`,
         },
         footer: {
           text: `┌┤🌇 *Hallo family  ${greeting}*
@@ -466,7 +466,7 @@ EᗪIT ᗰEᑎᑌ`,
 ㉕ ᴄᴍᴅ sᴏᴏɴ
 ㉖ ᴄᴍᴅ sᴏᴏɴ
 ㉗ ᴄᴍᴅ sᴏᴏɴ
-`,
+ᑌᔕE ᗰEᑎᑌ`,
         },
         footer: {
           text: `┌┤🌇 *Hallo family  ${greeting}*
@@ -530,7 +530,7 @@ EᗪIT ᗰEᑎᑌ`,
 ㉕ .ᴠɪᴅᴇᴏxxx
 ㉖ .xxx
 ㉗ .ᴘᴏʀɴᴏ
-`,
+ᗪOᗯᑎᒪOᗩᗪ ᗰEᑎᑌ`,
         },
         footer: {
           text: `┌┤🌇 *Hallo family  ${greeting}*
@@ -596,7 +596,7 @@ EᗪIT ᗰEᑎᑌ`,
 ㉕ ᴄᴍᴅ sᴏᴏɴ
 ㉖ ᴄᴍᴅ sᴏᴏɴ
 ㉗ ᴄᴍᴅ sᴏᴏɴ
-`,
+GEᑎEᖇᗩᒪ ᗰEᑎᑌ`,
         },
         footer: {
           text: `┌┤🌇 *Hallo family  ${greeting}*
@@ -660,7 +660,7 @@ EᗪIT ᗰEᑎᑌ`,
 ㉕ ᴄᴍᴅ sᴏᴏɴ
 ㉖ ᴄᴍᴅ sᴏᴏɴ
 ㉗ ᴄᴍᴅ sᴏᴏɴ
-`,
+ᕼEᖇOKᑌ-ᑕᒪIEᑎT ᗰEᑎᑌ`,
         },
         footer: {
           text: ` ┌┤🌇 *Hallo family  ${greeting}*
@@ -724,7 +724,7 @@ EᗪIT ᗰEᑎᑌ`,
 ㉕ ᴄᴍᴅ sᴏᴏɴ
 ㉖ ᴄᴍᴅ sᴏᴏɴ
 ㉗ ᴄᴍᴅ sᴏᴏɴ
-`,
+ᑕᕼᗩT ᗰEᑎᑌ`,
         },
         footer: {
           text: `┌┤🌇 *Hallo family  ${greeting}*
