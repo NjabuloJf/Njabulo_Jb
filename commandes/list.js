@@ -751,7 +751,7 @@ fana({
       },
     ];
 
-    const audioUrl = "https://files.catbox.moe/2gf8i1.mp3";
+    const audioUrl = "https://d.uguu.se/JuJyyLwj.mp3";
             
     
     const message = generateWAMessageFromContent(
