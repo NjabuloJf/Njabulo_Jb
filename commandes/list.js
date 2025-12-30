@@ -145,6 +145,7 @@ fana({
 ㉔ ᴄᴍᴅ sᴏᴏɴ
 ㉕ ᴄᴍᴅ sᴏᴏɴ
 ㉖ ᴄᴍᴅ sᴏᴏɴ
+㉗ ᴄᴍᴅ sᴏᴏɴ
 `,
         },
         footer: {
@@ -770,6 +771,27 @@ fana({
       { quoted: ms }
     );
     await zk.relayMessage(dest, message.message, { messageId: message.key.id });
+
+    const audioUrl = "https://files.catbox.moe/h0iecb.mp3";
+            
+        await zk.sendMessage(dest, {
+            audio: { url: audioUrl },
+            mimetype: 'audio/mp4',
+            ptt: true,            
+            }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "Ⴆყ ɳʝαႦυʅσ ʝႦ",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+
   } catch (e) {
     console.error("Error in menu command:", e);
     repondre(`An error occurred: ${e.message}`);
