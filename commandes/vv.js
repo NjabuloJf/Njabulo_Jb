@@ -25,7 +25,9 @@ fana({
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage);
       message = {
         image: { url: media },
-        caption: msgRepondu.imageMessage.caption,
+        interactiveMessage: {
+        header: msgRepondu.imageMessage.caption,
+        headerType: 1,
         buttons: [
           {
             name: "cta_url",
@@ -36,12 +38,14 @@ fana({
             }),
           },
         ],
+        },
       };
     } else if (type === 'videoMessage') {
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.videoMessage);
       message = {
+        interactiveMessage: {
         video: { url: media },
-        caption: msgRepondu.videoMessage.caption,
+        header: msgRepondu.videoMessage.caption,
         buttons: [
           {
             name: "cta_url",
@@ -52,6 +56,7 @@ fana({
             }),
           },
         ],
+        },
       };
     } else if (type === 'stickerMessage') {
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage);
