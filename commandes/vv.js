@@ -43,7 +43,14 @@ fana({
       message = { text: 'Unsupported message type' };
     }
 
-    await zk.sendMessage(dest, message, { quoted: ms });
+    await zk.sendMessage(dest,
+                         {
+    interactiveMessage: {
+     message, 
+   buttons,
+   headerType: 1
+  }
+   { quoted: ms });
   } catch (error) {
     console.error("Error sending message:", error);
     await zk.sendMessage(dest, { text: 'Error sending message' }, { quoted: ms });
