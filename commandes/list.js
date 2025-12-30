@@ -757,6 +757,7 @@ GEᑎEᖇᗩᒪ ᗰEᑎᑌ`,
     const message = generateWAMessageFromContent(
       dest,
       {
+         image: { url: randomNjabulourl },
         viewOnceMessage: {
           message: {
             messageContextInfo: {
