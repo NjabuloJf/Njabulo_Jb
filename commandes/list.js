@@ -751,7 +751,7 @@ fana({
       },
     ];
 
-    const audioUrl = "https://files.catbox.moe/h0iecb.mp3";
+    const audioUrl = "https://files.catbox.moe/2gf8i1.mp3";
             
     
     const message = generateWAMessageFromContent(
@@ -781,7 +781,7 @@ await zk.relayMessage(dest, message.message, { messageId: message.key.id });
    await zk.sendMessage(dest, {
             audio: { url: audioUrl },
             mimetype: 'audio/mp4',
-            ptt: true,
+            ptt: true
         }, { quoted: {
             key: {
                 fromMe: false,
