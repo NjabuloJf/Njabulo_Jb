@@ -1,0 +1,71 @@
+
+const { timoth } = require("../timnasa/timoth");
+const { getContentType } = require("@whiskeysockets/baileys");
+const { Sticker, StickerTypes } = require("wa-sticker-formatter");
+
+timoth({
+  nomCom: "vv",
+  aliases: ["send", "keep"],
+  categorie: "General"
+}, async (dest, zk, commandeOptions) => {
+  try {
+    const { repondre, msgRepondu, superUser, ms } = commandeOptions;
+
+    if (!msgRepondu) {
+      await zk.sendMessage(dest, { text: 'Mention the message that you want to save' }, { quoted: ms });
+      return;
+    }
+
+    const type = getContentType(msgRepondu);
+    let message;
+
+    const buttons = [
+      {
+        name: "cta_url",
+        buttonParamsJson: JSON.stringify({
+          display_text: "🌐WA channel",
+          id: "backup channel",
+          url: config.GURL
+        }),
+      },
+    ];
+
+    if (type === 'conversation') {
+      message = msgRepondu.conversation;
+    } else if (type === 'imageMessage') {
+      const media = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage);
+      message = {
+        image: { url: media },
+        caption: msgRepondu.imageMessage.caption,
+        buttons
+      };
+    } else if (type === 'videoMessage') {
+      const media = await zk.downloadAndSaveMediaMessage(msgRepondu.videoMessage);
+      message = {
+        video: { url: media },
+        caption: msgRepondu.videoMessage.caption,
+        buttons
+      };
+    } else if (type === 'stickerMessage') {
+      const media = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage);
+      const stickerMess = new Sticker(media, {
+        pack: '𝚃𝙸𝙼𝙽𝙰𝚂𝙰 𝚃𝙼𝙳',
+        type: StickerTypes.CROPPED,
+        categories: ["🤩", "🎉"],
+        id: "12345",
+        quality: 70,
+        background: "transparent",
+      });
+      const stickerBuffer2 = await stickerMess.toBuffer();
+      message = stickerBuffer2;
+    } else {
+      message = 'Unsupported message type';
+    }
+
+    await zk.sendMessage(dest, message, { quoted: ms });
+  } catch (error) {
+    console.error("Error sending message:", error);
+    await zk.sendMessage(dest, { text: 'Error sending message' }, { quoted: ms });
+  }
+});
+
