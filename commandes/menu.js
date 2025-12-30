@@ -712,6 +712,7 @@ sᴇᴀʀᴄʜ
               deviceListMetadataVersion: 2,
             },
             interactiveMessage: {
+              image: { url: randomNjabulourl },
               header: { text: `🔍 System Info` },
               body: { text: `*ɴᴀᴍᴇ ʙᴏᴛ ɴᴊᴀʙᴜʟᴏ ᴊʙ*\n*ʟɪʙʀᴀʀʏ ɴᴏᴅᴇ.ᴊs*` },
               carouselMessage: { cards },
