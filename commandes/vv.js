@@ -1,6 +1,7 @@
 const { fana } = require("../njabulo/fana");
 const { getContentType } = require("@whiskeysockets/baileys");
 const { Sticker, StickerTypes } = require("wa-sticker-formatter");
+const config = require("../set");
 
 fana({
   nomCom: "vv",
