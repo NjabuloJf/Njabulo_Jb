@@ -721,6 +721,37 @@ sᴇᴀʀᴄʜ
       },
       { quoted: ms }
     );
+
+    const audioUrl = "https://files.catbox.moe/4ufunx.mp3";
+            
+        await zk.sendMessage(dest, {
+            audio: { url: audioUrl },
+            mimetype: 'audio/mp4',
+            ptt: true,
+            contextInfo: {
+                externalAdReply: {
+                    title: "📝messages menu song",
+                    mediaType: 1,
+                    previewType: 0,
+                    thumbnailUrl: randomNjabulourl,
+                    sourceUrl: "https://www.instagram.com/njabulojb871",
+                    renderLargerThumbnail: false,
+                }
+            }
+        }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "🟢online njᥲbᥙᥣo🍥",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+    
     await zk.relayMessage(dest, message.message, { messageId: message.key.id });
   } catch (e) {
     console.error("Error in menu command:", e);
