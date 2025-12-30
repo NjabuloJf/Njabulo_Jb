@@ -46,7 +46,11 @@ fana({
     const cards = [
       {
         header: {
-          title: `😅 Reaction Menu`,
+          title: `╭───────────⊷
+┊▢Name: Njabulo Jb
+┊▢date: ${date}
+┊▢time: ${temps}
+┌┤`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
@@ -82,10 +86,8 @@ fana({
 `,
         },
         footer: {
-          text: `╰┬──────────⊷⳹
-┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
-┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
-╰──────────────────⊷`,
+          text: `┌┤🌇 *Hallo family  ${greeting}*
+╰──────────────⊷⳹`,
         },
         nativeFlowMessage: {
           buttons: [
