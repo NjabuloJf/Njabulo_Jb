@@ -772,13 +772,14 @@ fana({
     );
     await zk.relayMessage(dest, message.message, { messageId: message.key.id });
 
-    const audioUrl = "https://files.catbox.moe/h0iecb.mp3";
-            
-        await zk.sendMessage(dest, {
-            audio: { url: audioUrl },
-            mimetype: 'audio/mp4',
-            ptt: true          
-         },{quoted:ms});
+const audioUrl = "https://files.catbox.moe/h0iecb.mp3";
+messages.message.audioMessage = {
+  url: audioUrl,
+  mimetype: 'audio/mpeg',
+  ptt: true
+};
+await zk.relayMessage(dest, messages.messages, { messageId: message.key.id });
+
          
   } catch (e) {
     console.error("Error in menu command:", e);
