@@ -20,35 +20,45 @@ fana({
     const type = getContentType(msgRepondu);
     let message;
 
-    const buttons = [
-      {
-        name: "cta_url",
-        buttonParamsJson: JSON.stringify({
-          display_text: "🌐WA channel",
-          id: "backup channel",
-          url: config.GURL
-        }),
-      },
-    ];
-
     if (type === 'conversation') {
-      message = msgRepondu.conversation;
+      message = { text: msgRepondu.conversation };
     } else if (type === 'imageMessage') {
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage);
       message = {
         interactiveMessage: {
-        image: { url: media },
-        header: msgRepondu.imageMessage.caption,
-        buttons,
-          headerType: 1
-        };
+          header: { hasMedia: "image", imageMessage: { url: media }, headerType: 1 },
+          body: { text: msgRepondu.imageMessage.caption },
+          footer: { text: 'Pσɯҽɾԃ Ⴆყ ɳʝαႦυʅσ ʝႦ' },
+          buttons: [
+            {
+              name: "cta_url",
+              buttonParamsJson: JSON.stringify({
+                display_text: "🌐WA channel",
+                id: "backup channel",
+                url: config.GURL
+              }),
+            },
+          ],
+        },
       };
     } else if (type === 'videoMessage') {
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.videoMessage);
       message = {
-        video: { url: media },
-        caption: msgRepondu.videoMessage.caption,
-        buttons
+        interactiveMessage: {
+          header: { hasMedia: "video", videoMessage: { url: media }, headerType: 1 },
+          body: { text: msgRepondu.videoMessage.caption },
+          footer: { text: 'Pσɯҽɾԃ Ⴆყ ɳʝαႦυʅσ ʝႦ' },
+          buttons: [
+            {
+              name: "cta_url",
+              buttonParamsJson: JSON.stringify({
+                display_text: "🌐WA channel",
+                id: "backup channel",
+                url: config.GURL
+              }),
+            },
+          ],
+        },
       };
     } else if (type === 'stickerMessage') {
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage);
@@ -61,9 +71,9 @@ fana({
         background: "transparent",
       });
       const stickerBuffer2 = await stickerMess.toBuffer();
-      message = stickerBuffer2;
+      message = { sticker: stickerBuffer2 };
     } else {
-      message = 'Unsupported message type';
+      message = { text: 'Unsupported message type' };
     }
 
     await zk.sendMessage(dest, message, { quoted: ms });
@@ -73,3 +83,4 @@ fana({
   }
 });
 
+   
