@@ -1,6 +1,7 @@
 
 const { fana } = require("../njabulo/fana");
 const config = require("../set");
+const moment = require("moment-timezone");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({
@@ -12,6 +13,22 @@ fana({
 }, async (dest, zk, commandeOptions) => {
   console.log('Command triggered!');
   const { repondre, ms } = commandeOptions;
+
+  moment.tz.setDefault("Africa/Botswana");
+    const temps = moment().format('HH:mm:ss');
+    const date = moment().format('DD/MM/YYYY');
+
+    const hour = moment().hour();
+    let greeting = "Good Mornιng";
+    if (hour >= 12 && hour < 18) {
+        greeting = "Good ᥲftᥱrnnon!";
+    } else if (hour >= 18) {
+        greeting = "Good Evᥱrnιng!";
+    } else if (hour >= 22 || hour < 5) {
+        greeting = "Good Nιght";
+    }
+
+  
   try {
     const njabulox = [
       "https://files.catbox.moe/xjeyjh.jpg",
