@@ -31,8 +31,8 @@ async function events(nomCom) {
 
     if (verifAdmin || superUser) {
       if (!arg[0] || arg.join(' ') === ' ') {
-interactiveMessage: {
         await zk.sendMessage(dest, { 
+        interactiveMessage: {
         header: `${nomCom} on to active and ${nomCom} off to put off`,
         buttons,
          headerType: 1
