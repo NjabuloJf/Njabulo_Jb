@@ -93,14 +93,14 @@ fana({
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 Wa Channel",
+                display_text: "🌐 𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Links",
+                display_text: "📋 𝗖𝗼𝗽𝘆 𝗟𝗶𝗻𝗸𝘀",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
@@ -157,14 +157,14 @@ fana({
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 Wa Channel",
+                display_text: "🌐 𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
                 url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
               }),
             },
             {
               name: "cta_copy",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Links",
+                display_text: "📋 𝗖𝗼𝗽𝘆 𝗟𝗶𝗻𝗸𝘀",
                 copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
               }),
             },
@@ -751,7 +751,7 @@ GEᑎEᖇᗩᒪ ᗰEᑎᑌ`,
       },
     ];
 
-    const audioUrl = "https://d.uguu.se/JuJyyLwj.mp3";
+    const audioUrl = "https://files.catbox.moe/bf8mnv.mp3";
             
     
     const message = generateWAMessageFromContent(
