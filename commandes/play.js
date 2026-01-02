@@ -49,7 +49,7 @@ fana({
     const cards = await Promise.all(
       search.videos.slice(0, 5).map(async (video, i) => ({
         header: {
-          title: `📸 ${video.title}`,
+          title: `*🎧 ${video.title}*`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: video.thumbnail } }, { upload: zk.waUploadToServer })).imageMessage,
         },
@@ -57,22 +57,15 @@ fana({
           text: ``,
         },
         footer: {
-          text: "ᯤAll is for you enjoy🎈",
+          text: "",
         },
         nativeFlowMessage: {
           buttons: [
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 *View on YouTube*",
+                display_text: "𝗩𝗶𝗲𝘄 𝗼𝗻 𝗬𝗼𝘂𝗧𝘂𝗯𝗲",
                 url: `https://youtu.be/${video.videoId}`,
-              }),
-            },
-            {
-              name: "cta_copy",
-              buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Link",
-                copy_code: `https://youtu.be/${video.videoId}`,
               }),
             },
           ],
@@ -87,15 +80,25 @@ fana({
           message: {
             messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 },
             interactiveMessage: {
-              body: { text: `*Nᴊᴀʙᴜʟᴏ Jʙ YᴏᴜTᴜʙᴇ ᴅᴏᴡɴʟᴏᴀᴅᯤ*\n🔍 Search Results for: ${query}` },
+              body: { text: `🔍 Search Results for: ${query}` },
               footer: { text: `📂 Found ${search.videos.length} results` },
               carouselMessage: { cards },
             },
           },
         },
-      },
-      { quoted: ms }
-    );
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "ɳʝαႦυʅσ ʝႦ",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 
     await zk.relayMessage(dest, message.message, { messageId: message.key.id });
 
