@@ -54,7 +54,7 @@ fana({
           imageMessage: (await generateWAMessageContent({ image: { url: video.thumbnail } }, { upload: zk.waUploadToServer })).imageMessage,
         },
         body: {
-          text: `*🎧 Views:* ${video.views.toLocaleString()}\n*🎻 Uploaded:* ${video.ago}\n${video.timestamp}`,
+          text: ``,
         },
         footer: {
           text: "ᯤAll is for you enjoy🎈",
