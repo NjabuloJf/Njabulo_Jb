@@ -64,7 +64,7 @@ fana({
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on YouTube",
+                display_text: "🌐 *View on YouTube*",
                 url: `https://youtu.be/${video.videoId}`,
               }),
             },
