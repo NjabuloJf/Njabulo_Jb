@@ -122,18 +122,14 @@ fana(
             hasMediaAttachment: true,
             imageMessage: (await generateWAMessageContent({ image: item.buffer }, { upload: zk.waUploadToServer })).imageMessage,
           },
-          body: { text: `🔍 Search: ${q}` },
+          body: { text: `*🔍 Search: ${q}*` },
           footer: { text: "" },
           nativeFlowMessage: {
             buttons: [
               {
                 name: "cta_url",
-                buttonParamsJson: JSON.stringify({ display_text: "🌐 View Original", url: item.directLink }),
-              },
-              {
-                name: "cta_copy",
-                buttonParamsJson: JSON.stringify({ display_text: "📋 Copy Link", copy_code: item.directLink }),
-              },
+                buttonParamsJson: JSON.stringify({ display_text: "𝗩𝗶𝗲𝘄 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹", url: item.directLink }),
+               },
             ],
           },
         })
