@@ -68,6 +68,13 @@ fana({
         nativeFlowMessage: {
           buttons: [
             {
+              name: "quick_reply",
+              buttonParamsJson: JSON.stringify({
+              display_text: "Avaliable",
+              id: ".alive",
+              }),
+              },
+            {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
                 display_text: "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
