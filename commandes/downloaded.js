@@ -196,7 +196,7 @@ fana({
 
 
 // Define the command with aliases for video
-ezra({
+fana({
   nomCom: "mp4",
   aliases: ["videodoc", "film", "mp4"],
   categorie: "download",
@@ -289,7 +289,7 @@ ezra({
 
 
 // Define the command with aliases for video
-ezra({
+fana({
   nomCom: "mp4doc",
   aliases: ["videodoc", "film", "mp4"],
   categorie: "download",
