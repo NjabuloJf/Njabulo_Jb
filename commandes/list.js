@@ -114,10 +114,10 @@ fana({
 ┊▢ *ᴅᴀᴛᴇ:* ${date}
 ┊▢ *ᴛɪᴍᴇ:* ${temps}
 ┌┤`,
-  hasMediaAttachment: true,
-  imageMessage: (await generateWAMessageContent({ image: { url: randomImageUrl } }, { upload: zk.waUploadToServer })).imageMessage,
-  body: {
-    text: ` ① .ᴄᴍᴅ1 ② .ᴄᴍᴅ2 ③ .ᴄᴍᴅ3 
+        hasMediaAttachment: true,
+         imageMessage: (await generateWAMessageContent({ image: { url: randomImageUrl } }, { upload: zk.waUploadToServer })).imageMessage,
+          body: {
+         text: ` ① .ᴄᴍᴅ1 ② .ᴄᴍᴅ2 ③ .ᴄᴍᴅ3 
 ᗰEᑎᑌ`,
   },
   footer: {
@@ -126,14 +126,13 @@ fana({
   },
   nativeFlowMessage: {
     buttons: [
-      {
-  name: "quick_reply",
-  buttonParamsJson: JSON.stringify({
-    display_text: "Avaliable",
-    id: ".menu",
+    {
+    name: "quick_reply",
+    buttonParamsJson: JSON.stringify({
+      display_text: "Avaliable",
+      id: ".menu",
       }),
-     type: 1
-      },
+       },
       {
         name: "cta_url",
         buttonParamsJson: JSON.stringify({
