@@ -127,11 +127,12 @@ fana({
   nativeFlowMessage: {
     buttons: [
       {
-        "buttonId": ".menu",
-        "buttonText": {
-          "displayText": "Avaliable"
-        },
-        "type": 1
+  name: "quick_reply",
+  buttonParamsJson: JSON.stringify({
+    display_text: "Avaliable",
+    id: ".menu",
+      }),
+     type: 1
       },
       {
         name: "cta_url",
