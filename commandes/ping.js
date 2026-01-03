@@ -4,6 +4,8 @@ const { fana } = require("../njabulo/fana");
 const config = require("../set");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
+
+
 fana({
   nomCom: "ping",
   alias: ["speed", "pong"],
@@ -56,7 +58,6 @@ fana({
       {
         header: {
           title: `📊 Uptime`,
-          headerType: 1,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
@@ -69,11 +70,9 @@ fana({
         nativeFlowMessage: {
           buttons: [
             {
-                   "buttonId": ".alive",
-        "buttonText": {
-          "displayText": "Avaliable"
-        },
-        "type": 1
+           "buttonId": ".alive",
+           "buttonText": {"displayText": "Avaliable"},
+           "type": 1
             },
             { 
               name: "cta_url",
@@ -123,6 +122,7 @@ fana({
             interactiveMessage: {
               header: { text: `🔍 System Info` },
               body: { text: `*📂 sʏsᴛᴇᴍs ʟᴏᴀᴅɪɴɢ*` },
+              headerType: 1,
               carouselMessage: { cards },
             },
           },
