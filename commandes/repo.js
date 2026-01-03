@@ -1,4 +1,4 @@
-
+/*
 
 const { fana } = require("../njabulo/fana");
 const config = require("../set");
@@ -119,4 +119,4 @@ fana({
   }
 });
 
-
+*/
