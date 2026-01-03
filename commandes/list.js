@@ -152,24 +152,29 @@ fana({
           text: `┌┤🌇 *Hallo family  ${greeting}*
 ╰──────────────⊷⳹`,
         },
-        nativeFlowMessage: {
-          buttons: [
-            {
-              name: "cta_url",
-              buttonParamsJson: JSON.stringify({
-                display_text: "🌐 𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
-                url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
-              }),
-            },
-            {
-              name: "cta_copy",
-              buttonParamsJson: JSON.stringify({
-                display_text: "📋 𝗖𝗼𝗽𝘆 𝗟𝗶𝗻𝗸𝘀",
-                copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
-              }),
-            },
-          ],
+        nativeFlowMessage: {         
+  buttons: [
+    {
+      "buttonId": ".menu",
+      "buttonText": { "displayText":"Avaliable"},
+      "type": 1
+    },
+    {
+      name: "cta_url",
+      buttonParamsJson: JSON.stringify({
+        display_text: "🌐 𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
+        url: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
+      }),
+    },
+    {
+      name: "cta_copy",
+      buttonParamsJson: JSON.stringify({
+        display_text: "📋 𝗖𝗼𝗽𝘆 𝗟𝗶𝗻𝗸𝘀",
+        copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
+        }),
         },
+       ],
+      };
       },
       {
         header: {
