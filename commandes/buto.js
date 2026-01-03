@@ -114,61 +114,6 @@ fana({
                     highlight_label: '© 丨几匚',
                     rows: [
                       {
-                        title: '𝐆𝐞𝐧𝐞𝐫𝐚𝐥𝐌𝐞𝐧𝐮',
-                        description: 'General commands',
-                        id: `generalmenu`
-                      },
-                      {
-                        title: '𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬𝐌𝐞𝐧𝐮',
-                        description: 'Bot settings commands',
-                        id: `settingsmenu`
-                      },
-                      {
-                        title: '𝐎𝐰𝐧𝐞𝐫𝐌𝐞𝐧𝐮',
-                        description: 'Owner only commands',
-                        id: `ownermenu`
-                      },
-                      {
-                        title: '𝐇𝐞𝐫𝐨𝐤𝐮𝐌𝐞𝐧𝐮',
-                        description: 'Heroku related commands',
-                        id: `herokumenu`
-                      },
-                      {
-                        title: '𝐏𝐫𝐢𝐯𝐚𝐜𝐲𝐌𝐞𝐧𝐮',
-                        description: 'Privacy commands',
-                        id: `privacymenu`
-                      },
-                      {
-                        title: '𝐆𝐫𝐨𝐮𝐩𝐌𝐞𝐧𝐮',
-                        description: 'Group management',
-                        id: `groupmenu`
-                      },
-                      {
-                        title: '𝐀𝐈𝐌𝐞𝐧𝐮',
-                        description: 'AI & chat commands',
-                        id: `aimenu`
-                      },
-                      {
-                        title: '𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐌𝐞𝐧𝐮',
-                        description: 'Media downloaders',
-                        id: `downloadmenu`
-                      },
-                      {
-                        title: '𝐄𝐝𝐢𝐭𝐢𝐧𝐠𝐌𝐞𝐧𝐮',
-                        description: 'Media editing tools',
-                        id: `editingmenu`
-                      },
-                      {
-                        title: '𝐋𝐨𝐠𝐨𝐌𝐞𝐧𝐮',
-                        description: 'Logo & text makers',
-                        id: `logomenu`
-                      },
-                      {
-                        title: '+𝟏𝟖𝐌𝐞𝐧𝐮',
-                        description: 'NSFW commands (18+)',
-                        id: `+18menu`
-                      },
-                      {
                         title: '𝐔𝐭𝐢𝐥𝐬𝐌𝐞𝐧𝐮',
                         description: 'Utility commands',
                         id: `utilsmenu`
@@ -244,61 +189,6 @@ fana({
                     title: '📜 𝘾𝙖𝙩𝙚𝙜𝙤𝙧𝙮 𝙈𝙚𝙣𝙪𝙨',
                     highlight_label: '© 丨几匚',
                     rows: [
-                      {
-                        title: '𝐆𝐞𝐧𝐞𝐫𝐚𝐥𝐌𝐞𝐧𝐮',
-                        description: 'General commands',
-                        id: `generalmenu`
-                      },
-                      {
-                        title: '𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬𝐌𝐞𝐧𝐮',
-                        description: 'Bot settings commands',
-                        id: `settingsmenu`
-                      },
-                      {
-                        title: '𝐎𝐰𝐧𝐞𝐫𝐌𝐞𝐧𝐮',
-                        description: 'Owner only commands',
-                        id: `ownermenu`
-                      },
-                      {
-                        title: '𝐇𝐞𝐫𝐨𝐤𝐮𝐌𝐞𝐧𝐮',
-                        description: 'Heroku related commands',
-                        id: `herokumenu`
-                      },
-                      {
-                        title: '𝐏𝐫𝐢𝐯𝐚𝐜𝐲𝐌𝐞𝐧𝐮',
-                        description: 'Privacy commands',
-                        id: `privacymenu`
-                      },
-                      {
-                        title: '𝐆𝐫𝐨𝐮𝐩𝐌𝐞𝐧𝐮',
-                        description: 'Group management',
-                        id: `groupmenu`
-                      },
-                      {
-                        title: '𝐀𝐈𝐌𝐞𝐧𝐮',
-                        description: 'AI & chat commands',
-                        id: `aimenu`
-                      },
-                      {
-                        title: '𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐌𝐞𝐧𝐮',
-                        description: 'Media downloaders',
-                        id: `downloadmenu`
-                      },
-                      {
-                        title: '𝐄𝐝𝐢𝐭𝐢𝐧𝐠𝐌𝐞𝐧𝐮',
-                        description: 'Media editing tools',
-                        id: `editingmenu`
-                      },
-                      {
-                        title: '𝐋𝐨𝐠𝐨𝐌𝐞𝐧𝐮',
-                        description: 'Logo & text makers',
-                        id: `logomenu`
-                      },
-                      {
-                        title: '+𝟏𝟖𝐌𝐞𝐧𝐮',
-                        description: 'NSFW commands (18+)',
-                        id: `+18menu`
-                      },
                       {
                         title: '𝐔𝐭𝐢𝐥𝐬𝐌𝐞𝐧𝐮',
                         description: 'Utility commands',
