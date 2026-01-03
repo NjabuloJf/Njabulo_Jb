@@ -56,6 +56,7 @@ fana({
       {
         header: {
           title: `📊 Uptime`,
+          headerType: 1,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
