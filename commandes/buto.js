@@ -1,9 +1,11 @@
+const util = require('util');
+const fs = require('fs-extra');
 const { fana } = require("../njabulo/fana");
+const os = require("os");
+const moment = require("moment-timezone");
 const config = require("../set");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
-
-😊 Here's the script:
 fana({ 
   nomCom: "ping", 
   alias: ["speed", "pong"], 
@@ -12,7 +14,7 @@ fana({
   use: ".ping", 
 }, async (dest, zk, commandeOptions) => { 
   console.log('Command triggered!'); 
-  const { repondre, ms } = commandeOptions; 
+  const { repondre, ms, prefixe } = commandeOptions; 
   try { 
     const njabulox = [ 
       "https://files.catbox.moe/mh36c7.jpg", 
