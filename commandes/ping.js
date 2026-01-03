@@ -70,9 +70,9 @@ fana({
         nativeFlowMessage: {
           buttons: [
             {
-           "buttonId": ".alive",
-           "buttonText": {"displayText": "Avaliable"},
-           "type": 1
+           buttonId: ".alive",
+           buttonText: { displayText: "Avaliable"},
+           type: 1
             },
             { 
               name: "cta_url",
