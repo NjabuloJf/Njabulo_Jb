@@ -7,7 +7,7 @@ const config = require("../set");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({ 
-  nomCom: "ping", 
+  nomCom: "buto", 
   alias: ["speed", "pong"], 
   categorie: "General", 
   reaction: "⏰", 
