@@ -108,48 +108,69 @@ fana({
         },
       },
       {
-        header: {
+         header: {
           title: `╭───────────⊷
 ┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
 ┊▢ *ᴅᴀᴛᴇ:* ${date}
 ┊▢ *ᴛɪᴍᴇ:* ${temps}
 ┌┤`,
-        hasMediaAttachment: true,
-         imageMessage: (await generateWAMessageContent({ image: { url: randomImageUrl } }, { upload: zk.waUploadToServer })).imageMessage,
-          body: {
-         text: ` ① .ᴄᴍᴅ1 ② .ᴄᴍᴅ2 ③ .ᴄᴍᴅ3 
-ᗰEᑎᑌ`,
-  },
-  footer: {
-    text: `┌┤🌇 *Hi ${greeting}* 
-    ╰──────────────⊷⳹`,
-  },
-  nativeFlowMessage: {
-    buttons: [
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+① .ʜᴀᴄᴋᴇʀ
+② .ᴅʀᴀɢᴏɴʙᴀʟʟ
+③ .ɴᴀʀᴜᴛᴏ
+④ .ᴅɪᴅᴏɴɢ
+⑤ .ᴅɪᴅᴏɴɢ
+⑥ .sᴜᴍᴍᴇʀ
+⑦ .ᴡᴀʟʟ
+⑧ .ɢʀᴇᴇɴɴᴇᴏɴ
+⑨ .ɴᴇᴏɴʟɪɢʜᴛ
+⑩ .ʙᴏᴏᴍʟɢ
+⑪ .ᴅᴇᴠɪʟ
+⑫ .ɢʟɪᴛᴄʜ
+⑬ .ᴛʀᴀɴsғᴏʀᴍᴇʀ
+⑭ .sɴᴏᴡ
+⑮ .ᴡᴀᴛᴇʀ
+⑯ .ɴᴇᴏɴ
+⑰ .ᴛʜᴏʀ
+⑱ .ʟɪɢʜᴛɢʟᴏᴡ
+⑲ .ᴀʀᴇɴᴀ
+⑳ .ɢᴏʟᴅ
+㉑ .ᴘᴜʀᴘʟᴇ
+㉒ .ɢɪғ
+㉓ .ɪɴᴄᴀɴᴅᴇsᴄᴇɴᴛ
+㉔ ᴄᴍᴅ sᴏᴏɴ
+㉕ ᴄᴍᴅ sᴏᴏɴ
+㉖ ᴄᴍᴅ sᴏᴏɴ
+㉗ ᴄᴍᴅ sᴏᴏɴ
+ᒪOGO ᗰEᑎᑌ`,
+        },
+        footer: {
+          text: `┌┤🌇 *Hallo family  ${greeting}*
+╰──────────────⊷⳹`,
+        },
+        nativeFlowMessage: {         
+  buttons: [
     {
-    name: "quick_reply",
-    buttonParamsJson: JSON.stringify({
-      display_text: "Avaliable",
-      id: ".menu",
+      name: "cta_url",
+      buttonParamsJson: JSON.stringify({
+        display_text: "🌐 𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
+        url: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
       }),
-       },
-      {
-        name: "cta_url",
-        buttonParamsJson: JSON.stringify({
-          display_text: "🌐 𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
-          url: "https://whatsapp.com/your-channel",
+    },
+    {
+      name: "cta_copy",
+      buttonParamsJson: JSON.stringify({
+        display_text: "📋 𝗖𝗼𝗽𝘆 𝗟𝗶𝗻𝗸𝘀",
+        copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
         }),
+        },
+       ],
+      };
       },
-      {
-        name: "cta_copy",
-        buttonParamsJson: JSON.stringify({
-          display_text: "📋 𝗖𝗼𝗽𝘆 𝗟𝗶𝗻𝗸𝘀",
-          copy_code: "https://whatsapp.com/your-channel",
-        }),
-      },
-    ],
-  },
-  },
       {
         header: {
           title: `╭───────────⊷
