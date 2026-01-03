@@ -14,7 +14,7 @@ fana({
   use: ".ping", 
 }, async (dest, zk, commandeOptions) => { 
   console.log('Command triggered!'); 
-  const { repondre, ms, prefixe } = commandeOptions; 
+  const { repondre, ms } = commandeOptions; 
   try { 
     const njabulox = [ 
       "https://files.catbox.moe/mh36c7.jpg", 
@@ -84,12 +84,12 @@ fana({
                       {
                         title: '𝐅𝐮𝐥𝐥𝐌𝐞𝐧𝐮',
                         description: 'Display all commands',
-                        id: `${prefix}fullmenu`
+                        id: `fullmenu`
                       },
                       {
                         title: '𝐃𝐞𝐯',
                         description: "send developer contact",
-                        id: `${prefix}dev`
+                        id: `dev`
                       },
                     ],
                   },
@@ -100,12 +100,12 @@ fana({
                       {
                         title: '𝐏𝐢𝐧𝐠',
                         description: '',
-                        id: `${prefix}ping`
+                        id: `ping`
                       },
                       {
                         title: '𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬',
                         description: 'show bot settings',
-                        id: `${prefix}settings`
+                        id: `settings`
                       },
                     ],
                   },
@@ -116,62 +116,62 @@ fana({
                       {
                         title: '𝐆𝐞𝐧𝐞𝐫𝐚𝐥𝐌𝐞𝐧𝐮',
                         description: 'General commands',
-                        id: `${prefix}generalmenu`
+                        id: `generalmenu`
                       },
                       {
                         title: '𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬𝐌𝐞𝐧𝐮',
                         description: 'Bot settings commands',
-                        id: `${prefix}settingsmenu`
+                        id: `settingsmenu`
                       },
                       {
                         title: '𝐎𝐰𝐧𝐞𝐫𝐌𝐞𝐧𝐮',
                         description: 'Owner only commands',
-                        id: `${prefix}ownermenu`
+                        id: `ownermenu`
                       },
                       {
                         title: '𝐇𝐞𝐫𝐨𝐤𝐮𝐌𝐞𝐧𝐮',
                         description: 'Heroku related commands',
-                        id: `${prefix}herokumenu`
+                        id: `herokumenu`
                       },
                       {
                         title: '𝐏𝐫𝐢𝐯𝐚𝐜𝐲𝐌𝐞𝐧𝐮',
                         description: 'Privacy commands',
-                        id: `${prefix}privacymenu`
+                        id: `privacymenu`
                       },
                       {
                         title: '𝐆𝐫𝐨𝐮𝐩𝐌𝐞𝐧𝐮',
                         description: 'Group management',
-                        id: `${prefix}groupmenu`
+                        id: `groupmenu`
                       },
                       {
                         title: '𝐀𝐈𝐌𝐞𝐧𝐮',
                         description: 'AI & chat commands',
-                        id: `${prefix}aimenu`
+                        id: `aimenu`
                       },
                       {
                         title: '𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐌𝐞𝐧𝐮',
                         description: 'Media downloaders',
-                        id: `${prefix}downloadmenu`
+                        id: `downloadmenu`
                       },
                       {
                         title: '𝐄𝐝𝐢𝐭𝐢𝐧𝐠𝐌𝐞𝐧𝐮',
                         description: 'Media editing tools',
-                        id: `${prefix}editingmenu`
+                        id: `editingmenu`
                       },
                       {
                         title: '𝐋𝐨𝐠𝐨𝐌𝐞𝐧𝐮',
                         description: 'Logo & text makers',
-                        id: `${prefix}logomenu`
+                        id: `logomenu`
                       },
                       {
                         title: '+𝟏𝟖𝐌𝐞𝐧𝐮',
                         description: 'NSFW commands (18+)',
-                        id: `${prefix}+18menu`
+                        id: `+18menu`
                       },
                       {
                         title: '𝐔𝐭𝐢𝐥𝐬𝐌𝐞𝐧𝐮',
                         description: 'Utility commands',
-                        id: `${prefix}utilsmenu`
+                        id: `utilsmenu`
                       },
                     ],
                   },
@@ -215,12 +215,12 @@ fana({
                       {
                         title: '𝐅𝐮𝐥𝐥𝐌𝐞𝐧𝐮',
                         description: 'Display all commands',
-                        id: `${prefix}fullmenu`
+                        id: `fullmenu`
                       },
                       {
                         title: '𝐃𝐞𝐯',
                         description: "send developer contact",
-                        id: `${prefix}dev`
+                        id: `dev`
                       },
                     ],
                   },
@@ -231,12 +231,12 @@ fana({
                       {
                         title: '𝐏𝐢𝐧𝐠',
                         description: '',
-                        id: `${prefix}ping`
+                        id: `ping`
                       },
                       {
                         title: '𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬',
                         description: 'show bot settings',
-                        id: `${prefix}settings`
+                        id: `settings`
                       },
                     ],
                   },
@@ -247,62 +247,62 @@ fana({
                       {
                         title: '𝐆𝐞𝐧𝐞𝐫𝐚𝐥𝐌𝐞𝐧𝐮',
                         description: 'General commands',
-                        id: `${prefix}generalmenu`
+                        id: `generalmenu`
                       },
                       {
                         title: '𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬𝐌𝐞𝐧𝐮',
                         description: 'Bot settings commands',
-                        id: `${prefix}settingsmenu`
+                        id: `settingsmenu`
                       },
                       {
                         title: '𝐎𝐰𝐧𝐞𝐫𝐌𝐞𝐧𝐮',
                         description: 'Owner only commands',
-                        id: `${prefix}ownermenu`
+                        id: `ownermenu`
                       },
                       {
                         title: '𝐇𝐞𝐫𝐨𝐤𝐮𝐌𝐞𝐧𝐮',
                         description: 'Heroku related commands',
-                        id: `${prefix}herokumenu`
+                        id: `herokumenu`
                       },
                       {
                         title: '𝐏𝐫𝐢𝐯𝐚𝐜𝐲𝐌𝐞𝐧𝐮',
                         description: 'Privacy commands',
-                        id: `${prefix}privacymenu`
+                        id: `privacymenu`
                       },
                       {
                         title: '𝐆𝐫𝐨𝐮𝐩𝐌𝐞𝐧𝐮',
                         description: 'Group management',
-                        id: `${prefix}groupmenu`
+                        id: `groupmenu`
                       },
                       {
                         title: '𝐀𝐈𝐌𝐞𝐧𝐮',
                         description: 'AI & chat commands',
-                        id: `${prefix}aimenu`
+                        id: `aimenu`
                       },
                       {
                         title: '𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐌𝐞𝐧𝐮',
                         description: 'Media downloaders',
-                        id: `${prefix}downloadmenu`
+                        id: `downloadmenu`
                       },
                       {
                         title: '𝐄𝐝𝐢𝐭𝐢𝐧𝐠𝐌𝐞𝐧𝐮',
                         description: 'Media editing tools',
-                        id: `${prefix}editingmenu`
+                        id: `editingmenu`
                       },
                       {
                         title: '𝐋𝐨𝐠𝐨𝐌𝐞𝐧𝐮',
                         description: 'Logo & text makers',
-                        id: `${prefix}logomenu`
+                        id: `logomenu`
                       },
                       {
                         title: '+𝟏𝟖𝐌𝐞𝐧𝐮',
                         description: 'NSFW commands (18+)',
-                        id: `${prefix}+18menu`
+                        id: `+18menu`
                       },
                       {
                         title: '𝐔𝐭𝐢𝐥𝐬𝐌𝐞𝐧𝐮',
                         description: 'Utility commands',
-                        id: `${prefix}utilsmenu`
+                        id: `utilsmenu`
                       },
                     ],
                   },
