@@ -2,7 +2,6 @@ const { fana } = require("../njabulo/fana");
 const config = require("../set");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
-
 fana({ 
   nomCom: "buto", 
   alias: ["speed", "pong"], 
@@ -66,14 +65,10 @@ fana({
               "buttonText": {
                 "displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹"
               },
-              "type": 1,
-              name: "cta_url", 
-              buttonParamsJson: JSON.stringify({ 
-                url: config.GURL 
-              }), 
-            }, 
-          ], 
-        }, 
+              "type": 1
+            }
+          ]
+        } 
       }, 
       { 
         header: { 
@@ -94,14 +89,10 @@ fana({
               "buttonText": {
                 "displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹"
               },
-              "type": 1,
-              name: "cta_url", 
-              buttonParamsJson: JSON.stringify({ 
-                url: config.GURL 
-              }), 
-            }, 
-          ], 
-        }, 
+              "type": 1
+            }
+          ]
+        } 
       }, 
     ]; 
     const message = generateWAMessageFromContent( 
@@ -149,3 +140,4 @@ fana({
     repondre(`An error occurred: ${e.message}`); 
   } 
 });
+          
