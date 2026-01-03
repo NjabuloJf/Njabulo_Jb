@@ -312,6 +312,7 @@ fana({
           ]
         } 
       }, 
+      ];
             await zk.relayMessage(dest, message.message, { messageId: message.key.id }); 
   } catch (e) { 
     console.error("Error in menu command:", e); 
