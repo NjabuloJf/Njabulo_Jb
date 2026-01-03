@@ -24,6 +24,7 @@ fana({
     } 
     const reactionEmojis = ['❄️']; 
     const textEmojis = ['🚀']; 
+    } 
     const reactionEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)]; 
     let textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)]; 
     while (textEmoji === reactionEmoji) { 
@@ -61,11 +62,12 @@ fana({
         nativeFlowMessage: { 
           buttons: [ 
             { 
-              "buttonId": "uptime-btn",
-              "buttonText": {
-                "displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹"
-              },
-              "type": 1
+              name: "quick_reply",
+              buttonParamsJson: JSON.stringify({
+                display_text: "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
+                id: ".ping"
+              }),
+              type: 1
             }
           ]
         } 
@@ -85,11 +87,12 @@ fana({
         nativeFlowMessage: { 
           buttons: [ 
             { 
-              "buttonId": "ping-btn",
-              "buttonText": {
-                "displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹"
-              },
-              "type": 1
+              name: "quick_reply",
+              buttonParamsJson: JSON.stringify({
+                display_text: "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
+                id: ".ping"
+              }),
+              type: 1
             }
           ]
         } 
@@ -140,4 +143,4 @@ fana({
     repondre(`An error occurred: ${e.message}`); 
   } 
 });
-          
+
