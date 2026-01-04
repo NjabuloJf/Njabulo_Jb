@@ -77,6 +77,9 @@ const getRandomQuote = () => {
     return quotes[randomIndex];
 };
 
+  const emojis = ["😅", "🤕", "😔", "🙄", "😂"]; 
+const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+
 
   const randomQuote = getRandomQuote();
   
@@ -133,7 +136,7 @@ const getRandomQuote = () => {
         },
         footer: {
           text: `┌┤🌇 *Hallo family  ${greeting}* 
-┊*${randomQuote}*
+┊${reactionEmoji} *${randomQuote}*
 ╰──────────────⊷⳹`,
         },
         nativeFlowMessage: {
@@ -166,6 +169,7 @@ const getRandomQuote = () => {
         },
         footer: {
           text: `┌┤🌇 *Hallo family  ${greeting}*
+┊${reactionEmoji} *${randomQuote}*
 ╰──────────────⊷⳹ `,
         },
         nativeFlowMessage: {
