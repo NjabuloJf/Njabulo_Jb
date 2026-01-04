@@ -132,9 +132,8 @@ const getRandomQuote = () => {
 *Ｔｙｐｅ* .ʀᴇᴀᴄᴛɪᴏɴ-ᴍᴇɴᴜ`,
         },
         footer: {
-          text: `┌┤🌇 *Hallo family  ${greeting}*
- 
-*${randomQuote}*
+          text: `┌┤🌇 *Hallo family  ${greeting}* 
+┊*${randomQuote}*
 ╰──────────────⊷⳹`,
         },
         nativeFlowMessage: {
@@ -153,6 +152,7 @@ const getRandomQuote = () => {
 ┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
 ┊▢ *ᴅᴀᴛᴇ:* ${date}
 ┊▢ *ᴛɪᴍᴇ:* ${temps}
+┊▢ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${formattedTotalUsers} users
 ┌┤`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
