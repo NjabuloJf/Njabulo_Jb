@@ -1,61 +1,33 @@
-const util = require('util');
-const fs = require('fs-extra');
-const { fana } = require(__dirname + "/../njabulo/fana");
-const { format } = require(__dirname + "/../njabulo/mesfonctions");
-const os = require("os");
+const { fana } = require("../njabulo/fana");
+const config = require("../set");
 const moment = require("moment-timezone");
-const s = require(__dirname + "/../set");
-const more = String.fromCharCode(8206)
-const Taphere = more.repeat(4001)
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
+fana({
+  nomCom: "m",
+  alias: ["help", "cmds"],
+  categorie: "General",
+  reaction: "📚",
+  use: ".menu",
+}, async (dest, zk, commandeOptions) => {
+  console.log('Command triggered!');
+  const { repondre, ms } = commandeOptions;
 
+  moment.tz.setDefault("Africa/Botswana");
+    const temps = moment().format('HH:mm:ss');
+    const date = moment().format('DD/MM/YYYY');
 
-fana({ nomCom: "menu1", categorie: "Menu" }, async (dest, zk, commandeOptions) => {
-    let { ms, repondre, prefixe, nomAuteurMessage, mybotpic } = commandeOptions;
-    let { cm } = require(__dirname + "/../njabulo/fana");
-    let coms = {};
-    let mode = "public";
+    const hour = moment().hour();
+    let greeting = "Good Mornιng";
+    if (hour >= 12 && hour < 18) {
+        greeting = "Good ᥲftᥱrnnon!";
+    } else if (hour >= 18) {
+        greeting = "Good Evᥱrnιng!";
+    } else if (hour >= 22 || hour < 5) {
+        greeting = "Good Nιght";
+    }  
 
-    if ((s.MODE).toLowerCase() !== "yes") {
-        mode = "private";
-    }
-
-    cm.map((com) => {
-        if (!coms[com.categorie]) {
-            coms[com.categorie] = [];
-        }
-        coms[com.categorie].push(com.nomCom);
-    });
-
-  moment.tz.setDefault("Africa/Dar Es Salam");
-    const currentTime = moment();
-    const formattedTime = currentTime.format("HH:mm:ss");
-    const formattedDate = currentTime.format("DD/MM/YYYY");
-    const currentHour = currentTime.hour();
-
-    const greetings = ["Good Morning 🌄", "Good Afternoon 🌃", "Good Evening ⛅", "Good Night 🌙"];
-    const greeting = currentHour < 12 ? greetings[0] : currentHour < 17 ? greetings[1] : currentHour < 21 ? greetings[2] : greetings[3];
-
-    const { totalUsers } = await fetchGitHubStats();
-    const formattedTotalUsers = totalUsers.toLocaleString();
-
-  try { 
-    const njabulox = [ 
-      "https://files.catbox.moe/mh36c7.jpg", 
-      "https://files.catbox.moe/bnb3vx.jpg" 
-    ]; 
-    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)]; 
-    if (!randomNjabulourl) { 
-      console.error("Error: No image URL found."); 
-      repondre("An error occurred: No image URL found."); 
-      return; 
-    } 
-
-    const start = new Date().getTime(); 
-    await zk.sendPresenceUpdate('composing', dest); 
-    const end = new Date().getTime(); 
-    const responseTime = (end - start) / 1000; 
+  
     const cards = [ 
       { 
         header: { 
