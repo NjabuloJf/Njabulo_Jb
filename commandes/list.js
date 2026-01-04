@@ -129,10 +129,12 @@ const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
         },
         body: {
           text: `
-*ｃｍｄ* 27 
-*Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
-*Ｍｏｒｅ* ᴏɴ
-*Ｔｙｐｅ* .ʀᴇᴀᴄᴛɪᴏɴ-ᴍᴇɴᴜ`,
+╔
+ *ｃｍｄ* 27 
+ *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
+ *Ｍｏｒｅ* ᴏɴ
+ *Ｔｙｐｅ* .ʀᴇᴀᴄᴛɪᴏɴ-ᴍᴇɴᴜ
+╚`,
         },
         footer: {
           text: `┌┤🌇 *Hallo family  ${greeting}* 
@@ -162,10 +164,328 @@ const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
         },
         body: {
           text: `
- *ｃｍｄ* 5
-*Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
-*Ｍｏｒｅ* ᴏɴ
-*Ｔｙｐｅ* .Chat-menu`,
+╔
+ *ｃｍｄ* 27 
+ *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
+ *Ｍｏｒｅ* ᴏɴ
+ *Ｔｙｐｅ* .ʟᴏɢᴏ-ᴍᴇɴᴜ 
+╚`,
+        },
+        footer: {
+          text: `┌┤🌇 *Hallo family  ${greeting}* 
+┊${reactionEmoji} *${randomQuote}*
+╰──────────────⊷⳹`,
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+             "buttonId": "uptime-btn",
+              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹" },
+              "type": 1,
+            },               
+          ],
+        },
+      },
+      {                                      
+        header: {
+          title: `╭───────────⊷
+┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
+┊▢ *ᴅᴀᴛᴇ:* ${date}
+┊▢ *ᴛɪᴍᴇ:* ${temps}
+┊▢ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${formattedTotalUsers} users
+┌┤`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+╔
+ *ｃｍｄ* 27 
+ *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
+ *Ｍｏｒｅ* ᴏɴ
+ *Ｔｙｐｅ* .ᴇᴅɪᴛ-ᴍᴇɴᴜ 
+╚`,
+        },
+        footer: {
+          text: `┌┤🌇 *Hallo family  ${greeting}* 
+┊${reactionEmoji} *${randomQuote}*
+╰──────────────⊷⳹`,
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+             "buttonId": "uptime-btn",
+              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹" },
+              "type": 1,
+            },               
+          ],
+        },
+      },
+      {                                      
+
+        header: {
+          title: `╭───────────⊷
+┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
+┊▢ *ᴅᴀᴛᴇ:* ${date}
+┊▢ *ᴛɪᴍᴇ:* ${temps}
+┊▢ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${formattedTotalUsers} users
+┌┤`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+╔
+ *ｃｍｄ* 27 
+ *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
+ *Ｍｏｒｅ* ᴏɴ
+ *Ｔｙｐｅ* .ᴅᴏᴡɴʟᴏᴀᴅ-ᴍᴇɴᴜ
+╚`,
+        },
+        footer: {
+          text: `┌┤🌇 *Hallo family  ${greeting}* 
+┊${reactionEmoji} *${randomQuote}*
+╰──────────────⊷⳹`,
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+             "buttonId": "uptime-btn",
+              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹" },
+              "type": 1,
+            },               
+          ],
+        },
+      },
+      {                                      
+        header: {
+          title: `╭───────────⊷
+┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
+┊▢ *ᴅᴀᴛᴇ:* ${date}
+┊▢ *ᴛɪᴍᴇ:* ${temps}
+┊▢ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${formattedTotalUsers} users
+┌┤`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+╔
+ *ｃｍｄ* 27 
+ *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
+ *Ｍｏｒｅ* ᴏɴ
+ *Ｔｙｐｅ* .ɢᴇɴᴇʀᴀʟ-ᴍᴇɴᴜ
+╚`,
+        },
+        footer: {
+          text: `┌┤🌇 *Hallo family  ${greeting}* 
+┊${reactionEmoji} *${randomQuote}*
+╰──────────────⊷⳹`,
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+             "buttonId": "uptime-btn",
+              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹" },
+              "type": 1,
+            },               
+          ],
+        },
+      },
+      {                                      
+        header: {
+          title: `╭───────────⊷
+┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
+┊▢ *ᴅᴀᴛᴇ:* ${date}
+┊▢ *ᴛɪᴍᴇ:* ${temps}
+┊▢ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${formattedTotalUsers} users
+┌┤`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+╔
+ *ｃｍｄ* 27 
+ *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
+ *Ｍｏｒｅ* ᴏɴ
+ *Ｔｙｐｅ* .ᴀɴɪᴍᴇ-ᴍᴇɴᴜ
+╚`,
+        },
+        footer: {
+          text: `┌┤🌇 *Hallo family  ${greeting}* 
+┊${reactionEmoji} *${randomQuote}*
+╰──────────────⊷⳹`,
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+             "buttonId": "uptime-btn",
+              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹" },
+              "type": 1,
+            },               
+          ],
+        },
+      },
+      {  
+        header: {
+          title: `╭───────────⊷
+┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
+┊▢ *ᴅᴀᴛᴇ:* ${date}
+┊▢ *ᴛɪᴍᴇ:* ${temps}
+┊▢ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${formattedTotalUsers} users
+┌┤`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+╔
+ *ｃｍｄ* 27 
+ *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
+ *Ｍｏｒｅ* ᴏɴ
+ *Ｔｙｐｅ* . ʙᴜɢ-ᴍᴇɴᴜ
+╚`,
+        },
+        footer: {
+          text: `┌┤🌇 *Hallo family  ${greeting}* 
+┊${reactionEmoji} *${randomQuote}*
+╰──────────────⊷⳹`,
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+             "buttonId": "uptime-btn",
+              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹" },
+              "type": 1,
+            },               
+          ],
+        },
+      },
+      {  
+        header: {
+          title: `╭───────────⊷
+┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
+┊▢ *ᴅᴀᴛᴇ:* ${date}
+┊▢ *ᴛɪᴍᴇ:* ${temps}
+┊▢ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${formattedTotalUsers} users
+┌┤`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+╔
+ *ｃｍｄ* 27 
+ *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
+ *Ｍｏｒｅ* ᴏɴ
+ *Ｔｙｐｅ* .ɢʀᴏᴜᴘ-ᴍᴇɴᴜ
+╚`,
+        },
+        footer: {
+          text: `┌┤🌇 *Hallo family  ${greeting}* 
+┊${reactionEmoji} *${randomQuote}*
+╰──────────────⊷⳹`,
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+             "buttonId": "uptime-btn",
+              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹" },
+              "type": 1,
+            },               
+          ],
+        },
+      },
+      { 
+        header: {
+          title: `╭───────────⊷
+┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
+┊▢ *ᴅᴀᴛᴇ:* ${date}
+┊▢ *ᴛɪᴍᴇ:* ${temps}
+┊▢ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${formattedTotalUsers} users
+┌┤`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+╔
+ *ｃｍｄ* 27 
+ *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
+ *Ｍｏｒｅ* ᴏɴ
+ *Ｔｙｐｅ* .ᴜsᴇ-ᴍᴇɴᴜ
+╚`,
+        },
+        footer: {
+          text: `┌┤🌇 *Hallo family  ${greeting}* 
+┊${reactionEmoji} *${randomQuote}*
+╰──────────────⊷⳹`,
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+             "buttonId": "uptime-btn",
+              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹" },
+              "type": 1,
+            },               
+          ],
+        },
+      },
+      {  
+        header: {
+          title: `╭───────────⊷
+┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
+┊▢ *ᴅᴀᴛᴇ:* ${date}
+┊▢ *ᴛɪᴍᴇ:* ${temps}
+┊▢ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${formattedTotalUsers} users
+┌┤`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+╔
+ *ｃｍｄ* 27 
+ *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
+ *Ｍｏｒｅ* ᴏɴ
+ *Ｔｙｐｅ* .ʜᴇʀᴏᴋᴜ-ᴍᴇɴᴜ
+╚`,
+        },
+        footer: {
+          text: `┌┤🌇 *Hallo family  ${greeting}* 
+┊${reactionEmoji} *${randomQuote}*
+╰──────────────⊷⳹`,
+        },
+        nativeFlowMessage: {
+          buttons: [
+            {
+             "buttonId": "uptime-btn",
+              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹" },
+              "type": 1,
+            },               
+          ],
+        },
+      },
+      {                                      
+        header: {
+          title: `╭───────────⊷
+┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
+┊▢ *ᴅᴀᴛᴇ:* ${date}
+┊▢ *ᴛɪᴍᴇ:* ${temps}
+┊▢ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${formattedTotalUsers} users
+┌┤`,
+          hasMediaAttachment: true,
+          imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
+        },
+        body: {
+          text: `
+╔
+  *ｃｍｄ* 5
+  *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
+  *Ｍｏｒｅ* ᴏɴ
+  *Ｔｙｐｅ* .ᴄʜᴀᴛ-ᴍᴇɴᴜ
+╚`,
         },
         footer: {
           text: `┌┤🌇 *Hallo family  ${greeting}*
