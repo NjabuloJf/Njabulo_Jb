@@ -4,7 +4,7 @@ const moment = require("moment-timezone");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({
-  nomCom: "menu",
+  nomCom: "mo",
   alias: ["help", "cmds"],
   categorie: "General",
   reaction: "📚",
@@ -91,19 +91,10 @@ fana({
         nativeFlowMessage: {
           buttons: [
             {
-              name: "cta_url",
-              buttonParamsJson: JSON.stringify({
-                display_text: "🌐 𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
-                url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
-              }),
-            },
-            {
-              name: "cta_copy",
-              buttonParamsJson: JSON.stringify({
-                display_text: "📋 𝗖𝗼𝗽𝘆 𝗟𝗶𝗻𝗸𝘀",
-                copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
-              }),
-            },
+             "buttonId": "uptime-btn",
+              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹" },
+              "type": 1,
+            },               
           ],
         },
       },
@@ -155,19 +146,10 @@ fana({
         nativeFlowMessage: {
           buttons: [
             {
-              name: "cta_url",
-              buttonParamsJson: JSON.stringify({
-                display_text: "🌐 Wa Channel",
-                url: `https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k`,
-              }),
-            },
-            {
-              name: "cta_copy",
-              buttonParamsJson: JSON.stringify({
-                display_text: "📋 Copy Links",
-                copy_code: "https://whatsapp.com/channel/0029VbC9950DzgTDAVL08f3k",
-              }),
-            },
+              "buttonId": "uptime-btn",
+              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹" },
+              "type": 1,
+            }, 
           ],
         },
       },
