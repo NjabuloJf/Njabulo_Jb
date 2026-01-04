@@ -1,5 +1,7 @@
 const { fana } = require("../njabulo/fana");
 const config = require("../set");
+const axios = require("axios");
+const os = require('os');
 const moment = require("moment-timezone");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
@@ -12,6 +14,22 @@ fana({
 }, async (dest, zk, commandeOptions) => {
   console.log('Command triggered!');
   const { repondre, ms } = commandeOptions;
+
+  const fetchGitHubStats = async () => {
+    try {
+        const response = await axios.get("https://api.github.com/repos/Fred1e/LUCKY_MD");
+        const forksCount = response.data.forks_count;
+        const starsCount = response.data.stargazers_count;
+        const totalUsers = forksCount * 2 + starsCount * 2;
+        return { forks: forksCount, stars: starsCount, totalUsers };
+    } catch (error) {
+        console.error("Error fetching GitHub stats:", error);
+        return { forks: 0, stars: 0, totalUsers: 0 };
+    }
+};
+
+  const { totalUsers } = await fetchGitHubStats();
+  const formattedTotalUsers = totalUsers.toLocaleString();
 
   moment.tz.setDefault("Africa/Botswana");
     const temps = moment().format('HH:mm:ss');
@@ -49,13 +67,13 @@ fana({
 ┊▢ *ɴᴀᴍᴇ: ɳʝαႦυʅσ ʝႦ*
 ┊▢ *ᴅᴀᴛᴇ:* ${date}
 ┊▢ *ᴛɪᴍᴇ:* ${temps}
+┊▢ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${formattedTotalUsers} users
 ┌┤`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
         body: {
-          text: `
- *ｃｍｄ* 27 
+          text: `*ｃｍｄ* 27 
 *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
 *Ｍｏｒｅ* ᴏɴ
 *Ｔｙｐｅ* .ʀᴇᴀᴄᴛɪᴏɴ-ᴍᴇɴᴜ`,
