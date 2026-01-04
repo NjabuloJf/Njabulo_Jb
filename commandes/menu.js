@@ -61,13 +61,6 @@ fana({
           text: "", 
         }, 
         nativeFlowMessage: { 
-          buttons: [ 
-            { 
-              "buttonId": "uptime-btn",
-              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹" },
-              "type": 1,
-            }, 
-          ], 
         }, 
       }, 
       { 
@@ -82,14 +75,7 @@ fana({
         footer: { 
           text: "", 
         }, 
-        nativeFlowMessage: { 
-          buttons: [ 
-            { 
-              "buttonId": "ping-btn",
-              "buttonText": {"displayText": "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹"},
-              "type": 1,
-            }, 
-          ], 
+        nativeFlowMessage: {           
         }, 
       }, 
     ]; 
