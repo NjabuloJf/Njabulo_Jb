@@ -1,18 +1,45 @@
-const { fana } = require("../njabulo/fana");
-const config = require("../set");
+const util = require('util');
+const fs = require('fs-extra');
+const { fana } = require(__dirname + "/../njabulo/fana");
+const { format } = require(__dirname + "/../njabulo/mesfonctions");
+const os = require("os");
+const moment = require("moment-timezone");
+const s = require(__dirname + "/../set");
+const more = String.fromCharCode(8206)
+const Taphere = more.repeat(4001)
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 
 
-fana({ 
-  nomCom: "lis", 
-  alias: ["speed", "pong"], 
-  categorie: "General", 
-  reaction: "⏰", 
-  use: ".ping", 
-}, async (dest, zk, commandeOptions) => { 
-  console.log('Command triggered!'); 
-  const { repondre, ms } = commandeOptions; 
+fana({ nomCom: "menu1", categorie: "Menu" }, async (dest, zk, commandeOptions) => {
+    let { ms, repondre, prefixe, nomAuteurMessage, mybotpic } = commandeOptions;
+    let { cm } = require(__dirname + "/../njabulo/fana");
+    let coms = {};
+    let mode = "public";
+
+    if ((s.MODE).toLowerCase() !== "yes") {
+        mode = "private";
+    }
+
+    cm.map((com) => {
+        if (!coms[com.categorie]) {
+            coms[com.categorie] = [];
+        }
+        coms[com.categorie].push(com.nomCom);
+    });
+
+  moment.tz.setDefault("Africa/Dar Es Salam");
+    const currentTime = moment();
+    const formattedTime = currentTime.format("HH:mm:ss");
+    const formattedDate = currentTime.format("DD/MM/YYYY");
+    const currentHour = currentTime.hour();
+
+    const greetings = ["Good Morning 🌄", "Good Afternoon 🌃", "Good Evening ⛅", "Good Night 🌙"];
+    const greeting = currentHour < 12 ? greetings[0] : currentHour < 17 ? greetings[1] : currentHour < 21 ? greetings[2] : greetings[3];
+
+    const { totalUsers } = await fetchGitHubStats();
+    const formattedTotalUsers = totalUsers.toLocaleString();
+
   try { 
     const njabulox = [ 
       "https://files.catbox.moe/mh36c7.jpg", 
@@ -24,25 +51,7 @@ fana({
       repondre("An error occurred: No image URL found."); 
       return; 
     } 
-    const reactionEmojis = ['❄️']; 
-    const textEmojis = ['🚀']; 
-    const reactionEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)]; 
-    let textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)]; 
-    while (textEmoji === reactionEmoji) { 
-      textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)]; 
-    } 
-    const runtime = function (seconds) { 
-      seconds = Number(seconds); 
-      var d = Math.floor(seconds / (3600 * 24)); 
-      var h = Math.floor((seconds % (3600 * 24)) / 3600); 
-      var m = Math.floor((seconds % 3600) / 60); 
-      var s = Math.floor(seconds % 60); 
-      var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " d, ") : ""; 
-      var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " h, ") : ""; 
-      var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " m, ") : ""; 
-      var sDisplay = s > 0 ? s + (s == 1 ? " second" : " s") : ""; 
-      return dDisplay + hDisplay + mDisplay + sDisplay; 
-    }; 
+
     const start = new Date().getTime(); 
     await zk.sendPresenceUpdate('composing', dest); 
     const end = new Date().getTime(); 
@@ -55,7 +64,7 @@ fana({
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage, 
         }, 
         body: { 
-          text: `⏳ *uptime* : *${runtime(process.uptime())} ${reactionEmoji}* `, 
+          text: `⏳`, 
         }, 
         footer: { 
           text: "", 
@@ -77,7 +86,7 @@ fana({
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage, 
         }, 
         body: { 
-          text: `⏳ *ping* : *${responseTime.toFixed(2)}s ${reactionEmoji}* `, 
+          text: `⏳`, 
         }, 
         footer: { 
           text: "", 
