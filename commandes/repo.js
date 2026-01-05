@@ -1,4 +1,3 @@
-/*
 
 const { fana } = require("../njabulo/fana");
 const config = require("../set");
@@ -6,7 +5,7 @@ const { generateWAMessageContent, generateWAMessageFromContent } = require('@whi
 const axios = require('axios');
 
 fana({
-  nomCom: "repo",
+  nomCom: "rep",
   alias: ["repository"],
   categorie: "General",
   reaction: "⭐",
@@ -15,7 +14,7 @@ fana({
   console.log('Command triggered!');
   const { repondre, ms } = commandeOptions;
   try {
-    const repo = 'NjabuloJ/Njabulo-Jb';
+    const repo = 'NjabuloJf/Njabulo-Jb';
     const response = await axios.get(`https://api.github.com/repos/${repo}`);
     const data = response.data;
     const created = new Date(data.created_at).toLocaleDateString();
@@ -37,15 +36,15 @@ fana({
     const cards = [
       {
         header: {
-          title: `📊 Repository Info`,
+          title: `📊 𝗥𝗲𝗽𝗼𝘀𝗶𝘁𝗼𝗿𝘆 𝗴𝗶𝘁`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
         body: {
           text: `
-*💞 Name : Njabulo Jb*
-*📅 Created* : ${created}
-*🔄 Updated* : ${updated}
+*Name : Njabulo Jb*
+*Created* : ${created}
+*Updated* : ${updated}
           `,
         },
         footer: {
@@ -56,7 +55,7 @@ fana({
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on GitHub",
+                display_text: "𝗥𝗲𝗽𝗼𝘀𝗶𝘁𝗼𝗿𝘆 𝗴𝗶𝘁",
                 url: `https://github.com/${repo}`,
               }),
             },
@@ -65,15 +64,15 @@ fana({
       },
       {
         header: {
-          title: `📊 Stats`,
+          title: `📊 𝗚𝗲𝘁 𝗽𝗮𝗶𝗿 𝗰𝗼𝗱𝗲`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: randomNjabulourl } }, { upload: zk.waUploadToServer })).imageMessage,
         },
         body: {
           text: `
-*💞 Name* : Njabulo Jb*
-*⭐ Stars* : ${data.stargazers_count}
-*🍴 Forks* : ${data.forks_count}
+*Name* : Njabulo Jb*
+*Stars* : ${data.stargazers_count}
+*Forks* : ${data.forks_count}
           `,
         },
         footer: {
@@ -84,7 +83,7 @@ fana({
             {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌐 View on GitHub",
+                display_text: "𝗚𝗲𝘁 𝗽𝗮𝗶𝗿 𝗰𝗼𝗱𝗲",
                 url: `https://github.com/${repo}`,
               }),
             },
@@ -119,4 +118,3 @@ fana({
   }
 });
 
-*/
