@@ -6,7 +6,7 @@ const moment = require("moment-timezone");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 fana({
-  nomCom: "mo",
+  nomCom: "menu",
   alias: ["help", "cmds"],
   categorie: "General",
   reaction: "📚",
