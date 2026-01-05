@@ -1,6 +1,7 @@
 const { fana } = require("../njabulo/fana");
 const axios = require("axios");
 const { writeFile } = require("fs/promises");
+const config = require("../set");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
 
 // ── Random image for the header (used only for error messages) ─────
@@ -18,9 +19,9 @@ const baseButtons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "Visit Website",
+      display_text: "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
       id: "backup channel",
-      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+      url: config.GURL
     }),
   },
   {
