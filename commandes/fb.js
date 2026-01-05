@@ -1,5 +1,6 @@
 const { fana } = require("../njabulo/fana");
 const fs = require("fs");
+const config = require("../set");
 const getFBInfo = require("@xaviabot/fb-downloader");
 const { default: axios } = require("axios");
 
@@ -20,15 +21,7 @@ const baseButtons = [
     buttonParamsJson: JSON.stringify({
       display_text: "Visit Website",
       id: "backup channel",
-      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-    }),
-  },
-  {
-    name: "cta_copy",
-    buttonParamsJson: JSON.stringify({
-      display_text: "Copy",
-      id: "copy",
-      copy_code: "", // will be filled dynamically
+      url: config.GURL
     }),
   },
 ];
