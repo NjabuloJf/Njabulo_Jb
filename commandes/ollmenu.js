@@ -241,6 +241,46 @@ fana({
       return;
     }
 
+   const emojis = ["😅", "🤕", "😔", "🙄", "😂", "🤔", "😲", "😩"]; 
+const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+
+  const randomQuote = getRandomQuote();
+  
+  const { totalUsers } = await fetchGitHubStats();
+  const formattedTotalUsers = totalUsers.toLocaleString();
+
+
+   moment.tz.setDefault("Africa/Botswana");
+    const temps = moment().format('HH:mm:ss');
+    const date = moment().format('DD/MM/YYYY');
+
+    const hour = moment().hour();
+    let greeting = "Good Mornιng";
+    if (hour >= 12 && hour < 18) {
+        greeting = "Good ᥲftᥱrnnon!";
+    } else if (hour >= 18) {
+        greeting = "Good Evᥱrnιng!";
+    } else if (hour >= 22 || hour < 5) {
+        greeting = "Good Nιght";
+    }
+
+  
+  try {
+    const njabulox = [
+      "https://files.catbox.moe/xjeyjh.jpg",
+      "https://files.catbox.moe/mh36c7.jpg",
+      "https://files.catbox.moe/bnb3vx.jpg"
+    ];
+
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+    if (!randomNjabulourl) {
+      console.error("Error: No image URL found.");
+      repondre("An error occurred: No image URL found.");
+      return;
+    }
+
+
     const cards = [
        {                                      
         header: {
