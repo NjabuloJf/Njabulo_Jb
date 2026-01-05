@@ -92,17 +92,18 @@ fana({
         greeting = "Good Nιght";
       }
 
-      const card = {
+      const card = 
+      {
         header: {
-          title: `📸 ${video.title}`,
+          title: `*📸 ${video.title}*`,
           hasMediaAttachment: true,
           imageMessage: (await generateWAMessageContent({ image: { url: video.thumbnail } }, { upload: zk.waUploadToServer })).imageMessage,
         },
         body: {
-          text: `🎧 Views: ${video.views.toLocaleString()}\n🎻 Uploaded: ${video.ago}\n${video.timestamp}`,
+          text: `*🎧 Views:* ${video.views.toLocaleString()}\n*🎻 Uploaded:* ${video.ago}\n${video.timestamp}`,
         },
         footer: {
-          text: "🔹 Play song",
+          text: "",
         },
         nativeFlowMessage: {
           buttons: [
@@ -137,9 +138,19 @@ fana({
               },
             },
           },
-        },
-        { quoted: ms }
-      );
+             }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "ɳʝαႦυʅσ ʝႦ",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 
       await zk.relayMessage(dest, message.message, { messageId: message.key.id });
       await zk.sendMessage(dest, {
