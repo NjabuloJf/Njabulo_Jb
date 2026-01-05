@@ -1,5 +1,6 @@
 const JavaScriptObfuscator = require("javascript-obfuscator");
 const { fana } = require("../njabulo/fana");
+const config = require("../set");
 
 // ── Random image list ─────────────────────────────────────────────
 const njabulox = [
@@ -16,17 +17,9 @@ const baseButtons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "Visit Website",
+      display_text: "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
       id: "backup channel",
-      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-    }),
-  },
-  {
-    name: "cta_copy",
-    buttonParamsJson: JSON.stringify({
-      display_text: "Copy",
-      id: "copy",
-      copy_code: "", // will be filled dynamically
+      url: config.GURL
     }),
   },
 ];
