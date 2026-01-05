@@ -4,7 +4,7 @@ const {ajouterOuMettreAJourJid,mettreAJourAction,verifierEtatJid} = require("../
 const {atbajouterOuMettreAJourJid,atbverifierEtatJid} = require("../bdd/antibot")
 const { search, download } = require("aptoide-scraper");
 const fs = require("fs-extra");
-const conf = require("../set");
+const config = require("../set");
 const { default: axios } = require('axios');
 
 
