@@ -1,4 +1,5 @@
 const { fana } = require("../njabulo/fana");
+const config = require("../set");
 const fancy = require("../njabulo/style");
 
 // ── Random image list ─────────────────────────────────────────────
@@ -14,14 +15,6 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
 // ── Helper that builds the button list for a given copy‑text ─────
 function buildButtons(copyText) {
   return [
-    {
-      name: "cta_url",
-      buttonParamsJson: JSON.stringify({
-        display_text: "Visit Website",
-        id: "backup channel",
-        url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-      }),
-    },
     {
       name: "cta_copy",
       buttonParamsJson: JSON.stringify({
