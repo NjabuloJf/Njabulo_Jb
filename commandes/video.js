@@ -90,7 +90,7 @@ fana({
             }, 
             interactiveMessage: { 
               body: { 
-                text: `*Nᴊᴀʙᴜʟᴏ Jʙ YᴏᴜTᴜʙᴇ ᴅᴏᴡɴʟᴏᯤ*\n🔍 Search Results for: ${query}` 
+                text: `🔍 Search Results for: ${query}` 
               }, 
               footer: { 
                 text: `📂 Found ${search.videos.length} results` 
