@@ -3,6 +3,7 @@ const { fana } = require("../njabulo/fana");
 const traduire = require("../njabulo/traduction");
 const { downloadMediaMessage, downloadContentFromMessage } = require("@whiskeysockets/baileys");
 const fs = require("fs-extra");
+const config = require("../set");
 const axios = require("axios");
 const FormData = require("form-data");
 const { exec } = require("child_process");
@@ -22,9 +23,9 @@ const baseButtons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "Visit Website",
+      display_text: "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
       id: "backup channel",
-      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+      url: config.GURL
     }),
   },
   {
@@ -53,18 +54,9 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
       interactiveMessage: {
         image: { url: randomNjabulourl },
         header: text,
+        mentionedJid: [ms?.sender?.jid || ""],
         buttons,
         headerType: 1,
-        contextInfo: {
-          mentionedJid: [ms?.sender?.jid || ""],
-          externalAdReply: {
-            title: "💓ᥕᥱᥣᥴomᥱ fᥲmιᥣყ ",
-            mediaType: 1,
-            previewType: 0,
-            thumbnailUrl: randomNjabulourl,
-            renderLargerThumbnail: false,
-          },
-        },
       },
     },
     {
