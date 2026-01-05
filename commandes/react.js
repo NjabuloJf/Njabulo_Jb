@@ -5,6 +5,7 @@ const fs = require("fs-extra");
 const { execSync } = require("child_process");
 const { unlink } = require('fs').promises;
 const { fana } = require("../njabulo/fana");
+const config = require("../set");
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -25,9 +26,9 @@ const buttons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "Visit Website",
+      display_text: "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
       id: "backup channel",
-      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+      url: config.GURL
     }),
   },
   ];
