@@ -77,7 +77,7 @@ const getRandomQuote = () => {
     return quotes[randomIndex];
 };
 
-  const emojis = ["😅", "🤕", "😔", "🙄", "😂"]; 
+  const emojis = ["😅", "🤕", "😔", "🙄", "😂", "🤔", "😲", "😩"]; 
 const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 
 
@@ -165,7 +165,7 @@ const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
         body: {
           text: `
 ╔
- *ｃｍｄ* 27 
+ *ｃｍｄ* 23
  *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
  *Ｍｏｒｅ* ᴏɴ
  *Ｔｙｐｅ* .ʟᴏɢᴏ-ᴍᴇɴᴜ 
@@ -200,7 +200,7 @@ const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
         body: {
           text: `
 ╔
- *ｃｍｄ* 27 
+ *ｃｍｄ* 18
  *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
  *Ｍｏｒｅ* ᴏɴ
  *Ｔｙｐｅ* .ᴇᴅɪᴛ-ᴍᴇɴᴜ 
@@ -271,7 +271,7 @@ const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
         body: {
           text: `
 ╔
- *ｃｍｄ* 27 
+ *ｃｍｄ* 11
  *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
  *Ｍｏｒｅ* ᴏɴ
  *Ｔｙｐｅ* .ɢᴇɴᴇʀᴀʟ-ᴍᴇɴᴜ
@@ -306,7 +306,7 @@ const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
         body: {
           text: `
 ╔
- *ｃｍｄ* 27 
+ *ｃｍｄ* 12
  *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
  *Ｍｏｒｅ* ᴏɴ
  *Ｔｙｐｅ* .ᴀɴɪᴍᴇ-ᴍᴇɴᴜ
@@ -341,7 +341,7 @@ const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
         body: {
           text: `
 ╔
- *ｃｍｄ* 27 
+ *ｃｍｄ* 18
  *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
  *Ｍｏｒｅ* ᴏɴ
  *Ｔｙｐｅ* . ʙᴜɢ-ᴍᴇɴᴜ
@@ -376,7 +376,7 @@ const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
         body: {
           text: `
 ╔
- *ｃｍｄ* 27 
+ *ｃｍｄ* 23
  *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
  *Ｍｏｒｅ* ᴏɴ
  *Ｔｙｐｅ* .ɢʀᴏᴜᴘ-ᴍᴇɴᴜ
@@ -411,7 +411,7 @@ const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
         body: {
           text: `
 ╔
- *ｃｍｄ* 27 
+ *ｃｍｄ* 19
  *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
  *Ｍｏｒｅ* ᴏɴ
  *Ｔｙｐｅ* .ᴜsᴇ-ᴍᴇɴᴜ
@@ -446,7 +446,7 @@ const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
         body: {
           text: `
 ╔
- *ｃｍｄ* 27 
+ *ｃｍｄ* 20
  *Ｍｅｎｕ* Ｒｅａｃｔｉｏｎ 
  *Ｍｏｒｅ* ᴏɴ
  *Ｔｙｐｅ* .ʜᴇʀᴏᴋᴜ-ᴍᴇɴᴜ
@@ -518,7 +518,7 @@ const reactionEmoji = emojis[Math.floor(Math.random() * emojis.length)];
             },
             interactiveMessage: {
               header: { text: `🔍 System Info` },
-              body: { text: `*ɴᴀᴍᴇ ʙᴏᴛ ɴᴊᴀʙᴜʟᴏ ᴊʙ*\n*ʟɪʙʀᴀʀʏ ɴᴏᴅᴇ.ᴊs*` },
+              body: { text: `*ｃｏｍｐｌｅｔｅｄ✘*` },
               carouselMessage: { cards },
             },
           },
