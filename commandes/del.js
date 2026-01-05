@@ -1,6 +1,7 @@
 
 
 const { fana } = require("../njabulo/fana");
+const config = require("../set");
 const { Sticker, StickerTypes } = require("wa-sticker-formatter");
 const {
   ajouterOuMettreAJourJid,
@@ -21,18 +22,11 @@ const buttons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "Visit Website",
-      id: "backup channel",
-      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-    }),
-  },
-  {
-    name: "cta_copy",
-    buttonParamsJson: JSON.stringify({
-      display_text: "Messaging online",
-      id: "copy",
-      copy_code: "greeting",
-    }),
+      display_text: "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
+      id: "back channel",
+      url: config.GURL
+
+    });
   },
 ];
 
