@@ -1,6 +1,6 @@
 const { fana } = require("../njabulo/fana");
 const axios = require("axios");
-const conf = require(__dirname + "/../set");
+const config = require("../set");
 
 // ── Random image list ─────────────────────────────────────────────
 const njabulox = [
