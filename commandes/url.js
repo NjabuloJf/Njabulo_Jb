@@ -2,6 +2,7 @@ const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter")
 const { fana } = require("../njabulo/fana");
 const { downloadMediaMessage } = require("@whiskeysockets/baileys");
 const fs = require("fs-extra");
+const config = require("../set");
 const ffmpeg = require("fluent-ffmpeg");
 const { Catbox } = require("node-catbox");
 
@@ -12,9 +13,9 @@ const buttons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "Visit Website",
+      display_text: "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
       id: "backup channel",
-      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+      url: config.GURL
     }),
   },
   {
