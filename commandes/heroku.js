@@ -12,7 +12,7 @@ const buttons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "🌐WA channel",
+      display_text: "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
       id: "backup channel",
       url: config.GURL
     }),
