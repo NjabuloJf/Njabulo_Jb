@@ -5,6 +5,7 @@ const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter')
 const traduire = require("../njabulo/traduction");
 const { downloadMediaMessage,downloadContentFromMessage } =  require('@whiskeysockets/baileys');
 const fs =require("fs-extra") ;
+const config = require("../set");
 const axios = require('axios');  
 const FormData = require('form-data');
 const { exec } = require("child_process");
