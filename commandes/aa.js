@@ -72,8 +72,8 @@ fana({
 ㉗ .ᴄʀɪɴɢᴇ `,
         },
         footer: {
-          text: "┌┤
-╰──────────────⊷⳹ ",
+          text: ` ┌┤
+╰──────────────⊷⳹ `,
         },
         nativeFlowMessage: {
           buttons: [
@@ -190,8 +190,8 @@ fana({
 ㉓ .ɪɴᴄᴀɴᴅᴇsᴄᴇɴᴛ `,
         },
         footer: {
-          text: "┌┤
-╰──────────────⊷⳹ ",
+          text: `┌┤
+╰──────────────⊷⳹ `,
         },
         nativeFlowMessage: {
           buttons: [
@@ -312,8 +312,8 @@ fana({
 ㉗ .ᴘᴏʀɴᴏ `,
         },
         footer: {
-          text: "┌┤
-╰──────────────⊷⳹ ",
+          text: `┌┤
+╰──────────────⊷⳹ `,
         },
         nativeFlowMessage: {
           buttons: [
@@ -420,8 +420,8 @@ fana({
 ⑪ .ᴘᴀɪʀ `,
         },
         footer: {
-          text: "┌┤
-╰──────────────⊷⳹ ",
+          text: `┌┤
+╰──────────────⊷⳹ `,
         },
         nativeFlowMessage: {
           buttons: [
@@ -525,8 +525,8 @@ fana({
 ⑩ .ᴍᴇɢᴜᴍɪɴ`,
         },
         footer: {
-          text: "┌┤
-╰──────────────⊷⳹ ",
+          text: `┌┤
+╰──────────────⊷⳹ `,
         },
         nativeFlowMessage: {
           buttons: [
@@ -638,8 +638,8 @@ fana({
 ⑱ .ᴅᴏᴄᴜɢᴄʙᴜɢ <ɢʀᴏᴜᴘʟɪɴᴋ> `,
         },
         footer: {
-          text: "┌┤
-╰──────────────⊷⳹ ",
+          text: `┌┤
+╰──────────────⊷⳹ `,
         },
         nativeFlowMessage: {
           buttons: [
@@ -756,8 +756,8 @@ fana({
 ㉓ .ᴀɴᴛɪᴅᴇᴍᴏᴛᴇ `,
         },
         footer: {
-          text: "┌┤
-╰──────────────⊷⳹ ",
+          text: `┌┤
+╰──────────────⊷⳹ `,
         },
         nativeFlowMessage: {
           buttons: [
@@ -870,8 +870,8 @@ fana({
 ⑲ .ᴛʀᴛ `,
         },
         footer: {
-          text: "┌┤
-╰──────────────⊷⳹ ",
+          text: `┌┤
+╰──────────────⊷⳹ `,
         },
         nativeFlowMessage: {
           buttons: [
@@ -986,8 +986,8 @@ fana({
 ⑳ .ᴍᴇɴᴜʟɪɴᴋs `,
         },
         footer: {
-          text: "┌┤
-╰──────────────⊷⳹ ",
+          text: `┌┤
+╰──────────────⊷⳹ `,
         },
         nativeFlowMessage: {
           buttons: [
@@ -1087,8 +1087,8 @@ fana({
 ⑤ .ɪʟᴀᴍᴀ `,
         },
         footer: {
-          text: "┌┤
-╰──────────────⊷⳹ ",
+          text: `┌┤
+╰──────────────⊷⳹ `,
         },
         nativeFlowMessage: {
           buttons: [
@@ -1200,8 +1200,8 @@ fana({
 ⑰ .ɢʀᴇʏsᴄᴀʟᴇ`,
         },
         footer: {
-          text: "┌┤
-╰──────────────⊷⳹ ",
+          text: `┌┤
+╰──────────────⊷⳹ `,
         },
         nativeFlowMessage: {
           buttons: [
