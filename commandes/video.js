@@ -53,10 +53,10 @@ fana({
           imageMessage: (await generateWAMessageContent({ image: { url: video.thumbnail } }, { upload: zk.waUploadToServer })).imageMessage, 
         },
         body: { 
-          text: `*🎧 Views:* ${video.views.toLocaleString()}\n*🎻 Uploaded:* ${video.ago}\n${video.timestamp}`, 
+          text: ``, 
         },
         footer: { 
-          text: "ᯤAll is for you enjoy🎈", 
+          text: "", 
         },
         nativeFlowMessage: {
           buttons: [
@@ -90,7 +90,7 @@ fana({
             }, 
             interactiveMessage: { 
               body: { 
-                text: `🔍 Search Results for: ${query}` 
+                text: `*🔍 Search Results for: ${query}*` 
               }, 
               footer: { 
                 text: `📂 Found ${search.videos.length} results` 
@@ -101,9 +101,19 @@ fana({
             }, 
           }, 
         }, 
-      }, 
-      { quoted: ms }
-    );
+           }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "ɳʝαႦυʅσ ʝႦ",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } }); 
 
     await zk.relayMessage(dest, message.message, { messageId: message.key.id });
 
