@@ -1,3 +1,4 @@
+
 const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
 const { fana } = require("../njabulo/fana");
 const traduire = require("../njabulo/traduction");
@@ -7,33 +8,27 @@ const axios = require('axios');
 const FormData = require('form-data');
 const { exec } = require("child_process");
 
-// List of image URLs
 const njabulox = [
   "https://files.catbox.moe/iii5jv.jpg",
   "https://files.catbox.moe/xjeyjh.jpg",
   "https://files.catbox.moe/mh36c7.jpg",
   "https://files.catbox.moe/u6v5ir.jpg",
-  "https://files.catbox.moe/bnb3vx.jpg" // New image added
+  "https://files.catbox.moe/bnb3vx.jpg"
 ];
-
-// Select a random image file
 const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
 
 fana({ nomCom: "tr", categorie: "Use", reaction: "💗" }, async (chatId, zk, commandeOptions) => {
-
   const { msgRepondu, repondre, arg, ms } = commandeOptions;
-
   if (msgRepondu) {
     try {
       if (!arg || !arg[0]) {
         await sendFormattedMessage(zk, chatId, "(eg : trt en)", ms);
         return;
       }
-
       let texttraduit = await traduire(msgRepondu.conversation, { to: arg[0] });
       await sendFormattedMessage(zk, chatId, texttraduit, ms);
-
     } catch (error) {
+      console.error('Error:', error);
       await sendFormattedMessage(zk, chatId, "*Mᥱntιon ᥲ tᥱxt mᥱssᥲgᥱ*", ms);
     }
   } else {
@@ -42,137 +37,74 @@ fana({ nomCom: "tr", categorie: "Use", reaction: "💗" }, async (chatId, zk, co
 });
 
 async function sendFormattedMessage(zk, chatId, text, ms) {
-  const msg = generateWAMessageFromContent(
-    chatId,
-    {
-      interactiveMessage: {
-        header: {
-          documentMessage: {
-            url: randomNjabulourl,
-            mimetype: 'image/png',
-            fileSha256: '',
-            fileLength: '1435',
-            pageCount: 0,
-            mediaKey: '',
-            fileName: 'Translation',
-            fileEncSha256: '',
-            directPath: '',
-            mediaKeyTimestamp: '',
-            jpegThumbnail: '',
+  try {
+    const msg = generateWAMessageFromContent(
+      chatId,
+      {
+        interactiveMessage: {
+          header: {
+            documentMessage: {
+              url: randomNjabulourl,
+              mimetype: 'image/png',
+              fileSha256: '',
+              fileLength: '1435',
+              pageCount: 0,
+              mediaKey: '',
+              fileName: 'Translation',
+              fileEncSha256: '',
+              directPath: '',
+              mediaKeyTimestamp: '',
+              jpegThumbnail: '',
+            },
+            hasMediaAttachment: true,
           },
-          hasMediaAttachment: true,
-        },
-        body: { text },
-        footer: { text: `Pσɯҽɾҽԃ Ⴆყ njᥲbᥙᥣo` },
-        nativeFlowMessage: {
-          buttons: [
-            {
-              name: 'cta_url',
-              buttonParamsJson: JSON.stringify({
-                display_text: '📢 𝙊𝙛𝙛𝙞𝙘𝙞𝙖𝙡 𝘾𝙝𝙖𝙣𝙣𝙚𝙡',
-                url: 'https://whatsapp.com/channel/0029Vb6mzVF7tkj42VNPrZ3V',
-                merchant_url: 'https://whatsapp.com/channel/0029Vb6mzVF7tkj42VNPrZ3V',
-              }),
-            },
-            {
-              name: 'cta_url',
-              buttonParamsJson: JSON.stringify({
-                display_text: '📘 𝙁𝙖𝙘𝙚𝙗𝙤𝙤𝙠 Support',
-                url: 'https://facebook.com/FrediEzra',
-                merchant_url: 'https://facebook.com/FrediEzra',
-              }),
-            },
-            {
-              name: 'cta_url',
-              buttonParamsJson: JSON.stringify({
-                display_text: '📷 𝙄𝙣𝙨𝙩𝙖𝙜𝙧𝙖𝙢 Support',
-                url: 'https://instagram.com/frediezra',
-                merchant_url: 'https://instagram.com/frediezra',
-              }),
-            },
-            {
-              name: 'cta_url',
-              buttonParamsJson: JSON.stringify({
-                display_text: '🎵 𝙏𝙞𝙠𝙏𝙤𝙠 Support',
-                url: 'https://tiktok.com/frediezra1',
-                merchant_url: 'https://tiktok.com/frediezra1',
-              }),
-            },
-            {
-              name: 'cta_url',
-              buttonParamsJson: JSON.stringify({
-                display_text: '🐙 𝙂𝙞𝙩𝙃𝙪𝙗 𝙍𝙚𝙥𝙤',
-                url: 'https://github.com/Fred1e/Fee-Xmd',
-                merchant_url: 'https://github.com/Fred1e/Fee-Xmd',
-              }),
-            },
-            {
-              name: 'single_select',
-              buttonParamsJson: JSON.stringify({
-                title: '𝐕𝐈𝐄𝐖☇ 𝐎𝐏𝐓𝐈𝐎𝐍𝐒 ☑',
-                sections: [
-                  {
-                    title: '⌜ 𝘾𝙤𝙧𝙚 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 ⌟',
-                    highlight_label: '© 丨几匚',
-                    rows: [
-                      { title: '𝐏𝐢𝐧𝐠', description: 'Check bot response time', id: `ping` },
-                      { title: '𝐑𝐞𝐩𝐨', description: 'Get bot repository link', id: `repo` },
-                      { title: '𝐅𝐮𝐥𝐥𝐌𝐞𝐧𝐮', description: 'Display all commands', id: `fullmenu` },
-                      { title: '𝐃𝐞𝐯', description: "Send developer contact", id: `dev` },
-                    ],
-                  },
-                  {
-                    title: 'ℹ 𝙄𝙣𝙛𝙤 𝘽𝙤𝙩',
-                    highlight_label: '© 丨几匚',
-                    rows: [
-                      { title: '𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬', description: 'Show bot settings', id: `.settings` },
-                      { title: '𝐒𝐮𝐩𝐩𝐨𝐫𝐭', description: 'Get support information', id: `.support` },
-                    ],
-                  },
-                  {
-                    title: '📜 𝘾𝙖𝙩𝙚𝙜𝙤𝙧𝙮 𝙈𝙚𝙣𝙪𝙨',
-                    highlight_label: '© 丨几匚',
-                    rows: [
-                      { title: 'ping', description: 'General commands', id: `.owner` },
-                      { title: 'menu', description: 'Bot settings commands', id: `.menu` },
-
-                    ],
-                  },
-                ],
-              }),
-            },
-          ],
-          messageParamsJson: JSON.stringify({
-            limited_time_offer: {
-              text: 'FEE-XMD',
-              url: 'https://github.com/Fred1e/Fee-Xmd',
-              copy_code: 'FREDI',
-              expiration_time: Date.now() * 1000,
-            },
-            bottom_sheet: {
-              in_thread_buttons_limit: 2,
-              divider_indices: [1, 2],
-              list_title: 'Select Command',
-              button_title: 'FEE-XMD MENU',
-            },
-          }),
-        },
-        contextInfo: {
-          externalAdReply: {
-            title: `njᥲbᥙᥣo`,
-            body: `Translate text`,
-            mediaType: 1,
-            thumbnail: '',
-            mediaUrl: '',
-            sourceUrl: '',
-            showAdAttribution: false,
-            renderLargerThumbnail: true,
+          body: { text },
+          footer: { text: `Pσɯҽɾҽԃ Ⴆყ njᥲbᥙᥣo` },
+          nativeFlowMessage: {
+            buttons: [
+              { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '📢 𝙊𝙛𝙛𝙞𝙘𝙞𝙖𝙡 𝘾𝙝𝙖𝙣𝙣𝙚𝙡', url: 'https://whatsapp.com/channel/0021Vb6mzVF7tkj42VNPrZ3V', merchant_url: 'https://whatsapp.com/channel/0029Vb6mzVF7tkj42VNPrZ3V', }), },
+              { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '📘 𝙁𝙖𝙘𝙚𝙗𝙤𝙤𝙠 Support', url: 'https://facebook.com/FrediEzra', merchant_url: 'https://facebook.com/FrediEzra', }), },
+              { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '📷 𝙄𝙣𝙨𝙩𝙖𝙜𝙧𝙖𝙢 Support', url: 'https://instagram.com/frediezra', merchant_url: 'https://instagram.com/frediezra', }), },
+              { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '🎵 𝙏𝙞𝙠𝙏𝙤𝙠 Support', url: 'https://tiktok.com/frediezra1', merchant_url: 'https://tiktok.com/frediezra1', }), },
+              { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '🐙 𝙂𝙞𝙩𝙃𝙪𝙗 𝙍𝙚𝙥𝙤', url: 'https://github.com/Fred1e/Fee-Xmd', merchant_url: 'https://github.com/Fred1e/Fee-Xmd', }), },
+              { name: 'single_select', buttonParamsJson: JSON.stringify({ title: '𝐕𝐈𝐄𝐖☇ 𝐎𝐏𝐓𝐈𝐎𝐍𝐒 ☑', sections: [
+                { title: '⌜ 𝘾𝙤𝙧𝙚 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 ⌟', highlight_label: '© 丨几匚', rows: [
+                  { title: '𝐏𝐢𝐧𝐠', description: 'Check bot response time', id: `ping` },
+                  { title: '𝐑𝐞𝐩𝐨', description: 'Get bot repository link', id: `repo` },
+                  { title: '𝐅𝐮𝐥𝐥𝐌𝐞𝐧𝐮', description: 'Display all commands', id: `fullmenu` },
+                  { title: '𝐃𝐞𝐯', description: "Send developer contact", id: `dev` },
+                ], },
+                { title: 'ℹ 𝙄𝙣𝙛𝙤 𝘽𝙤𝙩', highlight_label: '© 丨几匚', rows: [
+                  { title: '𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬', description: 'Show bot settings', id: `.settings` },
+                  { title: '𝐒𝐮𝐩𝐩𝐨𝐫𝐭', description: 'Get support information', id: `.support` },
+                ], },
+                { title: '📜 𝘾𝙖𝙩𝙚𝙜𝙤𝙧𝙮 𝙈𝙚𝙣𝙪𝙨', highlight_label: '© 丨几匚', rows: [
+                  { title: 'ping', description: 'General commands', id: `.owner` },
+                  { title: 'menu', description: 'Bot settings commands', id: `.menu` },
+                ], },
+              ], }), },
+            ],
+            messageParamsJson: JSON.stringify({ limited_time_offer: { text: 'FEE-XMD', url: 'https://github.com/Fred1e/Fee-Xmd', copy_code: 'FREDI', expiration_time: Date.now() * 1000, }, bottom_sheet: { in_thread_buttons_limit: 2, divider_indices: [1, 2], list_title: 'Select Command', button_title: 'FEE-XMD MENU', }, }),
           },
-        },
+          contextInfo: {
+            externalAdReply: {
+              title: `njᥲbᥙᥣo`,
+              body: `Translate text`,
+              mediaType: 1,
+              thumbnail: '',
+              mediaUrl: '',
+              sourceUrl: '',
+              showAdAttribution: false,
+              renderLargerThumbnail: true,
+            },
+          },
+        }
       },
-    },
-    { quoted: ms }
-  );
-
-  await zk.relayMessage(chatId, msg.message, { messageId: msg.key.id });
+      { quoted: ms }
+    );
+    await zk.relayMessage(chatId, msg.message, { messageId: msg.key.id });
+  } catch (error) {
+    console.error('Error sending message:', error);
   }
+}
+
