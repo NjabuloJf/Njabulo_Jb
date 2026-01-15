@@ -38,6 +38,7 @@ fana({ nomCom: "tr", categorie: "Use", reaction: "💗" }, async (chatId, zk, co
 
 async function sendFormattedMessage(zk, chatId, text, ms) {
   try {
+    console.log('Sending message to', chatId);
     const msg = generateWAMessageFromContent(
       chatId,
       {
@@ -62,7 +63,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
           footer: { text: `Pσɯҽɾҽԃ Ⴆყ njᥲbᥙᥣo` },
           nativeFlowMessage: {
             buttons: [
-              { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '📢 𝙊𝙛𝙛𝙞𝙘𝙞𝙖𝙡 𝘾𝙝𝙖𝙣𝙣𝙚𝙡', url: 'https://whatsapp.com/channel/0021Vb6mzVF7tkj42VNPrZ3V', merchant_url: 'https://whatsapp.com/channel/0029Vb6mzVF7tkj42VNPrZ3V', }), },
+              { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '📢 𝙊𝙛𝙛𝙞𝙘𝙞𝙖𝙡 𝘾𝙝𝙖𝙣𝙣𝙚𝙡', url: 'https://whatsapp.com/channel/0029Vb6mzVF7tkj42VNPrZ3V', merchant_url: 'https://whatsapp.com/channel/0029Vb6mzVF7tkj42VNPrZ3V', }), },
               { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '📘 𝙁𝙖𝙘𝙚𝙗𝙤𝙤𝙠 Support', url: 'https://facebook.com/FrediEzra', merchant_url: 'https://facebook.com/FrediEzra', }), },
               { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '📷 𝙄𝙣𝙨𝙩𝙖𝙜𝙧𝙖𝙢 Support', url: 'https://instagram.com/frediezra', merchant_url: 'https://instagram.com/frediezra', }), },
               { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '🎵 𝙏𝙞𝙠𝙏𝙤𝙠 Support', url: 'https://tiktok.com/frediezra1', merchant_url: 'https://tiktok.com/frediezra1', }), },
@@ -84,27 +85,22 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
                 ], },
               ], }), },
             ],
-            messageParamsJson: JSON.stringify({ limited_time_offer: { text: 'FEE-XMD', url: 'https://github.com/Fred1e/Fee-Xmd', copy_code: 'FREDI', expiration_time: Date.now() * 1000, }, bottom_sheet: { in_thread_buttons_limit: 2, divider_indices: [1, 2], list_title: 'Select Command', button_title: 'FEE-XMD MENU', }, }),
           },
           contextInfo: {
             externalAdReply: {
               title: `njᥲbᥙᥣo`,
               body: `Translate text`,
               mediaType: 1,
-              thumbnail: '',
-              mediaUrl: '',
-              sourceUrl: '',
-              showAdAttribution: false,
-              renderLargerThumbnail: true,
             },
           },
         }
       },
       { quoted: ms }
     );
+    console.log('Message generated');
     await zk.relayMessage(chatId, msg.message, { messageId: msg.key.id });
+    console.log('Message sent');
   } catch (error) {
     console.error('Error sending message:', error);
   }
-}
-
+ }
