@@ -1,6 +1,4 @@
 
-
-Here's the updated code:
 const { fana } = require("../njabulo/fana");
 const moment = require("moment-timezone");
 // List of image URLs
