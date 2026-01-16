@@ -140,7 +140,7 @@ fana({ nomCom: "maaa", categorie: "General" }, async (dest, zk, commandeOptions)
         externalAdReply: {
           title: ``,
           body: `Yo, Ready to fuck shit up?`,
-          mediaType: 1,
+          mediaType: 0,
           thumbnail: randomNjabulourl,
           mediaUrl: '',
           sourceUrl: 'https://github.com/Fred1e/Fee-Xmd',
