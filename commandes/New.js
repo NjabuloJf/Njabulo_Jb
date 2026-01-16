@@ -1,3 +1,4 @@
+
 const { fana } = require("../njabulo/fana");
 const moment = require("moment-timezone");
 // List of image URLs
@@ -34,6 +35,15 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
         hasMediaAttachment: true,
       },
       image: { url: randomNjabulourl },
+      contextInfo: {
+        externalAdReply: {
+          title: `⏰ message menu`,
+          mediaType: 1,
+          previewType: 0,
+          thumbnailUrl: randomNjabulourl,
+          renderLargerThumbnail: true,
+        },
+      },
       header: text,
       footer: `Pσɯҽɾҽԃ Ⴆყ njabulo`,
       nativeFlowMessage: {
@@ -63,22 +73,13 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
         }),
       },
     },
-    contextInfo: {
-      externalAdReply: {
-        title: `⏰ message menu`,
-        mediaType: 1,
-        previewType: 0,
-        thumbnailUrl: randomNjabulourl,
-        renderLargerThumbnail: true,
-      },
-    },
   }, { quoted: ms });
   return msgm;
 }
 
 fana(
   {
-    nomCom: "gps",
+    nomCom: "gipi",
     categorie: "General",
     reaction: "📷",
   },
