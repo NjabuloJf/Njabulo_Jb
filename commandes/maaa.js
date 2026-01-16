@@ -259,6 +259,7 @@ fana({ nomCom: "maaa", categorie: "General" }, async (dest, zk, commandeOptions)
           },
           hasMediaAttachment: true,
         },
+        image: { url: randomNjabulourl },
         header: infoMsg,
         footer: `Pσɯҽɾҽԃ Ⴆყ njabulo`,
         nativeFlowMessage: {
