@@ -26,6 +26,9 @@ fana({ nomCom: "meee", categorie: "General" }, async (dest, zk, commandeOptions)
   const temps = moment().format('HH:mm:ss');
   const date = moment().format('DD/MM/YYYY');
 
+
+  
+
   // Generate greeting based on time of day
   const hour = moment().hour();
   let greeting = "Good Mornιng";
@@ -36,6 +39,23 @@ fana({ nomCom: "meee", categorie: "General" }, async (dest, zk, commandeOptions)
   } else if (hour >= 22 || hour < 5) {
     greeting = "Good Nιght";
   }
+
+  const quotedMessage = {
+  key: {
+    fromMe: false,
+    participant: '0@s.whatsapp.net',
+    remoteJid: 'status@broadcast',
+  },
+  message: {
+    contactMessage: {
+      displayName: 'njᥲbᥙᥣo',
+      conversation: 'bot',
+      local: 'Botswana',
+      copy: 'reply',
+    },
+  },
+};
+
 
   let infoMsg = `╭───────────⊷
 ┊▢nᥲmᥱ : *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
@@ -331,7 +351,7 @@ fana({ nomCom: "maaa", categorie: "General" }, async (dest, zk, commandeOptions)
           renderLargerThumbnail: true,
         },
       },
-    }, { quoted: ms });
+    }, { quoted: quotedMessage });
   } catch (error) {
     console.error("Menu error: ", error);
     repondre("🥵🥵 Menu error: " + error);
