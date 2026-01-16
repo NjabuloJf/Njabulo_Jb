@@ -259,7 +259,7 @@ fana({ nomCom: "maaa", categorie: "General" }, async (dest, zk, commandeOptions)
           },
           hasMediaAttachment: true,
         },
-        body: infoMsg,
+        text: infoMsg,
         footer: `Pσɯҽɾҽԃ Ⴆყ njabulo`,
         nativeFlowMessage: {
           buttons: [
