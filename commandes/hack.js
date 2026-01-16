@@ -62,7 +62,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
         message: {
           contactMessage: {
             displayName: "njᥲbᥙᥣo",
-            vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`,
+            conversation: 'bot',
           },
         },
       },
