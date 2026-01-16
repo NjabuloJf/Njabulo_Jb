@@ -61,88 +61,84 @@ fana({ nomCom: "menuu", categorie: "General" }, async (dest, zk, commandeOptions
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
 
-  const baseButtons = [
-    {
-      name: 'single_select',
-      buttonParamsJson: JSON.stringify({
-        title: '𝐕𝐈𝐄𝐖☇ 𝐎𝐏𝐓𝐈𝐎𝐍𝐒 ☑',
-        sections: [
-          {
-            title: '⌜ 𝘾𝙤𝙧𝙚 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 ⌟',
-            highlight_label: '© 丨几匚',
-            rows: [
-              { title: '𝐏𝐢𝐧𝐠', description: 'Check bot response time', id: `.ping` },
-              { title: '𝐑𝐞𝐩𝐨', description: 'Get bot repository link', id: `repo` },
-              { title: '𝐅𝐮𝐥𝐥𝐌𝐞𝐧𝐮', description: 'Display all commands', id: `fullmenu` },
-              { title: '𝐃𝐞𝐯', description: "Send developer contact", id: `dev` },
-            ],
-          },
-          {
-            title: 'ℹ 𝙄𝙣𝙛𝙤 𝘽𝙤𝙩',
-            highlight_label: '© 丨几匚',
-            rows: [
-              { title: '𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬', description: 'Show bot settings', id: `.settings` },
-              { title: '𝐒𝐮𝐩𝐩𝐨𝐫𝐭', description: 'Get support information', id: `.support` },
-            ],
-          },
-          {
-            title: '📜 𝘾𝙖𝙩𝙚𝙜𝙤𝙧𝙮 𝙈𝙚𝙣𝙪𝙨',
-            highlight_label: '© 丨几匚',
-            rows: [
-              { title: 'ping', description: 'General commands', id: `.owner` },
-              { title: 'menu', description: 'Bot settings commands', id: `.menu` },
-            ],
-          },
-          {
-            title: '🌐 𝙎𝙤𝙘𝙞𝙖𝙡 𝙈𝙚𝙙𝙞𝙖',
-            highlight_label: '© 丨几匚',
-            rows: [
-              {
-                name: 'cta_url',
-                buttonParamsJson: JSON.stringify({
-                  display_text: '📢 𝙊𝙛𝙛𝙞𝙘𝙞𝙖𝙡 𝘾𝙝𝙖𝙣𝙣𝙚𝙥',
-                  url: 'https://whatsapp.com/channel/0029Vb6mzVF7tkj42VNPrZ3V',
-                  merchant_url: 'https://whatsapp.com/channel/0029Vb6mzVF7tkj42VNPrZ3V',
-                }),
-              },
-              {
-                name: 'cta_url',
-                buttonParamsJson: JSON.stringify({
-                  display_text: '📘 𝙁𝙖𝙘𝙚𝙗𝙤𝙤𝙠 Support',
-                  url: 'https://facebook.com/FrediEzra',
-                  merchant_url: 'https://facebook.com/FrediEzra',
-                }),
-              },
-              {
-                name: 'cta_url',
-                buttonParamsJson: JSON.stringify({
-                  display_text: '📷 𝙄𝙣𝙨𝙩𝙖𝙜𝙧𝙖𝙢 Support',
-                  url: 'https://instagram.com/frediezra',
-                  merchant_url: 'https://instagram.com/frediezra',
-                }),
-              },
-              {
-                name: 'cta_url',
-                buttonParamsJson: JSON.stringify({
-                  display_text: '🎵 𝙏𝙞𝙠𝙏𝙤𝙠 Support',
-                  url: 'https://tiktok.com/frediezra1',
-                  merchant_url: 'https://tiktok.com/frediezra1',
-                }),
-              },
-              {
-                name: 'cta_url',
-                buttonParamsJson: JSON.stringify({
-                  display_text: '🐙 𝙂𝙞𝙩𝙃𝙪𝙗 𝙍𝙚𝙥𝙤',
-                  url: 'https://github.com/Fred1e/Fee-Xmd',
-                  merchant_url: 'https://github.com/Fred1e/Fee-Xmd',
-                }),
-              },
-            ],
-          },
-        ]
-      }),
-    },
-  ];
+
+
+
+
+const baseButtons = [
+  {
+    name: 'single_select',
+    buttonParamsJson: JSON.stringify({
+      title: '𝐕𝐈𝐄𝐖☇ 𝐎𝐏𝐓𝐈𝐎𝐍𝐒 ☑',
+      sections: [
+        {
+          title: '⌜ 𝘾𝙤𝙧𝙚 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 ⌟',
+          highlight_label: '© 丨几匚',
+          rows: [
+            { title: '𝐏𝐢𝐧𝐠', description: 'Check bot response time', id: `ping` },
+            { title: '𝐑𝐞𝐩𝐨', description: 'Get bot repository link', id: `repo` },
+            { title: '𝐅𝐮𝐥𝐥𝐌𝐞𝐧𝐮', description: 'Display all commands', id: `fullmenu` },
+            { title: '𝐃𝐞𝐯', description: "Send developer contact", id: `dev` },
+          ],
+        },
+        {
+          title: 'ℹ 𝙄𝙣𝙛𝙤 𝘽𝙤𝙩',
+          highlight_label: '© 丨几匚',
+          rows: [
+            { title: '𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬', description: 'Show bot settings', id: `.settings` },
+            { title: '𝐒𝐮𝐩𝐩𝐨𝐫𝐭', description: 'Get support information', id: `.support` },
+          ],
+        },
+        {
+          title: '🌐 𝙎𝙤𝙘𝙞𝙖𝙡 𝙈𝙚𝙙𝙞𝙖',
+          highlight_label: '© 丨几匚',
+          rows: [
+            {
+              name: 'cta_url',
+              buttonParamsJson: JSON.stringify({
+                display_text: '📢 𝙊𝙛𝙛𝙞𝙘𝙞𝙖𝙡 𝘾𝙝𝙖𝙣𝙣𝙚𝙥',
+                url: 'https://whatsapp.com/channel/0029Vb6mzVF7tkj42VNPrZ3V',
+                merchant_url: 'https://whatsapp.com/channel/0029Vb6mzVF7tkj42VNPrZ3V',
+              }),
+            },
+            {
+              name: 'cta_url',
+              buttonParamsJson: JSON.stringify({
+                display_text: '📘 𝙁𝙖𝙘𝙚𝙗𝙤𝙤𝙠 Support',
+                url: 'https://facebook.com/FrediEzra',
+                merchant_url: 'https://facebook.com/FrediEzra',
+              }),
+            },
+            {
+              name: 'cta_url',
+              buttonParamsJson: JSON.stringify({
+                display_text: '📷 𝙄𝙣𝙨𝙩𝙖𝙜𝙧𝙖𝙢 Support',
+                url: 'https://instagram.com/frediezra',
+                merchant_url: 'https://instagram.com/frediezra',
+              }),
+            },
+            {
+              name: 'cta_url',
+              buttonParamsJson: JSON.stringify({
+                display_text: '🎵 𝙏𝙞𝙠𝙏𝙤𝙠 Support',
+                url: 'https://tiktok.com/frediezra1',
+                merchant_url: 'https://tiktok.com/frediezra1',
+              }),
+            },
+            {
+              name: 'cta_url',
+              buttonParamsJson: JSON.stringify({
+                display_text: '🐙 𝙂𝙞𝙩𝙃𝙪𝙗 𝙍𝙚𝙥𝙤',
+                url: 'https://github.com/Fred1e/Fee-Xmd',
+                merchant_url: 'https://github.com/Fred1e/Fee-Xmd',
+              }),
+            },
+          ],
+        },
+      ]
+    }),
+  },
+];
 
 // List of image URLs
 const njabulox = [
