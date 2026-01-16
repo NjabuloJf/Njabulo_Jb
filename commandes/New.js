@@ -35,6 +35,8 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
         hasMediaAttachment: true,
       },
       image: { url: randomNjabulourl },
+      header: text,
+      footer: `Pσɯҽɾҽԃ Ⴆყ njabulo`,
       contextInfo: {
         externalAdReply: {
           title: `⏰ message menu`,
@@ -44,8 +46,6 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
           renderLargerThumbnail: true,
         },
       },
-      header: text,
-      footer: `Pσɯҽɾҽԃ Ⴆყ njabulo`,
       nativeFlowMessage: {
         buttons: [
           {
