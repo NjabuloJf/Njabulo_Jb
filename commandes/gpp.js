@@ -159,6 +159,7 @@ fana(
                 }
             }
         } });
+    }
 
     } catch (error) {
       console.error("Error in .getpp command:", error);
