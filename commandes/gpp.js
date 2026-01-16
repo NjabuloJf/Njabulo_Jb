@@ -20,7 +20,7 @@ const moment = require("moment-timezone");
     
 
 async function sendFormattedMessage(zk, chatId, text, ms) {
-  await zk.sendMessage(chatId, {
+ const sentMsg = await zk.sendMessage(chatId, {
       interactiveMessage: {
         header: {
           documentMessage: {
@@ -101,6 +101,9 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
           }),
         },
       },
+
+     await zk.sendMessage(dest, {
+      sentMsg,
       contextInfo: {
         externalAdReply: {
           title: `⏰ message menu`,
