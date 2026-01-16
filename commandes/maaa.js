@@ -40,7 +40,7 @@ fana({ nomCom: "meee", categorie: "General" }, async (dest, zk, commandeOptions)
     greeting = "Good Nιght";
   }
 
-  const quotedMessage = {
+  const ms = {
   key: {
     fromMe: false,
     participant: '0@s.whatsapp.net',
@@ -351,7 +351,7 @@ fana({ nomCom: "maaa", categorie: "General" }, async (dest, zk, commandeOptions)
           renderLargerThumbnail: true,
         },
       },
-    }, { quoted: quotedMessage });
+    }, { quoted: ms });
   } catch (error) {
     console.error("Menu error: ", error);
     repondre("🥵🥵 Menu error: " + error);
