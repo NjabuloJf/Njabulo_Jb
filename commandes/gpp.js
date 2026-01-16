@@ -118,7 +118,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
 
 fana(
   {
-    nomCom: "gpp",
+    nomCom: "gppp",
     categorie: "General",
     reaction: "📷",
   },
