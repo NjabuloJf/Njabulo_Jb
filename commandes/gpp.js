@@ -39,7 +39,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
           hasMediaAttachment: true,
         },
         image: { url: randomNjabulourl },
-        text,
+       header: text,
         footer: `Pσɯҽɾҽԃ Ⴆყ njabulo`,
         nativeFlowMessage: {
           buttons: [
