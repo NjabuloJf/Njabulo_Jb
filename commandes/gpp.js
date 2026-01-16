@@ -1,4 +1,5 @@
 const { fana } = require("../njabulo/fana");
+const moment = require("moment-timezone");
 
     // List of image URLs
     const njabulox = [
@@ -11,6 +12,11 @@ const { fana } = require("../njabulo/fana");
 
     // Select a random image file
     const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+
+  moment.tz.setDefault("Africa/Botswana");
+  const temps = moment().format('HH:mm:ss');
+  const date = moment().format('DD/MM/YYYY');
+
     
 
 async function sendFormattedMessage(zk, chatId, text, ms) {
