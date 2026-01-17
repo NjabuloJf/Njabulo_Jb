@@ -36,7 +36,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
       },
       image: { url: randomNjabulourl },
       header: text,
-      footer: `Pσɯҽɾҽԃ Ⴆყ njabulo`,
+      footer: `Message completed WA.bot`,
       contextInfo: {
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
@@ -49,26 +49,26 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
       nativeFlowMessage: {
         buttons: [
           {
-            name: 'cta_url',
+            name: "cta_url",
             buttonParamsJson: JSON.stringify({
-              display_text: '🌐Wa Channel',
-              url: 'https://whatsapp.com/channel',
-              merchant_url: 'https://whatsapp.com/channel',
+            display_text: "[ฬค-ℭɦɑղղℰ£]",
+            id: "backup channel",
+           url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",          
             }),
           },
         ],
         messageParamsJson: JSON.stringify({
           limited_time_offer: {
-            text: 'FEE-XMD',
-            url: 'https://github.com/Fred1e/Fee-Xmd',
-            copy_code: 'FREDI',
+            text: 'MESSAGE',
+            url: '',
+            copy_code: '☪',
             expiration_time: moment().add(1, 'hour').valueOf(),
           },
           bottom_sheet: {
             in_thread_buttons_limit: 2,
             divider_indices: [1, 2],
             list_title: 'Select Command',
-            button_title: 'FEE-XMD MENU',
+            button_title: 'NJABULO JB MENU',
           },
         }),
       },
