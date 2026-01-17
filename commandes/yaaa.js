@@ -26,7 +26,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
           fileLength: '',
           pageCount: 0,
           mediaKey: '',
-          fileName: 'FEE-XMD MENU',
+          fileName: 'njabulo code',
           fileEncSha256: '',
           directPath: '',
           mediaKeyTimestamp: '',
@@ -47,6 +47,14 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
       },
       nativeFlowMessage: {
         buttons: [
+          {
+           name: "quick_reply",
+            buttonParamsJson: JSON.stringify({
+            display_text: "[⏤͟͟͞͞★𝗠𝗲𝘀𝗴 𝗠𝗲𝗻𝘂✘]",
+            id: "backup channel",
+           text: ".menu",          
+            }),
+          },
           {
             name: "cta_url",
             buttonParamsJson: JSON.stringify({
