@@ -136,10 +136,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
         },
       },
     }, { quoted: ms });
-    await zk.sendMessage(chatId, message.message, { messageId: message.key.id });
-  } catch (error) {
-    console.error("Error in sendFormattedMessage:", error);
-  }
+    await zk.relayMessage(chatId, message.message, { messageId: message.key.id });
 }
 
 fana(
