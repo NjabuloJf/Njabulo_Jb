@@ -50,7 +50,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
           {
             name: "cta_url",
             buttonParamsJson: JSON.stringify({
-            display_text: "[𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹✘]",
+            display_text: "[⏤͟͟͞͞★𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹✘]",
             id: "backup channel",
            url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",          
             }),
@@ -60,7 +60,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
           limited_time_offer: {
             text: 'MESSAGE',
             url: '',
-            copy_code: '☪',
+            copy_code: 'online id',
             expiration_time: moment().add(1, 'hour').valueOf(),
           },
           bottom_sheet: {
