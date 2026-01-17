@@ -36,7 +36,6 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
       },
       image: { url: randomNjabulourl },
       header: text,
-      footer: `Message completed WA.bot`,
       contextInfo: {
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
@@ -51,7 +50,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
           {
             name: "cta_url",
             buttonParamsJson: JSON.stringify({
-            display_text: "[ฬค-ℭɦɑղղℰ£]",
+            display_text: "[𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹✘]",
             id: "backup channel",
            url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",          
             }),
