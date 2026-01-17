@@ -117,7 +117,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
             text: 'FEE-XMD',
             url: 'https://github.com/Fred1e/Fee-Xmd',
             copy_code: 'FREDI',
-            expiration_time: Date.now() * 1000,
+            expiration_time: moment().add(1, 'hour').valueOf(), 
           },
           bottom_sheet: {
             in_thread_buttons_limit: 2,
