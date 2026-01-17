@@ -1,3 +1,4 @@
+
 const { fana } = require("../njabulo/fana");
 const moment = require("moment-timezone");
 const { generateWAMessageContent, generateWAMessageFromContent } = require('@whiskeysockets/baileys');
@@ -193,4 +194,7 @@ fana(
     } catch (error) {
       console.error("Error in gppp command:", error);
       await sendFormattedMessage(zk, chatId, `TOTAL BUST, ${nomAuteurMessage}! Njabulo Jb crashed: ${error.message} 😡 Try again or flop! 😣`, ms);
-            } 
+    }
+  }
+);
+
