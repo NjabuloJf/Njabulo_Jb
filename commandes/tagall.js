@@ -8,7 +8,7 @@ const fs = require("fs-extra");
 const config = require("../set");
 const { default: axios } = require('axios');
 
-const baseButtons = [
+const buttons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
