@@ -68,16 +68,17 @@ fana({ nomCom: "me", categorie: "Menu" }, async (dest, zk, commandeOptions) => {
             text: infoMsg + menuMsg,
             contextInfo: {
                 mentionedJid: [senderName],
-                externalAdReply: {
-                    title: "𝚳𝚫𝚻𝚵𝐋𝚵𝚵-𝚻𝚳𝐃",
-                    body: "Tap here my friend join channel update",
-                    thumbnailUrl: "https://files.catbox.moe/ejm45q.jpg",
-                    sourceUrl: "https://whatsapp.com/channel/0029VatokI45EjxufALmY32X",
-                    mediaType: 1,
-                    renderLargerThumbnail: true
-                }
-            }
-        });
+            },
+          isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+            newsletterJid: "120363399999197102@newsletter",
+            newsletterName: "╭••➤Njabulo Jb",
+            serverMessageId: 143,
+          },
+          forwardingScore: 999,
+        }
+      }
+    }, { quoted: ms });
     } catch (error) {
         console.error("Menu error: ", error);
         repondre("🥵🥵 Menu error: " + error);
