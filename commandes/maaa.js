@@ -40,21 +40,7 @@ fana({ nomCom: "meee", categorie: "General" }, async (dest, zk, commandeOptions)
     greeting = "Good Nιght";
   }
 
-  const ms = {
-  key: {
-    fromMe: false,
-    participant: '0@s.whatsapp.net',
-    remoteJid: 'status@broadcast',
-  },
-  message: {
-    contactMessage: {
-      displayName: 'njᥲbᥙᥣo',
-      conversation: 'bot',
-      local: 'Botswana',
-      copy: 'reply',
-    },
-  },
-};
+  
 
 
   let infoMsg = `╭───────────⊷
