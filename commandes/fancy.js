@@ -40,39 +40,17 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
         headerType: 1,
         contextInfo: {
           mentionedJid: [ms?.sender?.jid || ""],
-          externalAdReply: {
-            title: "🖋️message front text",
-            mediaType: 1,
-            previewType: 0,
-            thumbnailUrl: randomNjabulourl,
-            renderLargerThumbnail: false,
           },
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
             newsletterJid: "120363399999197102@newsletter",
-            newsletterName: "╭••➤®Njabulo Jb",
+            newsletterName: "╭••➤Njabulo Jb",
             serverMessageId: 143,
           },
           forwardingScore: 999,
-        },
-      },
-    },
-    {
-      quoted: {
-        key: {
-          fromMe: false,
-          participant: "0@s.whatsapp.net",
-          remoteJid: "status@broadcast",
-        },
-        message: {
-          contactMessage: {
-            displayName: "njᥲbᥙᥣo",
-            vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`,
-          },
-        },
-      },
-    }
-  );
+        }
+      }
+    }, { quoted: ms });
 }
 
 // ── Command: .fancy ─────────────────────────────────────────────
