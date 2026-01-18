@@ -4,8 +4,22 @@ const {ajouterOuMettreAJourJid,mettreAJourAction,verifierEtatJid} = require("../
 const {atbajouterOuMettreAJourJid,atbverifierEtatJid} = require("../bdd/antibot")
 const { search, download } = require("aptoide-scraper");
 const fs = require("fs-extra");
-const conf = require("../set");
+const config = require("../set");
 const { default: axios } = require('axios');
+
+const baseButtons = [
+  {
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "[⏤͟͟͞͞★𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹✘]",
+      id: "backup channel",
+      url: config.GURL,
+    }),
+  },
+];
+
+
+
 
     // List of image URLs
     const njabulox = [
@@ -21,37 +35,32 @@ const { default: axios } = require('axios');
     
 
 async function sendFormattedMessage(zk, chatId, text, ms) {
-  await zk.sendMessage(chatId, {
-    text,
-    contextInfo: {
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo Jb",
-         serverMessageId: 143,
-         },
-         forwardingScore: 999, // 
-         externalAdReply: {
-         title: "🗑️ message delete",
-         mediaType: 1,
-          previewType: 0,
-         thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: false,
+await zk.sendMessage(
+    chatId,
+    {
+      interactiveMessage: {
+        header: text,
+        buttons,
+        headerType: 1,
+        contextInfo: {
+          mentionedJid: [ms?.sender?.jid || ""],
+          externalAdReply: {
+            title: "ɳʝαႦυʅσ ʝႦ",
+            mediaType: 1,
+            previewType: 0,
+            thumbnailUrl: randomNjabulourl,
+            renderLargerThumbnail: false,
+          },
+          isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+            newsletterJid: "120363399999197102@newsletter",
+            newsletterName: "╭••➤Njabulo Jb",
+            serverMessageId: 143,
+          },
+          forwardingScore: 999,
         },
-        },
-          }, { quoted: {
-            key: {
-                fromMe: false,
-                participant: `0@s.whatsapp.net`,
-                remoteJid: "status@broadcast"
-            },
-            message: {
-                contactMessage: {
-                    displayName: "njᥲbᥙᥣo",
-                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
-                }
-            }
-        } });
+      },
+    }, { quoted: ms });
 }
 
 fana({ nomCom: "del", categorie: 'Group',reaction:"ð?§¹" }, async (dest, zk, commandeOptions) => {
