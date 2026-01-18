@@ -3,7 +3,7 @@ const conf = require(__dirname + "/../set");
 const axios = require('axios');
 const config = require("../set");
 
-const baseButtons = [
+const buttons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
@@ -33,9 +33,8 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
     chatId,
     {
       interactiveMessage: {
-        image: { url: randomNjabulourl },
         header: text,
-        buttons,
+        buttons: buttons,
         headerType: 1,
         contextInfo: {
           mentionedJid: [ms?.sender?.jid || ""],
