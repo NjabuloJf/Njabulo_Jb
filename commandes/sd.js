@@ -8,6 +8,17 @@ const moment = require("moment-timezone");
 const s = require(__dirname + "/../set");
 const more = String.fromCharCode(8206);
 const readmore = more.repeat(4001);
+const baseButtons = [
+  {
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "[⏤͟͟͞͞★𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹✘]",
+      id: "backup channel",
+      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+    }),
+  },
+];
+
 const njabulox = [
   "https://files.catbox.moe/iii5jv.jpg",
   "https://files.catbox.moe/xjeyjh.jpg",
@@ -63,8 +74,11 @@ fana({ nomCom: "me", categorie: "Menu" }, async (dest, zk, commandeOptions) => {
   const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
   try {
     await zk.sendMessage(dest, {
+      interactiveMessage: {
       image: { url: randomNjabulourl },
-      caption: infoMsg + menuMsg,
+      header: infoMsg + menuMsg,
+      buttons,
+      headerType: 1,
       contextInfo: {
         mentionedJid: [ms?.sender?.jid || ""],
         externalAdReply: {
@@ -81,6 +95,7 @@ fana({ nomCom: "me", categorie: "Menu" }, async (dest, zk, commandeOptions) => {
           serverMessageId: 143,
         },
         forwardingScore: 999,
+      },
       },
     }, { quoted: ms });
   } catch (error) {
