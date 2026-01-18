@@ -8,7 +8,7 @@ const moment = require("moment-timezone");
 const s = require(__dirname + "/../set");
 const more = String.fromCharCode(8206);
 const readmore = more.repeat(4001);
-const baseButtons = [
+const buttons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
@@ -77,7 +77,7 @@ fana({ nomCom: "me", categorie: "Menu" }, async (dest, zk, commandeOptions) => {
       interactiveMessage: {
       image: { url: randomNjabulourl },
       header: infoMsg + menuMsg,
-      buttons,
+      buttons: buttons,
       headerType: 1,
       contextInfo: {
         mentionedJid: [ms?.sender?.jid || ""],
