@@ -13,7 +13,7 @@ const buttons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
+      display_text: "[⏤͟͟͞͞★𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹✘]",
       id: "backup channel",
       url: config.GURL
     }),
@@ -72,7 +72,7 @@ async function sendFormattedMessage(zk, chatId, text, ms, copyCode = text) {
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
             newsletterJid: "120363399999197102@newsletter",
-            newsletterName: "╭••➤®Njabulo Jb",
+            newsletterName: "╭••➤Njabulo Jb",
             serverMessageId: 143,
           },
           forwardingScore: 999,
@@ -80,7 +80,7 @@ async function sendFormattedMessage(zk, chatId, text, ms, copyCode = text) {
       },
     }, { quoted: ms });
 }
-}
+
 
 // ── Catbox upload helper ─────────────────────────────────────────────
 async function uploadToCatbox(Path) {
