@@ -1,11 +1,4 @@
-const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
 const { fana } = require("../njabulo/fana");
-const traduire = require("../njabulo/traduction");
-const { downloadMediaMessage, downloadContentFromMessage } = require('@whiskeysockets/baileys');
-const fs = require("fs-extra");
-const axios = require('axios');
-const FormData = require('form-data');
-const { exec } = require("child_process");
 
     // List of image URLs
     const njabulox = [
@@ -47,24 +40,35 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
         } });
 }
 
-fana({ nomCom: "trt", categorie: "Use", reaction: "💗" }, async (chatId, zk, commandeOptions) => {
+fana({
+  nomCom: "blocklist",
+  aliases: ["listblock", "blacklist"],
+  reaction: '🍂',
+  categorie: "Search"
+}, async (chatId, zk, commandeOptions) => {
+  const { repondre, ms } = commandeOptions;
 
-  const { msgRepondu, repondre, arg, ms } = commandeOptions;
+  try {
+    let blocklist = await zk.fetchBlocklist();
 
-  if (msgRepondu) {
-    try {
-      if (!arg || !arg[0]) {
-        sendFormattedMessage(zk, chatId, "(eg : trt en)", ms);
-        return;
-      }
+    if (blocklist.length > 0) {
+      let jackhuh = `*Bᥣoᥴkᥱd Contᥲᥴts*\n`;
 
-      let texttraduit = await traduire(msgRepondu.conversation, { to: arg[0] });
-      sendFormattedMessage(zk, chatId, texttraduit, ms);
+      await sendFormattedMessage(zk, chatId, `*ყoᥙ hᥲvᥱ bᥣoᥴkᥱd ${blocklist.length} contact(s), fᥱtᥴhιng ᥲnd sᥱndιng thᥱιr dᥱtᥲιᥣs!*`, ms);
 
-    } catch (error) {
-      sendFormattedMessage(zk, chatId, "*Mᥱntιon ᥲ tᥱxt mᥱssᥲgᥱ*", ms);
+      const promises = blocklist.map(async (blockedUser) => {
+        const phoneNumber = blockedUser.split('@')[0];
+
+        jackhuh += `🖕  +${phoneNumber}\n`; 
+      });
+
+      await Promise.all(promises);
+
+      await sendFormattedMessage(zk, chatId, jackhuh, ms);
+    } else {
+      await sendFormattedMessage(zk, chatId, "*Thᥱrᥱ ᥲrᥱ no bᥣoᥴkᥱd ᥴontᥲᥴts*", ms);
     }
-  } else {
-    sendFormattedMessage(zk, chatId, "*Mᥱntιon ᥲ tᥱxt mᥱssᥲgᥱ*", ms);
+  } catch (e) {
+    await sendFormattedMessage(zk, chatId, "An error occurred while accessing blocked users.\n\n" + e, ms);
   }
 });
