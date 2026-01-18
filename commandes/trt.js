@@ -77,7 +77,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
       },
     }, { quoted: ms });
 }
-}
+
 
 // ── Translate command ─────────────────────────────────────────────
 fana(
