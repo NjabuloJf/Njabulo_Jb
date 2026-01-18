@@ -7,7 +7,7 @@ const buttons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "🌐WA channel",
+      display_text: "[⏤͟͟͞͞★𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹✘]",
       id: "backup channel",
       url: config.GURL
     }),
@@ -49,7 +49,7 @@ fana({
           {
             name: "cta_url",
             buttonParamsJson: JSON.stringify({
-              display_text: "🌐WA channel",
+              display_text: "[⏤͟͟͞͞★𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹✘]",
               id: "backup channel",
               url: config.GURL
             }),
@@ -67,7 +67,7 @@ fana({
           {
             name: "cta_url",
             buttonParamsJson: JSON.stringify({
-              display_text: "🌐WA channel",
+              display_text: "[⏤͟͟͞͞★𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹✘]",
               id: "backup channel",
               url: config.GURL
             }),
@@ -78,7 +78,7 @@ fana({
     } else if (type === 'stickerMessage') {
       const media = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage);
       const stickerMess = new Sticker(media, {
-        pack: '𝚃𝙸𝙼𝙽𝙰𝚂𝙰 𝚃𝙼𝙳',
+        pack: 'Njabulo',
         type: StickerTypes.CROPPED,
         categories: ["🤩", "🎉"],
         id: "12345",
