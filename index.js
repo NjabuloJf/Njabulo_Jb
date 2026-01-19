@@ -112,6 +112,19 @@ setTimeout(() => {
         const zk = (0, baileys_1.default)(sockOptions);
         store.bind(zk.ev);
 
+        const buttons = [
+  {
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "View Channel",
+      id: "backup channel",
+      url: conf.GURL,
+    }),
+  },
+];
+
+
+
 
      // List of image URLs
     const njabulox = [
@@ -897,10 +910,7 @@ zk.ev.on('group-participants.update', async (group) => {
             let msg = `*message welcome on group*`;
             let membres = group.participants;
             for (let membre of membres) {
-                msg += `
-                _________________________________
-                *Hᥱყ* 🖐️ @${membre.split("@")[0]}
-                _________________________________
+                msg += `  *hy* 🖐️ @${membre.split("@")[0]}
                 `;
             
             }
@@ -909,8 +919,10 @@ zk.ev.on('group-participants.update', async (group) => {
             msg += `*more visit on website njabulo-onlin.vercel.app* `;
 
          zk.sendMessage(group.id, {
-        image: { url: randomNjabulourl },
-         caption: msg,
+         interactiveMessage: {
+         header: msg,
+        buttons,
+        headerType: 1,
          contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
@@ -927,6 +939,7 @@ zk.ev.on('group-participants.update', async (group) => {
          renderLargerThumbnail: false,
         },
         },
+         },
           }, { quoted: {
             key: {
                 fromMe: false,
