@@ -31,7 +31,7 @@ const baseButtons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹",
+      display_text: "View Channel",
       id: "backup channel",
       url: config.GURL
     }),
@@ -52,38 +52,28 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
     chatId,
     {
       interactiveMessage: {
-        image: { url: randomNjabulourl },
         header: text,
         buttons,
         headerType: 1,
         contextInfo: {
           mentionedJid: [ms?.sender?.jid || ""],
           externalAdReply: {
-            title: "🖇️ Group link",
+            title: "ɳʝαႦυʅσ ʝႦ",
             mediaType: 1,
             previewType: 0,
             thumbnailUrl: randomNjabulourl,
             renderLargerThumbnail: false,
           },
-        },
-      },
-    },
-    {
-      quoted: {
-        key: {
-          fromMe: false,
-          participant: "0@s.whatsapp.net",
-          remoteJid: "status@broadcast",
-        },
-        message: {
-          contactMessage: {
-            displayName: "njᥲbᥙᥣo",
-            vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`,
+          isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+            newsletterJid: "120363399999197102@newsletter",
+            newsletterName: "╭••➤Njabulo Jb",
+            serverMessageId: 143,
           },
+          forwardingScore: 999,
         },
       },
-    }
-  );
+    }, { quoted: ms });
 }
 
 // ── “link” command ─────────────────────────────────────────────
@@ -114,7 +104,7 @@ fana(
     const link = await zk.groupInviteCode(dest);
     const lien = `https://chat.whatsapp.com/${link}`;
 
-    const mess = `hello ${nomAuteurMessage}, here is the group link for ${nomGroupe} \n\nGroup link: ${lien} \n\n> ɳᴊᴀʙᴜʟᴏ ᴊʙ σғғɪᴄᴇ`;
+    const mess = `hello ${nomAuteurMessage}, here is the group link`;
 
     sendFormattedMessage(zk, dest, mess, ms);
   }
