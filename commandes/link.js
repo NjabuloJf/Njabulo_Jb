@@ -29,11 +29,11 @@ const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
 // ── Standard button set (used by all modules) ────────────────────────
 const baseButtons = [
   {
-    name: "cta_url",
+  name: "cta_copy",
     buttonParamsJson: JSON.stringify({
-      display_text: "View Channel",
-      id: "backup channel",
-      url: config.GURL
+      display_text: "Copy",
+      id: "copy",
+      copy_code: "", // will be filled dynamically
     }),
   },
 ];
