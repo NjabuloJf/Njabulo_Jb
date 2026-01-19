@@ -12,7 +12,7 @@ const buttons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "[⏤͟͟͞͞★𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹✘]",
+      display_text: "View Channel",
       id: "backup channel",
       url: config.GURL,
     }),
@@ -72,11 +72,11 @@ fana({ nomCom: "tagall", categorie: 'Group', reaction: "🚨" }, async (dest, zk
   let mess = arg.join(' ') || 'Aucun Message';
   let membresGroupe = verifGroupe ? await infosGroupe.participants : "";
   let tag = `*Group* : *${nomGroupe}* \n*Message* : *${mess}*\n\n`;
-  let emoji = ['> ᴅᴇᴀʀ😡'];
+  let emoji = ['> ᴅᴇᴀʀ⤵️'];
   let random = Math.floor(Math.random() * emoji.length);
 
   for (const membre of membresGroupe) {
-    tag += `${emoji[random]} @${membre.id.split("@")[0]}\n`;
+    tag += `${emoji[random]} +${membre.id.split("+")[0]}\n`;
   }
 
   if (verifAdmin || superUser) {
