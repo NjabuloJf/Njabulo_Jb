@@ -1078,31 +1078,43 @@ zk.ev.on('group-participants.update', async (group) => {
 ╰───────────⊷`;
 await zk.sendMessage(zk.user.id, { 
     interactiveMessage: {
-     image: { url: randomNjabulourl },
-      header: cmsg,
-      buttons: buttons,
-      headerType: 1,
-        contextInfo: {
-          mentionedJid: [ms?.sender?.jid || ""],
-          externalAdReply: {
-            title: "ɳʝαႦυʅσ ʝႦ",
-            mediaType: 1,
-            previewType: 0,
-            thumbnailUrl: randomNjabulourl,
-            renderLargerThumbnail: false,
-          },
-          isForwarded: true,
-          forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363399999197102@newsletter",
-            newsletterName: "╭••➤Njabulo Jb",
-            serverMessageId: 143,
-          },
-          forwardingScore: 999,
+            image: { url: randomNjabulourl },
+         header: cmsg,
+        buttons: buttons,
+        headerType: 1,
+         contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "🖐️ message bot is connected",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: false,
+         },
         },
-      },
-    }, { quoted: ms });
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
             }
-             }
+        } });
+                    
+               }
+                }
             else if (connection == "close") {
                 let raisonDeconnexion = new boom_1.Boom(lastDisconnect?.error)?.output.statusCode;
                 if (raisonDeconnexion === baileys_1.DisconnectReason.badSession) {
