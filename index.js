@@ -33,7 +33,7 @@ const logger = logger_1.default.child({});
 logger.level = 'silent';
 const pino = require("pino");
 const boom_1 = require("@hapi/boom");
-const config = require("../set");
+const conf = require("./set");
 const axios = require("axios");
 let fs = require("fs-extra");
 let path = require("path");
@@ -125,17 +125,6 @@ setTimeout(() => {
     // Select a random image file
     const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
 
-        const buttons = [
-  {
-    name: "cta_url",
-    buttonParamsJson: JSON.stringify({
-      display_text: "🌐WA channel",
-      id: "backup channel",
-     url: config.GURL
-    }),
-  },
-  ];
-        
         
         
         const audioMap = {
@@ -590,13 +579,36 @@ function mybotpic() {
                                     await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") });
                                     (0, baileys_1.delay)(800);
                                     await zk.sendMessage(origineMessage, {
-                                    interactiveMessage: {                                    
-                                     header: txt,
-                                    mentions: [auteurMessage],
-                                      buttons: buttons,
-                                        headerType: 1
+                                    text: txt, 
+                                    contextInfo: {
+                                         isForwarded: true,
+                                          forwardedNewsletterMessageInfo: {
+                                         newsletterJid: '120363399999197102@newsletter',
+                                         newsletterName: "╭••➤®Njabulo Jb",
+                                         serverMessageId: 143,
+                                         },
+                                           forwardingScore: 999, // 
+                                           externalAdReply: {
+                                           title: "⭕ message delete & remove",
+                                           mediaType: 1,
+                                            previewType: 0,
+                                           thumbnailUrl: randomNjabulourl,
+                                           renderLargerThumbnail: true,
                                           },
-                                          }, { quoted: ms });
+                                          },
+                                            }, { quoted: {
+                                              key: {
+                                                  fromMe: false,
+                                                  participant: `0@s.whatsapp.net`,
+                                                  remoteJid: "status@broadcast"
+                                              },
+                                              message: {
+                                                  contactMessage: {
+                                                      displayName: "njᥲbᥙᥣo",
+                                                      vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                                                  }
+                                              }
+                                          } });
                                     try {
                                         await zk.groupParticipantsUpdate(origineMessage, [auteurMessage], "remove");
                                     }
@@ -610,13 +622,37 @@ function mybotpic() {
                                         txt += `message deleted \n @${auteurMessage.split("@")[0]} avoid sending link.`;
                                         // await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                                        await zk.sendMessage(origineMessage, { 
-                                          interactiveMessage: {
-                                           header: txt,
-                                           mentions: [auteurMessage],
-                                           buttons: buttons,
-                                           headerType: 1
-                                          }
-                                          }, { quoted: ms });
+                                           text: txt, 
+                                          mentions: [auteurMessage],
+                                           contextInfo: {
+                                         isForwarded: true,
+                                          forwardedNewsletterMessageInfo: {
+                                         newsletterJid: '120363399999197102@newsletter',
+                                         newsletterName: "╭••➤®Njabulo Jb",
+                                         serverMessageId: 143,
+                                         },
+                                           forwardingScore: 999, // 
+                                           externalAdReply: {
+                                           title: "⭕ message delete links",
+                                           mediaType: 1,
+                                            previewType: 0,
+                                           thumbnailUrl: randomNjabulourl,
+                                           renderLargerThumbnail: false,
+                                          },
+                                          },
+                                            }, { quoted: {
+                                              key: {
+                                                  fromMe: false,
+                                                  participant: `0@s.whatsapp.net`,
+                                                  remoteJid: "status@broadcast"
+                                              },
+                                              message: {
+                                                  contactMessage: {
+                                                      displayName: "njᥲbᥙᥣo",
+                                                      vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                                                  }
+                                              }
+                                          } });
                                        await zk.sendMessage(origineMessage, { delete: key });
                                        await fs.unlink("st1.webp");
 
@@ -740,13 +776,37 @@ function mybotpic() {
       await ajouterUtilisateurAvecWarnCount(auteurMessage)
 
       await zk.sendMessage(origineMessage, { 
-          interactiveMessage: {
-          header: msg,
+          text: msg , 
           mentions: [auteurMessage],
-          buttons: buttons,
-          headerType: 1
-          }
-            }, { quoted: ms });
+      contextInfo: {
+     isForwarded: true,
+       forwardedNewsletterMessageInfo: {
+       newsletterJid: '120363399999197102@newsletter',
+       newsletterName: "╭••➤®Njabulo Jb",
+       serverMessageId: 143,
+       },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "⭕ message warn",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
       await zk.sendMessage(origineMessage, { delete: key });
 
     }
@@ -838,40 +898,48 @@ zk.ev.on('group-participants.update', async (group) => {
             let membres = group.participants;
             for (let membre of membres) {
                 msg += `
-                *Hi* 🖐️ @${membre.split("@")[0]}
+                _________________________________
+                *Hᥱყ* 🖐️ @${membre.split("@")[0]}
+                _________________________________
                 `;
             
             }
 
     
-            msg += `*more visit njabulo-online.vercel.app* `;
+            msg += `*more visit on website njabulo-onlin.vercel.app* `;
 
-       zk.sendMessage(group.id, {
-        interactiveMessage: {
-        header: msg,
-          mentions: [auteurMessage],
-         buttons: buttons,
-        headerType: 1,
-        contextInfo: {
-          mentionedJid: [ms?.sender?.jid || ""],
-          externalAdReply: {
-            title: "ɳʝαႦυʅσ ʝႦ",
-            mediaType: 1,
-            previewType: 0,
-            thumbnailUrl: randomNjabulourl,
-            renderLargerThumbnail: false,
-          },
-          isForwarded: true,
-          forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363399999197102@newsletter",
-            newsletterName: "╭••➤Njabulo Jb",
-            serverMessageId: 143,
-          },
-          forwardingScore: 999,
+         zk.sendMessage(group.id, {
+        image: { url: randomNjabulourl },
+         caption: msg,
+         contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "🖐️ message welcome on group",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: false,
         },
-      },
-    }, { quoted: ms });
-        
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
         } else if (group.action == 'remove' && (await recupevents(group.id, "goodbye") == 'on')) {
             let msg = `one or somes member(s) left group;\n`;
 
@@ -881,31 +949,36 @@ zk.ev.on('group-participants.update', async (group) => {
             }
 
         zk.sendMessage(group.id, { 
-         interactiveMessage: {
-        header: msg, 
-        mentions: [auteurMessage],
-        buttons: buttons,
-        headerType: 1,
+        text: msg, 
         contextInfo: {
-          mentionedJid: [ms?.sender?.jid || ""],
-          externalAdReply: {
-            title: "ɳʝαႦυʅσ ʝႦ",
-            mediaType: 1,
-            previewType: 0,
-            thumbnailUrl: randomNjabulourl,
-            renderLargerThumbnail: false,
-          },
-          isForwarded: true,
-          forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363399999197102@newsletter",
-            newsletterName: "╭••➤Njabulo Jb",
-            serverMessageId: 143,
-          },
-          forwardingScore: 999,
+       isForwarded: true,
+       forwardedNewsletterMessageInfo: {
+       newsletterJid: '120363399999197102@newsletter',
+       newsletterName: "╭••➤®Njabulo Jb",
+       serverMessageId: 143,
+       },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "😡 goodbye will gonna miss you",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: false,
         },
-      },
-    }, { quoted: ms });
-        
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 
         } else if (group.action == 'promote' && (await recupevents(group.id, "antipromote") == 'on') ) {
             //  console.log(zk.user.id)
@@ -1002,8 +1075,31 @@ zk.ev.on('group-participants.update', async (group) => {
         }
 
        
+//⚠︎ time zone Botswana 
+function getCurrentDateTime() {
+    const options = {
+        timeZone: 'Africa/Nairobi', // Botswana time zone
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false, // 24-hour format
+    };
+    const dateTime = new Intl.DateTimeFormat('en-KE', options).format(new Date());
+    return dateTime;
+}
 
-
+//⚠︎Auto Bio Update Interval
+setInterval(async () => {
+    if (conf.AUTO_BIO === "yes") {
+        const currentDateTime = getCurrentDateTime(); // Get the current date and time
+        const bioText = `ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴅᴇᴠɪᴄᴇ 📅 ᴅᴀᴛᴇ\n${currentDateTime} \n⏰ᴛɪᴍᴇ`;  // Format the bio text
+        await zk.updateProfileStatus(bioText); // Update the bio
+        console.log(`Updated Bio: ${bioText}`); // Log the updated bio
+    }
+}, 60000); // Update bio every 60 seconds
         
         //événement contact
         zk.ev.on("contacts.upsert", async (contacts) => {
@@ -1021,7 +1117,20 @@ zk.ev.on('group-participants.update', async (group) => {
             insertContact(contacts);
         });
 
-   
+    
+        //fin événement contact 
+        zk.ev.on("connection.update", async (con) => {
+       const { connection } = con;
+       if (connection === "open") {
+       try {
+        let inviteCode = "ILqvrJ34jmsLLXfbAfD4n6";
+        await zk.acceptInvite(inviteCode);
+          console.log("Joined group successfully");
+          } catch (error) {
+          console.error("Error joining group:", error);
+          }
+         }
+        });
         //événement connexion
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
@@ -1035,7 +1144,7 @@ zk.ev.on('group-participants.update', async (group) => {
                 console.log("------");
                 await (0, baileys_1.delay)(300);
                 console.log("------------------/-----");
-                console.log("Njabulo Jb is Online 🕸\n\n");
+                console.log("DULLAH XMD is Online 🕸\n\n");
                 //chargement des commandes 
                 console.log("Loading Njabulo Jb Commands ...\n");
                 fs.readdirSync(__dirname + "/commandes").forEach((fichier) => {
@@ -1068,20 +1177,16 @@ zk.ev.on('group-participants.update', async (group) => {
 
                 if((conf.DP).toLowerCase() === 'yes') {     
 
-                let cmsg =` ╭──────────⊷
-┊┏━┈┈┈┈┈┈┈⏤͟͟͞͞★
-┊┊ *ᯤɴᴊᴀʙᴜʟᴏ ᴊʙ: ᴄᴏɴɴᴇᴄᴛᴇᴅ* 
-┊┊ *ɴᴀᴍᴇ ɴᴊᴀʙᴜʟᴏ ᴊʙ*
-┊┊ *ᴘʀᴇғɪx: [ ${prefixe} ]*
-┊┊ *ᴍᴏᴅᴇ:* ${md}
-┊┗━┈┈┈┈┈┈┈┈━⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
-╰───────────⊷`;
+                let cmsg =`___________________________
+Njabulo Jb is connected to devices
+nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+ρrᥱfιx :  *[ ${prefixe} ]*
+modᥱ : *${md}*
+___________________________
+`;
 await zk.sendMessage(zk.user.id, { 
-    interactiveMessage: {
             image: { url: randomNjabulourl },
-         header: cmsg,
-        buttons: buttons,
-        headerType: 1,
+         caption: cmsg,
          contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
@@ -1096,7 +1201,6 @@ await zk.sendMessage(zk.user.id, {
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
          renderLargerThumbnail: false,
-         },
         },
         },
           }, { quoted: {
@@ -1114,7 +1218,7 @@ await zk.sendMessage(zk.user.id, {
         } });
                     
                }
-                }
+             }
             else if (connection == "close") {
                 let raisonDeconnexion = new boom_1.Boom(lastDisconnect?.error)?.output.statusCode;
                 if (raisonDeconnexion === baileys_1.DisconnectReason.badSession) {
