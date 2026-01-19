@@ -33,7 +33,7 @@ const logger = logger_1.default.child({});
 logger.level = 'silent';
 const pino = require("pino");
 const boom_1 = require("@hapi/boom");
-const conf = require("./set");
+const config = require("../set");
 const axios = require("axios");
 let fs = require("fs-extra");
 let path = require("path");
@@ -131,7 +131,7 @@ setTimeout(() => {
     buttonParamsJson: JSON.stringify({
       display_text: "🌐WA channel",
       id: "backup channel",
-      url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u"
+     url: config.GURL
     }),
   },
   ];
@@ -593,7 +593,7 @@ function mybotpic() {
                                     interactiveMessage: {                                    
                                      header: txt,
                                     mentions: [auteurMessage],
-                                      buttons,
+                                      buttons: buttons,
                                         headerType: 1
                                           },
                                           }, { quoted: ms });
@@ -743,7 +743,7 @@ function mybotpic() {
           interactiveMessage: {
           header: msg,
           mentions: [auteurMessage],
-          buttons,
+          buttons: buttons,
           headerType: 1
           }
             }, { quoted: ms });
@@ -838,25 +838,40 @@ zk.ev.on('group-participants.update', async (group) => {
             let membres = group.participants;
             for (let membre of membres) {
                 msg += `
-                _________________________________
-                *Hᥱყ* 🖐️ @${membre.split("@")[0]}
-                _________________________________
+                *Hi* 🖐️ @${membre.split("@")[0]}
                 `;
             
             }
 
     
-            msg += `*more visit on website njabulo-online.vercel.app* `;
+            msg += `*more visit njabulo-online.vercel.app* `;
 
-         zk.sendMessage(group.id, {
+       zk.sendMessage(group.id, {
         interactiveMessage: {
-        image: { url: randomNjabulourl },
         header: msg,
           mentions: [auteurMessage],
-         buttons,
-        headerType: 1
-        }
+         buttons: buttons,
+        headerType: 1,
+        contextInfo: {
+          mentionedJid: [ms?.sender?.jid || ""],
+          externalAdReply: {
+            title: "ɳʝαႦυʅσ ʝႦ",
+            mediaType: 1,
+            previewType: 0,
+            thumbnailUrl: randomNjabulourl,
+            renderLargerThumbnail: false,
+          },
+          isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+            newsletterJid: "120363399999197102@newsletter",
+            newsletterName: "╭••➤Njabulo Jb",
+            serverMessageId: 143,
+          },
+          forwardingScore: 999,
+        },
+      },
     }, { quoted: ms });
+        
         } else if (group.action == 'remove' && (await recupevents(group.id, "goodbye") == 'on')) {
             let msg = `one or somes member(s) left group;\n`;
 
@@ -869,10 +884,28 @@ zk.ev.on('group-participants.update', async (group) => {
          interactiveMessage: {
         header: msg, 
         mentions: [auteurMessage],
-        buttons,
-        headerType: 1
-         }
-      }, { quoted: ms });
+        buttons: buttons,
+        headerType: 1,
+        contextInfo: {
+          mentionedJid: [ms?.sender?.jid || ""],
+          externalAdReply: {
+            title: "ɳʝαႦυʅσ ʝႦ",
+            mediaType: 1,
+            previewType: 0,
+            thumbnailUrl: randomNjabulourl,
+            renderLargerThumbnail: false,
+          },
+          isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+            newsletterJid: "120363399999197102@newsletter",
+            newsletterName: "╭••➤Njabulo Jb",
+            serverMessageId: 143,
+          },
+          forwardingScore: 999,
+        },
+      },
+    }, { quoted: ms });
+        
 
         } else if (group.action == 'promote' && (await recupevents(group.id, "antipromote") == 'on') ) {
             //  console.log(zk.user.id)
@@ -1045,26 +1078,30 @@ zk.ev.on('group-participants.update', async (group) => {
 ╰───────────⊷`;
 await zk.sendMessage(zk.user.id, { 
     interactiveMessage: {
-            image: { url: randomNjabulourl },
-         header: cmsg,
-        buttons: buttons,
+     image: { url: randomNjabulourl },
+      header: cmsg,
+      buttons: buttons,
       headerType: 1,
-    },
-          }, { quoted: {
-            key: {
-                fromMe: false,
-                participant: `0@s.whatsapp.net`,
-                remoteJid: "status@broadcast"
-            },
-            message: {
-                contactMessage: {
-                    displayName: "njᥲbᥙᥣo",
-                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
-                }
+        contextInfo: {
+          mentionedJid: [ms?.sender?.jid || ""],
+          externalAdReply: {
+            title: "ɳʝαႦυʅσ ʝႦ",
+            mediaType: 1,
+            previewType: 0,
+            thumbnailUrl: randomNjabulourl,
+            renderLargerThumbnail: false,
+          },
+          isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+            newsletterJid: "120363399999197102@newsletter",
+            newsletterName: "╭••➤Njabulo Jb",
+            serverMessageId: 143,
+          },
+          forwardingScore: 999,
+        },
+      },
+    }, { quoted: ms });
             }
-        } });
-                    
-               }
              }
             else if (connection == "close") {
                 let raisonDeconnexion = new boom_1.Boom(lastDisconnect?.error)?.output.statusCode;
