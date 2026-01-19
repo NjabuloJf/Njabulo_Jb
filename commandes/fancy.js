@@ -18,7 +18,7 @@ function buildButtons(copyText) {
     {
       name: "cta_copy",
       buttonParamsJson: JSON.stringify({
-        display_text: "Copy",
+        display_text: "Copy text ",
         id: "copy",
         copy_code: copyText,          // <-- the text to copy
       }),
@@ -34,7 +34,6 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
     chatId,
     {
       interactiveMessage: {
-        image: { url: randomNjabulourl },
         header: text,
         buttons,
         headerType: 1,
