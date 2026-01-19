@@ -921,7 +921,7 @@ zk.ev.on('group-participants.update', async (group) => {
          zk.sendMessage(group.id, {
          interactiveMessage: {
          header: msg,
-        buttons,
+        buttons: buttons,
         headerType: 1,
          contextInfo: {
          isForwarded: true,
