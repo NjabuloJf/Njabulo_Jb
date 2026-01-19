@@ -592,7 +592,10 @@ function mybotpic() {
                                     await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") });
                                     (0, baileys_1.delay)(800);
                                     await zk.sendMessage(origineMessage, {
-                                    text: txt, 
+                                     interactiveMessage: {
+                                    header: txt, 
+                                    buttons: buttons,
+                                    headerType: 1,
                                     contextInfo: {
                                          isForwarded: true,
                                           forwardedNewsletterMessageInfo: {
@@ -609,6 +612,7 @@ function mybotpic() {
                                            renderLargerThumbnail: true,
                                           },
                                           },
+                                    },
                                             }, { quoted: {
                                               key: {
                                                   fromMe: false,
@@ -635,8 +639,11 @@ function mybotpic() {
                                         txt += `message deleted \n @${auteurMessage.split("@")[0]} avoid sending link.`;
                                         // await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                                        await zk.sendMessage(origineMessage, { 
-                                           text: txt, 
+                                           interactiveMessage: {
+                                           header: txt, 
                                           mentions: [auteurMessage],
+                                               buttons: buttons,
+                                               headerType: 1,
                                            contextInfo: {
                                          isForwarded: true,
                                           forwardedNewsletterMessageInfo: {
@@ -653,6 +660,7 @@ function mybotpic() {
                                            renderLargerThumbnail: false,
                                           },
                                           },
+                                       },
                                             }, { quoted: {
                                               key: {
                                                   fromMe: false,
@@ -789,8 +797,11 @@ function mybotpic() {
       await ajouterUtilisateurAvecWarnCount(auteurMessage)
 
       await zk.sendMessage(origineMessage, { 
-          text: msg , 
+          interactiveMessage: {
+          header: msg , 
           mentions: [auteurMessage],
+          buttons: buttons,
+        headerType: 1,
       contextInfo: {
      isForwarded: true,
        forwardedNewsletterMessageInfo: {
@@ -807,6 +818,7 @@ function mybotpic() {
          renderLargerThumbnail: false,
         },
         },
+      },
           }, { quoted: {
             key: {
                 fromMe: false,
@@ -962,7 +974,10 @@ zk.ev.on('group-participants.update', async (group) => {
             }
 
         zk.sendMessage(group.id, { 
-        text: msg, 
+        interactiveMessage: {
+        header: msg, 
+        buttons: buttons,
+        headerType: 1,
         contextInfo: {
        isForwarded: true,
        forwardedNewsletterMessageInfo: {
@@ -977,6 +992,7 @@ zk.ev.on('group-participants.update', async (group) => {
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
          renderLargerThumbnail: false,
+        },
         },
         },
           }, { quoted: {
@@ -1190,16 +1206,22 @@ setInterval(async () => {
 
                 if((conf.DP).toLowerCase() === 'yes') {     
 
-                let cmsg =`___________________________
-Njabulo Jb is connected to devices
-nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
-ρrᥱfιx :  *[ ${prefixe} ]*
-modᥱ : *${md}*
-___________________________
+                let cmsg =`
+╭──────────⊷
+┊┏━┈┈┈┈┈┈┈⏤͟͟͞͞★
+┊┊ *ᯤɴᴊᴀʙᴜʟᴏ ᴊʙ: ᴄᴏɴɴᴇᴄᴛᴇᴅ* 
+┊┊ *ɴᴀᴍᴇ ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+┊┊ *ᴘʀᴇғɪx: [ ${prefixe} ]*
+┊┊ *ᴍᴏᴅᴇ:* ${md}
+┊┗━┈┈┈┈┈┈┈┈━⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+╰───────────⊷
 `;
 await zk.sendMessage(zk.user.id, { 
+    interactiveMessage: {
             image: { url: randomNjabulourl },
-         caption: cmsg,
+         header: cmsg,
+        buttons: buttons,
+        headerType: 1,
          contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
@@ -1216,6 +1238,7 @@ await zk.sendMessage(zk.user.id, {
          renderLargerThumbnail: false,
         },
         },
+    },
           }, { quoted: {
             key: {
                 fromMe: false,
