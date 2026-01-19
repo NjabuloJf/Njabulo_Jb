@@ -53,7 +53,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
     {
       interactiveMessage: {
         header: text,
-        buttons,
+        buttons: buttons,
         headerType: 1,
         contextInfo: {
           mentionedJid: [ms?.sender?.jid || ""],
