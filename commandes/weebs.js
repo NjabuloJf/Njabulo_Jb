@@ -19,7 +19,7 @@ const baseButtons = [
   {
     name: "cta_url",
     buttonParamsJson: JSON.stringify({
-      display_text: "[⏤͟͟͞͞★𝗪𝗮 𝗖𝗵𝗮𝗻𝗻𝗲𝗹✘]",
+      display_text: "View Channel",
       id: "backup channel",
       url: config.GURL
     }),
