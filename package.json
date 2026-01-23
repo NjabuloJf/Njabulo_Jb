@@ -2,12 +2,12 @@
   "name": "Njabulo_Jb",
   "version": "2.0.0",
   "description": "",
-  "main": "control.js",
+  "main": "fanajb.js",
   "scripts": {
-    "test": "node control.js",
-    "s": "node control.js",
-    "toshtech": "pm2 start control.js --attach",
-    "toshtech": "pm2 start control.js --attach",
+    "test": "node fanajb.js",
+    "s": "node fanajb.js",
+    "toshtech": "pm2 start fanajb.js --attach",
+    "toshtech": "pm2 start fanajb.js --attach",
     "c": "tsc"
   },
   "keywords": [
