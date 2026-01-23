@@ -2,12 +2,12 @@
   "name": "Njabulo_Jb",
   "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "control.js",
   "scripts": {
-    "test": "node index.js",
-    "s": "node index.js",
-    "toshtech": "pm2 start index.js --attach",
-    "toshtech": "pm2 start index.js --attach",
+    "test": "node control.js",
+    "s": "node control.js",
+    "toshtech": "pm2 start control.js --attach",
+    "toshtech": "pm2 start control.js --attach",
     "c": "tsc"
   },
   "keywords": [
@@ -18,7 +18,7 @@
     "whatsapp-bot",
     "raheem-md-boy"
   ],
-  "author": "heroku",
+  "author": "NjabuloJ",
 "license": "ISC",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
