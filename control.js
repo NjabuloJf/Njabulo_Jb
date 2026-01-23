@@ -1091,7 +1091,7 @@ zk.ev.on('group-participants.update', async (group) => {
 
 
                 },{
-                    timezone: "Africa/Zimbabwe"
+                    timezone: "Africa/Botswana"
                   });
               }
 
@@ -1104,62 +1104,7 @@ zk.ev.on('group-participants.update', async (group) => {
         }
 
        
-//⚠︎ time zone Botswana 
-function getCurrentDateTime() {
-    const options = {
-        timeZone: 'Africa/Nairobi', // Botswana time zone
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false, // 24-hour format
-    };
-    const dateTime = new Intl.DateTimeFormat('en-KE', options).format(new Date());
-    return dateTime;
-}
 
-//⚠︎Auto Bio Update Interval
-setInterval(async () => {
-    if (conf.AUTO_BIO === "yes") {
-        const currentDateTime = getCurrentDateTime(); // Get the current date and time
-        const bioText = `ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴅᴇᴠɪᴄᴇ 📅 ᴅᴀᴛᴇ\n${currentDateTime} \n⏰ᴛɪᴍᴇ`;  // Format the bio text
-        await zk.updateProfileStatus(bioText); // Update the bio
-        console.log(`Updated Bio: ${bioText}`); // Log the updated bio
-    }
-}, 60000); // Update bio every 60 seconds
-        
-        //événement contact
-        zk.ev.on("contacts.upsert", async (contacts) => {
-            const insertContact = (newContact) => {
-                for (const contact of newContact) {
-                    if (store.contacts[contact.id]) {
-                        Object.assign(store.contacts[contact.id], contact);
-                    }
-                    else {
-                        store.contacts[contact.id] = contact;
-                    }
-                }
-                return;
-            };
-            insertContact(contacts);
-        });
-
-    
-        //fin événement contact 
-        zk.ev.on("connection.update", async (con) => {
-       const { connection } = con;
-       if (connection === "open") {
-       try {
-        let inviteCode = "ILqvrJ34jmsLLXfbAfD4n6";
-        await zk.acceptInvite(inviteCode);
-          console.log("Joined group successfully");
-          } catch (error) {
-          console.error("Error joining group:", error);
-          }
-         }
-        });
         //événement connexion
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
