@@ -13,9 +13,13 @@ fana({
 }, async (dest, zk, commandOptions) => {
   const { arg, ms, userJid } = commandOptions;
 
+  const randomNjabulourl = "https://files.catbox.moe/dfe0h0.jpg",
 
   try {
     await zk.sendMessage(dest, { 
+      document: {url: randomNjabulourl },
+      mimetype: 'application/pdf',
+      fileName: 'WhatsApp PDF 10GB',
       text: '*searching k-drama*',
           }, { quoted: {
             key: {
