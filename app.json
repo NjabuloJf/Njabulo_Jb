@@ -60,17 +60,6 @@
       "required":false
     }
 	,
-    "HEROKU_APY_KEY": {
-    "description": "📡insert your heroku api-key ",
-     "value":"HRKU-AAa4OvbTCLDEK8R9CIpjZDInu5zGLmQfqkA0oJNNSu2Q_____wNi617Z3aQe",
-	"required" :true
-    },
-  "HEROKU_APP_NAME": {
-    "description": "👥insert your heroku APP NAME (the name you wrote at the beginning)",
-     "value":"",
-	"required" :true
-    }  
-	  ,
     "SESSION_ID":
     {
       "description":"📃put your session ID, the code you received after pairing code",   
@@ -109,11 +98,7 @@
     "value":"1",  
     "required": false
   },
-  "ANTI_DELETE_MESSAGE" : {
-    "description": "🚮if you want to enable anti delete message put yes else put no",
-    "value": "no",
-    "required": false
-  }
+
   },
 
   "formation": {
