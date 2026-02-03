@@ -24,9 +24,8 @@ pool.on('error', (err, client) => {
 });
 
 async function createAntilienTable() {
-  const client = await pool.connect();
   try {
-    await client.query(`
+    await pool.query(`
       CREATE TABLE IF NOT EXISTS antilien (
         jid text PRIMARY KEY,
         etat text,
@@ -36,8 +35,6 @@ async function createAntilienTable() {
     console.log("La table 'antilien' a été créée avec succès.");
   } catch (error) {
     console.error("Une erreur est survenue lors de la création de la table 'antilien':", error);
-  } finally {
-    client.release();
   }
 }
 
