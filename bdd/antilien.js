@@ -9,11 +9,6 @@ if (!dbUrl) {
   process.exit(1);
 }
 
-if (!dbUrl.startsWith('postgres://')) {
-  console.error('DATABASE_URL environment variable is not a PostgreSQL database URL');
-  process.exit(1);
-}
-
 const proConfig = {
   connectionString: dbUrl,
   ssl: {
@@ -134,4 +129,5 @@ module.exports = {
   verifierEtatJid,
   recupererActionJid,
 };
+
 
