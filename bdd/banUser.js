@@ -1,8 +1,9 @@
-require("dotenv").config();
+
+require('dotenv').config();
 const { Pool } = require("pg");
 const s = require("../set");
 
-const dbUrl = s.DATABASE_URL || "postgres://db_7xp9_user:6hwmTN7rGPNsjlBEHyX49CXwrG7cDeYiGPNsjlBEHyX49CXwrG7cDeYi@dpg-cj7ldu5jeehc73b2p7g0-a.oregon-postgres.render.com/db_7xp9";
+const dbUrl = s.DATABASE_URL;
 
 const proConfig = {
   connectionString: dbUrl,
@@ -65,7 +66,7 @@ async function isUserBanned(jid) {
 async function removeUserFromBanList(jid) {
   const client = await pool.connect();
   try {
-    const query = "DELETE FROM banUser WHERE jid = $1";
+    const query = "DELETE FROM FROM DELETE FROM banUser WHERE jid = $1";
     const values = [jid];
     await client.query(query, values);
     console.log(`JID ${jid} supprimé de la liste des bannis.`);
@@ -81,4 +82,3 @@ module.exports = {
   isUserBanned,
   removeUserFromBanList,
 };
-
