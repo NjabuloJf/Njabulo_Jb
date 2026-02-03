@@ -1,9 +1,8 @@
 
 require("dotenv").config();
 const { Pool } = require("pg");
-let s = require("../set")
 
-var dbUrl = s.DATABASE_URL ? s.DATABASE_URL : "postgres://db_7xp9_user:6hwmTN7rGPNsjlBEHyX49CXwrG7cDeYi@dpg-cj7ldu5jeehc73b2p7g0-a.oregon-postgres.render.com/db_7xp9"
+const dbUrl = process.env.DATABASE_URL;
 
 const proConfig = {
   connectionString: dbUrl,
@@ -125,4 +124,6 @@ module.exports = {
   verifierEtatJid,
   recupererActionJid,
 };
+
+
 
