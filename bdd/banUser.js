@@ -1,9 +1,13 @@
 
-require('dotenv').config();
+require('dotenv').config({ path: __dirname + '/set.env' });
 const { Pool } = require("pg");
-const s = require("../set");
 
-const dbUrl = s.DATABASE_URL;
+const dbUrl = process.env.DATABASE_URL;
+
+if (!dbUrl) {
+  console.error('DATABASE_URL environment variable is not set');
+  process.exit(1);
+}
 
 const proConfig = {
   connectionString: dbUrl,
@@ -19,66 +23,80 @@ pool.on('error', (err, client) => {
   process.exit(-1);
 });
 
-const creerTableBanUser = async () => {
+async function creerTableBanUser() {
   try {
-    await pool.query(`
-      CREATE TABLE IF NOT EXISTS banUser (
-        jid text PRIMARY KEY
-      );
-    `);
-    console.log("La table 'banUser' a été créée avec succès.");
-  } catch (e) {
-    console.error("Une erreur est survenue lors de la création de la table 'banUser':", e);
+    const client = await pool.connect();
+    try {
+      await client.query(`
+        CREATE TABLE IF NOT EXISTS banUser (
+          jid text PRIMARY KEY
+        );
+      `);
+      console.log("La table 'banUser' a été créée avec succès.");
+    } catch (error) {
+      console.error("Une erreur est survenue lors de la création de la table 'banUser':", error);
+    } finally {
+      client.release();
+    }
+  } catch (error) {
+    console.error('Erreur de connexion à la base de données:', error);
   }
-};
+}
 
 creerTableBanUser();
 
-async function addUserToBanList(jid) {
-  const client = await pool.connect();
+async function banUser(jid) {
   try {
-    const query = "INSERT INTO banUser (jid) VALUES ($1)";
-    const values = [jid];
-    await client.query(query, values);
-    console.log(`JID ${jid} ajouté à la liste des bannis.`);
+    const client = await pool.connect();
+    try {
+      await client.query('INSERT INTO banUser (jid) VALUES ($1) ON CONFLICT DO NOTHING', [jid]);
+      console.log(`Utilisateur ${jid} banni avec succès.`);
+    } catch (error) {
+      console.error('Erreur lors du bannissement de l\'utilisateur:', error);
+    } finally {
+      client.release();
+    }
   } catch (error) {
-    console.error("Erreur lors de l'ajout de l'utilisateur banni :", error);
-  } finally {
-    client.release();
+    console.error('Erreur de connexion à la base de données:', error);
   }
-}
+};
 
-async function isUserBanned(jid) {
-  const client = await pool.connect();
+async function unbanUser(jid) {
   try {
-    const query = "SELECT EXISTS (SELECT 1 FROM banUser WHERE jid = $1)";
-    const values = [jid];
-    const result = await client.query(query, values);
-    return result.rows[0].exists;
+    const client = await pool.connect();
+    try {
+      await client.query('DELETE FROM banUser WHERE jid = $1', [jid]);
+      console.log(`Utilisateur ${jid} débanni avec succès.`);
+    } catch (error) {
+      console.error('Erreur lors du débannissement de l\'utilisateur:', error);
+    } finally {
+      client.release();
+    }
   } catch (error) {
-    console.error("Erreur lors de la vérification de l'utilisateur banni :", error);
+    console.error('Erreur de connexion à la base de données:', error);
+  }
+};
+
+async function isBanned(jid) {
+  try {
+    const client = await pool.connect();
+    try {
+      const result = await client.query('SELECT * FROM banUser WHERE jid = $1', [jid]);
+      return result.rows.length > 0;
+    } catch (error) {
+      console.error('Erreur lors de la vérification du bannissement:', error);
+      return false;
+    } finally {
+      client.release();
+    }
+  } catch (error) {
+    console.error('Erreur de connexion à la base de données:', error);
     return false;
-  } finally {
-    client.release();
   }
-}
-
-async function removeUserFromBanList(jid) {
-  const client = await pool.connect();
-  try {
-    const query = "DELETE FROM FROM DELETE FROM banUser WHERE jid = $1";
-    const values = [jid];
-    await client.query(query, values);
-    console.log(`JID ${jid} supprimé de la liste des bannis.`);
-  } catch (error) {
-    console.error("Erreur lors de la suppression de l'utilisateur banni :", error);
-  } finally {
-    client.release();
-  }
-}
+};
 
 module.exports = {
-  addUserToBanList,
-  isUserBanned,
-  removeUserFromBanList,
+  banUser,
+  unbanUser,
+  isBanned,
 };
