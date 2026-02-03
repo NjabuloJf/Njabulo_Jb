@@ -4,6 +4,11 @@ const { Pool } = require("pg");
 
 const dbUrl = process.env.DATABASE_URL;
 
+if (!dbUrl) {
+  console.error('DATABASE_URL environment variable is not set');
+  process.exit(1);
+}
+
 const proConfig = {
   connectionString: dbUrl,
   ssl: {
@@ -121,9 +126,6 @@ async function recupererActionJid(jid) {
 module.exports = {
   mettreAJourAction,
   ajouterOuMettreAJourJid,
-  verifierEtatJid,
-  recupererActionJid,
-};
-
-
-
+//  verifierEtatJid,
+//  recupererActionJid,
+//};
