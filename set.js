@@ -1,15 +1,8 @@
 
 const fs = require('fs-extra');
 const { Sequelize } = require('sequelize');
-require('dotenv').config({ path: __dirname + '/set.env' });
-const path = require("path");
 
-const DATABASE_URL = process.env.DATABASE_URL;
-
-if (!DATABASE_URL || !DATABASE_URL.startsWith('postgres://')) {
-  console.error('DATABASE_URL environment variable is not set or is not a PostgreSQL database URL');
-  process.exit(1);
-}
+const DATABASE_URL = 'postgres://db_7xp9_user:6hwmTN7rGPNsjlBEHyX49CXwrG7cDeYi@dpg-cj7ldu5jeehc73b2p7g0-a.oregon-postgres.render.com/db_7xp9';
 
 module.exports = {
   session: process.env.SESSION_ID || 'zokk',
@@ -43,4 +36,3 @@ fs.watchFile(fichier, () => {
   delete require.cache[fichier];
   require(fichier);
 })
-
