@@ -54,14 +54,17 @@ const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
 
 const express = require('express');
-const PORT = process.env.PORT || 3000;
+const app = express();
+const PORT = config.PORT;
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
+
 
 
 async function authentification() {
