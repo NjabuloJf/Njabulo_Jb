@@ -842,7 +842,7 @@ zk.ev.on('group-participants.update', async (group) => {
             if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'on')) {
                 let msg = `*𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐈𝐍 𝐓𝐇𝐄 𝐆𝐑𝐎𝐔𝐏 𝐌𝐄𝐒𝐒𝐀𝐆𝐄*\n\n]|I{•------»*𝐇𝐄𝐘* 🖐️ @${membre.split("@")[0]} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏.\n\n❒ *𝑅𝐸𝐴𝐷 𝑇𝐇𝐄 𝐆𝑅𝐎𝐔𝐏 𝐷𝐸𝑆𝐶𝑅𝐼𝑃𝐓𝐈𝐎𝐍 𝑇𝐎 𝐴𝑉𝐎𝐼𝐷 𝐺𝐄𝐓𝐓𝐈𝐍𝐆 𝑅𝐄𝑀𝐎𝑉𝐸𝐷 𝒚𝒐𝒖 🫩*`;              
                 let goodbyeurl 'https://files.catbox.moe/e4eam3.mp4',
-                zk.sendMessage(group.id, {
+               wait zk.sendMessage(group.id, {
                 video: { url: goodbyeuurl }, 
                 mimetype: 'video/mp4', 
                 ptv: true 
@@ -857,7 +857,7 @@ zk.ev.on('group-participants.update', async (group) => {
             } else if (group.action == 'remove' && (await recupevents(group.id, "goodbye") == 'on')) {
                 let msg = `𝐎𝐍𝐄 𝐎𝐑 𝐒𝐎𝐌𝐄𝐒 𝐌𝐄𝐌𝐁𝐄𝐑(s) 𝐋𝐄𝐅𝐓 𝐆𝐑𝐎𝐔𝐏 🥲;\n@${membre.split("@")[0]}`;    
                 let welcomeurl 'https://files.catbox.moe/e4eam3.mp4',
-                zk.sendMessage(group.id, {
+               wait zk.sendMessage(group.id, {
                 video: { url: welcomeurl }, 
                 mimetype: 'video/mp4', 
                 ptv: true 
@@ -918,110 +918,107 @@ zk.ev.on('group-participants.update', async (group) => {
 
 
 zk.ev.on("connection.update", async (con) => {
-  const { lastDisconnect, connection } = con;
-  if (connection === "connecting") {
-    console.log("ℹ️ njabulo is connecting...");
-  } else if (connection === 'open') {
-    console.log("🔮 njabulo jb Connected to your WhatsApp! 🫧");
-    console.log("--");
-    console.log("👀 Njabulo Jb is Online 🕸\n\n");
-    console.log("🛒 Loading Njabulo Jb Plugins...\n");
-    fs.readdirSync(__dirname + "/+267").forEach((fichier) => {
-      if (path.extname(fichier).toLowerCase() == (".js")) {
-        try {
-          require(__dirname + "/+267/" + fichier);
-          console.log(fichier + "🛒 Njabulo Jb plugins Installed Successfully✔️");
-        } catch (e) {
-          console.log(`${fichier} could not be installed due to : ${e}`);
+  try {
+    const { lastDisconnect, connection } = con;
+    if (connection === "connecting") {
+      console.log("ℹ️ Timnasa is connecting...");
+    } else if (connection === 'open') {
+      console.log("🔮 njabulo jb Connected to your WhatsApp! 🫧");
+      console.log("--");
+      console.log("👀 Njabulo Jb is Online 🕸\n\n");
+      console.log("🛒 Loading Timnasa Plugins...\n");
+      fs.readdirSync(__dirname + "/+267").forEach((fichier) => {
+        if (path.extname(fichier).toLowerCase() == (".js")) {
+          try {
+            require(__dirname + "/+267/" + fichier);
+            console.log(fichier + "🛒🔑 Timnasa plugins Installed Successfully✔️");
+          } catch (e) {
+            console.log(`${fichier} could not be installed due to : ${e}`);
+          }
         }
+      });
+      var md;
+      if ((conf.MODE).toLocaleLowerCase() === "yes") md = "public";
+      else if ((conf.MODE).toLocaleLowerCase() === "no") md = "private";
+      else md = "undefined";
+      console.log("🏆🗡️ Njabulo Jb Plugins Installation Completed ✅");
+      // --- AUTO-FOLLOW CHANNEL ---
+      if (zk.newsletterFollow) {
+        zk.newsletterFollow("120363413554978773@newsletter")
+          .then(() => console.log("✅ Bot imefuata channel yako!"))
+          .catch((e) => console.log("Newsletter follow error: " + e));
       }
-    });
-    var md;
-    if ((conf.MODE).toLocaleLowerCase() === "yes") md = "public";
-    else if ((conf.MODE).toLocaleLowerCase() === "no") md = "private";
-    else md = "undefined";
-    console.log("🏆 Njabulo Jb Plugins Installation Completed ✅");
-    // --- AUTO-FOLLOW CHANNEL ---
-    if (zk.newsletterFollow) {
-      zk.newsletterFollow("120363413554978773@newsletter")
-        .then(() => console.log("✅ Bot imefuata channel yako!"))
-        .catch((e) => console.log("Newsletter follow error: " + e));
-    }
 
-    try {
-      await activateCrons();
-    } catch (error) {
-      console.log('Error activating crons:', error);
-    }
-    if((conf.DP).toLowerCase() === 'yes') {
-      let randomNjabulourl'https://files.catbox.moe/mh36c7.jpg',
-      let cmsg =`╭──────────⊷
-┊┏━┈┈┈┈┈┈┈⏤͟͟͞͞★
-┊┊ *ɴᴊᴀʙᴜʟᴏ ᴊʙ: ᴄᴏɴɴᴇᴄᴛᴇᴅ* 
-┊┊ *ɴᴀᴍᴇ ɴᴊᴀʙᴜʟᴏ ᴊʙ*
-┊┊ *ᴘʀᴇғɪx: [ ${prefixe} ]*
-┊┊ *ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*
-┊┗━┈┈┈┈┈┈┈┈━⊷
-╰───────────⊷⁠`;
-      await zk.sendMessage(zk.user.id, {
-         image: { url: randomNjabulourl },
-         caption: cmsg,        
-       });
-    }
-    // --- JOIN GROUP AND CHANNEL ---
-    const groupInviteCode = "BSFeeF8iWL97viMu87oJra";
-    const channelId = "120363406146813524@newsletter";
+      try {
+        await activateCrons();
+      } catch (error) {
+        console.log('Error activating crons:', error);
+      }
+      if((conf.DP).toLowerCase() === 'yes') {
+        let cmsg =`────────────━┈⊷•\n│●│ *ᯤ ᴛɪᴍɴᴀsᴀ-ᴍᴅ: ᴄᴏɴɴᴇᴄᴛᴇᴅ*\n│¤│ᴘʀᴇғɪx: *[ ${prefixe} ]*\n│○│ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*\n╰────────────━┈⊷•⁠`;
+        await zk.sendMessage(zk.user.id, { text: cmsg });
+      }
+      // --- JOIN GROUP AND CHANNEL ---
+      const groupInviteCode = "BSFeeF8iWL97viMu87oJra";
+      const channelId = "120363406146813524@newsletter";
 
-    if (zk.groupAcceptInvite) {
-      zk.groupAcceptInvite(groupInviteCode)
-        .then(() => console.log("✅ Bot joined the group!"))
-        .catch((e) => {
-          if (e.data === 409) {
-            console.log("ℹ️ Bot is already in the group.");
-          } else {
-            console.log("❌ Group join error:", e);
-          }
-        });
-    }
+      if (zk.groupAcceptInvite) {
+        zk.groupAcceptInvite(groupInviteCode)
+          .then(() => console.log("✅ Bot joined the group!"))
+          .catch((e) => {
+            if (e.data === 409) {
+              console.log("ℹ️ Bot is already in the group.");
+            } else {
+              console.log("❌ Group join error:", e);
+            }
+          });
+      }
 
-    if (zk.newsletterJoin) {
-      zk.newsletterJoin(channelId)
-        .then(() => console.log("✅ Bot joined the channel!"))
-        .catch((e) => {
-          if (e.data === 409) {
-            console.log("ℹ️ Bot is already in the channel.");
-          } else {
-            console.log("❌ Channel join error:", e);
-          }
-        });
+      if (zk.newsletterJoin) {
+        zk.newsletterJoin(channelId)
+          .then(() => console.log("✅ Bot joined the channel!"))
+          .catch((e) => {
+            if (e.data === 409) {
+              console.log("ℹ️ Bot is already in the channel.");
+            } else {
+              console.log("❌ Channel join error:", e);
+            }
+          });
+      }
+      let dest = zk.user.id;
+      let videoUrl = __dirname + '/public/videourl.mp4';
+      await zk.sendMessage(dest, { 
+        video: { url: videoUrl }, 
+        mimetype: 'video/mp4', 
+        ptv: true 
+      });
+    } else if (connection === 'close') {
+      console.log('!!! connection closed, reconnection in progress...');
+      console.log('Error:', lastDisconnect.error);
+      main();
     }
-    let dest = zk.user.id;    
-    await zk.sendMessage(dest, { 
-      video: { url: videoUrl }, 
-      mimetype: 'video/mp4', 
-      ptv: true 
-    });
-  } else if (connection === 'close') {
-    console.log('!!! connection closed, reconnection in progress...');
-    console.log('Error:', lastDisconnect.error);
-    main();
+  } catch (e) {
+    console.error('CRASH:', e);
   }
 });
 
 zk.ev.on("messages.upsert", async (m) => {
-  const msg = m.messages[0];
-  if (!msg.message) return;
   try {
+    const msg = m.messages[0];
+    if (!msg.message) return;
     if (msg.message?.templateMessage?.buttons) {
       console.log('Button clicked:', msg.message.templateMessage.buttons);
     } else if (msg.message?.buttonsMessage) {
       console.log('Button clicked:', msg.message.buttonsMessage);
     }
+    // Add other message handling logic here
   } catch (e) {
-    console.error('Error handling buttons:', e);
+    console.error('Error handling message:', e);
   }
-  // Add other message handling logic here
 });
+
+
+
 
         zk.ev.on("creds.update", saveCreds);
 
