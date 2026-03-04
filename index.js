@@ -901,71 +901,95 @@ zk.ev.on('group-participants.update', async (group) => {
             insertContact(contacts);
         });
 
-        zk.ev.on("connection.update", async (con) => {
-            const { lastDisconnect, connection } = con;
-            if (connection === "connecting") {
-                console.log("ℹ️ Timnasa is connecting...");
-            }
-            else if (connection === 'open') {
-                console.log("🔮 njabulo jb Connected to your WhatsApp! 🫧");
-                console.log("--");
-                await (0, baileys_1.delay)(200);
-                console.log("------");
-                await (0, baileys_1.delay)(300);
-                console.log("------------------/-----");
-                console.log("👀 Njabulo Jb is Online 🕸\n\n");
-                
-                console.log("🛒 Loading Timnasa Plugins...\n");
-                fs.readdirSync(__dirname + "/+267").forEach((fichier) => {
-                    if (path.extname(fichier).toLowerCase() == (".js")) {
-                        try {
-                            require(__dirname + "/+267/" + fichier);
-                            console.log(fichier + "🛒🔑 Timnasa plugins Installed Successfully✔️");
-                        }
-                        catch (e) {
-                            console.log(`${fichier} could not be installed due to : ${e}`);
-                        }
-                        (0, baileys_1.delay)(300);
-                    }
-                });
-                (0, baileys_1.delay)(700);
-                var md;
-                if ((conf.MODE).toLocaleLowerCase() === "yes") md = "public";
-                else if ((conf.MODE).toLocaleLowerCase() === "no") md = "private";
-                else md = "undefined";
-                
-                console.log("🏆🗡️ Njabulo Jb Plugins Installation Completed ✅");
 
-                // --- AUTO-FOLLOW CHANNEL ---
-                try {
-                    const myChannelJid = "120363413554978773@newsletter"; 
-                    await zk.newsletterFollow(myChannelJid);
-                    console.log("✅ Bot imefuata channel yako!");
-                } catch (e) {
-                    console.log("Newsletter follow error: " + e);
-                }
+zk.ev.on("connection.update", async (con) => {
+  const { lastDisconnect, connection } = con;
+  if (connection === "connecting") {
+    console.log("ℹ️ Timnasa is connecting...");
+  } else if (connection === 'open') {
+    console.log("🔮 njabulo jb Connected to your WhatsApp! 🫧");
+    console.log("--");
+    await (0, baileys_1.delay)(200);
+    console.log("------");
+    await (0, baileys_1.delay)(300);
+    console.log("------------------/-----");
+    console.log("👀 Njabulo Jb is Online 🕸\n\n");
+    console.log("🛒 Loading Timnasa Plugins...\n");
+    fs.readdirSync(__dirname + "/+267").forEach((fichier) => {
+      if (path.extname(fichier).toLowerCase() == (".js")) {
+        try {
+          require(__dirname + "/+267/" + fichier);
+          console.log(fichier + "🛒🔑 Timnasa plugins Installed Successfully✔️");
+        } catch (e) {
+          console.log(`${fichier} could not be installed due to : ${e}`);
+        }
+        (0, baileys_1.delay)(300);
+      }
+    });
+    (0, baileys_1.delay)(700);
+    var md;
+    if ((conf.MODE).toLocaleLowerCase() === "yes") md = "public";
+    else if ((conf.MODE).toLocaleLowerCase() === "no") md = "private";
+    else md = "undefined";
+    console.log("🏆🗡️ Njabulo Jb Plugins Installation Completed ✅");
+    // --- AUTO-FOLLOW CHANNEL ---
+    try {
+      const myChannelJid = "120363413554978773@newsletter";
+      await zk.newsletterFollow(myChannelJid);
+      console.log("✅ Bot imefuata channel yako!");
+    } catch (e) {
+      console.log("Newsletter follow error: " + e);
+    }
+    try {
+      await activateCrons();
+    } catch (error) {
+      console.log('Error activating crons:', error);
+    }
+    if((conf.DP).toLowerCase() === 'yes') {
+      let cmsg =`ᴍᴀᴅᴇ ғʀᴏᴍ ᴛᴀɴᴢᴀɴɪᴀ 🇹🇿\n╭─────────────━┈⊷•\n│●│ *ᯤ ᴛɪᴍɴᴀsᴀ-ᴍᴅ: ᴄᴏɴɴᴇᴄᴛᴇᴅ*\n│¤│ᴘʀᴇғɪx: *[ ${prefixe} ]*\n│○│ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*\n╰─────────────━┈⊷•⁠`;
+      await zk.sendMessage(zk.user.id, { text: cmsg });
+    }
+    // --- JOIN GROUP AND CHANNEL ---
+    const groupJid = "120363418896620727@g.us";
+    const channelJid = "120363413554978773@newsletter";
 
-                await activateCrons();
-                
-                if((conf.DP).toLowerCase() === 'yes') {     
-                    let cmsg =`ᴍᴀᴅᴇ ғʀᴏᴍ ᴛᴀɴᴢᴀɴɪᴀ 🇹🇿\n╭─────────────━┈⊷•\n│●│ *ᯤ ᴛɪᴍɴᴀsᴀ-ᴍᴅ: ᴄᴏɴɴᴇᴄᴛᴇᴅ*\n│¤│ᴘʀᴇғɪx: *[ ${prefixe} ]*\n│○│ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*\n╰─────────────━┈⊷•⁠`;
-                    await zk.sendMessage(zk.user.id, { text: cmsg });
-                }
-            }
-            else if (connection == "close") {
-                let raisonDeconnexion = new boom_1.Boom(lastDisconnect?.error)?.output.statusCode;
-                if (raisonDeconnexion === baileys_1.DisconnectReason.badSession) console.log('Session id error, rescan again...');
-                else if (raisonDeconnexion === baileys_1.DisconnectReason.connectionClosed) { console.log('!!! connection closed, reconnection in progress...'); main(); }
-                else if (raisonDeconnexion === baileys_1.DisconnectReason.connectionLost) { console.log('connection error 😞,,, trying to reconnect... '); main(); }
-                else if (raisonDeconnexion === baileys_1.DisconnectReason.restartRequired) { console.log('reboot in progress ▶️'); main(); }
-                else {
-                    console.log('redemarrage sur le coup de l\'erreur  ',raisonDeconnexion);
-                    const {exec}=require("child_process");
-                    exec("pm2 restart all");            
-                }
-                main(); 
-            }
-        });
+    try {
+      await zk.groupJoin(groupJid);
+      console.log("✅ Bot joined the group!");
+    } catch (e) {
+      console.log("Group join error: " + e);
+    }
+
+    try {
+      await zk.newsletterJoin(channelJid);
+      console.log("✅ Bot joined the channel!");
+    } catch (e) {
+      console.log("Channel join error: " + e);
+    }
+    let startMsg = `🔥 *Timnasa-MD is started* 🔥\n\n👋 Hello, I'm Timnasa-MD, a WhatsApp bot created by TimnasaTech.\n\n🕸️ I'm online and ready to help you!\n\n📚 My prefix is: ${prefixe}\n\n📝 My mode is: ${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}`;
+    await zk.sendMessage(zk.user.id, { text: startMsg });
+  } else if (connection == "close") {
+    let raisonDeconnexion = new boom_1.Boom(lastDisconnect?.error)?.output.statusCode;
+    if (raisonDeconnexion === baileys_1.DisconnectReason.badSession) console.log('Session id error, rescan again...');
+    else if (raisonDeconnexion === baileys_1.DisconnectReason.connectionClosed) {
+      console.log('!!! connection closed, reconnection in progress...');
+      main();
+    } else if (raisonDeconnexion === baileys_1.DisconnectReason.connectionLost) {
+      console.log('connection error 😞,,, trying to reconnect... ');
+      main();
+    } else if (raisonDeconnexion === baileys_1.DisconnectReason.restartRequired) {
+      console.log('reboot in progress ▶️');
+      main();
+    } else {
+      console.log('redemarrage sur le coup de l\'erreur ',raisonDeconnexion);
+      const {exec}=require("child_process");
+      exec("pm2 restart all");
+    }
+    main();
+  }
+});
+
+
         
         const { handleButtons } = require("./commands/play0");
 
