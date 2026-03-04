@@ -8,6 +8,7 @@ const DATABASE_URL = process.env.DATABASE_URL === undefined
     ? databasePath
     : process.env.DATABASE_URL;
 module.exports = { session: process.env.SESSION_ID || 'zokk',
+    PORT: process.env.PORT || 3000,
     PREFIXE: process.env.PREFIX || ".",
     GITHUB : process.env.GITHUB|| 'https://files.catbox.moe/xtkghn.jpg',
     OWNER_NAME : process.env.OWNER_NAME || "TimnasaTech",
