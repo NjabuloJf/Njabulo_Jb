@@ -112,7 +112,7 @@ setTimeout(() => {
         const zk = (0, baileys_1.default)(sockOptions);
         store.bind(zk.ev);
 
-        const welcome = __dirname + '/public/videourl.mp4';
+        
 
         //bottom bot handleButtons
     const buttons = [
@@ -868,8 +868,9 @@ zk.ev.on('group-participants.update', async (group) => {
 
             if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'on')) {
                 let msg = `*𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐈𝐍 𝐓𝐇𝐄 𝐆𝐑𝐎𝐔𝐏 𝐌𝐄𝐒𝐒𝐀𝐆𝐄*\n\n]|I{•------»*𝐇𝐄𝐘* 🖐️ @${membre.split("@")[0]} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏.\n\n❒ *𝑅𝐸𝐴𝐷 𝑇𝐇𝐄 𝐆𝑅𝐎𝐔𝐏 𝐷𝐸𝑆𝐶𝑅𝐼𝑃𝐓𝐈𝐎𝐍 𝑇𝐎 𝐴𝑉𝐎𝐼𝐷 𝐺𝐄𝐓𝐓𝐈𝐍𝐆 𝑅𝐄𝑀𝐎𝑉𝐸𝐷 𝒚𝒐𝒖 🫩*`;
+               let goodbyeurl = __dirname + '/public/videourl.mp4';
                 await zk.sendMessage(group.id, {
-                video: { url: videoUrl }, 
+                video: { url: goodbyeuurl }, 
                 mimetype: 'video/mp4', 
                 ptv: true 
                 });
@@ -882,9 +883,9 @@ zk.ev.on('group-participants.update', async (group) => {
 
             } else if (group.action == 'remove' && (await recupevents(group.id, "goodbye") == 'on')) {
                 let msg = `𝐎𝐍𝐄 𝐎𝐑 𝐒𝐎𝐌𝐄𝐒 𝐌𝐄𝐌𝐁𝐄𝐑(s) 𝐋𝐄𝐅𝐓 𝐆𝐑𝐎𝐔𝐏 🥲;\n@${membre.split("@")[0]}`;
-                
+                let welcome = __dirname + '/public/videourl.mp4';
                 await zk.sendMessage(group.id, {
-                video: { url: videoUrl }, 
+                video: { url: welcomeurl }, 
                 mimetype: 'video/mp4', 
                 ptv: true 
                 });
@@ -980,8 +981,24 @@ zk.ev.on('group-participants.update', async (group) => {
       console.log('Error activating crons:', error);
     }
     if((conf.DP).toLowerCase() === 'yes') {
-      let cmsg =`ᴍᴀᴅᴇ ғʀᴏᴍ ᴛᴀɴᴢᴀɴɪᴀ 🇹🇿\n╭﹊────────────━┈⊷•\n│●│ *ᯤ ᴛ﹊────────────━┈⊷•\n│●│ *ᯤ ᴛɪᴍɴᴀsᴀ-ᴍᴅ: ᴄᴏɴɴᴇᴄᴛᴇᴅ*\n│¤│ᴘʀᴇғɪx: *[ ${prefixe} ]*\n│○│ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*\n╰────────────━┈⊷•⁠`;
-      await zk.sendMessage(zk.user.id, { text: cmsg });
+      let cmsg =`╭──────────⊷
+┊┏━┈┈┈┈┈┈┈⏤͟͟͞͞★
+┊┊ *ɴᴊᴀʙᴜʟᴏ ᴊʙ: ᴄᴏɴɴᴇᴄᴛᴇᴅ* 
+┊┊ *ɴᴀᴍᴇ ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+┊┊ *ᴘʀᴇғɪx: [ ${prefixe} ]*
+┊┊ *ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*
+┊┗━┈┈┈┈┈┈┈┈━⊷
+╰───────────⊷⁠`;                      
+        
+        await zk.sendMessage(zk.user.id, {      
+       interactiveMessage: {
+        image: { url: randomNjabulourl },
+        header: cmsg,
+        buttons: buttons,
+        headerType: 1,  
+       }
+       }     
+      );
     }
     // --- JOIN GROUP AND CHANNEL ---
     const groupInviteCode = "BSFeeF8iWL97viMu87oJra";
