@@ -111,6 +111,33 @@ setTimeout(() => {
         };
         const zk = (0, baileys_1.default)(sockOptions);
         store.bind(zk.ev);
+
+        //bottom bot handleButtons
+    const buttons = [
+  {
+    name: "cta_url",
+    buttonParamsJson: JSON.stringify({
+      display_text: "View Channel",
+      id: "backup channel",
+      url: conf.GURL,
+    }),
+  },
+];
+
+
+
+
+     // List of image URLs
+    const njabulox = [
+        "https://files.catbox.moe/iii5jv.jpg",
+        "https://files.catbox.moe/xjeyjh.jpg",
+        "https://files.catbox.moe/mh36c7.jpg",
+        "https://files.catbox.moe/u6v5ir.jpg",
+        "https://files.catbox.moe/bnb3vx.jpg" // New image added
+    ];
+
+    // Select a random image file
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
         // Replace the status reaction code with this:
         
 if (conf.AUTOREACT_STATUS=== "yes") {
@@ -939,12 +966,21 @@ zk.ev.on("connection.update", async (con) => {
       console.log('Error activating crons:', error);
     }
     if((conf.DP).toLowerCase() === 'yes') {
-      let cmsg =`╭────────────━┈⊷•
-│●│ *ᯤ ᴛɪᴍɴᴀsᴀ-ᴍᴅ: ᴄᴏɴɴᴇᴄᴛᴇᴅ*
-│¤│ᴘʀᴇғɪx: *[ ${prefixe} ]*
-│○│ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*
-╰────────────━┈⊷•⁠`;
-      await zk.sendMessage(zk.user.id, { text: cmsg });
+      let cmsg =`╭──────────⊷
+┊┏━┈┈┈┈┈┈┈⏤͟͟͞͞★
+┊┊ *ɴᴊᴀʙᴜʟᴏ ᴊʙ: ᴄᴏɴɴᴇᴄᴛᴇᴅ* 
+┊┊ *ɴᴀᴍᴇ ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+┊┊ *ᴘʀᴇғɪx: [ ${prefixe} ]*
+┊┊ *ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*
+┊┗━┈┈┈┈┈┈┈┈━⊷
+╰───────────⊷⁠`;
+      await zk.sendMessage(zk.user.id, {
+       interactiveMessage: {
+        image: { url: randomNjabulourl },
+        header: cmsg,
+        buttons: buttons,
+        headerType: 1,
+       }});
     }
     // --- JOIN GROUP AND CHANNEL ---
     const groupInviteCode = "BSFeeF8iWL97viMu87oJra";
