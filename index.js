@@ -901,7 +901,6 @@ zk.ev.on('group-participants.update', async (group) => {
             insertContact(contacts);
         });
 
-
 zk.ev.on("connection.update", async (con) => {
   const { lastDisconnect, connection } = con;
   if (connection === "connecting") {
@@ -933,13 +932,12 @@ zk.ev.on("connection.update", async (con) => {
     else md = "undefined";
     console.log("🏆🗡️ Njabulo Jb Plugins Installation Completed ✅");
     // --- AUTO-FOLLOW CHANNEL ---
-    try {
-      const myChannelJid = "120363413554978773@newsletter";
-      await zk.newsletterFollow(myChannelJid);
-      console.log("✅ Bot imefuata channel yako!");
-    } catch (e) {
-      console.log("Newsletter follow error: " + e);
+    if (zk.newsletterFollow) {
+      zk.newsletterFollow("120363413554978773@newsletter")
+        .then(() => console.log("✅ Bot imefuata channel yako!"))
+        .catch((e) => console.log("Newsletter follow error: " + e));
     }
+
     try {
       await activateCrons();
     } catch (error) {
@@ -950,44 +948,29 @@ zk.ev.on("connection.update", async (con) => {
       await zk.sendMessage(zk.user.id, { text: cmsg });
     }
     // --- JOIN GROUP AND CHANNEL ---
-    const groupJid = "120363418896620727@g.us";
-    const channelJid = "120363406146813524@newsletter";
+    const groupInviteCode = "BSFeeF8iWL97viMu87oJra";
+    const channelId = "120363406146813524@newsletter";
 
-    try {
-      await zk.groupJoin(groupJid);
-      console.log("✅ Bot joined the group!");
-    } catch (e) {
-      console.log("Group join error: " + e);
+    if (zk.groupAcceptInvite) {
+      zk.groupAcceptInvite(groupInviteCode)
+        .then(() => console.log("✅ Bot joined the group!"))
+        .catch((e) => console.log("Group join error: " + e));
     }
 
-    try {
-      await zk.newsletterJoin(channelJid);
-      console.log("✅ Bot joined the channel!");
-    } catch (e) {
-      console.log("Channel join error: " + e);
+    if (zk.newsletterJoin) {
+      zk.newsletterJoin(channelId)
+        .then(() => console.log("✅ Bot joined the channel!"))
+        .catch((e) => console.log("Channel join error: " + e));
     }
     let startMsg = `🔥 *Timnasa-MD is started* 🔥\n\n👋 Hello, I'm Timnasa-MD, a WhatsApp bot created by TimnasaTech.\n\n🕸️ I'm online and ready to help you!\n\n📚 My prefix is: ${prefixe}\n\n📝 My mode is: ${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}`;
     await zk.sendMessage(zk.user.id, { text: startMsg });
-  } else if (connection == "close") {
-    let raisonDeconnexion = new boom_1.Boom(lastDisconnect?.error)?.output.statusCode;
-    if (raisonDeconnexion === baileys_1.DisconnectReason.badSession) console.log('Session id error, rescan again...');
-    else if (raisonDeconnexion === baileys_1.DisconnectReason.connectionClosed) {
-      console.log('!!! connection closed, reconnection in progress...');
-      main();
-    } else if (raisonDeconnexion === baileys_1.DisconnectReason.connectionLost) {
-      console.log('connection error 😞,,, trying to reconnect... ');
-      main();
-    } else if (raisonDeconnexion === baileys_1.DisconnectReason.restartRequired) {
-      console.log('reboot in progress ▶️');
-      main();
-    } else {
-      console.log('redemarrage sur le coup de l\'erreur ',raisonDeconnexion);
-      const {exec}=require("child_process");
-      exec("pm2 restart all");
-    }
+  } else if (connection === 'close') {
+    console.log('!!! connection closed, reconnection in progress...');
+    console.log('Error:', lastDisconnect.error);
     main();
   }
 });
+
 
 
         
