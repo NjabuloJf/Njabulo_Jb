@@ -1,116 +1,116 @@
 {
-  "name":"𝚻𝚰𝚳𝚴𝚫𝐒𝚫-𝚻𝚳𝐃",
-  "description":"Best whatsapp bot💥 developed by   ᴛɪᴍɴᴀsᴀ ᴍᴜʟᴛɪᴘʟᴇ ᴅᴇᴠɪᴄᴇ ʙᴏᴛ ",
-  "keywords":["timnasa","node","baileys","whatsapp"],
+  "name":"Njabulo_Jb",
+  "description":"ɴᴊᴀʙᴜʟᴏ ᴊʙ ʙᴇsᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ 2026",
+  "keywords":["njabulo","node","baileys","whatsapp"],
   "logo":"https://files.catbox.moe/t1rw0x.jpg",
     "repository": "https://github.com/NjabuloJf/Njabulo_Jb",
   "succes_url": "/",
-   "stack":"heroku-24",
+  "stack": "container",
 
   "env":{
      "PREFIX": {
-      "description": "Choose your bot's prefix",
+      "description": "ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ʙᴏᴛ's ᴘʀᴇғɪx",
       "value": ".",
       "required": true
     },
     "AUTO_READ_STATUS": {
-      "description": "Your contact status will be read automatically (type 'yes' to activate or 'no' to deactivate; don't write in capital letters)",
+      "description": "ʏᴏᴜʀ ᴄᴏɴᴛᴀᴄᴛ sᴛᴀᴛᴜs ᴡɪʟʟ ʙᴇ ʀᴇᴀᴅ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ (ᴛʏᴘᴇ 'ʏᴇs' ᴛᴏ ᴀᴄᴛɪᴠᴀᴛᴇ ᴏʀ 'ɴᴏ' ᴛᴏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇ; ᴅᴏɴ'ᴛ ᴡʀɪᴛᴇ ɪɴ ᴄᴀᴘɪᴛᴀʟ ʟᴇᴛᴛᴇʀs)",
       "value": "yes",
       "required": false
     },
       "AUDIO_REPLY":
     {
-      "description":"Enter yes for your bot to auto reply audio in all chats",
+      "description":"ᴇɴᴛᴇʀ ʏᴇs ғᴏʀ ʏᴏᴜʀ ʙᴏᴛ ᴛᴏ ᴀᴜᴛᴏ ʀᴇᴘʟʏ ᴀᴜᴅɪᴏ ɪɴ ᴀʟʟ ᴄʜᴀᴛs",
       "value":"yes",
       "required":false
     },
     "AUTO_REPLY": {
-      "description": "when enabled it automatically sends  auto reply message in your chats for mentioned words",
+      "description": "ᴡʜᴇɴ ᴇɴᴀʙʟᴇᴅ ɪᴛ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ sᴇɴᴅs ᴀᴜᴛᴏ ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ ɪɴ ʏᴏᴜʀ ᴄʜᴀᴛs ғᴏʀ ᴍᴇɴᴛɪᴏɴᴇᴅ ᴡᴏʀᴅs",
       "value": "no",
       "required": false
     },
     "AUTO_REACT_STATUS": {
-      "description": "Your contact status will be react automatically (type 'yes' to activate or 'no' to deactivate; don't write in capital letters)",
+      "description": "ʏᴏᴜʀ ᴄᴏɴᴛᴀᴄᴛ sᴛᴀᴛᴜs ᴡɪʟʟ ʙᴇ ʀᴇᴀᴄᴛ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ (ᴛʏᴘᴇ 'ʏᴇs' ᴛᴏ ᴀᴄᴛɪᴠᴀᴛᴇ ᴏʀ 'ɴᴏ' ᴛᴏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇ; ᴅᴏɴ'ᴛ ᴡʀɪᴛᴇ ɪɴ ᴄᴀᴘɪᴛᴀʟ ʟᴇᴛᴛᴇʀs)",
       "value": "yes",
       "required": false
     },
     "AUTO_BIO": {
-      "description": "This automatically update your bio status.Always make sure you insert your OWNER_NAME since it uses that to update your bio name status",
+      "description": "ᴛʜɪs ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴜᴘᴅᴀᴛᴇ ʏᴏᴜʀ ʙɪᴏ sᴛᴀᴛᴜs.ᴀʟᴡᴀʏs ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ ɪɴsᴇʀᴛ ʏᴏᴜʀ ᴏᴡɴᴇʀ_ɴᴀᴍᴇ sɪɴᴄᴇ ɪᴛ ᴜsᴇs ᴛʜᴀᴛ ᴛᴏ ᴜᴘᴅᴀᴛᴇ ʏᴏᴜʀ ʙɪᴏ ɴᴀᴍᴇ sᴛᴀᴛᴜs",
       "value": "yes",
       "required": false
     },
     "ANTI_BAD": {
-      "description": "when enabled it bot was detect bad words and delete",
+      "description": "ᴡʜᴇɴ ᴇɴᴀʙʟᴇᴅ ɪᴛ ʙᴏᴛ ᴡᴀs ᴅᴇᴛᴇᴄᴛ ʙᴀᴅ ᴡᴏʀᴅs ᴀɴᴅ ᴅᴇʟᴇᴛᴇ",
       "value": "no",
       "required": false
     },
     "ANTI_BUG": {
-      "description": "when you enable anti bug 🐛 bot is detect bugs text and delete",
+      "description": "ᴡʜᴇɴ ʏᴏᴜ ᴇɴᴀʙʟᴇ ᴀɴᴛɪ ʙᴜɢ  ʙᴏᴛ ɪs ᴅᴇᴛᴇᴄᴛ ʙᴜɢs ᴛᴇxᴛ ᴀɴᴅ ᴅᴇʟᴇᴛᴇ",
       "value": "no",
       "required": false
     },
     "AUTO_SAVE_CONTACTS": {
-      "description":"Enter yes for your bot to auto save contacts",
+      "description":"ᴇɴᴛᴇʀ ʏᴇs ғᴏʀ ʏᴏᴜʀ ʙᴏᴛ ᴛᴏ ᴀᴜᴛᴏ sᴀᴠᴇ ᴄᴏɴᴛᴀᴄᴛs",
       "value":"no",
       "required":false
     },
     "AUTO_DOWNLOAD_STATUS": {
-      "description": "Your contact status will be downloaded automatically and sent to you (type 'yes' to activate or 'no' to deactivate; don't write in capital letters)",
+      "description": "ʏᴏᴜʀ ᴄᴏɴᴛᴀᴄᴛ sᴛᴀᴛᴜs ᴡɪʟʟ ʙᴇ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴀɴᴅ sᴇɴᴛ ᴛᴏ ʏᴏᴜ (ᴛʏᴘᴇ 'ʏᴇs' ᴛᴏ ᴀᴄᴛɪᴠᴀᴛᴇ ᴏʀ 'ɴᴏ' ᴛᴏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇ; ᴅᴏɴ'ᴛ ᴡʀɪᴛᴇ ɪɴ ᴄᴀᴘɪᴛᴀʟ ʟᴇᴛᴛᴇʀs)",
       "value": "no",
       "required": false
     },
     "PM_PERMIT": {
-      "description": "Restrict other users from using your bot in private messages (type 'yes' to activate or 'no' to deactivate; don't write in capital letters)",
+      "description": "ʀᴇsᴛʀɪᴄᴛ ᴏᴛʜᴇʀ ᴜsᴇʀs ғʀᴏᴍ ᴜsɪɴɢ ʏᴏᴜʀ ʙᴏᴛ ɪɴ ᴘʀɪᴠᴀᴛᴇ ᴍᴇssᴀɢᴇs (ᴛʏᴘᴇ 'ʏᴇs' ᴛᴏ ᴀᴄᴛɪᴠᴀᴛᴇ ᴏʀ 'ɴᴏ' ᴛᴏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇ; ᴅᴏɴ'ᴛ ᴡʀɪᴛᴇ ɪɴ ᴄᴀᴘɪᴛᴀʟ ʟᴇᴛᴛᴇʀs)",
       "value": "yes",
       "required": false
     },
     "AUTO_STATUS_TEXT": {
-      "description": "type your genuine status message",
+      "description": "ᴛʏᴘᴇ ʏᴏᴜʀ ɢᴇɴᴜɪɴᴇ sᴛᴀᴛᴜs ᴍᴇssᴀɢᴇ",
       "value": "💲YOUR STATUS VIEWED",
       "required": false
     },
     "AUTO_STATUS_REPLY": {
-      "description": "type your genuine status message",
+      "description": "ᴛʏᴘᴇ ʏᴏᴜʀ ɢᴇɴᴜɪɴᴇ sᴛᴀᴛᴜs ᴍᴇssᴀɢᴇ",
       "value": "no",
       "required": false
     },
     "CHAT_BOT": {
-      "description": "urs if you want bot to chat automatic in inbox",
+      "description": "ᴜʀs ɪғ ʏᴏᴜ ᴡᴀɴᴛ ʙᴏᴛ ᴛᴏ ᴄʜᴀᴛ ᴀᴜᴛᴏᴍᴀᴛɪᴄ ɪɴ ɪɴʙᴏx",
       "value": "on",
       "required": false
     },
     "PUBLIC_MODE": {
-      "description": "Set 'yes' to make your bot public or 'no' to keep it private",
+      "description": "sᴇᴛ 'ʏᴇs' ᴛᴏ ᴍᴀᴋᴇ ʏᴏᴜʀ ʙᴏᴛ ᴘᴜʙʟɪᴄ ᴏʀ 'ɴᴏ' ᴛᴏ ᴋᴇᴇᴘ ɪᴛ ᴘʀɪᴠᴀᴛᴇ",
       "value": "yes",
       "required": false
     },
     "HEROKU_API_KEY": {
-      "description": "Insert your Heroku API key (required)",
+      "description": "ɪɴsᴇʀᴛ ʏᴏᴜʀ ʜᴇʀᴏᴋᴜ ᴀᴘɪ ᴋᴇʏ (ʀᴇǫᴜɪʀᴇᴅ)",
       "value": "TIMNASA_TMD1",
       "required": true
     },
     "HEROKU_APP_NAME": {
-      "description": "Insert your Heroku app name (required)",
+      "description": "ɪɴsᴇʀᴛ ʏᴏᴜʀ ʜᴇʀᴏᴋᴜ ᴀᴘᴘ ɴᴀᴍᴇ (ʀᴇǫᴜɪʀᴇᴅ)",
       "value": "",
       "required": true
     },
     "SESSION_ID": {
-      "description": "Enter your session ID, the code you receive after scanning the QR code",
+      "description": "ᴇɴᴛᴇʀ ʏᴏᴜʀ sᴇssɪᴏɴ ɪᴅ, ᴛʜᴇ ᴄᴏᴅᴇ ʏᴏᴜ ʀᴇᴄᴇɪᴠᴇ ᴀғᴛᴇʀ sᴄᴀɴɴɪɴɢ ᴛʜᴇ ǫʀ ᴄᴏᴅᴇ",
       "value": "",
       "required": true
     },
     "OWNER_NAME": {
-      "description": "don't you have a name bro.Insert your name here!!",
+      "description": "ᴅᴏɴ'ᴛ ʏᴏᴜ ʜᴀᴠᴇ ᴀ ɴᴀᴍᴇ ʙʀᴏ.ɪɴsᴇʀᴛ ʏᴏᴜʀ ɴᴀᴍᴇ ʜᴇʀᴇ!!",
       "value": "TIMNASA_TMD1",
       "required": false
     },
     "AUTO_READ_MESSAGES": {
-      "description": "yes toactivate no to deactivate",
+      "description": "ʏᴇs ᴛᴏᴀᴄᴛɪᴠᴀᴛᴇ ɴᴏ ᴛᴏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇ",
       "value": "no",
       "required": false  
     },
     "NUMERO_OWNER": {
-      "description": "Your phone number (exclude '+' and area code, e.g., '255752593977')",
+      "description": "ʏᴏᴜʀ ᴘʜᴏɴᴇ ɴᴜᴍʙᴇʀ (ᴇxᴄʟᴜᴅᴇ '+' ᴀɴᴅ ᴀʀᴇᴀ ᴄᴏᴅᴇ, ᴇ.ɢ., '26777821911')",
       "value": "255784766591",
       "required": false
     },
@@ -120,41 +120,52 @@
       "required": true
     },
     "PRESENCE": {
-      "description": "Mark your presence: 1 for online, 2 for typing, 3 for recording, or leave blank for real state",
+      "description": "ᴍᴀʀᴋ ʏᴏᴜʀ ᴘʀᴇsᴇɴᴄᴇ: 1 ғᴏʀ ᴏɴʟɪɴᴇ, 2 ғᴏʀ ᴛʏᴘɪɴɢ, 3 ғᴏʀ ʀᴇᴄᴏʀᴅɪɴɢ, ᴏʀ ʟᴇᴀᴠᴇ ʙʟᴀɴᴋ ғᴏʀ ʀᴇᴀʟ sᴛᴀᴛᴇ",
       "value": "2",
       "required": false
     },
     "ANTI_DELETE_MESSAGES": {
-      "description": "Enable anti-delete message in dm's (set 'yes' to activate or 'no' to deactivate)",
+      "description": "ᴇɴᴀʙʟᴇ ᴀɴᴛɪ-ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇ ɪɴ ᴅᴍ's (sᴇᴛ 'ʏᴇs' ᴛᴏ ᴀᴄᴛɪᴠᴀᴛᴇ ᴏʀ 'ɴᴏ' ᴛᴏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇ)",
       "value": "no",
       "required": false
     },
     "ANTI_CALL": {
-      "description": "Automatically decline incoming calls (set 'on' to activate or 'off' to deactivate)",
+      "description": "ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇᴄʟɪɴᴇ ɪɴᴄᴏᴍɪɴɢ ᴄᴀʟʟs (sᴇᴛ 'ᴏɴ' ᴛᴏ ᴀᴄᴛɪᴠᴀᴛᴇ ᴏʀ 'ᴏғғ' ᴛᴏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇ)",
       "value": "no",
       "required": false
     },
     "AUTO_BLOCK": {
-      "description": "Type true if you want bot to automatically  block those who spam your dm ",
+      "description": "ᴛʏᴘᴇ ᴛʀᴜᴇ ɪғ ʏᴏᴜ ᴡᴀɴᴛ ʙᴏᴛ ᴛᴏ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ʙʟᴏᴄᴋ ᴛʜᴏsᴇ ᴡʜᴏ sᴘᴀᴍ ʏᴏᴜʀ ᴅᴍ",
       "value": "no",
       "required": false
     },
     "AUTO_REACTION": {
-      "description": "Set 'yes' to enable bot reactions to messages in private chats",
+      "description": "sᴇᴛ 'ʏᴇs' ᴛᴏ ᴇɴᴀʙʟᴇ ʙᴏᴛ ʀᴇᴀᴄᴛɪᴏɴs ᴛᴏ ᴍᴇssᴀɢᴇs ɪɴ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛs",
       "value": "no",
       "required": false
     }
     },
 
-	  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    },
-    {
-      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  "formation": {
+
+    "worker": {
+
+      "quantity": 1,
+
+      "size": "standard-2x"
+
     }
+
+  },
+
+  "addons": [
+
+    {
+
+      "plan": "heroku-postgresql:essential-0"
+
+    }
+
   ]
-}
+
+	}

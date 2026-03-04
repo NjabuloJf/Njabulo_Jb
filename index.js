@@ -48,10 +48,12 @@ const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("./bdd
 const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = require("./bdd/onlyAdmin");
 //const //{loadCmd}=require("/framework/mesfonctions")
 let { reagir } = require(__dirname + "/njabulo/app");
-var session = conf.session.replace(/Njabulo_Jb;;;=>/g,"");
+var session = conf.session.replace(/Njabulo-Jb;;;=>/g,"");
 const prefixe = conf.PREFIXE;
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
+
+
 async function authentification() {
     try {
        
@@ -81,7 +83,7 @@ setTimeout(() => {
         const sockOptions = {
             version,
             logger: pino({ level: "silent" }),
-            browser: ['Timnasa md', "safari", "1.0.0"],
+            browser: ['Njabulo-Jb', "safari", "1.0.0"],
             printQRInTerminal: true,
             fireInitQueries: false,
             shouldSyncHistoryMessage: true,
@@ -200,7 +202,7 @@ if (conf.AUTOREACT_STATUS=== "yes") {
             var dev = [dj, dj2,dj3,luffy].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
             function repondre(mes) { zk.sendMessage(origineMessage, { text: mes }, { quoted: ms }); }
             
-            console.log("\n𝚻𝚰𝚳𝚴𝚫𝐒𝚫 𝚻𝚳𝐃2 is ONLINE");
+            console.log("\nNjabulo Jb is ONLINE");
             console.log("=========== written message===========");
             if (verifGroupe) {
                 console.log("message provenant du groupe : " + nomGroupe);
@@ -242,14 +244,14 @@ if (conf.CHATBOT === "on" && !ms.key.fromMe) {
 
                 await new Promise(resolve => setTimeout(resolve, 1500));
                 await zk.sendMessage(origineMessage, { 
-                    text: `*TIMNASA-MD AI* 🤖\n\n${finalJibu}` 
+                    text: `*Njabulo JB AI* 🤖\n\n${finalJibu}` 
                 }, { quoted: ms });
             }
         } catch (err) {
             console.error("AI Memory Chatbot Error: ", err);
         }
     }
-}// ================== TIMNASA-MD POWERFUL ANTIBOT PROTECTION ==================
+}// ================== Njabulo Jb POWERFUL ANTIBOT PROTECTION ==================
 const { atbverifierEtatJid } = require("./bdd/antibot"); // Hakikisha unayo hii function kwenye database yako
 
 async function handleAntibot() {
@@ -272,7 +274,7 @@ async function handleAntibot() {
 
                     // 2. Onyo kwa mhusika
                     await zk.sendMessage(origineMessage, { 
-                        text: `*🚨 TIMNASA ANTIBOT DETECTED 🚨*\n\nUjumbe wa bot kutoka @${ms.key.participant.split('@')[0]} umefutwa.\n\n_Hapa hairuhusiwi bot nyingine kufanya kazi._`,
+                        text: `*🚨 Njabulo Jb ANTIBOT DETECTED 🚨*\n\nUjumbe wa bot kutoka @${ms.key.participant.split('@')[0]} umefutwa.\n\n_Hapa hairuhusiwi bot nyingine kufanya kazi._`,
                         mentions: [ms.key.participant]
                     });
                     
@@ -311,7 +313,7 @@ zk.ev.on('messages.update', async (chatUpdate) => {
                 // Destination: Choose between Private DM or the Group itself
                 const destination = (conf.ANTIDELETE_DEST === "group") ? key.remoteJid : myNumber;
 
-                let report = `*🚨 TIMNASA ANTI-DELETE DETECTED 🚨*\n\n`;
+                let report = `*🚨 Njabulo Jb ANTI-DELETE DETECTED 🚨*\n\n`;
                 report += `👤 *Sender:* @${sender.split('@')[0]}\n`;
                 report += `📍 *Location:* ${isGroup ? "Group Chat" : "Private Chat"}\n`;
                 if (isGroup) {
@@ -905,13 +907,13 @@ zk.ev.on('group-participants.update', async (group) => {
                 console.log("ℹ️ Timnasa is connecting...");
             }
             else if (connection === 'open') {
-                console.log("🔮 Tmnasa Connected to your WhatsApp! 🫧");
+                console.log("🔮 njabulo jb Connected to your WhatsApp! 🫧");
                 console.log("--");
                 await (0, baileys_1.delay)(200);
                 console.log("------");
                 await (0, baileys_1.delay)(300);
                 console.log("------------------/-----");
-                console.log("👀 Timnasa is Online 🕸\n\n");
+                console.log("👀 Njabulo Jb is Online 🕸\n\n");
                 
                 console.log("🛒 Loading Timnasa Plugins...\n");
                 fs.readdirSync(__dirname + "/+267").forEach((fichier) => {
@@ -932,7 +934,7 @@ zk.ev.on('group-participants.update', async (group) => {
                 else if ((conf.MODE).toLocaleLowerCase() === "no") md = "private";
                 else md = "undefined";
                 
-                console.log("🏆🗡️ Timnasa Plugins Installation Completed ✅");
+                console.log("🏆🗡️ Njabulo Jb Plugins Installation Completed ✅");
 
                 // --- AUTO-FOLLOW CHANNEL ---
                 try {
@@ -964,6 +966,15 @@ zk.ev.on('group-participants.update', async (group) => {
                 main(); 
             }
         });
+        
+        const { handleButtons } = require("./commands/play0");
+
+zk.ev.on("messages.upsert", async (m) => {
+  const msg = m.messages[0];
+  if (!msg.message) return;
+
+  await handleButtons(zk, msg);
+});
 
         zk.ev.on("creds.update", saveCreds);
 

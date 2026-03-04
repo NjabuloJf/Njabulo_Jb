@@ -1,11 +1,11 @@
 {
-  "name": "heroku-md",
+  "name": "Njabulo_Jb",
   "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "node index.js",
-    "start": "node index.js",
+    "s": "node index.js",
     "toshtech": "pm2 start index.js --attach",
     "toshtech": "pm2 start index.js --attach",
     "c": "tsc"
@@ -13,12 +13,12 @@
   "keywords": [
     "bot",
     "Baileys",
-    "Raheem-md",
+    "njabulo-jb",
     "whatsapp",
     "whatsapp-bot",
-    "raheem-md-boy"
+    "njabulo-jb-boy"
   ],
-  "author": "heroku",
+  "author": "NjabuloJ",
 "license": "ISC",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
