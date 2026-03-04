@@ -113,33 +113,6 @@ setTimeout(() => {
         store.bind(zk.ev);
 
         
-
-        //bottom bot handleButtons
-    const buttons = [
-  {
-    name: "cta_url",
-    buttonParamsJson: JSON.stringify({
-      display_text: "View Channel",
-      id: "backup channel",
-      url: conf.GURL,
-    }),
-  },
-];
-
-
-
-
-     // List of image URLs
-    const njabulox = [
-        "https://files.catbox.moe/iii5jv.jpg",
-        "https://files.catbox.moe/xjeyjh.jpg",
-        "https://files.catbox.moe/mh36c7.jpg",
-        "https://files.catbox.moe/u6v5ir.jpg",
-        "https://files.catbox.moe/bnb3vx.jpg" // New image added
-    ];
-
-    // Select a random image file
-    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
         // Replace the status reaction code with this:
         
 if (conf.AUTOREACT_STATUS=== "yes") {
@@ -867,8 +840,8 @@ zk.ev.on('group-participants.update', async (group) => {
             }
 
             if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'on')) {
-                let msg = `*𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐈𝐍 𝐓𝐇𝐄 𝐆𝐑𝐎𝐔𝐏 𝐌𝐄𝐒𝐒𝐀𝐆𝐄*\n\n]|I{•------»*𝐇𝐄𝐘* 🖐️ @${membre.split("@")[0]} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏.\n\n❒ *𝑅𝐸𝐴𝐷 𝑇𝐇𝐄 𝐆𝑅𝐎𝐔𝐏 𝐷𝐸𝑆𝐶𝑅𝐼𝑃𝐓𝐈𝐎𝐍 𝑇𝐎 𝐴𝑉𝐎𝐼𝐷 𝐺𝐄𝐓𝐓𝐈𝐍𝐆 𝑅𝐄𝑀𝐎𝑉𝐸𝐷 𝒚𝒐𝒖 🫩*`;
-               let goodbyeurl = __dirname + '/public/videourl.mp4';
+                let msg = `*𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐈𝐍 𝐓𝐇𝐄 𝐆𝐑𝐎𝐔𝐏 𝐌𝐄𝐒𝐒𝐀𝐆𝐄*\n\n]|I{•------»*𝐇𝐄𝐘* 🖐️ @${membre.split("@")[0]} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏.\n\n❒ *𝑅𝐸𝐴𝐷 𝑇𝐇𝐄 𝐆𝑅𝐎𝐔𝐏 𝐷𝐸𝑆𝐶𝑅𝐼𝑃𝐓𝐈𝐎𝐍 𝑇𝐎 𝐴𝑉𝐎𝐼𝐷 𝐺𝐄𝐓𝐓𝐈𝐍𝐆 𝑅𝐄𝑀𝐎𝑉𝐸𝐷 𝒚𝒐𝒖 🫩*`;              
+                let goodbyeurl 'https://files.catbox.moe/e4eam3.mp4',
                 zk.sendMessage(group.id, {
                 video: { url: goodbyeuurl }, 
                 mimetype: 'video/mp4', 
@@ -882,8 +855,8 @@ zk.ev.on('group-participants.update', async (group) => {
                 });
 
             } else if (group.action == 'remove' && (await recupevents(group.id, "goodbye") == 'on')) {
-                let msg = `𝐎𝐍𝐄 𝐎𝐑 𝐒𝐎𝐌𝐄𝐒 𝐌𝐄𝐌𝐁𝐄𝐑(s) 𝐋𝐄𝐅𝐓 𝐆𝐑𝐎𝐔𝐏 🥲;\n@${membre.split("@")[0]}`;
-                let welcome = __dirname + '/public/videourl.mp4';
+                let msg = `𝐎𝐍𝐄 𝐎𝐑 𝐒𝐎𝐌𝐄𝐒 𝐌𝐄𝐌𝐁𝐄𝐑(s) 𝐋𝐄𝐅𝐓 𝐆𝐑𝐎𝐔𝐏 🥲;\n@${membre.split("@")[0]}`;    
+                let welcomeurl 'https://files.catbox.moe/e4eam3.mp4',
                 zk.sendMessage(group.id, {
                 video: { url: welcomeurl }, 
                 mimetype: 'video/mp4', 
@@ -981,6 +954,7 @@ zk.ev.on("connection.update", async (con) => {
       console.log('Error activating crons:', error);
     }
     if((conf.DP).toLowerCase() === 'yes') {
+      let randomNjabulourl'https://files.catbox.moe/mh36c7.jpg',
       let cmsg =`╭──────────⊷
 ┊┏━┈┈┈┈┈┈┈⏤͟͟͞͞★
 ┊┊ *ɴᴊᴀʙᴜʟᴏ ᴊʙ: ᴄᴏɴɴᴇᴄᴛᴇᴅ* 
