@@ -973,7 +973,7 @@ zk.ev.on("connection.update", async (con) => {
 
 
         
-        const { handleButtons } = require("./bdd/play0");
+        const { handleButtons } = require("./+267/play0");
 
 zk.ev.on("messages.upsert", async (m) => {
   const msg = m.messages[0];
