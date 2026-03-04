@@ -66,7 +66,7 @@
     },
     "AUTO_STATUS_TEXT": {
       "description": "ᴛʏᴘᴇ ʏᴏᴜʀ ɢᴇɴᴜɪɴᴇ sᴛᴀᴛᴜs ᴍᴇssᴀɢᴇ",
-      "value": "💲YOUR STATUS VIEWED",
+      "value": "YOUR STATUS VIEWED",
       "required": false
     },
     "AUTO_STATUS_REPLY": {
@@ -86,7 +86,7 @@
     },
     "HEROKU_API_KEY": {
       "description": "ɪɴsᴇʀᴛ ʏᴏᴜʀ ʜᴇʀᴏᴋᴜ ᴀᴘɪ ᴋᴇʏ (ʀᴇǫᴜɪʀᴇᴅ)",
-      "value": "TIMNASA_TMD1",
+      "value": "HRKU-AAv-UXdRW1oTV9mBeOX3lOK3Eq_ElRQtuwmUOFeUqBSg_____w41wxpCVkVz",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -101,7 +101,7 @@
     },
     "OWNER_NAME": {
       "description": "ᴅᴏɴ'ᴛ ʏᴏᴜ ʜᴀᴠᴇ ᴀ ɴᴀᴍᴇ ʙʀᴏ.ɪɴsᴇʀᴛ ʏᴏᴜʀ ɴᴀᴍᴇ ʜᴇʀᴇ!!",
-      "value": "TIMNASA_TMD1",
+      "value": "Njabulo Jb",
       "required": false
     },
     "AUTO_READ_MESSAGES": {
@@ -111,7 +111,7 @@
     },
     "NUMERO_OWNER": {
       "description": "ʏᴏᴜʀ ᴘʜᴏɴᴇ ɴᴜᴍʙᴇʀ (ᴇxᴄʟᴜᴅᴇ '+' ᴀɴᴅ ᴀʀᴇᴀ ᴄᴏᴅᴇ, ᴇ.ɢ., '26777821911')",
-      "value": "255784766591",
+      "value": "26777821911",
       "required": false
     },
     "STARTING_BOT_MESSAGE": {
