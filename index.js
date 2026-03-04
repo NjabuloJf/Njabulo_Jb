@@ -869,7 +869,7 @@ zk.ev.on('group-participants.update', async (group) => {
             if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'on')) {
                 let msg = `*𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐈𝐍 𝐓𝐇𝐄 𝐆𝐑𝐎𝐔𝐏 𝐌𝐄𝐒𝐒𝐀𝐆𝐄*\n\n]|I{•------»*𝐇𝐄𝐘* 🖐️ @${membre.split("@")[0]} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏.\n\n❒ *𝑅𝐸𝐴𝐷 𝑇𝐇𝐄 𝐆𝑅𝐎𝐔𝐏 𝐷𝐸𝑆𝐶𝑅𝐼𝑃𝐓𝐈𝐎𝐍 𝑇𝐎 𝐴𝑉𝐎𝐼𝐷 𝐺𝐄𝐓𝐓𝐈𝐍𝐆 𝑅𝐄𝑀𝐎𝑉𝐸𝐷 𝒚𝒐𝒖 🫩*`;
                let goodbyeurl = __dirname + '/public/videourl.mp4';
-                await zk.sendMessage(group.id, {
+                zk.sendMessage(group.id, {
                 video: { url: goodbyeuurl }, 
                 mimetype: 'video/mp4', 
                 ptv: true 
@@ -884,7 +884,7 @@ zk.ev.on('group-participants.update', async (group) => {
             } else if (group.action == 'remove' && (await recupevents(group.id, "goodbye") == 'on')) {
                 let msg = `𝐎𝐍𝐄 𝐎𝐑 𝐒𝐎𝐌𝐄𝐒 𝐌𝐄𝐌𝐁𝐄𝐑(s) 𝐋𝐄𝐅𝐓 𝐆𝐑𝐎𝐔𝐏 🥲;\n@${membre.split("@")[0]}`;
                 let welcome = __dirname + '/public/videourl.mp4';
-                await zk.sendMessage(group.id, {
+                zk.sendMessage(group.id, {
                 video: { url: welcomeurl }, 
                 mimetype: 'video/mp4', 
                 ptv: true 
@@ -944,20 +944,20 @@ zk.ev.on('group-participants.update', async (group) => {
         });
 
 
-  zk.ev.on("connection.update", async (con) => {
+zk.ev.on("connection.update", async (con) => {
   const { lastDisconnect, connection } = con;
   if (connection === "connecting") {
-    console.log("ℹ️ Timnasa is connecting...");
+    console.log("ℹ️ njabulo is connecting...");
   } else if (connection === 'open') {
     console.log("🔮 njabulo jb Connected to your WhatsApp! 🫧");
     console.log("--");
     console.log("👀 Njabulo Jb is Online 🕸\n\n");
-    console.log("🛒 Loading Timnasa Plugins...\n");
+    console.log("🛒 Loading Njabulo Jb Plugins...\n");
     fs.readdirSync(__dirname + "/+267").forEach((fichier) => {
       if (path.extname(fichier).toLowerCase() == (".js")) {
         try {
           require(__dirname + "/+267/" + fichier);
-          console.log(fichier + "🛒🔑 Timnasa plugins Installed Successfully✔️");
+          console.log(fichier + "🛒 Njabulo Jb plugins Installed Successfully✔️");
         } catch (e) {
           console.log(`${fichier} could not be installed due to : ${e}`);
         }
@@ -967,7 +967,7 @@ zk.ev.on('group-participants.update', async (group) => {
     if ((conf.MODE).toLocaleLowerCase() === "yes") md = "public";
     else if ((conf.MODE).toLocaleLowerCase() === "no") md = "private";
     else md = "undefined";
-    console.log("🏆🗡️ Njabulo Jb Plugins Installation Completed ✅");
+    console.log("🏆 Njabulo Jb Plugins Installation Completed ✅");
     // --- AUTO-FOLLOW CHANNEL ---
     if (zk.newsletterFollow) {
       zk.newsletterFollow("120363413554978773@newsletter")
@@ -988,17 +988,11 @@ zk.ev.on('group-participants.update', async (group) => {
 ┊┊ *ᴘʀᴇғɪx: [ ${prefixe} ]*
 ┊┊ *ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*
 ┊┗━┈┈┈┈┈┈┈┈━⊷
-╰───────────⊷⁠`;                      
-        
-        await zk.sendMessage(zk.user.id, {      
-       interactiveMessage: {
-        image: { url: randomNjabulourl },
-        header: cmsg,
-        buttons: buttons,
-        headerType: 1,  
-       }
-       }     
-      );
+╰───────────⊷⁠`;
+      await zk.sendMessage(zk.user.id, {
+         image: { url: randomNjabulourl },
+         caption: cmsg,        
+       });
     }
     // --- JOIN GROUP AND CHANNEL ---
     const groupInviteCode = "BSFeeF8iWL97viMu87oJra";
@@ -1007,16 +1001,27 @@ zk.ev.on('group-participants.update', async (group) => {
     if (zk.groupAcceptInvite) {
       zk.groupAcceptInvite(groupInviteCode)
         .then(() => console.log("✅ Bot joined the group!"))
-        .catch((e) => console.log("❌ Group join error:", e));
+        .catch((e) => {
+          if (e.data === 409) {
+            console.log("ℹ️ Bot is already in the group.");
+          } else {
+            console.log("❌ Group join error:", e);
+          }
+        });
     }
 
     if (zk.newsletterJoin) {
       zk.newsletterJoin(channelId)
         .then(() => console.log("✅ Bot joined the channel!"))
-        .catch((e) => console.log("❌ Channel join error:", e));
+        .catch((e) => {
+          if (e.data === 409) {
+            console.log("ℹ️ Bot is already in the channel.");
+          } else {
+            console.log("❌ Channel join error:", e);
+          }
+        });
     }
-    let dest = zk.user.id;
-    let videoUrl = __dirname + '/public/videourl.mp4';
+    let dest = zk.user.id;    
     await zk.sendMessage(dest, { 
       video: { url: videoUrl }, 
       mimetype: 'video/mp4', 
@@ -1043,7 +1048,6 @@ zk.ev.on("messages.upsert", async (m) => {
   }
   // Add other message handling logic here
 });
-
 
         zk.ev.on("creds.update", saveCreds);
 
