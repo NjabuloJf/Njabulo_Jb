@@ -3,7 +3,7 @@
   "description":"Best whatsapp bot💥 developed by   ᴛɪᴍɴᴀsᴀ ᴍᴜʟᴛɪᴘʟᴇ ᴅᴇᴠɪᴄᴇ ʙᴏᴛ ",
   "keywords":["timnasa","node","baileys","whatsapp"],
   "logo":"https://files.catbox.moe/t1rw0x.jpg",
-    "repository": "https://github.com/Next5x/Njabulo_Jb",
+    "repository": "https://github.com/NjabuloJf/Njabulo_Jb",
   "succes_url": "/",
   "stack": "container",
 
@@ -146,26 +146,15 @@
     }
     },
 
-  "formation": {
-
-    "worker": {
-
-      "quantity": 1,
-
-      "size": "standard-2x"
-
-    }
-
-  },
-
-  "addons": [
-
+	  "buildpacks": [
     {
-
-      "plan": "heroku-postgresql:essential-0"
-
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
     }
-
   ]
-
-	}
+}
