@@ -53,11 +53,11 @@ const prefixe = conf.PREFIXE;
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
 
-
-const express = require('express');
+echo "const express = require('express');
 const app = express();
 const cwd = process.cwd();
 const PORT = process.env.PORT || 8000;
+const conf = require('./set');
 
 app.use(express.static(cwd + '/public'));
 
@@ -67,8 +67,12 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log('Server running on port ' + PORT);
+  // your Timnasa connection code here
+  Timnasa.connect().catch((err) => {
+    console.error('Error connecting to Timnasa:', err);
+    process.exit(1); // exit the process with an error code
+  });
 });
-
 async function authentification() {
     try {
        
