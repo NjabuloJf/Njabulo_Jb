@@ -955,7 +955,7 @@ zk.ev.on("connection.update", async (con) => {
         console.log('Error activating crons:', error);
       }
       if((conf.DP).toLowerCase() === 'yes') {
-        let cmsg =`────────────━┈⊷•\n│●│ *ᯤ ᴛɪᴍɴᴀsᴀ-ᴍᴅ: ᴄᴏɴɴᴇᴄᴛᴇᴅ*\n│¤│ᴘʀᴇғɪx: *[ ${prefixe} ]*\n│○│ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*\n╰────────────━┈⊷•⁠`;
+        let cmsg =`.────────────━┈⊷•\n│●│ *ᯤ ᴛɪᴍɴᴀsᴀ-ᴍᴅ: ᴄᴏɴɴᴇᴄᴛᴇᴅ*\n│¤│ᴘʀᴇғɪx: *[ ${prefixe} ]*\n│○│ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*\n╰────────────━┈⊷•⁠`;
         await zk.sendMessage(zk.user.id, { text: cmsg });
       }
       // --- JOIN GROUP AND CHANNEL ---
