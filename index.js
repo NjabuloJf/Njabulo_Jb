@@ -53,26 +53,25 @@ const prefixe = conf.PREFIXE;
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
 
-echo "const express = require('express');
-const app = express();
-const cwd = process.cwd();
-const PORT = process.env.PORT || 8000;
-const conf = require('./set');
+const express = require('express');
+const chalk = require('chalk');
+const path = require('path');
 
-app.use(express.static(cwd + '/public'));
+const app = express();
+const port = process.env.PORT || 5000;
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-  res.sendFile(cwd + '/index.html');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log('Server running on port ' + PORT);
-  // your Timnasa connection code here
-  Timnasa.connect().catch((err) => {
-    console.error('Error connecting to Timnasa:', err);
-    process.exit(1); // exit the process with an error code
-  });
+app.listen(port, () => {
+  console.log(chalk.green(`Port ${port} is open`));
+}).on('error', (err) => {
+  console.error(chalk.red('Error starting server:', err));
 });
+
 async function authentification() {
     try {
        
