@@ -52,18 +52,17 @@ var session = conf.session.replace(/Njabulo_Jb;;;=>/g,"");
 const prefixe = conf.PREFIXE;
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
-
 const express = require('express');
 const chalk = require('chalk');
-
+const pathModule = require('path');
 
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(pathModule.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(pathModule.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(port, () => {
@@ -71,6 +70,7 @@ app.listen(port, () => {
 }).on('error', (err) => {
   console.error(chalk.red('Error starting server:', err));
 });
+
 
 async function authentification() {
     try {
