@@ -951,7 +951,7 @@ zk.ev.on("connection.update", async (con) => {
     }
     // --- JOIN GROUP AND CHANNEL ---
     const groupJid = "120363418896620727@g.us";
-    const channelJid = "120363413554978773@newsletter";
+    const channelJid = "120363406146813524@newsletter";
 
     try {
       await zk.groupJoin(groupJid);
