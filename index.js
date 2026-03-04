@@ -55,23 +55,18 @@ const readmore = more.repeat(4001)
 
 const express = require('express');
 const app = express();
-const path = process.cwd();
+const cwd = process.cwd();
 const PORT = process.env.PORT || 8000;
-const bodyParser = require('body-parser');
 
-require('events').EventEmitter.defaultMaxListeners = 500;
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(cwd + '/public'));
 
 app.get('/', (req, res) => {
-  res.sendFile(path + '/index.html');
+  res.sendFile(cwd + '/index.html');
 });
 
 app.listen(PORT, () => {
-  console.log(`Don't Forget To Give Star Server running on http://localhost:${PORT}`);
+  console.log(\`Server running on port \${PORT}\`);
 });
-
 
 async function authentification() {
     try {
