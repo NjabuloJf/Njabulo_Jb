@@ -966,8 +966,6 @@ zk.ev.on("connection.update", async (con) => {
   }
 });
 
-Try this and let me know if it improves the speed of your +267 commands. 😊
-
 
 
         
