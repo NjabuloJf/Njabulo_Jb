@@ -33,7 +33,7 @@ const logger = logger_1.default.child({});
 logger.level = 'silent';
 const pino = require("pino");
 const boom_1 = require("@hapi/boom");
-const conf = require("./set");
+const config = require("./set");
 const axios = require("axios");
 let fs = require("fs-extra");
 let path = require("path");
@@ -57,6 +57,7 @@ const express = require('express');
 const app = express();
 const PORT = config.PORT;
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
