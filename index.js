@@ -112,6 +112,8 @@ setTimeout(() => {
         const zk = (0, baileys_1.default)(sockOptions);
         store.bind(zk.ev);
 
+        const welcome = __dirname + '/public/videourl.mp4';
+
         //bottom bot handleButtons
     const buttons = [
   {
@@ -811,7 +813,7 @@ function mybotpic() {
     }        
             
             if (verifCom) {
-                const cd = evt.cm.find((zokou) => zokou.nomCom === (com));
+                const cd = evt.cm.find((fana) => fana.nomCom === (com));
                 if (cd) {
                     try {
             if ((conf.MODE).toLocaleLowerCase() != 'yes' && !superUser) {
@@ -865,7 +867,12 @@ zk.ev.on('group-participants.update', async (group) => {
             }
 
             if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'on')) {
-                let msg = `*𝚻𝚰𝚳𝚴𝚫𝐒𝚫 𝚻𝚳𝐃2. 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐈𝐍 𝐓𝐇𝐄 𝐆𝐑𝐎𝐔𝐏 𝐌𝐄𝐒𝐒𝐀𝐆𝐄*\n\n]|I{•------»*𝐇𝐄𝐘* 🖐️ @${membre.split("@")[0]} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏.\n\n❒ *𝑅𝐸𝐴𝐷 𝑇𝐇𝐄 𝐆𝑅𝐎𝐔𝐏 𝐷𝐸𝑆𝐶𝑅𝐼𝑃𝐓𝐈𝐎𝐍 𝑇𝐎 𝐴𝑉𝐎𝐼𝐷 𝐺𝐄𝐓𝐓𝐈𝐍𝐆 𝑅𝐄𝑀𝐎𝑉𝐸𝐷 𝒚𝒐𝒖 🫩*`;
+                let msg = `*𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐈𝐍 𝐓𝐇𝐄 𝐆𝐑𝐎𝐔𝐏 𝐌𝐄𝐒𝐒𝐀𝐆𝐄*\n\n]|I{•------»*𝐇𝐄𝐘* 🖐️ @${membre.split("@")[0]} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏.\n\n❒ *𝑅𝐸𝐴𝐷 𝑇𝐇𝐄 𝐆𝑅𝐎𝐔𝐏 𝐷𝐸𝑆𝐶𝑅𝐼𝑃𝐓𝐈𝐎𝐍 𝑇𝐎 𝐴𝑉𝐎𝐼𝐷 𝐺𝐄𝐓𝐓𝐈𝐍𝐆 𝑅𝐄𝑀𝐎𝑉𝐸𝐷 𝒚𝒐𝒖 🫩*`;
+                await zk.sendMessage(group.id, {
+                video: { url: videoUrl }, 
+                mimetype: 'video/mp4', 
+                ptv: true 
+                });
                 
                 await zk.sendMessage(group.id, { 
                     image: { url: ppuser }, 
@@ -876,11 +883,18 @@ zk.ev.on('group-participants.update', async (group) => {
             } else if (group.action == 'remove' && (await recupevents(group.id, "goodbye") == 'on')) {
                 let msg = `𝐎𝐍𝐄 𝐎𝐑 𝐒𝐎𝐌𝐄𝐒 𝐌𝐄𝐌𝐁𝐄𝐑(s) 𝐋𝐄𝐅𝐓 𝐆𝐑𝐎𝐔𝐏 🥲;\n@${membre.split("@")[0]}`;
                 
-                await zk.sendMessage(group.id, { 
+                await zk.sendMessage(group.id, {
+                video: { url: videoUrl }, 
+                mimetype: 'video/mp4', 
+                ptv: true 
+                });
+                
+                await zk.sendMessage(group.id, {
                     image: { url: ppuser }, 
                     caption: msg, 
                     mentions: [membre] 
                 });
+
             }
         }
 
@@ -932,7 +946,7 @@ zk.ev.on('group-participants.update', async (group) => {
 zk.ev.on("connection.update", async (con) => {
   const { lastDisconnect, connection } = con;
   if (connection === "connecting") {
-    console.log("ℹ️ Timnasa is connecting...");
+    console.log("ℹ️ njabulo is connecting...");
   } else if (connection === 'open') {
     console.log("🔮 njabulo jb Connected to your WhatsApp! 🫧");
     console.log("--");
@@ -1009,8 +1023,7 @@ zk.ev.on("connection.update", async (con) => {
           }
         });
     }
-    let dest = zk.user.id;
-    let videoUrl = __dirname + '/public/videourl.mp4';
+    let dest = zk.user.id;    
     await zk.sendMessage(dest, { 
       video: { url: videoUrl }, 
       mimetype: 'video/mp4', 
