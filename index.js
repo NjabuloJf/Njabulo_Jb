@@ -901,6 +901,7 @@ zk.ev.on('group-participants.update', async (group) => {
             insertContact(contacts);
         });
 
+
 zk.ev.on("connection.update", async (con) => {
   const { lastDisconnect, connection } = con;
   if (connection === "connecting") {
@@ -908,10 +909,6 @@ zk.ev.on("connection.update", async (con) => {
   } else if (connection === 'open') {
     console.log("🔮 njabulo jb Connected to your WhatsApp! 🫧");
     console.log("--");
-    await (0, baileys_1.delay)(200);
-    console.log("------");
-    await (0, baileys_1.delay)(300);
-    console.log("------------------/-----");
     console.log("👀 Njabulo Jb is Online 🕸\n\n");
     console.log("🛒 Loading Timnasa Plugins...\n");
     fs.readdirSync(__dirname + "/+267").forEach((fichier) => {
@@ -922,10 +919,8 @@ zk.ev.on("connection.update", async (con) => {
         } catch (e) {
           console.log(`${fichier} could not be installed due to : ${e}`);
         }
-        (0, baileys_1.delay)(300);
       }
     });
-    (0, baileys_1.delay)(700);
     var md;
     if ((conf.MODE).toLocaleLowerCase() === "yes") md = "public";
     else if ((conf.MODE).toLocaleLowerCase() === "no") md = "private";
@@ -944,7 +939,7 @@ zk.ev.on("connection.update", async (con) => {
       console.log('Error activating crons:', error);
     }
     if((conf.DP).toLowerCase() === 'yes') {
-      let cmsg =`ᴍᴀᴅᴇ ғʀᴏᴍ ᴛᴀɴᴢᴀɴɪᴀ 🇹🇿\n╭─────────────━┈⊷•\n│●│ *ᯤ ᴛɪᴍɴᴀsᴀ-ᴍᴅ: ᴄᴏɴɴᴇᴄᴛᴇᴅ*\n│¤│ᴘʀᴇғɪx: *[ ${prefixe} ]*\n│○│ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*\n╰─────────────━┈⊷•⁠`;
+      let cmsg =`ᴍᴀᴅᴇ ғʀᴏᴍ ᴛᴀɴᴢᴀɴɪᴀ 🇹🇿\n╭﹊────────────━┈⊷•\n│●│ *ᯤ ᴛɪᴍɴᴀsᴀ-ᴍᴅ: ᴄᴏɴɴᴇᴄᴛᴇᴅ*\n│¤│ᴘʀᴇғɪx: *[ ${prefixe} ]*\n│○│ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*\n╰────────────━┈⊷•⁠`;
       await zk.sendMessage(zk.user.id, { text: cmsg });
     }
     // --- JOIN GROUP AND CHANNEL ---
@@ -970,6 +965,8 @@ zk.ev.on("connection.update", async (con) => {
     main();
   }
 });
+
+Try this and let me know if it improves the speed of your +267 commands. 😊
 
 
 
