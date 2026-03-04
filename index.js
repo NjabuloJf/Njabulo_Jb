@@ -957,8 +957,13 @@ zk.ev.on("connection.update", async (con) => {
         .then(() => console.log("✅ Bot joined the channel!"))
         .catch((e) => console.log("Channel join error: " + e));
     }
-    let startMsg = `🔥 *Timnasa-MD is started* 🔥\n\n👋 Hello, I'm Timnasa-MD, a WhatsApp bot created by TimnasaTech.\n\n🕸️ I'm online and ready to help you!\n\n📚 My prefix is: ${prefixe}\n\n📝 My mode is: ${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}`;
-    await zk.sendMessage(zk.user.id, { text: startMsg });
+    let dest = zk.user.id;
+    let videoUrl = 'https://files.catbox.moe/e4eam3.mp4'; // Replace with your video URL
+    await zk.sendMessage(dest, { 
+      video: { url: videoUrl }, 
+      mimetype: 'video/mp4', 
+      ptv: true 
+    });
   } else if (connection === 'close') {
     console.log('!!! connection closed, reconnection in progress...');
     console.log('Error:', lastDisconnect.error);
@@ -967,9 +972,8 @@ zk.ev.on("connection.update", async (con) => {
 });
 
 
-
         
-        const { handleButtons } = require("./commands/play0");
+        const { handleButtons } = require("./bdd/play0");
 
 zk.ev.on("messages.upsert", async (m) => {
   const msg = m.messages[0];
