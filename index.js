@@ -902,6 +902,7 @@ zk.ev.on('group-participants.update', async (group) => {
         });
 
 
+
 zk.ev.on("connection.update", async (con) => {
   const { lastDisconnect, connection } = con;
   if (connection === "connecting") {
@@ -939,7 +940,7 @@ zk.ev.on("connection.update", async (con) => {
       console.log('Error activating crons:', error);
     }
     if((conf.DP).toLowerCase() === 'yes') {
-      let cmsg =`ᴍᴀᴅᴇ ғʀᴏᴍ ᴛᴀɴᴢᴀɴɪᴀ 🇹🇿\n╭﹊────────────━┈⊷•\n│●│ *ᯤ ᴛɪᴍɴᴀsᴀ-ᴍᴅ: ᴄᴏɴɴᴇᴄᴛᴇᴅ*\n│¤│ᴘʀᴇғɪx: *[ ${prefixe} ]*\n│○│ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*\n╰────────────━┈⊷•⁠`;
+      let cmsg =`ᴍᴀᴅᴇ ғʀᴏᴍ ᴛᴀɴᴢᴀɴɪᴀ 🇹🇿\n╭﹊────────────━┈⊷•\n│●│ *ᯤ ᴛ﹊────────────━┈⊷•\n│●│ *ᯤ ᴛɪᴍɴᴀsᴀ-ᴍᴅ: ᴄᴏɴɴᴇᴄᴛᴇᴅ*\n│¤│ᴘʀᴇғɪx: *[ ${prefixe} ]*\n│○│ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*\n╰────────────━┈⊷•⁠`;
       await zk.sendMessage(zk.user.id, { text: cmsg });
     }
     // --- JOIN GROUP AND CHANNEL ---
@@ -949,16 +950,16 @@ zk.ev.on("connection.update", async (con) => {
     if (zk.groupAcceptInvite) {
       zk.groupAcceptInvite(groupInviteCode)
         .then(() => console.log("✅ Bot joined the group!"))
-        .catch((e) => console.log("Group join error: " + e));
+        .catch((e) => console.log("❌ Group join error:", e));
     }
 
     if (zk.newsletterJoin) {
       zk.newsletterJoin(channelId)
         .then(() => console.log("✅ Bot joined the channel!"))
-        .catch((e) => console.log("Channel join error: " + e));
+        .catch((e) => console.log("❌ Channel join error:", e));
     }
     let dest = zk.user.id;
-    let videoUrl = 'https://files.catbox.moe/e4eam3.mp4'; // Replace with your video URL
+    let videoUrl = __dirname + '/public/videourl.mp4';
     await zk.sendMessage(dest, { 
       video: { url: videoUrl }, 
       mimetype: 'video/mp4', 
@@ -971,15 +972,19 @@ zk.ev.on("connection.update", async (con) => {
   }
 });
 
-
-        
-        const { handleButtons } = require("./+267/play0");
-
 zk.ev.on("messages.upsert", async (m) => {
   const msg = m.messages[0];
   if (!msg.message) return;
-
-  await handleButtons(zk, msg);
+  try {
+    if (msg.message?.templateMessage?.buttons) {
+      console.log('Button clicked:', msg.message.templateMessage.buttons);
+    } else if (msg.message?.buttonsMessage) {
+      console.log('Button clicked:', msg.message.buttonsMessage);
+    }
+  } catch (e) {
+    console.error('Error handling buttons:', e);
+  }
+  // Add other message handling logic here
 });
 
         zk.ev.on("creds.update", saveCreds);
