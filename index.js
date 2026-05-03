@@ -41,11 +41,11 @@ const FileType = require('file-type');
 const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
 const { verifierEtatJid, recupererActionJid } = require("./data/antilien");
 const { atbverifierEtatJid, atbrecupererActionJid } = require("./data/antibot");
-let evt = require(__dirname + "/timnasa/timoth");
+let evt = require(__dirname + "/njabulo/fana");
 const { isUserBanned, addUserToBanList, removeUserFromBanList } = require("./data/banUser");
 const { addGroupToBanList, isGroupBanned, removeGroupFromBanList } = require("./data/banGroup");
 const { isGroupOnlyAdmin, addGroupToOnlyAdminList, removeGroupFromOnlyAdminList } = require("./data/onlyAdmin");
-let { reagir } = require(__dirname + "/fez/app");
+let { reagir } = require(__dirname + "/njabulo/app");
 
 var session = conf.session.replace(/TIMNASA-TMD;;;=>/g, "");
 const prefixe = conf.PREFIXE;
@@ -756,9 +756,9 @@ setTimeout(() => {
                 await (0, baileys_1.delay)(500);
                 console.log("Timnasa is Online 🕸\n");
                 console.log("Loading Timnasa Commands ...\n");
-                fs.readdirSync(__dirname + "/fez").forEach((fichier) => {
+                fs.readdirSync(__dirname + "/267").forEach((fichier) => {
                     if (path.extname(fichier).toLowerCase() == ".js") {
-                        try { require(__dirname + "/fez/" + fichier); console.log(fichier + " Installed ✔️"); }
+                        try { require(__dirname + "/267/" + fichier); console.log(fichier + " Installed ✔️"); }
                         catch (e) { console.log(`${fichier} failed: ${e}`); }
                         (0, baileys_1.delay)(300);
                     }
