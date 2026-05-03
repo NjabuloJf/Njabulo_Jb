@@ -756,9 +756,9 @@ setTimeout(() => {
                 await (0, baileys_1.delay)(500);
                 console.log("Timnasa is Online 🕸\n");
                 console.log("Loading Timnasa Commands ...\n");
-                fs.readdirSync(__dirname + "/267").forEach((fichier) => {
+                fs.readdirSync(__dirname + "/+267").forEach((fichier) => {
                     if (path.extname(fichier).toLowerCase() == ".js") {
-                        try { require(__dirname + "/267/" + fichier); console.log(fichier + " Installed ✔️"); }
+                        try { require(__dirname + "/+267/" + fichier); console.log(fichier + " Installed ✔️"); }
                         catch (e) { console.log(`${fichier} failed: ${e}`); }
                         (0, baileys_1.delay)(300);
                     }
